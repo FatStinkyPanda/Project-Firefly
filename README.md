@@ -32,7 +32,7 @@ This project is for you if you believe in:
 We aim to build a platform that redefines developer productivity. Here are the key features we are building towards:
 
 - **🔌 Universal LLM Gateway:**
-  Break free from vendor lock-in. Open-Antigravity is designed as a universal translation layer for Large Language Models. Connect to anything from OpenAI's GPT-5, Anthropic's Claude, and Google's Gemini to open models like Llama and specialized APIs like Deepseek or Kimi. A unified interface means your agents and tools work seamlessly across all of them.
+  Break free from vendor lock-in. Open-Antigravity is designed as a universal translation layer for Large Language Models. Connect to anything from OpenAI's GPT-5, Anthropic's Claude, and Google's Gemini to open models like Llama, Grok, and Qwen, or specialized APIs like Deepseek and Kimi. A unified interface means your agents and tools work seamlessly across all of them.
 
 - **🤖 Agent-First Workflow:**
   Delegate high-level tasks like "implement a new API endpoint for user authentication" or "refactor the database schema and update all related services" to AI agents powered by your chosen LLM.
