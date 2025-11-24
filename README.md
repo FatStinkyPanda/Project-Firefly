@@ -1,17 +1,12 @@
 <div align="center">
   <br />
-  <img src=".github/assets/short_logo.svg" width="200" />
+  <img src=".github/assets/logo.svg" width="200" />
   <br />
-  <h1>Open-Antigravity </h1>
-  
-  
-  [Download](https://antigravity.google)
-  
-  
-  <p><b>The Open-Source, Self-Hostable, AI-First Agentic Development Environment</b></p>
+  <h1>Open-Antigravity</h1>
+  <p><b>The Open-Source, Universal AI Gateway for Agentic Development</b></p>
   
   <p>
-    <i>An open, community-driven effort to build an alternative to proprietary agentic coding platforms, inspired by the vision of Google's Antigravity.</i>
+    <i>An open, community-driven effort to build a truly model-agnostic alternative to proprietary agentic coding platforms.</i>
   </p>
   
   <p>
@@ -24,20 +19,23 @@
 
 ---
 
-**Open-Antigravity** is not just another code editor or AI assistant. It's an ambitious open-source project to build a web-native, **agent-first** integrated development environment (IDE). Our goal is to create a platform where developers can delegate complex software engineering tasks to autonomous AI agents, moving from line-by-line coding to high-level, goal-oriented development.
+**Open-Antigravity** is not just another code editor or AI assistant. It's an ambitious open-source project to build a web-native, **agent-first** integrated development environment (IDE). Unlike proprietary platforms that lock you into a single AI ecosystem, Open-Antigravity is designed from the ground up to be a **universal gateway to any LLM**. Our goal is to create a platform where developers can delegate complex tasks to autonomous AI agents, powered by the models of their choice.
 
 This project is for you if you believe in:
+- **True Model Freedom:** Building a future that isn't tied to a single AI provider.
 - **Democratizing AI:** Making state-of-the-art agentic development accessible to everyone.
-- **Transparency:** Building an open platform where the community can see, shape, and understand the AI's reasoning process.
-- **Extensibility:** Creating a core that can be extended with any AI model, tool, or workflow.
-- **Self-Hosting & Privacy:** Giving you full control over your code, your data, and your development environment.
+- **Transparency & Extensibility:** Creating an open core that the community can shape, extend, and trust.
+- **Self-Hosting & Privacy:** Giving you full control over your code, your data, and your AI connections.
 
 ## ✨ Core Features (The Vision)
 
 We aim to build a platform that redefines developer productivity. Here are the key features we are building towards:
 
+- **🔌 Universal LLM Gateway:**
+  Break free from vendor lock-in. Open-Antigravity is designed as a universal translation layer for Large Language Models. Connect to anything from OpenAI's GPT-5, Anthropic's Claude, and Google's Gemini to open models like Llama and specialized APIs like Deepseek or Kimi. A unified interface means your agents and tools work seamlessly across all of them.
+
 - **🤖 Agent-First Workflow:**
-  Delegate high-level tasks like "implement a new API endpoint for user authentication" or "refactor the database schema and update all related services" to AI agents.
+  Delegate high-level tasks like "implement a new API endpoint for user authentication" or "refactor the database schema and update all related services" to AI agents powered by your chosen LLM.
 
 - **🧠 Multi-Agent Collaboration:**
   Spawn multiple agents that can work in parallel or collaborate on a single goal. For example, one agent writes the code, a second writes the tests, and a third verifies the changes in a browser.
@@ -45,9 +43,6 @@ We aim to build a platform that redefines developer productivity. Here are the k
 - **🌐 Dual-View Interface:**
   - **Editor View:** A feature-rich, AI-supercharged IDE based on **VS Code (VSCodium)** for when you want to get hands-on.
   - **Manager View:** A dedicated surface to spawn, orchestrate, monitor, and manage your fleet of AI agents as they work across different parts of your codebase.
-
-- **🔌 Extensible & Model-Agnostic:**
-  A pluggable architecture that allows you to bring your own AI models. While we may offer default support for leading models (like Gemini, Claude, or GPT variants), the platform is being designed to connect to any local, private, or open-source LLM.
 
 - **✅ Trust Through Verifiable Artifacts:**
   To build trust in autonomous work, agents don't just produce logs. They generate tangible **Artifacts**:
@@ -92,13 +87,14 @@ Our roadmap is a living document. For a detailed breakdown of upcoming features,
 
 Here is a high-level overview of the key phases:
 
-- **Phase 1: Core Platform & VSCodium Integration**
-  - [ ] Foundational backend services (Gateway, Workspace Manager).
+- **Phase 1: Core Platform & Universal Gateway**
+  - [ ] Design and build the **Universal AI Model Gateway** with a pluggable provider architecture.
+  - [ ] Implement initial connectors for major APIs (e.g., OpenAI, Anthropic) and a local model runner.
+  - [ ] Foundational backend services (Orchestrator, Workspace Manager).
   - [ ] Core web UI with an integrated VSCodium-based editor.
-  - [ ] Initial AI model gateway and containerized workspace provisioning.
 
 - **Phase 2: Single-Agent Workflow & Tooling**
-  - [ ] Development of the Agent Orchestrator.
+  - [ ] Development of the Agent Orchestrator to manage agent lifecycles.
   - [ ] Implementation of a general-purpose agent capable of file I/O and command execution.
   - [ ] Introduction of the "Verifiable Artifacts" system (e.g., task lists, execution plans).
 
