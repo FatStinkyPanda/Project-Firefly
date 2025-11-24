@@ -88,30 +88,29 @@ Open-Antigravity is being designed as a modular, container-native application th
 
 ## 🚀 Roadmap
 
-This is a long-term vision. We are tackling it in phases.
+Our roadmap is a living document. For a detailed breakdown of upcoming features, technical specifications, and timelines, please see our full [**ROADMAP.md**](./ROADMAP.md).
 
-- **Phase 1: The Core (In Progress)**
-  - [ ] Setup monorepo with basic CI/CD.
-  - [ ] Develop the core Web UI with a VSCodium-based editor.
-  - [ ] Implement the Workspace Manager for provisioning Docker-based environments.
-  - [ ] Basic AI Model Gateway to connect to a first LLM.
+Here is a high-level overview of the key phases:
 
-- **Phase 2: The First Agent**
-  - [ ] Develop the Agent Orchestrator.
-  - [ ] Implement a single, general-purpose agent capable of file system operations and running commands.
-  - [ ] Create the first "Artifact": a simple task list.
-  - [ ] Basic real-time logging from the agent to the UI.
+- **Phase 1: Core Platform & VSCodium Integration**
+  - [ ] Foundational backend services (Gateway, Workspace Manager).
+  - [ ] Core web UI with an integrated VSCodium-based editor.
+  - [ ] Initial AI model gateway and containerized workspace provisioning.
 
-- **Phase 3: Multi-Agent & Verification**
-  - [ ] Implement the Manager View for multi-agent orchestration.
-  - [ ] Introduce specialized agents (e.g., "Tester Agent," "UI Agent").
-  - [ ] Add more Artifact types: test reports, screenshots.
-  - [ ] Implement the interactive feedback mechanism.
+- **Phase 2: Single-Agent Workflow & Tooling**
+  - [ ] Development of the Agent Orchestrator.
+  - [ ] Implementation of a general-purpose agent capable of file I/O and command execution.
+  - [ ] Introduction of the "Verifiable Artifacts" system (e.g., task lists, execution plans).
 
-- **Phase 4: Community & Ecosystem**
-  - [ ] Develop a public plugin API for custom tools and agents.
-  - [ ] Create a marketplace for sharing community-built plugins.
-  - [ ] Add support for more complex, multi-repo workflows.
+- **Phase 3: Advanced Agentic Features**
+  - [ ] Multi-agent collaboration and orchestration via the "Manager View".
+  - [ ] Introduction of specialized agents (e.g., Tester, Code Reviewer).
+  - [ ] Self-healing and interactive feedback mechanisms for agents.
+
+- **Phase 4: Community & Extensibility**
+  - [ ] Public plugin API for custom tools, models, and agents.
+  - [ ] A community marketplace for sharing and discovering plugins.
+  - [ ] Enhanced support for complex, multi-repository projects.
 
 ## 🛠️ Getting Started (Development)
 
