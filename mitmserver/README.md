@@ -33,6 +33,28 @@ To use this proxy, you need to configure the official Antigravity application to
 -   Change a setting in the application's configuration file.
 -   Use a tool that intercepts system-wide network traffic and redirects it to the proxy.
 
+### System-Wide Proxy Configuration (Windows)
+
+If you cannot directly configure the Antigravity application to use a proxy, you can try setting up a system-wide proxy on Windows. This will route all HTTP/HTTPS traffic through your MITM server.
+
+1.  **Open Proxy Settings:**
+    *   Go to `Settings` > `Network & Internet` > `Proxy`.
+    *   Alternatively, search for "Proxy settings" in the Windows search bar.
+
+2.  **Manual Proxy Setup:**
+    *   Under the "Manual proxy setup" section, toggle "Use a proxy server" to `On`.
+    *   Set "Proxy IP address" to `127.0.0.1` (or `localhost`).
+    *   Set "Port" to `8080` (or whatever port your MITM server is listening on).
+    *   Check "Don't use the proxy server for local (intranet) addresses" if you only want to proxy external traffic.
+    *   Click `Save`.
+
+3.  **Verify:**
+    *   Start your MITM server (`npm start` in the `mitmserver` directory).
+    *   Launch the official Antigravity application.
+    *   You should now see requests and responses being logged in your MITM server's console.
+
+**Note:** Remember to disable the system-wide proxy settings when you are done testing, as it will affect all your internet traffic.
+
 **Important:** You will also need to update the `target` URL in `server.js` to point to the real Antigravity backend. The current placeholder is `http://localhost:3000`.
 
 ```javascript
