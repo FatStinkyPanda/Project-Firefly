@@ -121,7 +121,7 @@ Interested in building the future of software development with us? Here’s how 
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/your-username/open-antigravity.git
+    git clone https://github.com/ishandutta2007/open-antigravity.git
     cd open-antigravity
     ```
 
@@ -142,7 +142,7 @@ Interested in building the future of software development with us? Here’s how 
 We believe this ambitious project can only be realized as a community. We welcome contributions from everyone, whether you're a developer, a designer, a technical writer, or just an enthusiast.
 
 - **Check out the [Contribution Guide](./CONTRIBUTING.md)** to learn about our development process and how to get started.
-- **Look at the [open issues](https://github.com/your-username/open-antigravity/issues)** to find a task that interests you.
+- **Look at the [open issues](https://github.com/ishandutta2007/open-antigravity/issues)** to find a task that interests you.
 - **Join our [Discord server](https://discord.gg/123456789)** to chat with the team and other contributors.
 
 ## 📜 Disclaimer
