@@ -34,6 +34,8 @@ We aim to build a platform that redefines developer productivity. Here are the k
 
 - **🌌 Best of All Worlds:** Aims to fuse the best features of Claude Desktop, Cursor, Windsurf, Kiro, Trae, Trae CN, Qoder, and Antigravity into a single, cohesive experience.
 
+- **✨ Google's Cutting Edge:** Incorporates the powerful code-mending capabilities of **Google CodeMender** and the advanced reasoning of **Google Jules** to provide state-of-the-art code generation, debugging, and understanding.
+
 - **🔒 Privacy First:** No code information, environment information, OS information or user information or usage pattern would be sent to google.
 
 - **🔌 Universal LLM Gateway:**
