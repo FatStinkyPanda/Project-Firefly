@@ -4,10 +4,11 @@ Auto-Dev Loop Trigger
 Triggers the autonomous development loop if enabled by the user.
 """
 
-import sys
 from pathlib import Path
-import config.loop_config as loop_config
+import sys
+
 from .utils import Console, find_project_root
+import config.loop_config as loop_config
 
 def main():
     """Check config and trigger loop if enabled."""
@@ -19,7 +20,7 @@ def main():
     root = find_project_root() or Path.cwd()
     # Check standard location first
     prompt_path = root / "mcp-global-rules" / "prompts" / "auto_dev.md"
-    
+
     if not prompt_path.exists():
         # Fallback to the user's legacy temp file as requested (but preferring permanent)
         fallback = root / "ai-script-to-make-it-continue-development.md"

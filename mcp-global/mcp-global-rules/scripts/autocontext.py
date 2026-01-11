@@ -249,7 +249,7 @@ def get_auto_context(
 ) -> str:
     """Get hierarchically layered context for AI agent."""
     root = root or find_project_root() or Path.cwd()
-    
+
     # Budget Allocation
     budget_map = int(token_budget * 0.05)
     budget_mem = int(token_budget * 0.10)
@@ -270,7 +270,7 @@ def get_auto_context(
         store = get_store()
         recent_mems = store.recall(task) if task else store.list_all()
         recent_mems.sort(key=lambda m: m.updated or m.created, reverse=True)
-        
+
         mem_tokens_used = 0
         for mem in recent_mems[:5]:
             encoded = f"[{mem.key}] {mem.value}"
@@ -279,21 +279,21 @@ def get_auto_context(
                 mem_tokens_used += len(encoded.split())
     except Exception:
         pass
-        
+
     if memories:
         layers.append("# Recent Memory & Decisions\n" + "\n".join(memories))
 
     # Layer 3: Active & Dependencies
     active_files = {} # path -> content
     active_tokens = 0
-    
+
     # 3a. Recent Files (Active)
     recent = get_recent_context(limit=3, root=root)
     for path, content in recent.files:
         if active_tokens < budget_active:
             active_files[path] = content
             active_tokens += len(content.split())
-            
+
             # 3b. Dependencies of Active
             try:
                 from .deps import analyze_imports
@@ -320,20 +320,20 @@ def get_auto_context(
             if path not in active_files and semantic_tokens < budget_semantic:
                 semantic_content.append(f"## {Path(path).name} (Relevant)\n# {path}\n```python\n{content}\n```")
                 semantic_tokens += len(content.split())
-    
+
     # Assemble
     final_output = ["# Deep Context Auto-Loader", ""]
     final_output.extend(layers)
-    
+
     if active_files:
         final_output.append("# Active Context")
         for path, content in active_files.items():
             final_output.append(f"## {Path(path).name}\n# {path}\n```python\n{content[:2000]}\n```\n")
-            
+
     if semantic_content:
         final_output.append("# Semantic Context")
         final_output.extend(semantic_content)
-        
+
     return "\n".join(final_output)
 
 # ... (Main function kept same, calling get_auto_context)

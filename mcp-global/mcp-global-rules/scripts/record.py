@@ -8,14 +8,14 @@ Usage:
     python mcp.py record --snapshot
 """
 
-import sys
-import subprocess
-from pathlib import Path
 from datetime import datetime
+from pathlib import Path
 from typing import List, Optional
+import subprocess
+import sys
 
-from .utils import Console, find_project_root, run_git_command
 from .memory import get_store
+from .utils import Console, find_project_root, run_git_command
 
 def get_git_status(root: Path) -> str:
     """Get concise git status."""
@@ -35,10 +35,10 @@ def analyze_diff(root: Path) -> str:
     diff = run_git_command(['diff', '--cached', '-U0'], cwd=root)
     if not diff:
         return "No staged changes detected."
-        
+
     changes = []
     current_file = ""
-    
+
     for line in diff.split('\n'):
         if line.startswith('diff --git'):
             # diff --git a/file.py b/file.py
@@ -63,21 +63,21 @@ def analyze_diff(root: Path) -> str:
 def record_snapshot(root: Path) -> bool:
     """Record a context snapshot of current state."""
     Console.info("Recording context snapshot...")
-    
+
     status = get_git_status(root)
     semantic_summary = analyze_diff(root)
-    
+
     content = f"# Context Snapshot\n\n## Git Status\n{status}\n\n## Semantic Changes\n{semantic_summary}"
-    
+
     store = get_store()
     timestamp = datetime.now().isoformat()
-    
+
     store.remember(
         key=f"Snapshot {timestamp}",
         value=content,
         tags=['snapshot', 'auto-context', 'pre-commit']
     )
-    
+
     Console.ok("Context snapshot recorded")
     return True
 
@@ -85,15 +85,15 @@ def main():
     """CLI entry point."""
     args = [a for a in sys.argv[1:] if not a.startswith('-')]
     root = find_project_root() or Path.cwd()
-    
+
     if '--snapshot' in sys.argv:
         record_snapshot(root)
         return 0
-        
+
     if not args:
         Console.fail("Usage: mcp record 'message' OR mcp record --snapshot")
         return 1
-        
+
     message = " ".join(args)
     store = get_store()
     store.remember(

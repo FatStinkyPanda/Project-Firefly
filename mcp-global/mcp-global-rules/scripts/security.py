@@ -115,7 +115,8 @@ SECRET_PATTERNS = [
     (r'(?i)aws_?secret', "AWS secret reference"),
     (r'(?i)credentials\s*=\s*["\'][^"\']+["\']', "Hardcoded credentials"),
     (r'(?i)bearer\s+[a-z0-9]{20,}', "Bearer token in code"),
-    (r'(?i)-----BEGIN' + r'.*PRIVATE KEY-----', "Private key in code"),
+    (r'(?i)-----BEGIN'
+     r'.*PRIVATE KEY-----', "Private key in code"),
 ]
 
 # Dangerous functions
