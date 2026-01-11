@@ -13,7 +13,7 @@ if TYPE_CHECKING:
 
 logger = logging.getLogger("FireflyOpenRouterService")
 
-class OpenRouterService(BaseModelService):
+class OpenRouterManager(BaseModelService):
     """
     OpenRouter Service using standard library (zero-dependency).
     """

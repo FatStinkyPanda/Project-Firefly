@@ -211,7 +211,7 @@ class NamingConventionChecker:
 
     CONVENTIONS = {
         'controller': ['Controller', 'Handler', 'View', 'Router', 'Api', 'Manager'],
-        'service': ['Service', 'Manager', 'Logic', 'Settings'],
+        'service': ['Service', 'Manager', 'Logic', 'Settings', 'Response'],
         'repository': ['Repository', 'Repo', 'DAO', 'Dal'],
         'model': ['Model', 'Entity', 'Schema', 'DTO', 'Base', 'Create', 'Read', 'Update', 'Item', 'Info', 'Status', 'Payload', 'Login', 'Response', 'Request', 'Analytics', 'Performance', 'Risk', 'Grade', 'Token', 'WithStudent', 'Account', 'Institution', 'Classroom', 'Assignment', 'Announcement', 'Subscription', 'Transaction', 'GameSave', 'BugReport', 'Product', 'Permission', 'Enrollment', 'Submission', 'Condition', 'Link', 'Jurisdiction', 'Log', 'Message', 'Cache', 'Category', 'Image', 'Review', 'Question', 'Option', 'Answer', 'Module', 'Progress', 'Type'],
     }

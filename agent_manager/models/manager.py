@@ -6,7 +6,7 @@ from .base import BaseModelService, ModelResponse
 from .gemini import GeminiService
 from .ollama import OllamaService
 from .openai import OpenAIService
-from .openrouter import OpenRouterService
+from .open_connector import OpenRouterManager
 
 logger = logging.getLogger("FireflyModelClient")
 
@@ -39,7 +39,7 @@ class ModelClientManager:
 
     def _initialize_default_providers(self):
         """Initialize all supported providers (keys loaded from env)."""
-        for cls in [GeminiService, OpenAIService, AnthropicService, OpenRouterService, OllamaService]:
+        for cls in [GeminiService, OpenAIService, AnthropicService, OpenRouterManager, OllamaService]:
             try:
                 p = cls()
                 if p.validate_config():
@@ -55,7 +55,7 @@ class ModelClientManager:
 
         def get_priority(p):
             # Map class name or model name to priority index
-            name = p.__class__.__name__.lower().replace("service", "")
+            name = p.__class__.__name__.lower().replace("service", "").replace("manager", "")
             try:
                 return priority_list.index(name)
             except ValueError:
