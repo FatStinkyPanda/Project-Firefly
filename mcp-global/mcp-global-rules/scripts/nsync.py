@@ -19,8 +19,13 @@ except ImportError:
     FileSystemEventHandler = object
 
 # NSync Configuration
-WINDOWS_NSYNC = Path("C:/Users/dbiss/Desktop/Projects/_BLANK_/NSync")
-LINUX_NSYNC = Path("/home/p4nd4pr0t0c01/Projects/NSync")
+from .utils import find_project_root
+
+# NSync Configuration
+# Enforce containment within the current project
+_project_root = find_project_root() or Path.cwd()
+WINDOWS_NSYNC = _project_root / ".nsync"
+LINUX_NSYNC = _project_root / ".nsync"
 
 def get_remote_peer():
     import socket
@@ -240,7 +245,7 @@ def start_watch():
     launcher_py = Path(__file__).parent / "agent_launcher.py"
     try:
         # Check if launcher already running (agent_launcher has its own PID protection)
-        subprocess.Popen([sys.executable, str(launcher_py)], start_new_session=True)
+        subprocess.Popen([sys.executable, str(launcher_py)], start_new_session=True, shell=False)
         print("[NSYNC] Autonomous collaboration launcher started.")
     except Exception as e:
         print(f"[WARN] Failed to start collaboration launcher: {e}")

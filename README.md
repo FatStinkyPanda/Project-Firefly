@@ -1,169 +1,90 @@
-<div align="center">
-  <br />
-  <img src=".github/assets/google-antigravity-logo.svg" width="200" />
-  <br />
-  <h1>Project-Firefly</h1>
+# Project-Firefly (Firefly) 🦉🔥
 
-  [Download](https://github.com/ishandutta2007/open-antigravity)
-  <p><b>The Open-Source, Universal AI Gateway for Agentic Development</b></p>
-  <p>
-    <i>An open, community-driven effort to build a truly model-agnostic alternative to proprietary agentic coding platforms.</i>
-  </p>
-  
-  <p>
-    <a href="#"><img alt="Build Status" src="https://img.shields.io/badge/build-passing-brightgreen?style=for-the-badge"></a>
-    <a href="#"><img alt="License" src="https://img.shields.io/badge/license-MIT-blue?style=for-the-badge"></a>
-    <a href="#"><img alt="Contributions Welcome" src="https://img.shields.io/badge/contributions-welcome-orange?style=for-the-badge"></a>
-    <a href="#"><img alt="Discord" src="https://img.shields.io/discord/123456789?label=discord&style=for-the-badge&logo=discord"></a>
-  </p>
-</div>
+> **The AI-Native Integrated Development Environment.**  
+> *Forked from VS Code. Powered by MCP-Global. Driven by Autonomous Intelligence.*
+
+## 📖 Overview
+
+**Project-Firefly** (or simply **Firefly**) is a next-generation fork of [Visual Studio Code](https://github.com/microsoft/vscode), designed to be the ultimate environment for AI-assisted and autonomous software development. 
+
+While inspired by advanced platforms like Google's "Antigravity", Firefly distinguishes itself through **enforced automation**, **universal AI compatibility**, and a radically new **Event-Driven Agent Trigger System**. It is built not just to help developers write code, but to actively manage, monitor, and complete entire software lifecycles through continuous autonomous operation.
 
 ---
 
-**Project-Firefly** is not just another code editor or AI assistant. It's an ambitious open-source project to build a web-native, **agent-first** integrated development environment (IDE). Unlike proprietary platforms that lock you into a single AI ecosystem, Project-Firefly is designed from the ground up to be a **universal gateway to any LLM**. Our goal is to create a platform where developers can delegate complex tasks to autonomous AI agents, powered by the models of their choice.
+## 🚀 Core Pillars
 
-This project is for you if you believe in:
-- **True Model Freedom:** Building a future that isn't tied to a single AI provider.
-- **Democratizing AI:** Making state-of-the-art agentic development accessible to everyone.
-- **Transparency & Extensibility:** Creating an open core that the community can shape, extend, and trust.
-- **Self-Hosting & Privacy:** Giving you full control over your code, your data, and your AI connections.
+### 1. 🛡️ Strict MCP-Global Integration
+Firefly comes pre-integrated with the **`mcp-global`** toolset, providing a rigid yet powerful framework for quality and security.
+- **Enforced Workflows:** Development is governed by mandatory git hooks (pre-commit, pre-push) that run security scans, code reviews, and architectural checks.
+- **Automated Context & Memory:** The IDE automatically maintains context maps and project memory, ensuring AI agents always know the "what", "why", and "how" of the codebase.
+- **"Fix Properly" Philosophy:** The system adheres to a strict "fix properly, never disable" rule, ensuring technical debt is addressed, not bypassed.
 
-## ✨ Core Features (The Vision)
+### 2. ⚡ Event-Driven Agent Trigger System
+Firefly transforms the IDE from a passive editor into an active event processor. Developers can configure **Agent Triggers** that react to events inside and outside the IDE.
+- **"Agent Manager" Hub:** A central conversation interface where developers configure and monitor all automated triggers.
+- **Universal Inputs:** Agents can be triggered by:
+    - **Webhooks:** (e.g., A bug report submission on your company website auto-triggers a "Bug Fix" agent).
+    - **Remote Comms:** Send instructions via **Telegram, SMS, or Email** to your agent.
+    - **System Events:** Build failures, deployment alerts, or time-based schedules.
+- **Persistent Conversations:** Agent sessions persist even when you are away. You can start a task, leave, checks its status via SMS, and return to find the work completed.
 
-We aim to build a platform that redefines developer productivity. Here are the key features we are building towards:
+### 3. 🧠 Universal Model Connectivity & Intelligent Cycling
+Firefly breaks the vendor lock-in. It is agnostic to the AI model provider, giving developers true freedom.
+- **Universal Support:** Connects to **ANY** AI source:
+    - Google (Gemini)
+    - OpenAI (GPT-4)
+    - Anthropic (Claude)
+    - OpenRouter
+    - Local Models (Ollama, LM Studio)
+    - Custom URLs / Enterprise Endpoints
+- **Smart Orchestration:**
+    - **Priority Cycling:** Define a hierarchy of models (e.g., *Try Gemini Flash First -> Failover to Claude Opus -> Fallback to Local Llama*).
+    - **Usage Management:** If a rate limit is hit, Firefly instantly and transparently switches to the next available model in your priority list, ensuring zero downtime.
 
-- **🌌 Best of All Worlds:** Aims to fuse the best features of Claude Desktop, Cursor, Windsurf, Kiro, Trae, Trae CN, Qoder, and Antigravity into a single, cohesive experience.
+### 4. 🔄 Continuous Development Mode
+Firefly introduces the concept of **"Always-On" Development**.
+- **AI Orchestrators:** Specialized supervisor agents that manage the project lifecycle from start to finish.
+- **Autonomous Management:** These orchestrators assign tasks to sub-agents, monitor progress, and verify results.
+- **Production Guarantee:** The system ensures that all requirements are met, 100% of tests pass, and the artifact is fully ready for deployment before marking a task as complete. 
+- **Set & Forget:** Define the project goal, and the Orchestrator runs continuous loops until the software is production-ready.
 
-- **✨ Google's Cutting Edge:** Incorporates the powerful code-mending capabilities of **Google CodeMender** and the advanced reasoning of **Google Jules** to provide state-of-the-art code generation, debugging, and understanding.
+---
 
-- **🔒 Privacy First:** No code information, environment information, OS information or user information or usage pattern would be sent to google.
+## 🏗️ Architecture
 
-- **🔌 Universal LLM Gateway:**
-  Break free from vendor lock-in. Project-Firefly is designed as a universal translation layer for Large Language Models. Connect to anything from OpenAI's GPT-5, Anthropic's Claude, and Google's Gemini to open models like Llama, Grok, and Qwen, or specialized APIs like Deepseek and Kimi. A unified interface means your agents and tools work seamlessly across all of them.
+1.  **Base:** [Microsoft VS Code](https://github.com/microsoft/vscode) (Detached Fork).
+2.  **Automation Layer:** `mcp-global` (Python-based automated toolchain).
+3.  **Intelligence Layer:** Firefly Agent Manager (Rust/Python/WASM hybrid for high-performance agent orchestration).
 
-- **🤖 Agent-First Workflow:**
-  Delegate high-level tasks like "implement a new API endpoint for user authentication" or "refactor the database schema and update all related services" to AI agents powered by your chosen LLM.
+## 🛠️ Getting Started
 
-- **🧠 Multi-Agent Collaboration:**
-  Spawn multiple agents that can work in parallel or collaborate on a single goal. For example, one agent writes the code, a second writes the tests, and a third verifies the changes in a browser.
+### Prerequisites
+- Python 3.10+
+- Node.js (for VS Code development)
+- Git
 
-- **🌐 Dual-View Interface:**
-  - **Editor View:** A feature-rich, AI-supercharged IDE based on **VS Code (VSCodium)** for when you want to get hands-on.
-  - **Manager View:** A dedicated surface to spawn, orchestrate, monitor, and manage your fleet of AI agents as they work across different parts of your codebase.
-
-- **✅ Trust Through Verifiable Artifacts:**
-  To build trust in autonomous work, agents don't just produce logs. They generate tangible **Artifacts**:
-  - **Task Lists & Plans:** Review the agent's plan before it starts.
-  - **Screenshots & Recordings:** Visually verify UI changes made by an agent.
-  - **Test Results:** See concrete proof that the agent's code meets the requirements.
-
-- **🔄 Interactive Feedback Loop:**
-  Provide feedback to agents in real-time. Comment on an artifact, correct a line of code, or adjust the plan, and the agent will incorporate your feedback without losing context.
-
-## 🏛️ High-Level Architecture
-
-Project-Firefly is being designed as a modular, container-native application that you can run anywhere.
-
-```
-┌──────────────────────────┐
-│      Web UI (React)      │
-│  (Editor & Manager View) │
-└────────────┬─────────────┘
-             │ (WebSocket, REST API)
-┌────────────▼─────────────┐
-│    Gateway & Orchestrator│
-│ (FastAPI / Node.js)      │
-└──────┬─────────┬─────────┘
-       │         │
- (Orchestrates)  (Routes to)
-       │         │
-┌──────▼─────────▼─────────┐   ┌──────────────────┐
-│  Workspace Manager       │   │ AI Model Gateway │
-│ (Manages Docker contexts)│◀──▶ (Connects to LLMs) │
-└──────────────────────────┘   └──────────────────┘
-```
-
-- **Web UI:** A responsive frontend providing the editor and agent management interfaces.
-- **Gateway & Orchestrator:** The central brain that interprets user requests, dispatches tasks to agents, and manages workflows.
-- **Workspace Manager:** Provisions and manages isolated, containerized development environments for agents to safely work in.
-- **AI Model Gateway:** A standardized interface to connect to various large language models.
-
-## 🚀 Roadmap
-
-Our roadmap is a living document. For a detailed breakdown of upcoming features, technical specifications, and timelines, please see our full [**ROADMAP.md**](./ROADMAP.md).
-
-Here is a high-level overview of the key phases:
-
-- **Phase 1: Core Platform & Universal Gateway**
-  - [ ] Design and build the **Universal AI Model Gateway** with a pluggable provider architecture.
-  - [ ] Implement initial connectors for major APIs (e.g., OpenAI, Anthropic) and a local model runner.
-  - [ ] Foundational backend services (Orchestrator, Workspace Manager).
-  - [ ] Core web UI with an integrated VSCodium-based editor.
-
-- **Phase 2: Single-Agent Workflow & Tooling**
-  - [ ] Development of the Agent Orchestrator to manage agent lifecycles.
-  - [ ] Implementation of a general-purpose agent capable of file I/O and command execution.
-  - [ ] Introduction of the "Verifiable Artifacts" system (e.g., task lists, execution plans).
-
-- **Phase 3: Advanced Agentic Features**
-  - [ ] Multi-agent collaboration and orchestration via the "Manager View".
-  - [ ] Introduction of specialized agents (e.g., Tester, Code Reviewer).
-  - [ ] Self-healing and interactive feedback mechanisms for agents.
-
-- **Phase 4: Community & Extensibility**
-  - [ ] Public plugin API for custom tools, models, and agents.
-  - [ ] A community marketplace for sharing and discovering plugins.
-  - [ ] Enhanced support for complex, multi-repository projects.
-
-## 🛠️ Getting Started (Development)
-
-Interested in building the future of software development with us? Here’s how you can get the project running locally.
-
-**Prerequisites:**
-- Docker and Docker Compose
-- Node.js (v20+)
-- Python (v3.11+)
-
-**Installation:**
-
-1.  **Clone the repository:**
+### Installation
+1.  **Clone the Repo:**
     ```bash
-    git clone https://github.com/ishandutta2007/open-antigravity.git
+    git clone https://github.com/FatStinkyPanda/Project-Firefly.git
     cd Project-Firefly
     ```
-
-2.  **Setup environment variables:**
+2.  **Bootstrap MCP-Global:**
     ```bash
-    cp .env.example .env
+    # Installs hooks and automation tools
+    python mcp-global/mcp-global-rules/mcp.py setup --all
     ```
-    *Fill in your API keys and other configuration in the `.env` file.*
+3.  **Build Firefly:**
+    *Follow standard VS Code build instructions provided in the `vscode/` directory.*
 
-3.  **Launch the environment:**
-    ```bash
-    docker-compose up --build
-    ```
-    This will build all the services and launch the Project-Firefly platform. You can access it at `http://localhost:3000`.
+---
 
-## 🙌 How to Contribute
+## 🤝 Contributing
+Firefly follows the **MCP-Global** protocol. All contributions must pass the automated security and quality gates.
+- Always run `mcp.py context` before starting work.
+- Use `mcp.py fix` to auto-resolve linting issues.
+- **Never disable a hook.** Fix the underlying root cause.
 
-We believe this ambitious project can only be realized as a community. We welcome contributions from everyone, whether you're a developer, a designer, a technical writer, or just an enthusiast.
+---
 
-- **Check out the [Contribution Guide](./CONTRIBUTING.md)** to learn about our development process and how to get started.
-- **Look at the [open issues](https://github.com/ishandutta2007/open-antigravity/issues)** to find a task that interests you.
-- **Join our [Discord server](https://discord.com/invite/jc4xtF58Ve)** to chat with the team and other contributors.
-
-
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=ishandutta2007/open-antigravity&type=date&legend=top-left)](https://www.star-history.com/#ishandutta2007/open-antigravity&type=date&legend=top-left)
-
-
-
-
-## 📜 Disclaimer
-
-This tool is independent and not affiliated with Google. "Antigravity" and "Gemini" are trademarks of Google LLC. It is not intended for production use. The developers of this tool are not responsible for any damage caused by this tool.
-
-## 📜 License
-
-This project is licensed under the **MIT License**. See the [LICENSE](./LICENSE) file for details.
+*Project-Firefly: Illuminating the path to autonomous software engineering.*

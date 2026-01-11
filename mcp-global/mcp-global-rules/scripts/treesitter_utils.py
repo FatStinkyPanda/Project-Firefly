@@ -140,7 +140,8 @@ def get_parser(language: str) -> Optional[Any]:
 
     try:
         # Try to load language
-        lang_module = __import__(f'tree_sitter_{language}', fromlist=[language])
+        import importlib
+        lang_module = importlib.import_module(f'tree_sitter_{language}')
         if hasattr(lang_module, 'language'):
             lang = Language(lang_module.language())
             parser = Parser(lang)

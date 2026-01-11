@@ -4,9 +4,9 @@
 set -e # Exit immediately if a command exits with a non-zero status.
 
 echo "[MCP] Running pre-push validation..."
-PYTHON_CMD="/c/Users/CSquared/AppData/Local/Programs/Python/Python312/python.exe"
-$PYTHON_CMD mcp-global-rules/mcp.py security app/
-$PYTHON_CMD mcp-global-rules/mcp.py architecture app/ --strict
+PYTHON_CMD="python"
+$PYTHON_CMD mcp-global/mcp-global-rules/mcp.py security .
+$PYTHON_CMD mcp-global/mcp-global-rules/mcp.py architecture . --strict
 
 # Git LFS
 command -v git-lfs >/dev/null 2>&1 || { echo >&2 "\nThis repository is configured for Git LFS but 'git-lfs' was not found on your path. If you no longer wish to use Git LFS, remove this hook from your .git/hooks directory.\n"; exit 2; }

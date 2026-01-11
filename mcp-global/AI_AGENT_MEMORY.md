@@ -1,7 +1,7 @@
 # MCP AI Agent: Permanent Development Workflow Memory
 
 > **ENFORCED WORKFLOWS - READ AND ADHERE STRICTOR THAN CODE**
-> This document defines the MANDATORY operating procedures for all AI agents working on the CleverLittleBee project. It integrates context from MCP-Global, core principles, and autonomous bug-fixing protocols.
+> This document defines the MANDATORY operating procedures for all AI agents working on this project. It integrates context from MCP-Global, core principles, and autonomous bug-fixing protocols.
 
 ---
 

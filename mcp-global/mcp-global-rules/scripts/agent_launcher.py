@@ -57,10 +57,10 @@ def run_collaboration():
                 if t_process is None or t_process.poll() is not None:
                     action = "Starting" if t_process is None else "Restarting"
                     print(f"[LAUNCHER] Telegram configuration found. {action} Bridge...")
-                    t_process = subprocess.Popen([sys.executable, str(telegram_bridge_py)])
+                    t_process = subprocess.Popen([sys.executable, str(telegram_bridge_py)], shell=False)
 
             # Run mcp comms collaborate
-            process = subprocess.Popen([sys.executable, mcp_py, "comms", "collaborate"])
+            process = subprocess.Popen([sys.executable, mcp_py, "comms", "collaborate"], shell=False)
 
             # Monitoring loop
             while process.poll() is None:
@@ -68,7 +68,7 @@ def run_collaboration():
                 if telegram_config.exists():
                     if t_process is None or t_process.poll() is not None:
                         print("[LAUNCHER] Telegram Bridge starting/restarting...")
-                        t_process = subprocess.Popen([sys.executable, str(telegram_bridge_py)])
+                        t_process = subprocess.Popen([sys.executable, str(telegram_bridge_py)], shell=False)
                 elif t_process and t_process.poll() is None:
                     # If config removed, kill the bridge
                     print("[LAUNCHER] Telegram config removed. Stopping Bridge...")

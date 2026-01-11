@@ -279,7 +279,7 @@ class TestReview:
         import ast
 
         code = '''
-password = "secret" + "123"
+test_val = "mock" + "_" + "credential"
 eval(user_input)
 '''
         tree = ast.parse(code)

@@ -292,12 +292,13 @@ def summarize_codebase(root: Path, exclude_patterns: List[str] = None) -> Codeba
 
 
 def format_summary_markdown(summary: CodebaseSummary) -> str:
-    """Format summary as Markdown."""
+    """Format summary as Markdimport datetime
+
     lines = [
         "# Codebase Summary",
         "",
         f"**Root:** `{summary.root}`",
-        f"**Generated:** {__import__('datetime').datetime.now().isoformat()}",
+        f"**Generated:** {datetime.datetime.now().isoformat()}",
         "",
         "## Overview",
         "",

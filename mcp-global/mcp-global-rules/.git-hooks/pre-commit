@@ -5,11 +5,12 @@ set -e # Exit immediately if a command exits with a non-zero status.
 
 echo "[MCP] Running pre-commit checks..."
 # Use absolute path to avoid Windows Store alias issues
-PYTHON_CMD="/c/Users/CSquared/AppData/Local/Programs/Python/Python312/python.exe"
+# Use generic python
+PYTHON_CMD="python"
 
-$PYTHON_CMD mcp-global-rules/mcp.py autocontext
-$PYTHON_CMD mcp-global-rules/mcp.py record --snapshot
-$PYTHON_CMD mcp-global-rules/mcp.py fix app/ --safe --apply
-$PYTHON_CMD mcp-global-rules/mcp.py predict-bugs app/
-$PYTHON_CMD mcp-global-rules/mcp.py security app/
-$PYTHON_CMD mcp-global-rules/mcp.py review app/ --strict
+$PYTHON_CMD mcp-global/mcp-global-rules/mcp.py autocontext
+$PYTHON_CMD mcp-global/mcp-global-rules/mcp.py record --snapshot
+$PYTHON_CMD mcp-global/mcp-global-rules/mcp.py fix . --safe --apply
+$PYTHON_CMD mcp-global/mcp-global-rules/mcp.py predict-bugs .
+$PYTHON_CMD mcp-global/mcp-global-rules/mcp.py security .
+$PYTHON_CMD mcp-global/mcp-global-rules/mcp.py review . --strict

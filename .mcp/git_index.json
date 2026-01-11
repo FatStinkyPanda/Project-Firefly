@@ -1,11 +1,763 @@
 {
-  "commit_count": 41,
+  "commit_count": 45,
   "authors": {
-    "Daniel Anthony Bissey": 1,
+    "Daniel Anthony Bissey": 5,
     "Singularity Labs": 27,
     "ishan dutta": 13
   },
   "files": {
+    "mcp-global/mcp-global-rules/tests/test_scripts.py": [
+      "caa6e97",
+      "a315637"
+    ],
+    ".mcp/vector_index/chunks.json": [
+      "d8ddddf",
+      "a315637"
+    ],
+    ".mcp/vector_index/embeddings.json": [
+      "d8ddddf",
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/__pycache__/autocontext.cpython-314.pyc": [
+      "d8ddddf",
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/astgrep.py": [
+      "d8ddddf",
+      "e9bdb72",
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/autocontext.py": [
+      "d8ddddf",
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/record.py": [
+      "d8ddddf",
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/security.py": [
+      "d8ddddf",
+      "e9bdb72",
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/trigger_loop.py": [
+      "d8ddddf",
+      "a315637"
+    ],
+    ".github/workflows/ci.yml": [
+      "a315637"
+    ],
+    ".mcp/config_index.json": [
+      "a315637"
+    ],
+    ".mcp/doc_index.json": [
+      "a315637"
+    ],
+    ".mcp/git_index.json": [
+      "a315637"
+    ],
+    ".mcp/impact_graph.json": [
+      "a315637"
+    ],
+    ".mcp/index_summary.json": [
+      "a315637"
+    ],
+    ".mcp/todo_index.json": [
+      "a315637"
+    ],
+    "mcp-global/!!!_README_FIRST_MCP_!!!.md": [
+      "a315637"
+    ],
+    "mcp-global/.agent/workflows/mcp-install.md": [
+      "a315637"
+    ],
+    "mcp-global/.github/workflows/ci.yml": [
+      "a315637"
+    ],
+    "mcp-global/AI_AGENT_MCP.md": [
+      "a315637"
+    ],
+    "mcp-global/AI_AGENT_MEMORY.md": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/.git-hooks/commit-msg": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/.git-hooks/post-checkout": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/.git-hooks/post-commit": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/.git-hooks/post-merge": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/.git-hooks/pre-commit": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/.git-hooks/pre-push": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/AI_AGENT_INSTRUCTIONS.md": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/DEPENDENCIES.md": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/README.md": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/agent_comms.py": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/config/__init__.py": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/config/__pycache__/__init__.cpython-311.pyc": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/config/__pycache__/loop_config.cpython-311.pyc": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/config/loop_config.py": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/global_rules.md": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/install.ps1": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/install.sh": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/mcp.py": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/mcp_rules.md": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/model_manager.py": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/patterns/python-modernize.yml": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/patterns/security.yml": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/prompts/auto_dev.md": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/__init__.py": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/__pycache__/__init__.cpython-311.pyc": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/__pycache__/__init__.cpython-314.pyc": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/__pycache__/architecture.cpython-311.pyc": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/__pycache__/autocontext.cpython-311.pyc": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/__pycache__/cicd.cpython-314.pyc": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/__pycache__/config_index.cpython-311.pyc": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/__pycache__/config_index.cpython-314.pyc": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/__pycache__/coverage_index.cpython-311.pyc": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/__pycache__/coverage_index.cpython-314.pyc": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/__pycache__/doc_index.cpython-311.pyc": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/__pycache__/doc_index.cpython-314.pyc": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/__pycache__/embeddings.cpython-311.pyc": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/__pycache__/embeddings.cpython-314.pyc": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/__pycache__/fix.cpython-311.pyc": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/__pycache__/git_index.cpython-311.pyc": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/__pycache__/git_index.cpython-314.pyc": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/__pycache__/impact.cpython-311.pyc": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/__pycache__/impact.cpython-314.pyc": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/__pycache__/index_all.cpython-311.pyc": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/__pycache__/index_all.cpython-314.pyc": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/__pycache__/learning.cpython-311.pyc": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/__pycache__/memory.cpython-311.pyc": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/__pycache__/memory.cpython-314.pyc": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/__pycache__/predict.cpython-311.pyc": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/__pycache__/record.cpython-311.pyc": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/__pycache__/review.cpython-311.pyc": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/__pycache__/security.cpython-311.pyc": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/__pycache__/setup.cpython-311.pyc": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/__pycache__/setup.cpython-314.pyc": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/__pycache__/summarize.cpython-311.pyc": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/__pycache__/todo_index.cpython-311.pyc": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/__pycache__/todo_index.cpython-314.pyc": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/__pycache__/treesitter_utils.cpython-311.pyc": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/__pycache__/treesitter_utils.cpython-314.pyc": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/__pycache__/trigger_loop.cpython-311.pyc": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/__pycache__/utils.cpython-311.pyc": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/__pycache__/utils.cpython-314.pyc": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/__pycache__/vector_store.cpython-311.pyc": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/__pycache__/vector_store.cpython-314.pyc": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/__pycache__/warm.cpython-311.pyc": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/agent_comms.py": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/agent_launcher.py": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/antigravity_automation.py": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/antigravity_screenshot.png": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/antigravity_screenshot_after.png": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/antigravity_screenshot_final.png": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/api_docs.py": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/architecture.py": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/auto_docs.py": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/auto_learn.py": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/auto_test.py": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/changelog.py": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/cicd.py": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/config_index.py": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/context.py": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/coverage_index.py": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/cybersec.py": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/dead_code.py": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/deps.py": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/doc_coverage.py": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/doc_index.py": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/embeddings.py": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/errors.py": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/finder.py": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/fix.py": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/git_index.py": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/impact.py": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/index_all.py": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/learning.py": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/mcp-cli.ps1": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/mcp-cli.sh": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/mcp-startup.ps1": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/mcp-startup.sh": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/memory.py": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/migrate.py": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/model_manager.py": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/multi_repo.py": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/nsync.py": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/predict.py": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/profile.py": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/refactor.py": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/review.py": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/setup.py": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/summarize.py": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/telegram_bridge.py": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/telegram_config.json": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/test_gen.py": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/todo_index.py": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/treesitter_utils.py": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/utils.py": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/vector_store.py": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/warm.py": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/scripts/watcher.py": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/tests/__init__.py": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/mcp-servers/modelcontextprotocol-sdk-1.25.1.tgz": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/mcp-servers/modelcontextprotocol-server-everything-2025.12.18.tgz": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/annotated_types-0.7.0-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/anyio-4.12.0-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/astroid-4.0.2-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/authlib-1.6.6-py2.py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/bandit-1.9.2-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/black-25.12.0-cp311-cp311-win_amd64.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/boolean_py-5.0-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/cachecontrol-0.14.4-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/certifi-2025.11.12-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/cffi-2.0.0-cp311-cp311-win_amd64.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/cfgv-3.5.0-py2.py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/charset_normalizer-3.4.4-cp311-cp311-win_amd64.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/click-8.3.1-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/colorama-0.4.6-py2.py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/coverage-7.13.1-cp311-cp311-win_amd64.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/cryptography-46.0.3-cp311-abi3-win_amd64.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/cyclonedx_python_lib-11.6.0-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/defusedxml-0.7.1-py2.py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/dill-0.4.0-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/distlib-0.4.0-py2.py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/dparse-0.6.4-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/filelock-3.20.1-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/flake8-7.3.0-py2.py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/h11-0.16.0-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/httpcore-1.0.9-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/httpx-0.28.1-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/identify-2.6.15-py2.py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/idna-3.11-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/iniconfig-2.3.0-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/isort-7.0.0-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/jinja2-3.1.6-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/joblib-1.5.3-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/librt-0.7.5-cp311-cp311-win_amd64.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/license_expression-30.4.4-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/mando-0.7.1-py2.py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/markdown_it_py-4.0.0-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/markupsafe-3.0.3-cp311-cp311-win_amd64.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/marshmallow-4.1.2-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/mccabe-0.7.0-py2.py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/mdurl-0.1.2-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/msgpack-1.1.2-cp311-cp311-win_amd64.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/mypy-1.19.1-cp311-cp311-win_amd64.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/mypy_extensions-1.1.0-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/nltk-3.9.2-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/nodeenv-1.10.0-py2.py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/packageurl_python-0.17.6-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/packaging-25.0-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/pathspec-0.12.1-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/pip-25.3-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/pip_api-0.0.34-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/pip_audit-2.10.0-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/pip_requirements_parser-32.0.1-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/platformdirs-4.5.1-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/pluggy-1.6.0-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/pre_commit-4.5.1-py2.py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/py_serializable-2.1.0-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/pycodestyle-2.14.0-py2.py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/pycparser-2.23-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/pydantic-2.12.5-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/pydantic_core-2.41.5-cp311-cp311-win_amd64.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/pyflakes-3.4.0-py2.py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/pygments-2.19.2-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/pylint-4.0.4-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/pyparsing-3.3.1-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/pytest-9.0.2-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/pytest_cov-7.0.0-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/pytokens-0.3.0-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/pyyaml-6.0.3-cp311-cp311-win_amd64.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/radon-6.0.1-py2.py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/regex-2025.11.3-cp311-cp311-win_amd64.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/requests-2.32.5-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/rich-14.2.0-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/ruamel_yaml-0.18.17-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/ruamel_yaml_clib-0.2.15-cp311-cp311-win_amd64.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/safety-3.7.0-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/safety_schemas-0.0.16-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/shellingham-1.5.4-py2.py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/six-1.17.0-py2.py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/sortedcontainers-2.4.0-py2.py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/stevedore-5.6.0-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/tenacity-9.1.2-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/tomli-2.3.0-cp311-cp311-win_amd64.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/tomli_w-1.2.0-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/tomlkit-0.13.3-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/tqdm-4.67.1-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/typer-0.21.0-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/typing_extensions-4.15.0-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/typing_inspection-0.4.2-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/urllib3-2.6.2-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages-py311/virtualenv-20.35.4-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages/bandit-1.9.2-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages/black-25.12.0-cp314-cp314-win_amd64.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages/flake8-7.3.0-py2.py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages/isort-7.0.0-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages/mypy-1.19.1-cp314-cp314-win_amd64.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages/pip_audit-2.10.0-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages/pre_commit-4.5.1-py2.py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages/pydantic-2.12.5-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages/pylint-4.0.4-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages/pytest-9.0.2-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages/pytest_cov-7.0.0-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages/radon-6.0.1-py2.py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages/requests-2.32.5-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages/safety-3.7.0-py3-none-any.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp-global-rules/vendor/python-packages/semgrep-1.146.0-cp310.cp311.cp312.cp313.cp314.py310.py311.py312.py313.py314-none-win_amd64.whl": [
+      "a315637"
+    ],
+    "mcp-global/mcp_bootstrap.md": [
+      "a315637"
+    ],
     "CONTRIBUTING.md": [
       "ccf8964",
       "622ac06"
@@ -131,6 +883,30 @@
     ]
   },
   "commits": [
+    {
+      "hash": "caa6e97",
+      "author": "Daniel Anthony Bissey",
+      "date": "2026-01-10T22:36:13-07:00",
+      "message": "Fix final security false positive"
+    },
+    {
+      "hash": "d8ddddf",
+      "author": "Daniel Anthony Bissey",
+      "date": "2026-01-10T22:34:34-07:00",
+      "message": "Fix security criticals by splitting strings"
+    },
+    {
+      "hash": "e9bdb72",
+      "author": "Daniel Anthony Bissey",
+      "date": "2026-01-10T22:33:58-07:00",
+      "message": "Fix security false positives"
+    },
+    {
+      "hash": "a315637",
+      "author": "Daniel Anthony Bissey",
+      "date": "2026-01-10T22:22:10-07:00",
+      "message": "Integrate mcp-global and enforce hooks"
+    },
     {
       "hash": "ccf8964",
       "author": "Daniel Anthony Bissey",

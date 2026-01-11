@@ -184,6 +184,17 @@ class SecurityAnalyzer(ast.NodeVisitor):
         func_name = self._get_func_name(node.func)
 
         if func_name in DANGEROUS_FUNCTIONS:
+            # Special case: Allow subprocess.Popen/call/run if shell=False is explicit
+            if func_name in ('subprocess.Popen', 'subprocess.call', 'subprocess.run'):
+                is_safe = False
+                for keyword in node.keywords:
+                    if keyword.arg == 'shell':
+                         if isinstance(keyword.value, ast.Constant) and keyword.value.value is False:
+                             is_safe = True
+                if is_safe:
+                    self.generic_visit(node)
+                    return
+
             title, severity, cwe, desc = DANGEROUS_FUNCTIONS[func_name]
             self.issues.append(SecurityIssue(
                 path=self.path,

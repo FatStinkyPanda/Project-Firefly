@@ -165,9 +165,10 @@ def generate_changelog(
     """
     commits = get_commits_since_tag(since_tag, cwd)
 
+    import datetime
     changelog = ChangelogVersion(
         version=version,
-        date=__import__('datetime').datetime.now().strftime('%Y-%m-%d')
+        date=datetime.datetime.now().strftime('%Y-%m-%d')
     )
 
     for commit in commits:

@@ -1,7 +1,7 @@
 {
-  "total_items": 562,
+  "total_items": 609,
   "by_type": {
-    "readme": 3,
+    "readme": 50,
     "module": 58,
     "class": 114,
     "function": 387
@@ -11,13 +11,295 @@
       "type": "readme",
       "name": "README.md",
       "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\README.md",
-      "summary": "<div align=\"center\">   <br />   <img src=\".github/assets/google-antigravity-logo.svg\" width=\"200\" />"
+      "summary": "> **The AI-Native Integrated Development Environment.**   > *Forked from VS Code. Powered by MCP-Global. Driven by Autonomous Intelligence.* **Project-Firefly** (or simply **Firefly**) is a next-gener"
     },
     {
       "type": "readme",
       "name": "README.md",
       "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mitmserver\\README.md",
       "summary": "This is a man-in-the-middle (MITM) proxy server designed to intercept and inspect the network requests made by the official Antigravity application. It's a crucial tool for understanding the Antigravi"
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\README.md",
+      "summary": "[![Feature Requests](https://img.shields.io/github/issues/microsoft/vscode/feature-request.svg)](https://github.com/microsoft/vscode/issues?q=is%3Aopen+is%3Aissue+label%3Afeature-request+sort%3Areacti"
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\.devcontainer\\README.md",
+      "summary": "[![Open in Dev Containers](https://img.shields.io/static/v1?label=Dev%20Containers&message=Open&color=blue)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?u"
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\.eslint-plugin-local\\README.md",
+      "summary": "We use a set of custom [ESLint](http://eslint.org) to enforce repo specific coding rules and styles. These custom rules are run in addition to many standard ESLint rules we enable in the project. Some"
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\test\\README.md",
+      "summary": "This folder contains the various test runners for VS Code. Please refer to the documentation within for how to run them: * `unit`: our suite of unit tests ([README](unit/README.md)) * `integration`: o"
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\test\\automation\\README.md",
+      "summary": "This package contains functionality for automating various components of the VS Code UI, via an automation \"driver\" that connects from a separate process. It is used by the `smoke` tests."
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\test\\mcp\\README.md",
+      "summary": "This directory contains a Model Context Protocol (MCP) server that provides Playwright browser automation capabilities for Code - OSS development and testing. The MCP server exposes Code - OSS's Playw"
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\test\\monaco\\README.md",
+      "summary": "This directory contains scripts that are used to smoke test the Monaco Editor distribution.  $test/monaco> npm i  $test/monaco> npm run bundle"
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\test\\sanity\\README.md",
+      "summary": "Automated end-to-end release sanity tests for published VS Code builds. These tests verify critical functionality across different platforms and installation methods, ensuring that published builds me"
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\test\\smoke\\README.md",
+      "summary": "Make sure you are on **Node v12.x**. ```bash npm i && npm run compile"
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\test\\unit\\README.md",
+      "summary": "    ./scripts/test.[sh|bat] All unit tests are run inside a Electron renderer environment which access to DOM and Nodejs api. This is the closest to the environment in which VS Code itself ships. Note"
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\test\\integration\\browser\\README.md",
+      "summary": "Make sure to run the following commands to compile and install dependencies:     cd test/integration/browser     npm i"
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\src\\vscode-dts\\README.md",
+      "summary": "This is the place for the stable API and for API proposals. 1. find a proposal you are interested in 1. add its name to your extensions `package.json#enabledApiProposals` property"
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\src\\vs\\workbench\\contrib\\terminalContrib\\README.md",
+      "summary": "_Terminal contribs_ are a way of splitting out standalone terminal features into their own components that build upon the main terminal code. The `terminalContrib/` folder can only import from `termin"
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\src\\vs\\editor\\test\\node\\diffing\\README.md",
+      "summary": "Every folder in `fixtures` represents a test. The file that starts with `1.` is diffed against the file that starts with `2.`. Use `tst` instead of `ts` to avoid compiler/linter errors for typescript "
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\extensions\\css-language-features\\README.md",
+      "summary": "**Notice:** This extension is bundled with Visual Studio Code. It can be disabled but not uninstalled. See [CSS, SCSS and Less in VS Code](https://code.visualstudio.com/docs/languages/css) to learn ab"
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\extensions\\emmet\\README.md",
+      "summary": "**Notice:** This extension is bundled with Visual Studio Code. It can be disabled but not uninstalled. See [Emmet in Visual Studio Code](https://code.visualstudio.com/docs/editor/emmet) to learn about"
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\extensions\\git\\README.md",
+      "summary": "**Notice:** This extension is bundled with Visual Studio Code. It can be disabled but not uninstalled. See [Git support in VS Code](https://code.visualstudio.com/docs/editor/versioncontrol#_git-suppor"
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\extensions\\git-base\\README.md",
+      "summary": "**Notice:** This extension is bundled with Visual Studio Code. It can be disabled but not uninstalled. Git static contributions and remote repository picker. The Git extension exposes an API, reachabl"
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\extensions\\github\\README.md",
+      "summary": "**Notice:** This extension is bundled with Visual Studio Code. It can be disabled but not uninstalled. This extension provides the following GitHub-related features for VS Code: - `Publish to GitHub` "
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\extensions\\github-authentication\\README.md",
+      "summary": "**Notice:** This extension is bundled with Visual Studio Code. It can be disabled but not uninstalled. This extension provides support for authenticating to GitHub. It registers the `github` Authentic"
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\extensions\\grunt\\README.md",
+      "summary": "**Notice:** This extension is bundled with Visual Studio Code. It can be disabled but not uninstalled. This extension supports running [Grunt](https://gruntjs.com/) tasks defined in a `gruntfile.js` f"
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\extensions\\gulp\\README.md",
+      "summary": "**Notice:** This extension is bundled with Visual Studio Code. It can be disabled but not uninstalled. This extension supports running [Gulp](https://gulpjs.com/) tasks defined in a `gulpfile.{js,ts}`"
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\extensions\\html-language-features\\README.md",
+      "summary": "**Notice:** This extension is bundled with Visual Studio Code. It can be disabled but not uninstalled. See [HTML in Visual Studio Code](https://code.visualstudio.com/docs/languages/html) to learn abou"
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\extensions\\ipynb\\README.md",
+      "summary": "**Notice:** This extension is bundled with Visual Studio Code. It can be disabled but not uninstalled. This extension provides the following Jupyter-related features for VS Code: - Open, edit and save"
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\extensions\\jake\\README.md",
+      "summary": "**Notice:** This extension is bundled with Visual Studio Code. It can be disabled but not uninstalled. This extension supports running [Jake](http://jakejs.com/) tasks defined in a `Jakefile.js` file "
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\extensions\\json-language-features\\README.md",
+      "summary": "**Notice:** This extension is bundled with Visual Studio Code. It can be disabled but not uninstalled. See [JSON in Visual Studio Code](https://code.visualstudio.com/docs/languages/json) to learn abou"
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\extensions\\markdown-language-features\\README.md",
+      "summary": "**Notice:** This extension is bundled with Visual Studio Code. It can be disabled but not uninstalled. See [Markdown in Visual Studio Code](https://code.visualstudio.com/docs/languages/markdown) to le"
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\extensions\\markdown-math\\README.md",
+      "summary": "**Notice:** This extension is bundled with Visual Studio Code. It can be disabled but not uninstalled. Adds math rendering using [KaTeX](https://katex.org) to VS Code's built-in markdown preview and m"
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\extensions\\media-preview\\README.md",
+      "summary": "**Notice:** This extension is bundled with Visual Studio Code. It can be disabled but not uninstalled. This extension provides basic preview for images, audio and video files. - `.jpg`, `.jpe`, `.jpeg"
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\extensions\\merge-conflict\\README.md",
+      "summary": "**Notice:** This extension is bundled with Visual Studio Code. It can be disabled but not uninstalled. See [Merge Conflicts in VS Code](https://code.visualstudio.com/docs/editor/versioncontrol#_merge-"
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\extensions\\mermaid-chat-features\\README.md",
+      "summary": "**Notice:** This extension is bundled with Visual Studio Code. It can be disabled but not uninstalled. Adds basic [Mermaid.js](https://mermaid.js.org) diagram rendering to build-in chat."
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\extensions\\microsoft-authentication\\README.md",
+      "summary": "**Notice:** This extension is bundled with Visual Studio Code. It can be disabled but not uninstalled. This extension provides support for authenticating to Microsoft. It registers the `microsoft` Aut"
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\extensions\\notebook-renderers\\README.md",
+      "summary": "**Notice:** This extension is bundled with Visual Studio Code. It can be disabled but not uninstalled. This extension provides the following notebook renderers for VS Code: - Image renderer for png, j"
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\extensions\\npm\\README.md",
+      "summary": "**Notice:** This extension is bundled with Visual Studio Code. It can be disabled but not uninstalled. This extension supports running npm scripts defined in the `package.json` as [tasks](https://code"
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\extensions\\php-language-features\\README.md",
+      "summary": "**Notice:** This extension is bundled with Visual Studio Code. It can be disabled but not uninstalled. See [PHP in Visual Studio Code](https://code.visualstudio.com/docs/languages/php) to learn about "
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\extensions\\references-view\\README.md",
+      "summary": "This extension shows reference search results as separate view, just like search results. It complements the peek view presentation that is also built into VS Code. The following features are availabl"
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\extensions\\search-result\\README.md",
+      "summary": "**Notice:** This extension is bundled with Visual Studio Code. It can be disabled but not uninstalled. This extension provides Syntax Highlighting, Symbol Information, Result Highlighting, and Go to D"
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\extensions\\simple-browser\\README.md",
+      "summary": "**Notice:** This extension is bundled with Visual Studio Code. It can be disabled but not uninstalled. Provides a very basic browser preview using an iframe embedded in a [webviewW](). This extension "
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\extensions\\terminal-suggest\\README.md",
+      "summary": "**Notice:** This extension is bundled with Visual Studio Code. It can be disabled but not uninstalled. To enable the completions from this extension, set `terminal.integrated.suggest.enabled` to `true"
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\extensions\\theme-seti\\README.md",
+      "summary": "This is an icon theme that uses the icons from [`seti-ui`](https://github.com/jesseweed/seti-ui). There is script that can be used to update icons, [./build/update-icon-theme.js](build/update-icon-the"
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\extensions\\typescript-language-features\\README.md",
+      "summary": "**Notice:** This extension is bundled with Visual Studio Code. It can be disabled but not uninstalled. See [TypeScript in Visual Studio Code](https://code.visualstudio.com/docs/languages/typescript) a"
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\extensions\\typescript-language-features\\web\\README.md",
+      "summary": "Language server host for typescript using vscode's sync-api in the browser. To test this out, you'll need three shells: 1. `npm i` for vscode itself"
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\extensions\\typescript-basics\\syntaxes\\README.md",
+      "summary": "The file `TypeScript.tmLanguage.json` and `TypeScriptReact.tmLanguage.json` are derived from [TypeScript.tmLanguage](https://github.com/microsoft/TypeScript-TmLanguage/blob/master/TypeScript.tmLanguag"
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\extensions\\terminal-suggest\\src\\fig\\README.md",
+      "summary": "This folder contains the `autocomplete-parser` project from https://github.com/aws/amazon-q-developer-cli/blob/main/packages/autocomplete-parser and its dependencies which were located in siblings fol"
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\extensions\\json-language-features\\server\\README.md",
+      "summary": "[![NPM Version](https://img.shields.io/npm/v/vscode-json-languageserver.svg)](https://npmjs.org/package/vscode-json-languageserver) [![NPM Downloads](https://img.shields.io/npm/dm/vscode-json-language"
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\extensions\\javascript\\syntaxes\\README.md",
+      "summary": "The file `JavaScript.tmLanguage.json` is derived from [TypeScriptReact.tmLanguage](https://github.com/microsoft/TypeScript-TmLanguage/blob/master/TypeScriptReact.tmLanguage). To update to the latest v"
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\build\\monaco\\README.md",
+      "summary": "* The `monaco.d.ts` is now automatically generated when running `gulp watch` * increase version in `build/monaco/package.json` * Be sure to have all changes committed **and pushed to the remote**"
     },
     {
       "type": "readme",

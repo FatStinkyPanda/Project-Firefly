@@ -23,6 +23,29 @@ The mcp.py script will auto-detect its location and work correctly.
 
 ---
 
+## PLATFORM SPECIFICS (Project-Firefly)
+
+### Windows Compatibility
+- **Hooks**: This project uses Python-based git hooks for cross-platform stability. Do not replace them with shell scripts.
+- **Paths**: Using `core.longpaths` is required. Always use relative paths or dynamic root detection in scripts.
+
+### Agent-Triggered Event System
+Firefly agents are Event-Driven. You must:
+1. **Monitor "Agent Manager"**: Check for incoming triggers from Webhooks, Telegram, or SMS.
+2. **Handle Remote Events**: Process instructions from `mcp comms` or external signals immediately.
+
+### Universal Model Intelligence
+You have access to **ALL** model providers.
+- **Priority Cycling**: Start with efficient models (Gemini Flash). If complex reasoning is needed or limits hit, AUTOMATICALLY cycle to stronger models (Claude Opus, GPT-4) or fallback to Local LLMs.
+- **Zero Downtime**: Never stop for rate limits. Switch provider and continue.
+
+### Continuous Development (Orchestrators)
+- **Always-On**: Supervisor agents run 24/7.
+- **Definition of Done**: 100% Tests Passed, Security Scan Clean (0 Critical), Production Ready.
+- **Autonomous**: Do not wait for user input unless blocked. Propose -> Implement -> Verify -> Deploy.
+
+---
+
 ## CORE PRINCIPLES
 
 ### Fix Properly, Never Disable

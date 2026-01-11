@@ -11,8 +11,11 @@ Works correctly regardless of:
 """
 
 from pathlib import Path
+import json
 import os
 import sys
+
+import importlib
 
 # =============================================================================
 # CRITICAL: Resolve the ACTUAL location of this script
@@ -221,7 +224,7 @@ def main():
 
     try:
         # Import the module
-        module = __import__(f'scripts.{module_name}', fromlist=[module_name])
+        module = importlib.import_module(f'scripts.{module_name}')
 
         # Update sys.argv for the module
         sys.argv = [f'scripts/{module_name}.py'] + args

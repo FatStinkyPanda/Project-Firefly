@@ -4,6 +4,13 @@
 
 This document defines **mandatory workflows** for AI agents working with MCP-enabled projects. These workflows are automatically enforced via git hooks.
 
+## Continuous Development Mode (Orchestration)
+For "Always-On" development task:
+1. **Take Ownership**: You are the Orchestrator. Manage the lifecycle.
+2. **Check Triggers**: Review "Agent Manager" for external events/bug reports.
+3. **Cycle Models**: Use the most appropriate model (Gemini/Claude/Local) for the sub-task.
+4. **Enforce Quality**: Do not mark "Done" until `mcp review`, `mcp security`, and `mcp test` pass 100%.
+
 ## Required Tool Usage
 
 AI agents MUST use these tools when working on code:

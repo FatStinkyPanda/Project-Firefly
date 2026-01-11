@@ -37,7 +37,8 @@ def warm_all(root: Path = None) -> dict:
 
     def run_task(name, module_name, func_or_class, method):
         try:
-            module = __import__(f"scripts.{module_name}", fromlist=[func_or_class])
+            import importlib
+            module = importlib.import_module(f"scripts.{module_name}")
 
             if method:
                 # Class with method

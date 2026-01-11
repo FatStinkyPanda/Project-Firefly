@@ -1,6 +1,6 @@
 # 🚀 MCP-Global Tools Integrated!
 
-I have completed the integration of MCP-global tools, rules, and workflows into the CleverLittleBee project.
+I have completed the integration of MCP-global tools, rules, and workflows into the project.
 
 ### 🤖 For Fresh AI Agents
 Any fresh AI agent can now be brought up to speed simply by being told:
