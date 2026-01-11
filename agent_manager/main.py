@@ -12,6 +12,7 @@ from agent_manager.orchestrator import OrchestratorManager
 from agent_manager.triggers.system_events import WorkspaceMonitoringService
 from agent_manager.triggers.telegram import TelegramService
 from agent_manager.triggers.webhook import WebhookService
+from agent_manager.core.browser_adapter import BrowserAdapter
 
 # Configure Logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -36,6 +37,9 @@ def main():
     # 3.5 Initialize Session Management
     session_manager = SessionManager()
 
+    # 3.6 Initialize Browser Adapter
+    browser_adapter = BrowserAdapter(event_bus=bus)
+
     # 4. Initialize Peer Discovery
     peer_discovery = PeerDiscoveryService(event_bus=bus)
     peer_discovery.start()
@@ -46,7 +50,8 @@ def main():
         model_client=model_client,
         config_service=config,
         peer_discovery=peer_discovery,
-        session_manager=session_manager
+        session_manager=session_manager,
+        browser_adapter=browser_adapter
     )
     orchestrator.start()
 

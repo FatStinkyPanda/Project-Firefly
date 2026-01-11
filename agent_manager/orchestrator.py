@@ -1,4 +1,6 @@
+import asyncio
 import logging
+import os
 import re
 import subprocess
 
@@ -12,13 +14,15 @@ class OrchestratorManager:
     Manages the lifecycle and execution of agents based on triggers.
     Robustly handles AI responses using the Firefly Tagging System (FTS).
     """
-    def __init__(self, event_bus, model_client, config_service=None, peer_discovery=None, session_manager=None):
+    def __init__(self, event_bus, model_client, config_service=None, peer_discovery=None, session_manager=None, browser_adapter=None):
         self.event_bus = event_bus
         self.model_client = model_client
         self.config_service = config_service
         self.peer_discovery = peer_discovery
         self.session_manager = session_manager
+        self.browser_adapter = browser_adapter
         self.git_manager = GitManager()
+        self.tag_parser = TagParserService()
         self._current_conflicts = set()
         self._total_cost = 0.0
         self._is_autonomous = False
@@ -37,6 +41,8 @@ class OrchestratorManager:
 
     def stop(self):
         self.is_running = False
+        if self.browser_adapter:
+            asyncio.run(self.browser_adapter.stop())
         logger.info("Orchestrator stopped.")
 
     def handle_event(self, event_type: str, payload: dict):
@@ -59,6 +65,18 @@ class OrchestratorManager:
             self.set_status(cost=self._total_cost)
 
     def process_request(self, prompt: str, source: str, context: dict = None, session_id: str = "default", agent_role: str = "Lead Orchestrator"):
+        """
+        Sync bridge to async processing.
+        """
+        try:
+            loop = asyncio.get_event_loop()
+        except RuntimeError:
+            loop = asyncio.new_event_loop()
+            asyncio.set_event_loop(loop)
+        
+        return loop.run_until_complete(self.process_request_async(prompt, source, context, session_id, agent_role))
+
+    async def process_request_async(self, prompt: str, source: str, context: dict = None, session_id: str = "default", agent_role: str = "Lead Orchestrator"):
         """
         Unified processing logic using AI + Tag Parsing + Session Memory.
         """
@@ -94,6 +112,7 @@ class OrchestratorManager:
             "Use <thought> tags for your reasoning. "
             "Use <command> tags to execute shell commands. "
             "Use <message> tags to communicate back to the user. "
+            "Use <browser action=\"navigate|click|type|screenshot|get_text\" url=\"...\" selector=\"...\" text=\"...\" path=\"...\"/> to automate the browser. "
             "Use <delegate recipient=\"agent_name\">task_description</delegate> to assign work to a peer. "
             "If a Git conflict is detected, you must use <git_resolve path=\"file/path\">resolved_content</git_resolve> after reviewing the conflict in the file.\n"
             "Be precise and autonomous.\n"
@@ -113,9 +132,12 @@ class OrchestratorManager:
                 logger.info(f"CORE THOUGHT: {thought}")
                 self.set_status(thought=thought)
 
-            # 2. Execute commands (with safety)
+            # 2. execute commands (with safety)
             for cmd in parsed.commands:
                 self.execute_command(cmd)
+
+            # 2.5 Handle Browser Actions
+            await self._handle_browser_actions(response.text, session_id)
 
             # 3. Handle delegations
             self._handle_delegations(response.text)
@@ -142,6 +164,37 @@ class OrchestratorManager:
 
         except Exception as e:
             logger.error(f"Failed to process request: {e}")
+
+    async def _handle_browser_actions(self, text: str, session_id: str):
+        """Extracts and executes <browser> tags."""
+        if not self.browser_adapter:
+            return
+
+        # Regex to find <browser action="..." ... />
+        # Example: <browser action="navigate" url="https://google.com"/>
+        browser_tags = re.findall(r'<browser\s+([^>]*?)/?>', text, re.IGNORECASE)
+        for tag_content in browser_tags:
+            # Parse attributes
+            attrs = dict(re.findall(r'(\w+)=["\'](.*?)["\']', tag_content))
+            action = attrs.get("action")
+            if not action:
+                continue
+
+            logger.info(f"Browser Action: {action} with {attrs}")
+            self.set_status(thought=f"Executing browser action: {action}")
+            
+            result = await self.browser_adapter.run_action(action, **attrs)
+            
+            # Feed result back to the session history
+            if self.session_manager:
+                result_msg = f"[BROWSER RESULT] {action}: {result}"
+                self.session_manager.add_message(session_id, "system", result_msg)
+                
+                # Optional: Proactively trigger a follow-up if it was a scrape/screenshot
+                if action in ["get_text", "navigate", "screenshot"]:
+                    # We might want to trigger the agent again with the new context
+                    # to keep the autonomous flow going.
+                    self.process_request("Analyze the browser result and continue.", source="system", session_id=session_id)
 
     def execute_command(self, command: str):
         """Executes a command if it passes the safety policy."""

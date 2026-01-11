@@ -27,6 +27,7 @@ Firefly transforms the IDE from a passive editor into an active event processor.
     - **Webhooks:** (e.g., A bug report submission on your company website auto-triggers a "Bug Fix" agent).
     - **Remote Comms:** Send instructions via **Telegram, SMS, or Email** to your agent.
 - **Persistent Conversations:** Agent sessions persist even when you are away. You can start a task, leave, checks its status via SMS, and return to find the work completed.
+- **Multi-modal Web Interaction:** Agents can now browse the live web, navigate to URLs, click elements, capture screenshots, and scrape content for real-time analysis.
 
 ### 3. 🧠 Universal Model Connectivity & Intelligent Cycling
 Firefly breaks the vendor lock-in. It is agnostic to the AI model provider, giving developers true freedom.
@@ -60,26 +61,54 @@ Firefly provides granular control over autonomous actions through its **Command 
 
 ---
 
-## 🛠️ Getting Started
+## 🛠️ Recent Technical Decisions & Milestones
+
+### 🛡️ Spectre Mitigation Strategy
+During the build of native Node.js modules (like `@vscode/spdlog` and `@vscode/sqlite3`), we encountered `MSB8040` errors requiring Spectre-mitigated libraries. 
+- **Decision:** Rather than disabling security mitigations, we opted to install the mandatory `Microsoft.VisualStudio.Component.VC.Runtimes.x86.x64.Spectre` component for Visual Studio 2026.
+- **Why:** This ensures the IDE remains secure and production-ready, adhering to our "Fix Properly" philosophy.
+
+### 🧠 Backend Stability (PYTHONPATH & Syntax)
+The Agent Backend initially failed due to `ModuleNotFoundError` and `SyntaxError`.
+- **Decision:** Injected explicit `PYTHONPATH` in `fireflyMainService.ts` and corrected `from __future__ import annotations` placement across all Python model files.
+- **Result:** The backend now reliably spawns and maintains communication with the frontend.
+
+### 🏗️ Service Registration Logic
+Restored missing registrations in `workbench.common.main.ts` for `FireflyWorkbenchService`.
+- **Why:** This resolved "blank window" launch issues by ensuring core services are available at startup.
+
+### 🌐 Phase 3: Browser Automation Integration
+Successfully implemented the `BrowserAdapter` using Playwright.
+- **Decision:** Integrated a headless Chromium instance into the `Agent Manager` lifecycle to allow multi-modal web reasoning.
+- **Result:** Agents can now perform live web research, verify UI deployments, and interact with external web tools autonomously.
+
+---
+
+## 🚀 Getting Started
 
 ### Prerequisites
 - **Python 3.11.x** (Strictly enforced)
-- Node.js (for VS Code development)
-- Git
+- **Visual Studio 2026 Build Tools** with Spectre-mitigated libraries.
+- **Node.js 22.x**
 
-### Installation
+### Installation & Launch
 1.  **Clone the Repo:**
     ```bash
     git clone https://github.com/FatStinkyPanda/Project-Firefly.git
     cd Project-Firefly
     ```
-2.  **Bootstrap Environment:**
-    ```bash
-    # Initializes .venv and installs core dependencies (FAISS, Watchdog)
-    python mcp-global/mcp-global-rules/scripts/setup.py
+2.  **Rebuild Native Modules:**
+    Firefly requires native C++ bindings for its core functions.
+    ```powershell
+    # Rebuilds all 14 native modules using VS 2026
+    .\vscode\scripts\rebuild_all_native.bat
     ```
-3.  **Configure Preferences:**
-    Edit `options.json` in the root directory to set your model priorities and safety policies.
+3.  **Compile & Run:**
+    ```bash
+    cd vscode
+    npm run compile
+    .\scripts\code.bat
+    ```
 
 ---
 
