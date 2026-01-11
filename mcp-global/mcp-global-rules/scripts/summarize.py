@@ -12,6 +12,7 @@ from collections import defaultdict
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Dict, List, Optional, Any
+import datetime
 import sys
 
 from .utils import (
@@ -292,7 +293,7 @@ def summarize_codebase(root: Path, exclude_patterns: List[str] = None) -> Codeba
 
 
 def format_summary_markdown(summary: CodebaseSummary) -> str:
-    """Format summary as Markdimport datetime
+    """Format summary as Markdown."""
 
     lines = [
         "# Codebase Summary",
