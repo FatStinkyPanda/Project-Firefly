@@ -393,10 +393,10 @@ def run_git_command(args: List[str], cwd: Path = None) -> Optional[str]:
             cwd=cwd or Path.cwd(),
             timeout=30
         )
-        if result.returncode == 0:
-            return result.stdout.strip()
+        if result and result.returncode == 0:
+            return (result.stdout or "").strip()
         return None
-    except (subprocess.TimeoutExpired, FileNotFoundError):
+    except Exception:
         return None
 
 

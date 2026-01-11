@@ -1,9 +1,10 @@
-import os
+from typing import Optional
 import json
 import logging
-import urllib.request
+import os
 import urllib.error
-from typing import Optional
+import urllib.request
+
 from .base import BaseModelService
 
 logger = logging.getLogger("FireflyOpenAIService")
@@ -29,7 +30,7 @@ class OpenAIService(BaseModelService):
         messages = []
         if system_prompt:
             messages.append({"role": "system", "content": system_prompt})
-        
+
         messages.append({"role": "user", "content": prompt})
 
         data = {
@@ -42,7 +43,7 @@ class OpenAIService(BaseModelService):
             'Content-Type': 'application/json',
             'Authorization': f'Bearer {self.api_key}'
         }
-        
+
         req = urllib.request.Request(self.BASE_URL, data=json.dumps(data).encode('utf-8'), headers=headers)
 
         try:

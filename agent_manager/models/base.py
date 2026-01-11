@@ -15,14 +15,14 @@ class BaseModelService(ABC):
     def generate(self, prompt: str, system_prompt: Optional[str] = None) -> str:
         """
         Generate a complete response from the model.
-        
+
         Args:
             prompt: The user prompt.
             system_prompt: Optional system instruction.
-            
+
         Returns:
             The generated text string.
-            
+
         Raises:
             Exception: If the API call fails (network, auth, rate limit).
         """

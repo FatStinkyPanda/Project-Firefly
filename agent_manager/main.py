@@ -1,14 +1,14 @@
 import logging
-import time
 import os # Added for os.environ.get
+import time
 
 from agent_manager.core.event_bus import EventBus
-from agent_manager.triggers.webhook import WebhookTrigger
-from agent_manager.triggers.telegram import TelegramService # Added
-from agent_manager.orchestrator import OrchestratorManager
-from agent_manager.models.manager import ModelClientManager
 from agent_manager.models.gemini import GeminiService # Added
+from agent_manager.models.manager import ModelClientManager
 from agent_manager.models.openai import OpenAIService # Added
+from agent_manager.orchestrator import OrchestratorManager
+from agent_manager.triggers.telegram import TelegramService # Added
+from agent_manager.triggers.webhook import WebhookTrigger
 
 # Configure Logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -30,7 +30,7 @@ def main():
         providers.append(GeminiService(api_key=gemini_key))
     if openai_key:
         providers.append(OpenAIService(api_key=openai_key))
-    
+
     if not providers:
         logger.warning("No AI providers configured (missing API keys). Model features will be disabled.")
 

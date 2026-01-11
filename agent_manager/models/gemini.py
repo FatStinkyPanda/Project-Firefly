@@ -1,9 +1,10 @@
-import os
+from typing import Optional
 import json
 import logging
-import urllib.request
+import os
 import urllib.error
-from typing import Optional
+import urllib.request
+
 from .base import BaseModelService
 
 logger = logging.getLogger("FireflyGeminiService")
@@ -17,7 +18,7 @@ class GeminiService(BaseModelService):
     def __init__(self, api_key: Optional[str] = None, model_name: str = "gemini-1.5-flash"):
         self.api_key = api_key or os.environ.get("GEMINI_API_KEY")
         self.model_name = model_name
-        
+
     def validate_config(self) -> bool:
         return bool(self.api_key)
 
@@ -26,12 +27,12 @@ class GeminiService(BaseModelService):
             raise ValueError("Gemini API Key not found. Set GEMINI_API_KEY environment variable.")
 
         url = f"{self.BASE_URL}/{self.model_name}:generateContent?key={self.api_key}"
-        
+
         # Construct payload
         contents = []
         if system_prompt:
              contents.append({"role": "user", "parts": [{"text": "System Instruction: " + system_prompt}]})
-        
+
         contents.append({"role": "user", "parts": [{"text": prompt}]})
 
         data = {
@@ -41,7 +42,7 @@ class GeminiService(BaseModelService):
                 "maxOutputTokens": 2048
             }
         }
-        
+
         headers = {'Content-Type': 'application/json'}
         req = urllib.request.Request(url, data=json.dumps(data).encode('utf-8'), headers=headers)
 

@@ -5,7 +5,6 @@ import json
 import logging
 
 
-
 logger = logging.getLogger("FireflyWebhook")
 
 class WebhookRequestLogic(BaseHTTPRequestHandler):
@@ -51,7 +50,7 @@ class WebhookService:
         self.server = HTTPServer(('0.0.0.0', self.port), WebhookRequestLogic)
         # Inject event_bus into the server instance so the handler can access it
         self.server.event_bus = self.event_bus
-        
+
         self.thread = Thread(target=self.server.serve_forever)
         self.thread.daemon = True
         self.thread.start()

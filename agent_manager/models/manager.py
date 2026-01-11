@@ -1,5 +1,6 @@
-import logging
 from typing import List, Optional
+import logging
+
 from .base import BaseModelService
 from .gemini import GeminiService
 from .openai import OpenAIService
@@ -20,12 +21,12 @@ class ModelClientManager:
                 self.providers.append(GeminiService())
             except Exception:
                 pass
-            
+
             try:
                 self.providers.append(OpenAIService())
             except Exception:
                 pass
-        
+
         if not self.providers:
             logger.warning("No model services configured or initialized successfully.")
 
@@ -46,7 +47,7 @@ class ModelClientManager:
                 if not provider.validate_config():
                     logger.warning(f"Skipping {provider_name}: Invalid configuration (missing API key?)")
                     continue
-                
+
                 logger.info(f"Generating with {provider_name}...")
                 response = provider.generate(prompt, system_prompt)
                 logger.info(f"Success with {provider_name}")

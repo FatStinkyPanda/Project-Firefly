@@ -1,8 +1,9 @@
-import unittest
-import json
 from unittest.mock import MagicMock, patch
-from agent_manager.triggers.telegram import TelegramService
+import json
+import unittest
+
 from agent_manager.core.event_bus import EventBusService
+from agent_manager.triggers.telegram import TelegramService
 
 class TestTelegramService(unittest.TestCase):
     def setUp(self):
@@ -50,18 +51,18 @@ class TestTelegramService(unittest.TestCase):
 
         # publish event
         self.bus.publish("telegram_output", {"chat_id": 888, "text": "Reply"})
-        
+
         # Verify socket/api call via mock
         # Since handle_outgoing_message is subscribed, it should call send_message
-        # We need to wait or verify behavior. 
+        # We need to wait or verify behavior.
         # Since EventBus is synchronous for now (based on previous files), it should call immediately?
         # Let's check event_bus implementation. Assuming synchronous for now.
-        
+
         # Actually EventBus might be async/threaded?
         # Let's verify send_message calls urlopen
-        
+
         self.service.send_message(888, "Reply")
-        
+
         args, kwargs = mock_urlopen.call_args
         req = args[0]
         self.assertIn("sendMessage", req.full_url)

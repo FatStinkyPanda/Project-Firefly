@@ -37,7 +37,7 @@ class OrchestratorManager:
         Dispatches events to specific logic based on type.
         """
         logger.info(f"Orchestrator received event: {event_type}")
-        
+
         if event_type == "webhook_event":
             self.handle_webhook(payload)
         elif event_type == "telegram_input":
@@ -47,7 +47,7 @@ class OrchestratorManager:
         """Handle incoming webhooks."""
         data = payload.get('data')
         logger.info(f"Processing webhook data: {data}")
-        
+
         # Experimental: Use Model Client to analyze payload
         if self.model_client:
             try:
@@ -55,7 +55,7 @@ class OrchestratorManager:
                 logger.info(f"Model Analysis: {analysis}")
             except Exception as e:
                 logger.error(f"Model generation failed: {e}")
-        
+
         # Original logic for handling the webhook payload (now removed from here)
         # The original logic for bug_report/feature_request is removed as per the instruction's snippet.
         # If this logic needs to be preserved, it would need to be re-added or moved.
@@ -65,9 +65,9 @@ class OrchestratorManager:
         chat_id = payload.get("chat_id")
         text = payload.get("text")
         user = payload.get("user")
-        
+
         logger.info(f"Processing Telegram message from {user}: {text}")
-        
+
         if not self.model_client:
             logger.warning("No Model Client available to process Telegram message.")
             return
@@ -78,14 +78,14 @@ class OrchestratorManager:
                 prompt=text,
                 system_prompt=f"You are Firefly, an AI agent helper. You are chatting with {user} via Telegram. Keep answers concise."
             )
-            
+
             # Send response back via Event Bus
             self.event_bus.publish("telegram_output", {
                 "chat_id": chat_id,
                 "text": response_text
             })
             logger.info(f"Sent Telegram reply to {chat_id}")
-            
+
         except Exception as e:
             self.dispatch_agent("BugFixAgent", payload)
         elif event_type == "feature_request":

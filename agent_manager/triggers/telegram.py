@@ -1,12 +1,12 @@
-import os
-import time
+from typing import Optional, Dict, Any
 import json
 import logging
+import os
 import threading
-import urllib.request
+import time
 import urllib.error
 import urllib.parse
-from typing import Optional, Dict, Any
+import urllib.request
 
 logger = logging.getLogger("FireflyTelegramService")
 
@@ -23,7 +23,7 @@ class TelegramService:
         self.is_running = False
         self.last_update_id = 0
         self.polling_thread = None
-        
+
         # Subscribe to outgoing messages to send them back to Telegram
         self.event_bus.subscribe("telegram_output", self.handle_outgoing_message)
 
@@ -53,17 +53,17 @@ class TelegramService:
             except Exception as e:
                 logger.error(f"Error in Telegram polling loop: {e}")
                 time.sleep(5) # Backoff on error
-            
+
             time.sleep(1) # Poll interval
 
     def _check_updates(self):
         """Call getUpdates API."""
         url = f"{self.BASE_URL}{self.token}/getUpdates?offset={self.last_update_id + 1}&timeout=30"
-        
+
         try:
             with urllib.request.urlopen(url) as response:
                 result = json.loads(response.read().decode('utf-8'))
-                
+
                 if not result.get("ok"):
                     logger.error(f"Telegram API Error: {result}")
                     return
@@ -102,7 +102,7 @@ class TelegramService:
         """Handle 'telegram_output' events -> Send message to Telegram."""
         chat_id = payload.get("chat_id")
         text = payload.get("text")
-        
+
         if chat_id and text:
             self.send_message(chat_id, text)
 
@@ -116,7 +116,7 @@ class TelegramService:
             "chat_id": chat_id,
             "text": text
         }
-        
+
         headers = {'Content-Type': 'application/json'}
         req = urllib.request.Request(url, data=json.dumps(data).encode('utf-8'), headers=headers)
 
