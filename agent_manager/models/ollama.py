@@ -1,3 +1,4 @@
+from __future__ import annotations
 from typing import Optional, TYPE_CHECKING, Dict, Any
 import json
 import logging
@@ -5,7 +6,6 @@ import urllib.error
 import urllib.request
 
 from .base import BaseModelService
-from __future__ import annotations
 
 if TYPE_CHECKING:
     from .base import ModelResponse

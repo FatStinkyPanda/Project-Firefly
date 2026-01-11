@@ -1,11 +1,11 @@
 from dataclasses import dataclass, field
 from typing import List, Dict, Any, Optional
-from agent_manager.models.tag import TagResponse
 import logging
 import re
 
-logger = logging.getLogger("FireflyTagParser")
+from agent_manager.models.tag import TagResponse
 
+logger = logging.getLogger("FireflyTagParser")
 
 
 class TagParserService:

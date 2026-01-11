@@ -5,8 +5,8 @@ from .anthropic import AnthropicService
 from .base import BaseModelService, ModelResponse
 from .gemini import GeminiService
 from .ollama import OllamaService
-from .openai import OpenAIService
 from .open_connector import OpenRouterManager
+from .openai import OpenAIService
 
 logger = logging.getLogger("FireflyModelClient")
 

@@ -1,7 +1,7 @@
-from pathlib import Path
-import re
 from dataclasses import dataclass
+from pathlib import Path
 from typing import List
+import re
 
 @dataclass
 class LayerRule:

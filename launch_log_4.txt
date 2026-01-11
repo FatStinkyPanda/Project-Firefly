@@ -1,0 +1,453 @@
+
+> code-oss-dev@1.109.0 electron
+> node build/lib/electron.ts
+
+[[90m09:26:36[39m] Synchronizing built-in extensions...
+[[90m09:26:36[39m] You can manage built-in extensions with the [36m--builtin[39m flag
+[[90m09:26:36[39m] [34m[github][39m ms-vscode.js-debug-companion@1.1.3 [32m✔︎[39m
+[[90m09:26:36[39m] [34m[github][39m ms-vscode.js-debug@1.105.0 [32m✔︎[39m
+[[90m09:26:36[39m] [34m[github][39m ms-vscode.vscode-js-profile-table@1.0.10 [32m✔︎[39m
+
+[main 2026-01-11T16:26:44.506Z] [Firefly] Initializing Core Intelligence...
+[main 2026-01-11T16:26:44.507Z] [Firefly] Spawning Agent Backend: python c:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\agent_manager\main.py
+[main 2026-01-11T16:26:44.527Z] NativePolicyService#_updatePolicyDefinitions - Error loading @vscode/policy-watcher: Error: Could not locate the bindings file. Tried:
+ → C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\policy-watcher\build\vscode-policy-watcher.node
+ → C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\policy-watcher\build\Debug\vscode-policy-watcher.node
+ → C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\policy-watcher\build\Release\vscode-policy-watcher.node
+ → C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\policy-watcher\out\Debug\vscode-policy-watcher.node
+ → C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\policy-watcher\Debug\vscode-policy-watcher.node
+ → C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\policy-watcher\out\Release\vscode-policy-watcher.node
+ → C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\policy-watcher\Release\vscode-policy-watcher.node
+ → C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\policy-watcher\build\default\vscode-policy-watcher.node
+ → C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\policy-watcher\compiled\22.21.1\win32\x64\vscode-policy-watcher.node
+ → C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\policy-watcher\addon-build\release\install-root\vscode-policy-watcher.node
+ → C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\policy-watcher\addon-build\debug\install-root\vscode-policy-watcher.node
+ → C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\policy-watcher\addon-build\default\install-root\vscode-policy-watcher.node
+ → C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\policy-watcher\lib\binding\node-v140-win32-x64\vscode-policy-watcher.node
+    at bindings (C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\bindings\bindings.js:126:9)
+    at Object.<anonymous> (C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\policy-watcher\index.js:6:44)
+    at Module._compile (node:internal/modules/cjs/loader:1714:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1848:10)
+    at Module.load (node:internal/modules/cjs/loader:1448:32)
+    at Module._load (node:internal/modules/cjs/loader:1270:12)
+    at c._load (node:electron/js2c/node_init:2:17993)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)
+    at cjsLoader (node:internal/modules/esm/translators:313:5)
+    at ModuleWrap.<anonymous> (node:internal/modules/esm/translators:202:7)
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26)
+    at async NativePolicyService._updatePolicyDefinitions (file:///C:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/platform/policy/node/nativePolicyService.js:29:39)
+    at async NativePolicyService.updatePolicyDefinitions (file:///C:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/platform/policy/common/policy.js:22:13)
+    at async PolicyConfiguration.updatePolicyDefinitions (file:///C:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/platform/configuration/common/configurations.js:129:13)
+    at async PolicyConfiguration.initialize (file:///C:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/platform/configuration/common/configurations.js:96:21)
+    at async Promise.all (index 1)
+    at async ConfigurationService.initialize (file:///C:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/platform/configuration/common/configurationService.js:39:56)
+    at async Promise.all (index 2)
+    at async Object.settled (file:///C:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/base/common/async.js:1396:24)
+    at async CodeMain.initServices (file:///C:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/code/electron-main/main.js:232:9)
+    at async CodeMain.startup (file:///C:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/code/electron-main/main.js:99:17) {
+  tries: [
+    'C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\node_modules\\@vscode\\policy-watcher\\build\\vscode-policy-watcher.node',
+    'C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\node_modules\\@vscode\\policy-watcher\\build\\Debug\\vscode-policy-watcher.node',
+    'C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\node_modules\\@vscode\\policy-watcher\\build\\Release\\vscode-policy-watcher.node',
+    'C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\node_modules\\@vscode\\policy-watcher\\out\\Debug\\vscode-policy-watcher.node',
+    'C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\node_modules\\@vscode\\policy-watcher\\Debug\\vscode-policy-watcher.node',
+    'C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\node_modules\\@vscode\\policy-watcher\\out\\Release\\vscode-policy-watcher.node',
+    'C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\node_modules\\@vscode\\policy-watcher\\Release\\vscode-policy-watcher.node',
+    'C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\node_modules\\@vscode\\policy-watcher\\build\\default\\vscode-policy-watcher.node',
+    'C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\node_modules\\@vscode\\policy-watcher\\compiled\\22.21.1\\win32\\x64\\vscode-policy-watcher.node',
+    'C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\node_modules\\@vscode\\policy-watcher\\addon-build\\release\\install-root\\vscode-policy-watcher.node',
+    'C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\node_modules\\@vscode\\policy-watcher\\addon-build\\debug\\install-root\\vscode-policy-watcher.node',
+    'C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\node_modules\\@vscode\\policy-watcher\\addon-build\\default\\install-root\\vscode-policy-watcher.node',
+    'C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\node_modules\\@vscode\\policy-watcher\\lib\\binding\\node-v140-win32-x64\\vscode-policy-watcher.node'
+  ]
+}
+Error: Could not locate the bindings file. Tried:
+ → C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\spdlog\build\spdlog.node
+ → C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\spdlog\build\Debug\spdlog.node
+ → C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\spdlog\build\Release\spdlog.node
+ → C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\spdlog\out\Debug\spdlog.node
+ → C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\spdlog\Debug\spdlog.node
+ → C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\spdlog\out\Release\spdlog.node
+ → C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\spdlog\Release\spdlog.node
+ → C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\spdlog\build\default\spdlog.node
+ → C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\spdlog\compiled\22.21.1\win32\x64\spdlog.node
+ → C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\spdlog\addon-build\release\install-root\spdlog.node
+ → C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\spdlog\addon-build\debug\install-root\spdlog.node
+ → C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\spdlog\addon-build\default\install-root\spdlog.node
+ → C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\spdlog\lib\binding\node-v140-win32-x64\spdlog.node
+    at bindings (C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\bindings\bindings.js:126:9)
+    at Object.<anonymous> (C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\spdlog\index.js:3:35)
+    at Module._compile (node:internal/modules/cjs/loader:1714:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1848:10)
+    at Module.load (node:internal/modules/cjs/loader:1448:32)
+    at Module._load (node:internal/modules/cjs/loader:1270:12)
+    at c._load (node:electron/js2c/node_init:2:17993)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)
+    at cjsLoader (node:internal/modules/esm/translators:313:5)
+    at ModuleWrap.<anonymous> (node:internal/modules/esm/translators:202:7)
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26)
+    at async createSpdLogLogger (file:///C:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/platform/log/node/spdlogLog.js:20:25)
+    at async SpdLogLogger._createSpdLogLogger (file:///C:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/platform/log/node/spdlogLog.js:95:24) {
+  tries: [
+    'C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\node_modules\\@vscode\\spdlog\\build\\spdlog.node',
+    'C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\node_modules\\@vscode\\spdlog\\build\\Debug\\spdlog.node',
+    'C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\node_modules\\@vscode\\spdlog\\build\\Release\\spdlog.node',
+    'C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\node_modules\\@vscode\\spdlog\\out\\Debug\\spdlog.node',
+    'C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\node_modules\\@vscode\\spdlog\\Debug\\spdlog.node',
+    'C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\node_modules\\@vscode\\spdlog\\out\\Release\\spdlog.node',
+    'C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\node_modules\\@vscode\\spdlog\\Release\\spdlog.node',
+    'C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\node_modules\\@vscode\\spdlog\\build\\default\\spdlog.node',
+    'C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\node_modules\\@vscode\\spdlog\\compiled\\22.21.1\\win32\\x64\\spdlog.node',
+    'C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\node_modules\\@vscode\\spdlog\\addon-build\\release\\install-root\\spdlog.node',
+    'C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\node_modules\\@vscode\\spdlog\\addon-build\\debug\\install-root\\spdlog.node',
+    'C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\node_modules\\@vscode\\spdlog\\addon-build\\default\\install-root\\spdlog.node',
+    'C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\node_modules\\@vscode\\spdlog\\lib\\binding\\node-v140-win32-x64\\spdlog.node'
+  ]
+}
+[main 2026-01-11T16:26:44.545Z] Error: Cannot find module '../build/Release/winregistry.node'
+Require stack:
+- C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\windows-registry\dist\index.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1390:15)
+    at s._resolveFilename (node:electron/js2c/browser_init:2:130480)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1032:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1037:22)
+    at Module._load (node:internal/modules/cjs/loader:1199:37)
+    at c._load (node:electron/js2c/node_init:2:17993)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)
+    at Module.require (node:internal/modules/cjs/loader:1470:12)
+    at require (node:internal/modules/helpers:147:16)
+    at Object.<anonymous> (C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\windows-registry\dist\index.js:8:55)
+    at Module._compile (node:internal/modules/cjs/loader:1714:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1848:10)
+    at Module.load (node:internal/modules/cjs/loader:1448:32)
+    at Module._load (node:internal/modules/cjs/loader:1270:12)
+    at c._load (node:electron/js2c/node_init:2:17993)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)
+    at cjsLoader (node:internal/modules/esm/translators:313:5)
+    at ModuleWrap.<anonymous> (node:internal/modules/esm/translators:202:7)
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26)
+    at async getSqmMachineId (file:///C:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/base/node/id.js:93:30)
+    at async resolveSqmId (file:///C:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/platform/telemetry/node/telemetryUtils.js:20:17)
+    at async resolveSqmId (file:///C:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/platform/telemetry/electron-main/telemetryUtils.js:17:19)
+    at async Promise.all (index 1)
+    at async CodeApplication.startup (file:///C:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/code/electron-main/app.js:486:49)
+    at async CodeMain.startup (file:///C:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/code/electron-main/main.js:107:13) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\node_modules\\@vscode\\windows-registry\\dist\\index.js'
+  ]
+}
+[main 2026-01-11T16:26:44.600Z] [CSS_DEV] FAILED to compute CSS data Error: spawn C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\ripgrep\bin\rg.exe ENOENT
+    at ChildProcess._handle.onexit (node:internal/child_process:285:19)
+    at onErrorNT (node:internal/child_process:483:16)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'spawn C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\node_modules\\@vscode\\ripgrep\\bin\\rg.exe',
+  path: 'C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\node_modules\\@vscode\\ripgrep\\bin\\rg.exe',
+  spawnargs: [
+    '-g',
+    '**/*.css',
+    '--files',
+    '--no-ignore',
+    'c:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\out'
+  ]
+}
+[main 2026-01-11T16:26:44.754Z] update#setState disabled
+[main 2026-01-11T16:26:44.756Z] [CSS_DEV] DONE, 0 css modules (158ms)
+[main 2026-01-11T16:26:44.786Z] [Firefly] Agent Backend exited with code 1
+[main 2026-01-11T16:26:44.818Z] [storage state.vscdb] open(): Unable to open DB due to Error: Cannot find module '../build/Release/vscode-sqlite3.node'
+Require stack:
+- C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\sqlite3\lib\sqlite3-binding.js
+- C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\sqlite3\lib\sqlite3.js
+[main 2026-01-11T16:26:44.822Z] [storage state.vscdb] open(): Unable to use backup due to Error: ENOENT: no such file or directory, unlink 'c:\Users\dbiss\AppData\Roaming\code-oss-dev\User\globalStorage\state.vscdb'
+[main 2026-01-11T16:26:44.838Z] Error: Could not locate the bindings file. Tried:
+ → C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\windows-mutex\build\CreateMutex.node
+ → C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\windows-mutex\build\Debug\CreateMutex.node
+ → C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\windows-mutex\build\Release\CreateMutex.node
+ → C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\windows-mutex\out\Debug\CreateMutex.node
+ → C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\windows-mutex\Debug\CreateMutex.node
+ → C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\windows-mutex\out\Release\CreateMutex.node
+ → C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\windows-mutex\Release\CreateMutex.node
+ → C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\windows-mutex\build\default\CreateMutex.node
+ → C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\windows-mutex\compiled\22.21.1\win32\x64\CreateMutex.node
+ → C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\windows-mutex\addon-build\release\install-root\CreateMutex.node
+ → C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\windows-mutex\addon-build\debug\install-root\CreateMutex.node
+ → C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\windows-mutex\addon-build\default\install-root\CreateMutex.node
+ → C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\windows-mutex\lib\binding\node-v140-win32-x64\CreateMutex.node
+    at bindings (C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\bindings\bindings.js:126:9)
+    at Object.<anonymous> (C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\windows-mutex\index.js:3:41)
+    at Module._compile (node:internal/modules/cjs/loader:1714:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1848:10)
+    at Module.load (node:internal/modules/cjs/loader:1448:32)
+    at Module._load (node:internal/modules/cjs/loader:1270:12)
+    at c._load (node:electron/js2c/node_init:2:17993)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)
+    at cjsLoader (node:internal/modules/esm/translators:313:5)
+    at ModuleWrap.<anonymous> (node:internal/modules/esm/translators:202:7)
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26)
+    at async CodeApplication.installMutex (file:///C:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/code/electron-main/app.js:1151:38) {
+  tries: [
+    'C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\node_modules\\@vscode\\windows-mutex\\build\\CreateMutex.node',
+    'C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\node_modules\\@vscode\\windows-mutex\\build\\Debug\\CreateMutex.node',
+    'C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\node_modules\\@vscode\\windows-mutex\\build\\Release\\CreateMutex.node',
+    'C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\node_modules\\@vscode\\windows-mutex\\out\\Debug\\CreateMutex.node',
+    'C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\node_modules\\@vscode\\windows-mutex\\Debug\\CreateMutex.node',
+    'C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\node_modules\\@vscode\\windows-mutex\\out\\Release\\CreateMutex.node',
+    'C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\node_modules\\@vscode\\windows-mutex\\Release\\CreateMutex.node',
+    'C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\node_modules\\@vscode\\windows-mutex\\build\\default\\CreateMutex.node',
+    'C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\node_modules\\@vscode\\windows-mutex\\compiled\\22.21.1\\win32\\x64\\CreateMutex.node',
+    'C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\node_modules\\@vscode\\windows-mutex\\addon-build\\release\\install-root\\CreateMutex.node',
+    'C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\node_modules\\@vscode\\windows-mutex\\addon-build\\debug\\install-root\\CreateMutex.node',
+    'C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\node_modules\\@vscode\\windows-mutex\\addon-build\\default\\install-root\\CreateMutex.node',
+    'C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\node_modules\\@vscode\\windows-mutex\\lib\\binding\\node-v140-win32-x64\\CreateMutex.node'
+  ]
+}
+Error: Cannot find module './build/Debug/keymapping'
+Require stack:
+- C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\native-keymap\index.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1390:15)
+    at s._resolveFilename (node:electron/js2c/browser_init:2:130480)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1032:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1037:22)
+    at Module._load (node:internal/modules/cjs/loader:1199:37)
+    at c._load (node:electron/js2c/node_init:2:17993)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)
+    at Module.require (node:internal/modules/cjs/loader:1470:12)
+    at require (node:internal/modules/helpers:147:16)
+    at NativeBinding._init (C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\native-keymap\index.js:19:24)
+    at NativeBinding.getKeyMap (C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\native-keymap\index.js:24:10)
+    at exports.getKeyMap (C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\native-keymap\index.js:63:18)
+    at readKeyboardLayoutData (file:///C:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/platform/keyboardLayout/electron-main/keyboardLayoutMainService.js:61:45)
+    at KeyboardLayoutMainService._doInitialize (file:///C:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/platform/keyboardLayout/electron-main/keyboardLayoutMainService.js:40:36) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\node_modules\\native-keymap\\index.js'
+  ]
+}
+TypeError: Cannot read properties of null (reading 'getCurrentKeyboardLayout')
+    at NativeBinding.getCurrentKeyboardLayout (C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\native-keymap\index.js:34:29)
+    at exports.getCurrentKeyboardLayout (C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\native-keymap\index.js:60:18)
+    at readKeyboardLayoutData (file:///C:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/platform/keyboardLayout/electron-main/keyboardLayoutMainService.js:62:48)
+    at KeyboardLayoutMainService._doInitialize (file:///C:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/platform/keyboardLayout/electron-main/keyboardLayoutMainService.js:40:36)
+TypeError: Cannot read properties of null (reading 'onDidChangeKeyboardLayout')
+    at NativeBinding.onDidChangeKeyboardLayout (C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\native-keymap\index.js:43:22)
+    at exports.onDidChangeKeyboardLayout (C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\native-keymap\index.js:66:18)
+    at KeyboardLayoutMainService._doInitialize (file:///C:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/platform/keyboardLayout/electron-main/keyboardLayoutMainService.js:45:29)
+[main 2026-01-11T16:26:44.843Z] [storage main] initialize(): Unable to init storage due to Error: Cannot find module '../build/Release/vscode-sqlite3.node'
+Require stack:
+- C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\sqlite3\lib\sqlite3-binding.js
+- C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\sqlite3\lib\sqlite3.js
+[main 2026-01-11T16:26:44.953Z] [uncaught exception in main]: Error: Cannot find module '../build/Release/vscode-sqlite3.node'
+Require stack:
+- C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\sqlite3\lib\sqlite3-binding.js
+- C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\sqlite3\lib\sqlite3.js
+[main 2026-01-11T16:26:44.953Z] Error: Cannot find module '../build/Release/vscode-sqlite3.node'
+Require stack:
+- C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\sqlite3\lib\sqlite3-binding.js
+- C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\sqlite3\lib\sqlite3.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1390:15)
+    at s._resolveFilename (node:electron/js2c/browser_init:2:130480)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1032:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1037:22)
+    at Module._load (node:internal/modules/cjs/loader:1199:37)
+    at c._load (node:electron/js2c/node_init:2:17993)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)
+    at Module.require (node:internal/modules/cjs/loader:1470:12)
+    at require (node:internal/modules/helpers:147:16)
+    at Object.<anonymous> (C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\sqlite3\lib\sqlite3-binding.js:4:17)
+    at Module._compile (node:internal/modules/cjs/loader:1714:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1848:10)
+    at Module.load (node:internal/modules/cjs/loader:1448:32)
+    at Module._load (node:internal/modules/cjs/loader:1270:12)
+    at c._load (node:electron/js2c/node_init:2:17993)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)
+    at Module.require (node:internal/modules/cjs/loader:1470:12)
+    at require (node:internal/modules/helpers:147:16)
+    at Object.<anonymous> (C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\sqlite3\lib\sqlite3.js:2:17)
+    at Module._compile (node:internal/modules/cjs/loader:1714:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1848:10)
+    at Module.load (node:internal/modules/cjs/loader:1448:32)
+    at Module._load (node:internal/modules/cjs/loader:1270:12)
+    at c._load (node:electron/js2c/node_init:2:17993)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)
+    at cjsLoader (node:internal/modules/esm/translators:313:5)
+    at ModuleWrap.<anonymous> (node:internal/modules/esm/translators:202:7)
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26)
+[main 2026-01-11T16:26:44.953Z] [uncaught exception in main]: Error: Cannot find module '../build/Release/vscode-sqlite3.node'
+Require stack:
+- C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\sqlite3\lib\sqlite3-binding.js
+- C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\sqlite3\lib\sqlite3.js
+[main 2026-01-11T16:26:44.953Z] Error: Cannot find module '../build/Release/vscode-sqlite3.node'
+Require stack:
+- C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\sqlite3\lib\sqlite3-binding.js
+- C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\sqlite3\lib\sqlite3.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1390:15)
+    at s._resolveFilename (node:electron/js2c/browser_init:2:130480)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1032:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1037:22)
+    at Module._load (node:internal/modules/cjs/loader:1199:37)
+    at c._load (node:electron/js2c/node_init:2:17993)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)
+    at Module.require (node:internal/modules/cjs/loader:1470:12)
+    at require (node:internal/modules/helpers:147:16)
+    at Object.<anonymous> (C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\sqlite3\lib\sqlite3-binding.js:4:17)
+    at Module._compile (node:internal/modules/cjs/loader:1714:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1848:10)
+    at Module.load (node:internal/modules/cjs/loader:1448:32)
+    at Module._load (node:internal/modules/cjs/loader:1270:12)
+    at c._load (node:electron/js2c/node_init:2:17993)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)
+    at Module.require (node:internal/modules/cjs/loader:1470:12)
+    at require (node:internal/modules/helpers:147:16)
+    at Object.<anonymous> (C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\sqlite3\lib\sqlite3.js:2:17)
+    at Module._compile (node:internal/modules/cjs/loader:1714:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1848:10)
+    at Module.load (node:internal/modules/cjs/loader:1448:32)
+    at Module._load (node:internal/modules/cjs/loader:1270:12)
+    at c._load (node:electron/js2c/node_init:2:17993)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)
+    at cjsLoader (node:internal/modules/esm/translators:313:5)
+    at ModuleWrap.<anonymous> (node:internal/modules/esm/translators:202:7)
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26)
+[2984:0111/092646.428:INFO:CONSOLE:0] "Failed to load module script: Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of "text/css". Strict MIME type checking is enforced for module scripts per HTML spec.", source: vscode-file://vscode-app/c:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/workbench/contrib/markdown/browser/media/markdown.css (0)
+[2984:0111/092646.630:INFO:CONSOLE:362] "[uncaught exception]: TypeError: Failed to fetch dynamically imported module: vscode-file://vscode-app/c:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/workbench/workbench.desktop.main.js", source: vscode-file://vscode-app/c:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/code/electron-browser/workbench/workbench.js (362)
+[2984:0111/092646.630:INFO:CONSOLE:364] "TypeError: Failed to fetch dynamically imported module: vscode-file://vscode-app/c:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/workbench/workbench.desktop.main.js", source: vscode-file://vscode-app/c:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/code/electron-browser/workbench/workbench.js (364)
+[2984:0111/092646.657:INFO:CONSOLE:462] "Uncaught (in promise) TypeError: Failed to fetch dynamically imported module: vscode-file://vscode-app/c:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/workbench/workbench.desktop.main.js", source: vscode-file://vscode-app/c:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/code/electron-browser/workbench/workbench.js (462)
+[2984:0111/092647.135:INFO:CONSOLE:0] "Failed to load module script: Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of "text/css". Strict MIME type checking is enforced for module scripts per HTML spec.", source: vscode-file://vscode-app/c:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/workbench/browser/actions/media/actions.css (0)
+[main 2026-01-11T16:26:47.894Z] Error: Cannot find module '../build/Release/windows.node'
+Require stack:
+- C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\deviceid\dist\storage.js
+- C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\deviceid\dist\devdeviceid.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1390:15)
+    at s._resolveFilename (node:electron/js2c/browser_init:2:130480)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1032:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1037:22)
+    at Module._load (node:internal/modules/cjs/loader:1199:37)
+    at c._load (node:electron/js2c/node_init:2:17993)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)
+    at Module.require (node:internal/modules/cjs/loader:1470:12)
+    at require (node:internal/modules/helpers:147:16)
+    at Object.<anonymous> (C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\deviceid\dist\storage.js:34:7)
+    at Module._compile (node:internal/modules/cjs/loader:1714:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1848:10)
+    at Module.load (node:internal/modules/cjs/loader:1448:32)
+    at Module._load (node:internal/modules/cjs/loader:1270:12)
+    at c._load (node:electron/js2c/node_init:2:17993)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)
+    at Module.require (node:internal/modules/cjs/loader:1470:12)
+    at require (node:internal/modules/helpers:147:16)
+    at Object.<anonymous> (C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\deviceid\dist\devdeviceid.js:32:30)
+    at Module._compile (node:internal/modules/cjs/loader:1714:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1848:10)
+    at Module.load (node:internal/modules/cjs/loader:1448:32)
+    at Module._load (node:internal/modules/cjs/loader:1270:12)
+    at c._load (node:electron/js2c/node_init:2:17993)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)
+    at Module.require (node:internal/modules/cjs/loader:1470:12)
+    at require (node:internal/modules/helpers:147:16)
+    at Object.<anonymous> (C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\deviceid\dist\index.js:26:14)
+    at Module._compile (node:internal/modules/cjs/loader:1714:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1848:10)
+    at Module.load (node:internal/modules/cjs/loader:1448:32)
+    at Module._load (node:internal/modules/cjs/loader:1270:12)
+    at c._load (node:electron/js2c/node_init:2:17993)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)
+    at cjsLoader (node:internal/modules/esm/translators:313:5)
+    at ModuleWrap.<anonymous> (node:internal/modules/esm/translators:202:7)
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26)
+    at async getDevDeviceId (file:///C:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/base/node/id.js:105:33)
+    at async validateDevDeviceId (file:///C:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/platform/telemetry/electron-main/telemetryUtils.js:30:28) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\node_modules\\@vscode\\deviceid\\dist\\storage.js',
+    'C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\node_modules\\@vscode\\deviceid\\dist\\devdeviceid.js'
+  ]
+}
+[2984:0111/092647.925:INFO:CONSOLE:0] "Failed to load module script: Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of "text/css". Strict MIME type checking is enforced for module scripts per HTML spec.", source: vscode-file://vscode-app/c:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/workbench/contrib/debug/browser/media/callStackEditorContribution.css (0)
+[2984:0111/092647.925:INFO:CONSOLE:0] "Failed to load module script: Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of "text/css". Strict MIME type checking is enforced for module scripts per HTML spec.", source: vscode-file://vscode-app/c:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/workbench/services/progress/browser/media/progressService.css (0)
+[2984:0111/092647.927:INFO:CONSOLE:0] "Failed to load module script: Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of "text/css". Strict MIME type checking is enforced for module scripts per HTML spec.", source: vscode-file://vscode-app/c:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/workbench/browser/parts/statusbar/media/statusbarpart.css (0)
+[2984:0111/092647.928:INFO:CONSOLE:0] "Failed to load module script: Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of "text/css". Strict MIME type checking is enforced for module scripts per HTML spec.", source: vscode-file://vscode-app/c:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/workbench/browser/parts/banner/media/bannerpart.css (0)
+[2984:0111/092647.954:INFO:CONSOLE:0] "Failed to load module script: Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of "text/css". Strict MIME type checking is enforced for module scripts per HTML spec.", source: vscode-file://vscode-app/c:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/workbench/contrib/files/browser/media/explorerviewlet.css (0)
+[2984:0111/092647.974:INFO:CONSOLE:0] "Failed to load module script: Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of "text/css". Strict MIME type checking is enforced for module scripts per HTML spec.", source: vscode-file://vscode-app/c:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/workbench/contrib/workspace/browser/media/workspaceTrustEditor.css (0)
+[2984:0111/092647.976:INFO:CONSOLE:0] "Failed to load module script: Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of "text/css". Strict MIME type checking is enforced for module scripts per HTML spec.", source: vscode-file://vscode-app/c:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/workbench/contrib/debug/browser/media/debug.contribution.css (0)
+[2984:0111/092647.979:INFO:CONSOLE:0] "Failed to load module script: Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of "text/css". Strict MIME type checking is enforced for module scripts per HTML spec.", source: vscode-file://vscode-app/c:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/workbench/contrib/debug/browser/media/debugHover.css (0)
+[2984:0111/092647.982:INFO:CONSOLE:0] "Failed to load module script: Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of "text/css". Strict MIME type checking is enforced for module scripts per HTML spec.", source: vscode-file://vscode-app/c:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/workbench/services/userDataProfile/browser/media/userDataProfileView.css (0)
+[2984:0111/092647.982:INFO:CONSOLE:0] "Failed to load module script: Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of "text/css". Strict MIME type checking is enforced for module scripts per HTML spec.", source: vscode-file://vscode-app/c:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/workbench/contrib/output/browser/output.css (0)
+[2984:0111/092648.359:ERROR:CONSOLE:1] "Request Autofill.enable failed. {"code":-32601,"message":"'Autofill.enable' wasn't found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+[2984:0111/092648.360:ERROR:CONSOLE:1] "Request Autofill.setAddresses failed. {"code":-32601,"message":"'Autofill.setAddresses' wasn't found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+[2984:0111/092648.431:INFO:CONSOLE:0] "Failed to load module script: Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of "text/css". Strict MIME type checking is enforced for module scripts per HTML spec.", source: vscode-file://vscode-app/c:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/base/browser/ui/contextview/contextview.css (0)
+[2984:0111/092648.431:INFO:CONSOLE:0] "Failed to load module script: Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of "text/css". Strict MIME type checking is enforced for module scripts per HTML spec.", source: vscode-file://vscode-app/c:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/workbench/contrib/extensions/browser/media/extensionsViewlet.css (0)
+[2984:0111/092648.435:INFO:CONSOLE:0] "Failed to load module script: Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of "text/css". Strict MIME type checking is enforced for module scripts per HTML spec.", source: vscode-file://vscode-app/c:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/workbench/contrib/extensions/browser/media/extensionManagement.css (0)
+[2984:0111/092648.435:INFO:CONSOLE:0] "Failed to load module script: Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of "text/css". Strict MIME type checking is enforced for module scripts per HTML spec.", source: vscode-file://vscode-app/c:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/workbench/contrib/debug/browser/media/repl.css (0)
+[2984:0111/092648.440:INFO:CONSOLE:0] "Failed to load module script: Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of "text/css". Strict MIME type checking is enforced for module scripts per HTML spec.", source: vscode-file://vscode-app/c:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/workbench/contrib/share/browser/share.css (0)
+[2984:0111/092648.440:INFO:CONSOLE:0] "Failed to load module script: Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of "text/css". Strict MIME type checking is enforced for module scripts per HTML spec.", source: vscode-file://vscode-app/c:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/workbench/contrib/debug/browser/media/debugViewlet.css (0)
+[2984:0111/092648.463:INFO:CONSOLE:0] "Failed to load module script: Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of "text/css". Strict MIME type checking is enforced for module scripts per HTML spec.", source: vscode-file://vscode-app/c:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/workbench/contrib/search/browser/media/searchview.css (0)
+[2984:0111/092648.463:INFO:CONSOLE:0] "Failed to load module script: Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of "text/css". Strict MIME type checking is enforced for module scripts per HTML spec.", source: vscode-file://vscode-app/c:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/workbench/contrib/browserView/electron-browser/media/browser.css (0)
+[2984:0111/092648.463:INFO:CONSOLE:0] "Failed to load module script: Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of "text/css". Strict MIME type checking is enforced for module scripts per HTML spec.", source: vscode-file://vscode-app/c:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/workbench/electron-browser/actions/media/actions.css (0)
+[2984:0111/105229.220:ERROR:CONSOLE:1] "Uncaught (in promise) SyntaxError: Unexpected token 'H', "HTTP/1.1 4"... is not valid JSON", source: devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@9ec049fb8b1ce73a14a1fe3977dec7287134f09e/&can_dock=true&toolbarColor=rgba(223,223,223,1)&textColor=rgba(0,0,0,1)&experiments=true (1)
+[main 2026-01-11T17:53:06.448Z] Error: Cannot find module '../build/Release/vscode-sqlite3.node'
+Require stack:
+- C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\sqlite3\lib\sqlite3-binding.js
+- C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\sqlite3\lib\sqlite3.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1390:15)
+    at s._resolveFilename (node:electron/js2c/browser_init:2:130480)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1032:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1037:22)
+    at Module._load (node:internal/modules/cjs/loader:1199:37)
+    at c._load (node:electron/js2c/node_init:2:17993)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)
+    at Module.require (node:internal/modules/cjs/loader:1470:12)
+    at require (node:internal/modules/helpers:147:16)
+    at Object.<anonymous> (C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\sqlite3\lib\sqlite3-binding.js:4:17)
+    at Module._compile (node:internal/modules/cjs/loader:1714:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1848:10)
+    at Module.load (node:internal/modules/cjs/loader:1448:32)
+    at Module._load (node:internal/modules/cjs/loader:1270:12)
+    at c._load (node:electron/js2c/node_init:2:17993)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)
+    at Module.require (node:internal/modules/cjs/loader:1470:12)
+    at require (node:internal/modules/helpers:147:16)
+    at Object.<anonymous> (C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\sqlite3\lib\sqlite3.js:2:17)
+    at Module._compile (node:internal/modules/cjs/loader:1714:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1848:10)
+    at Module.load (node:internal/modules/cjs/loader:1448:32)
+    at Module._load (node:internal/modules/cjs/loader:1270:12)
+    at c._load (node:electron/js2c/node_init:2:17993)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)
+    at cjsLoader (node:internal/modules/esm/translators:313:5)
+    at ModuleWrap.<anonymous> (node:internal/modules/esm/translators:202:7)
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\node_modules\\@vscode\\sqlite3\\lib\\sqlite3-binding.js',
+    'C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\node_modules\\@vscode\\sqlite3\\lib\\sqlite3.js'
+  ]
+}
