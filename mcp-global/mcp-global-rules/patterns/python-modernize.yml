@@ -1,0 +1,55 @@
+# Python Modernization Patterns
+# Use with: mcp pattern --file patterns/python-modernize.yml
+
+rules:
+  - id: use-fstring
+    pattern: "{}".format($VAR)
+    message: "Use f-string instead of .format()"
+    fix: f"{$VAR}"
+    severity: info
+    
+  - id: old-string-format
+    pattern: "%" % ($$$)
+    message: "Use f-strings or .format()"
+    severity: info
+    
+  - id: type-equality
+    pattern: type($VAR) == $TYPE
+    message: "Use isinstance() for type checking"
+    fix: isinstance($VAR, $TYPE)
+    severity: warning
+    
+  - id: bare-except
+    pattern: "except:"
+    message: "Use 'except Exception:' to avoid catching SystemExit"
+    fix: "except Exception:"
+    severity: error
+    
+  - id: mutable-default
+    pattern: def $FN($$$, $ARG=[]):
+    message: "Mutable default argument - use None instead"
+    severity: error
+    
+  - id: mutable-default-dict
+    pattern: def $FN($$$, $ARG={}):
+    message: "Mutable default argument - use None instead"
+    severity: error
+    
+  - id: old-super
+    pattern: super($CLS, self)
+    message: "Use super() without arguments in Python 3"
+    fix: super()
+    severity: info
+    
+  - id: dict-keys-iteration
+    pattern: for $VAR in $DICT.keys():
+    message: "Iterate directly: for $VAR in $DICT:"
+    fix: for $VAR in $DICT:
+    severity: info
+    
+  - id: list-append-loop
+    pattern: |
+      for $VAR in $ITER:
+          $LIST.append($EXPR)
+    message: "Consider list comprehension"
+    severity: info

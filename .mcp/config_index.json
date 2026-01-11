@@ -1,0 +1,44 @@
+{
+  "config_files": [
+    "mitmserver\\package.json",
+    ".gemini\\settings.json"
+  ],
+  "env_vars": {},
+  "env_usage": {
+    "mcp-global\\mcp-global-rules\\mcp.py": [
+      "MCP_ROOT"
+    ],
+    "mcp-global\\mcp-global-rules\\scripts\\agent_comms.py": [
+      "AGENT_IDENTITY"
+    ],
+    "mcp-global\\mcp-global-rules\\scripts\\agent_launcher.py": [
+      "TEMP"
+    ],
+    "mcp-global\\mcp-global-rules\\scripts\\config_index.py": [
+      "py",
+      "yml",
+      "yaml",
+      "json"
+    ],
+    "mcp-global\\mcp-global-rules\\scripts\\telegram_bridge.py": [
+      "last_update_id"
+    ],
+    "mcp-global\\mcp-global-rules\\scripts\\utils.py": [
+      "MCP_ROOT"
+    ],
+    "mitmserver\\server.js": [
+      "PORT"
+    ]
+  },
+  "missing_vars": [
+    "PORT",
+    "last_update_id",
+    "yml",
+    "MCP_ROOT",
+    "AGENT_IDENTITY",
+    "TEMP",
+    "py",
+    "json",
+    "yaml"
+  ]
+}

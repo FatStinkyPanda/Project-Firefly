@@ -1,0 +1,59 @@
+# Python Security Patterns
+# Use with: mcp pattern --file patterns/security.yml
+
+rules:
+  - id: hardcoded-password
+    pattern: password = "$VAL"
+    message: "Hardcoded password detected"
+    severity: error
+    
+  - id: hardcoded-secret
+    pattern: secret = "$VAL"
+    message: "Hardcoded secret detected"
+    severity: error
+    
+  - id: hardcoded-token
+    pattern: token = "$VAL"
+    message: "Hardcoded token detected"
+    severity: error
+    
+  - id: hardcoded-api-key
+    pattern: api_key = "$VAL"
+    message: "Hardcoded API key detected"
+    severity: error
+    
+  - id: eval-usage
+    pattern: eval($$$)
+    message: "eval() is dangerous - consider ast.literal_eval()"
+    severity: error
+    
+  - id: exec-usage
+    pattern: exec($$$)
+    message: "exec() executes arbitrary code"
+    severity: error
+    
+  - id: pickle-load
+    pattern: pickle.load($$$)
+    message: "pickle.load() can execute arbitrary code"
+    severity: error
+    
+  - id: pickle-loads
+    pattern: pickle.loads($$$)
+    message: "pickle.loads() can execute arbitrary code"
+    severity: error
+    
+  - id: yaml-load
+    pattern: yaml.load($$$)
+    message: "Use yaml.safe_load() instead"
+    fix: yaml.safe_load($$$)
+    severity: error
+    
+  - id: shell-true
+    pattern: subprocess.$FN($$$, shell=True$$$)
+    message: "shell=True enables command injection"
+    severity: error
+    
+  - id: os-system
+    pattern: os.system($$$)
+    message: "os.system() is vulnerable to injection"
+    severity: error

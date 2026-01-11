@@ -1,0 +1,6 @@
+#!/bin/bash
+# MCP Post-checkout Hook
+# Warm up context
+echo "[MCP] Warming context for new branch..."
+PYTHON_CMD="/c/Users/CSquared/AppData/Local/Programs/Python/Python312/python.exe"
+$PYTHON_CMD mcp-global-rules/mcp.py warm

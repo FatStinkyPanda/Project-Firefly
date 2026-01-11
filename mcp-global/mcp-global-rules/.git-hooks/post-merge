@@ -1,0 +1,5 @@
+#!/bin/bash
+# MCP Post-merge Hook
+echo "[MCP] Updating indexes after merge..."
+PYTHON_CMD="/c/Users/CSquared/AppData/Local/Programs/Python/Python312/python.exe"
+$PYTHON_CMD mcp-global-rules/mcp.py index-all --quick

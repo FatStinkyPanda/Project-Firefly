@@ -1,0 +1,3383 @@
+{
+  "total_items": 562,
+  "by_type": {
+    "readme": 3,
+    "module": 58,
+    "class": 114,
+    "function": 387
+  },
+  "items": [
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\README.md",
+      "summary": "<div align=\"center\">   <br />   <img src=\".github/assets/google-antigravity-logo.svg\" width=\"200\" />"
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mitmserver\\README.md",
+      "summary": "This is a man-in-the-middle (MITM) proxy server designed to intercept and inspect the network requests made by the official Antigravity application. It's a crucial tool for understanding the Antigravi"
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\README.md",
+      "summary": "> **AI Agent Enhancement Package** - 42 Scripts | 48 Commands | 6 Hooks **Windows (PowerShell):** ```powershell"
+    },
+    {
+      "type": "module",
+      "name": "agent_comms",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\agent_comms.py",
+      "summary": "MCP Agent Collaboration Layer (ACL)"
+    },
+    {
+      "type": "class",
+      "name": "AgentPresence",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\agent_comms.py",
+      "summary": "Manages local agent presence and heartbeats."
+    },
+    {
+      "type": "function",
+      "name": "send_message",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\agent_comms.py",
+      "summary": "Sends an encrypted-in-transit message via NSync mailbox."
+    },
+    {
+      "type": "function",
+      "name": "listen_for_messages",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\agent_comms.py",
+      "summary": "Polls for messages addressed to this host."
+    },
+    {
+      "type": "function",
+      "name": "show_status",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\agent_comms.py",
+      "summary": "Displays local and remote agent status."
+    },
+    {
+      "type": "function",
+      "name": "autonomous_loop",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\agent_comms.py",
+      "summary": "Autonomous execution loop for AI agents."
+    },
+    {
+      "type": "module",
+      "name": "mcp",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\mcp.py",
+      "summary": "MCP Tools Runner"
+    },
+    {
+      "type": "function",
+      "name": "get_package_root",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\mcp.py",
+      "summary": "Get the absolute path to the mcp-global-rules directory."
+    },
+    {
+      "type": "function",
+      "name": "show_help",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\mcp.py",
+      "summary": "Show help message."
+    },
+    {
+      "type": "function",
+      "name": "main",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\mcp.py",
+      "summary": "Main entry point."
+    },
+    {
+      "type": "module",
+      "name": "model_manager",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\model_manager.py",
+      "summary": "Antigravity Model Priority Manager"
+    },
+    {
+      "type": "module",
+      "name": "loop_config",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\config\\loop_config.py",
+      "summary": "Auto-Dev Loop Configuration"
+    },
+    {
+      "type": "module",
+      "name": "__init__",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\config\\__init__.py",
+      "summary": "Configuration Package"
+    },
+    {
+      "type": "module",
+      "name": "agent_comms",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\agent_comms.py",
+      "summary": "MCP Agent Collaboration Layer (ACL)"
+    },
+    {
+      "type": "class",
+      "name": "AgentPresence",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\agent_comms.py",
+      "summary": "Manages local agent presence and heartbeats."
+    },
+    {
+      "type": "function",
+      "name": "send_message",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\agent_comms.py",
+      "summary": "Sends an encrypted-in-transit message via NSync mailbox."
+    },
+    {
+      "type": "function",
+      "name": "listen_for_messages",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\agent_comms.py",
+      "summary": "Polls for messages addressed to this host."
+    },
+    {
+      "type": "function",
+      "name": "listen_for_telegram_messages",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\agent_comms.py",
+      "summary": "Polls for Telegram messages. Background agents wait for Antigravity priority."
+    },
+    {
+      "type": "function",
+      "name": "notify_user_telegram",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\agent_comms.py",
+      "summary": "Sends a notification back to the user via the Telegram Bridge."
+    },
+    {
+      "type": "function",
+      "name": "show_status",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\agent_comms.py",
+      "summary": "Displays local and remote agent status."
+    },
+    {
+      "type": "function",
+      "name": "handle_telegram_instruction",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\agent_comms.py",
+      "summary": "Parses telegram text and tries to execute as an MCP command or route to Antigravity."
+    },
+    {
+      "type": "function",
+      "name": "autonomous_loop",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\agent_comms.py",
+      "summary": "Autonomous execution loop for AI agents."
+    },
+    {
+      "type": "module",
+      "name": "agent_launcher",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\agent_launcher.py",
+      "summary": "Antigravity Autonomous Agent Launcher"
+    },
+    {
+      "type": "module",
+      "name": "antigravity_automation",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\antigravity_automation.py",
+      "summary": "Antigravity IDE Automation Bridge"
+    },
+    {
+      "type": "class",
+      "name": "AntigravityBridge",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\antigravity_automation.py",
+      "summary": "Manages automation of Antigravity IDE chat interface."
+    },
+    {
+      "type": "function",
+      "name": "handle_antigravity_message",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\antigravity_automation.py",
+      "summary": "Main handler for processing Telegram messages destined for Antigravity."
+    },
+    {
+      "type": "function",
+      "name": "install_playwright",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\antigravity_automation.py",
+      "summary": "Helper function to install Playwright if needed."
+    },
+    {
+      "type": "function",
+      "name": "test_connection",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\antigravity_automation.py",
+      "summary": "Test the connection to Antigravity IDE."
+    },
+    {
+      "type": "function",
+      "name": "connect_to_antigravity",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\antigravity_automation.py",
+      "summary": "Attempts to connect to a running Antigravity IDE instance."
+    },
+    {
+      "type": "function",
+      "name": "verify_workspace",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\antigravity_automation.py",
+      "summary": "Verifies that Antigravity is open in the correct workspace directory."
+    },
+    {
+      "type": "function",
+      "name": "open_workspace",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\antigravity_automation.py",
+      "summary": "Opens the correct workspace directory in Antigravity."
+    },
+    {
+      "type": "function",
+      "name": "send_message_to_agent",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\antigravity_automation.py",
+      "summary": "Types a message into Antigravity's agent chat interface and retrieves the response."
+    },
+    {
+      "type": "function",
+      "name": "close",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\antigravity_automation.py",
+      "summary": "Cleanup resources."
+    },
+    {
+      "type": "module",
+      "name": "api_docs",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\api_docs.py",
+      "summary": "API Documentation Generator"
+    },
+    {
+      "type": "class",
+      "name": "APIEndpoint",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\api_docs.py",
+      "summary": "An API endpoint definition."
+    },
+    {
+      "type": "class",
+      "name": "APIDocumentation",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\api_docs.py",
+      "summary": "Complete API documentation."
+    },
+    {
+      "type": "class",
+      "name": "FlaskRouteExtractor",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\api_docs.py",
+      "summary": "Extract routes from Flask applications."
+    },
+    {
+      "type": "class",
+      "name": "FastAPIRouteExtractor",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\api_docs.py",
+      "summary": "Extract routes from FastAPI applications."
+    },
+    {
+      "type": "function",
+      "name": "analyze_file",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\api_docs.py",
+      "summary": "Analyze a file for API endpoints."
+    },
+    {
+      "type": "function",
+      "name": "generate_api_docs",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\api_docs.py",
+      "summary": "Generate API documentation for a project."
+    },
+    {
+      "type": "function",
+      "name": "main",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\api_docs.py",
+      "summary": "CLI entry point."
+    },
+    {
+      "type": "function",
+      "name": "to_openapi",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\api_docs.py",
+      "summary": "Convert to OpenAPI 3.0 spec."
+    },
+    {
+      "type": "function",
+      "name": "to_markdown",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\api_docs.py",
+      "summary": "Convert to markdown documentation."
+    },
+    {
+      "type": "function",
+      "name": "_extract_params",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\api_docs.py",
+      "summary": "Extract path parameters like <id> or {id}."
+    },
+    {
+      "type": "function",
+      "name": "_extract_params",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\api_docs.py",
+      "summary": "Extract parameters from path and function signature."
+    },
+    {
+      "type": "module",
+      "name": "architecture",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\architecture.py",
+      "summary": "Architecture Validator"
+    },
+    {
+      "type": "class",
+      "name": "LayerRule",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\architecture.py",
+      "summary": "A layer dependency rule."
+    },
+    {
+      "type": "class",
+      "name": "ArchViolation",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\architecture.py",
+      "summary": "An architecture violation."
+    },
+    {
+      "type": "class",
+      "name": "ArchReport",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\architecture.py",
+      "summary": "Architecture analysis report."
+    },
+    {
+      "type": "function",
+      "name": "detect_layer",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\architecture.py",
+      "summary": "Detect the layer a module belongs to based on path patterns."
+    },
+    {
+      "type": "class",
+      "name": "ImportAnalyzer",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\architecture.py",
+      "summary": "Analyze imports for architecture violations."
+    },
+    {
+      "type": "class",
+      "name": "NamingConventionChecker",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\architecture.py",
+      "summary": "Check naming conventions by layer."
+    },
+    {
+      "type": "function",
+      "name": "analyze_file",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\architecture.py",
+      "summary": "Analyze a file for architecture violations."
+    },
+    {
+      "type": "function",
+      "name": "analyze_architecture",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\architecture.py",
+      "summary": "Analyze project architecture."
+    },
+    {
+      "type": "function",
+      "name": "main",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\architecture.py",
+      "summary": "CLI entry point."
+    },
+    {
+      "type": "module",
+      "name": "astgrep",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\astgrep.py",
+      "summary": "ast-grep Wrapper"
+    },
+    {
+      "type": "function",
+      "name": "_find_astgrep",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\astgrep.py",
+      "summary": "Find ast-grep binary."
+    },
+    {
+      "type": "class",
+      "name": "PatternMatch",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\astgrep.py",
+      "summary": "A pattern match result."
+    },
+    {
+      "type": "class",
+      "name": "PatternRule",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\astgrep.py",
+      "summary": "A pattern rule for search/fix."
+    },
+    {
+      "type": "function",
+      "name": "search_pattern",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\astgrep.py",
+      "summary": "Search for pattern in code."
+    },
+    {
+      "type": "function",
+      "name": "_astgrep_search",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\astgrep.py",
+      "summary": "Search using ast-grep."
+    },
+    {
+      "type": "function",
+      "name": "_regex_search",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\astgrep.py",
+      "summary": "Fallback regex-based search."
+    },
+    {
+      "type": "function",
+      "name": "apply_fix",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\astgrep.py",
+      "summary": "Apply fix pattern to files."
+    },
+    {
+      "type": "function",
+      "name": "_astgrep_fix",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\astgrep.py",
+      "summary": "Apply fix using ast-grep."
+    },
+    {
+      "type": "function",
+      "name": "_regex_fix",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\astgrep.py",
+      "summary": "Fallback regex-based fix."
+    },
+    {
+      "type": "function",
+      "name": "run_rules",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\astgrep.py",
+      "summary": "Run multiple pattern rules."
+    },
+    {
+      "type": "function",
+      "name": "get_builtin_rules",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\astgrep.py",
+      "summary": "Get built-in rules for language."
+    },
+    {
+      "type": "function",
+      "name": "is_astgrep_available",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\astgrep.py",
+      "summary": "Check if ast-grep is available."
+    },
+    {
+      "type": "function",
+      "name": "main",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\astgrep.py",
+      "summary": "CLI entry point."
+    },
+    {
+      "type": "module",
+      "name": "autocontext",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\autocontext.py",
+      "summary": "Auto-Context Loader"
+    },
+    {
+      "type": "class",
+      "name": "ContextCache",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\autocontext.py",
+      "summary": "Cache of context state."
+    },
+    {
+      "type": "class",
+      "name": "ContextResult",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\autocontext.py",
+      "summary": "Result of context loading."
+    },
+    {
+      "type": "function",
+      "name": "get_cache_path",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\autocontext.py",
+      "summary": "Get path to context cache."
+    },
+    {
+      "type": "function",
+      "name": "load_cache",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\autocontext.py",
+      "summary": "Load context cache from disk."
+    },
+    {
+      "type": "function",
+      "name": "save_cache",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\autocontext.py",
+      "summary": "Save context cache to disk."
+    },
+    {
+      "type": "function",
+      "name": "track_file_access",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\autocontext.py",
+      "summary": "Track that a file was accessed."
+    },
+    {
+      "type": "function",
+      "name": "get_recent_context",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\autocontext.py",
+      "summary": "Get context from recently accessed files."
+    },
+    {
+      "type": "function",
+      "name": "get_hot_context",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\autocontext.py",
+      "summary": "Get context from most frequently accessed files."
+    },
+    {
+      "type": "function",
+      "name": "get_semantic_context",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\autocontext.py",
+      "summary": "Get context via semantic search."
+    },
+    {
+      "type": "function",
+      "name": "get_dependency_context",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\autocontext.py",
+      "summary": "Get context from file dependencies (imports)."
+    },
+    {
+      "type": "function",
+      "name": "get_project_map",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\autocontext.py",
+      "summary": "Layer 1: Get high-level project map."
+    },
+    {
+      "type": "function",
+      "name": "get_auto_context",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\autocontext.py",
+      "summary": "Get hierarchically layered context for AI agent."
+    },
+    {
+      "type": "function",
+      "name": "update_task",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\autocontext.py",
+      "summary": "Update current task in cache."
+    },
+    {
+      "type": "function",
+      "name": "main",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\autocontext.py",
+      "summary": "CLI entry point."
+    },
+    {
+      "type": "module",
+      "name": "auto_docs",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\auto_docs.py",
+      "summary": "Auto-Docstring Generator"
+    },
+    {
+      "type": "class",
+      "name": "DocstringSuggestion",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\auto_docs.py",
+      "summary": "A suggested docstring for a function or class."
+    },
+    {
+      "type": "function",
+      "name": "generate_function_docstring",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\auto_docs.py",
+      "summary": "Generate a Google-style docstring for a function."
+    },
+    {
+      "type": "function",
+      "name": "_generate_param_description",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\auto_docs.py",
+      "summary": "Generate a description for a parameter based on its name."
+    },
+    {
+      "type": "function",
+      "name": "generate_class_docstring",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\auto_docs.py",
+      "summary": "Generate a Google-style docstring for a class."
+    },
+    {
+      "type": "class",
+      "name": "DocstringAnalyzer",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\auto_docs.py",
+      "summary": "Analyze a module for missing docstrings."
+    },
+    {
+      "type": "function",
+      "name": "analyze_file_for_docstrings",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\auto_docs.py",
+      "summary": "Analyze a file for missing docstrings."
+    },
+    {
+      "type": "function",
+      "name": "add_docstrings_to_file",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\auto_docs.py",
+      "summary": "Add docstrings to a file."
+    },
+    {
+      "type": "function",
+      "name": "generate_docstrings",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\auto_docs.py",
+      "summary": "Generate docstrings for all Python files in a directory."
+    },
+    {
+      "type": "function",
+      "name": "main",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\auto_docs.py",
+      "summary": "CLI entry point."
+    },
+    {
+      "type": "function",
+      "name": "_get_indent",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\auto_docs.py",
+      "summary": "Get the indentation of a line."
+    },
+    {
+      "type": "function",
+      "name": "_check_function",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\auto_docs.py",
+      "summary": "Check if a function needs a docstring."
+    },
+    {
+      "type": "function",
+      "name": "visit_ClassDef",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\auto_docs.py",
+      "summary": "Check if a class needs a docstring."
+    },
+    {
+      "type": "module",
+      "name": "auto_learn",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\auto_learn.py",
+      "summary": "Auto-Learning Integration"
+    },
+    {
+      "type": "function",
+      "name": "auto_learn",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\auto_learn.py",
+      "summary": "Decorator to auto-record tool outcomes."
+    },
+    {
+      "type": "function",
+      "name": "record_error",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\auto_learn.py",
+      "summary": "Record an error for learning."
+    },
+    {
+      "type": "function",
+      "name": "record_correction",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\auto_learn.py",
+      "summary": "Record a user correction for learning."
+    },
+    {
+      "type": "function",
+      "name": "suggest_from_history",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\auto_learn.py",
+      "summary": "Get fix suggestion from learning history."
+    },
+    {
+      "type": "function",
+      "name": "get_success_rate",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\auto_learn.py",
+      "summary": "Get success rate for a tool."
+    },
+    {
+      "type": "function",
+      "name": "main",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\auto_learn.py",
+      "summary": "CLI entry point."
+    },
+    {
+      "type": "module",
+      "name": "auto_test",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\auto_test.py",
+      "summary": "Auto-Test Generator"
+    },
+    {
+      "type": "class",
+      "name": "TestSuite",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\auto_test.py",
+      "summary": "Generated test suite for a module."
+    },
+    {
+      "type": "function",
+      "name": "generate_test_function",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\auto_test.py",
+      "summary": "Generate a pytest test function for a given function."
+    },
+    {
+      "type": "function",
+      "name": "generate_edge_case_tests",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\auto_test.py",
+      "summary": "Generate edge case tests for a function."
+    },
+    {
+      "type": "function",
+      "name": "generate_test_class",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\auto_test.py",
+      "summary": "Generate a pytest test class."
+    },
+    {
+      "type": "function",
+      "name": "_generate_method_test",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\auto_test.py",
+      "summary": "Generate test for a class method."
+    },
+    {
+      "type": "function",
+      "name": "_get_sample_value",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\auto_test.py",
+      "summary": "Get a sample value for a parameter."
+    },
+    {
+      "type": "function",
+      "name": "_generate_assertion",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\auto_test.py",
+      "summary": "Generate an assertion based on return type."
+    },
+    {
+      "type": "function",
+      "name": "generate_test_file",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\auto_test.py",
+      "summary": "Generate a test file for a Python module."
+    },
+    {
+      "type": "function",
+      "name": "generate_tests",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\auto_test.py",
+      "summary": "Generate tests for all Python files in a directory."
+    },
+    {
+      "type": "function",
+      "name": "main",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\auto_test.py",
+      "summary": "CLI entry point."
+    },
+    {
+      "type": "module",
+      "name": "changelog",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\changelog.py",
+      "summary": "Changelog Generator"
+    },
+    {
+      "type": "class",
+      "name": "ChangelogEntry",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\changelog.py",
+      "summary": "A single changelog entry."
+    },
+    {
+      "type": "class",
+      "name": "ChangelogVersion",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\changelog.py",
+      "summary": "A version section in the changelog."
+    },
+    {
+      "type": "function",
+      "name": "parse_commit_message",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\changelog.py",
+      "summary": "Parse a conventional commit message."
+    },
+    {
+      "type": "function",
+      "name": "get_git_tags",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\changelog.py",
+      "summary": "Get all git tags with their dates."
+    },
+    {
+      "type": "function",
+      "name": "get_commits_since_tag",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\changelog.py",
+      "summary": "Get commits since a specific tag."
+    },
+    {
+      "type": "function",
+      "name": "generate_changelog",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\changelog.py",
+      "summary": "Generate changelog from git commits."
+    },
+    {
+      "type": "function",
+      "name": "format_changelog_markdown",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\changelog.py",
+      "summary": "Format changelog as Markdown."
+    },
+    {
+      "type": "function",
+      "name": "update_changelog_file",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\changelog.py",
+      "summary": "Update a changelog file with new content."
+    },
+    {
+      "type": "function",
+      "name": "main",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\changelog.py",
+      "summary": "CLI entry point."
+    },
+    {
+      "type": "module",
+      "name": "cicd",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\cicd.py",
+      "summary": "CI/CD Pipeline Generator"
+    },
+    {
+      "type": "class",
+      "name": "ProjectType",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\cicd.py",
+      "summary": "Detected project type."
+    },
+    {
+      "type": "function",
+      "name": "detect_project_type",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\cicd.py",
+      "summary": "Detect project type from files."
+    },
+    {
+      "type": "function",
+      "name": "generate_github_action",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\cicd.py",
+      "summary": "Generate GitHub Actions workflow."
+    },
+    {
+      "type": "function",
+      "name": "generate_gitlab_ci",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\cicd.py",
+      "summary": "Generate GitLab CI config."
+    },
+    {
+      "type": "function",
+      "name": "write_github_action",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\cicd.py",
+      "summary": "Write GitHub Actions workflow to file."
+    },
+    {
+      "type": "function",
+      "name": "write_gitlab_ci",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\cicd.py",
+      "summary": "Write GitLab CI config to file."
+    },
+    {
+      "type": "function",
+      "name": "main",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\cicd.py",
+      "summary": "CLI entry point."
+    },
+    {
+      "type": "module",
+      "name": "config_index",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\config_index.py",
+      "summary": "Config Index"
+    },
+    {
+      "type": "class",
+      "name": "ConfigItem",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\config_index.py",
+      "summary": "A configuration item."
+    },
+    {
+      "type": "function",
+      "name": "find_config_files",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\config_index.py",
+      "summary": "Find configuration files."
+    },
+    {
+      "type": "function",
+      "name": "parse_env_file",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\config_index.py",
+      "summary": "Parse .env file."
+    },
+    {
+      "type": "function",
+      "name": "parse_json_file",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\config_index.py",
+      "summary": "Parse JSON config file."
+    },
+    {
+      "type": "function",
+      "name": "find_env_usage_in_file",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\config_index.py",
+      "summary": "Find env var usage in a code file."
+    },
+    {
+      "type": "function",
+      "name": "index_configs",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\config_index.py",
+      "summary": "Build configuration index."
+    },
+    {
+      "type": "function",
+      "name": "get_env_vars_for_file",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\config_index.py",
+      "summary": "Get env vars used by a specific file."
+    },
+    {
+      "type": "function",
+      "name": "main",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\config_index.py",
+      "summary": "CLI entry point."
+    },
+    {
+      "type": "module",
+      "name": "context",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\context.py",
+      "summary": "Smart Context Loader"
+    },
+    {
+      "type": "class",
+      "name": "ContextItem",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\context.py",
+      "summary": "A piece of context from the codebase."
+    },
+    {
+      "type": "class",
+      "name": "ContextResult",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\context.py",
+      "summary": "Result of context extraction."
+    },
+    {
+      "type": "function",
+      "name": "estimate_tokens",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\context.py",
+      "summary": "Estimate token count (rough: 4 chars per token)."
+    },
+    {
+      "type": "function",
+      "name": "tokenize_query",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\context.py",
+      "summary": "Tokenize query into searchable terms."
+    },
+    {
+      "type": "function",
+      "name": "calculate_tf_idf",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\context.py",
+      "summary": "Calculate TF-IDF relevance score."
+    },
+    {
+      "type": "function",
+      "name": "get_recent_files",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\context.py",
+      "summary": "Get recently modified files from git."
+    },
+    {
+      "type": "function",
+      "name": "extract_function_context",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\context.py",
+      "summary": "Extract function definitions with context."
+    },
+    {
+      "type": "function",
+      "name": "extract_class_context",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\context.py",
+      "summary": "Extract class definitions with context."
+    },
+    {
+      "type": "function",
+      "name": "load_context",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\context.py",
+      "summary": "Load relevant context for a query."
+    },
+    {
+      "type": "function",
+      "name": "main",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\context.py",
+      "summary": "CLI entry point."
+    },
+    {
+      "type": "function",
+      "name": "to_markdown",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\context.py",
+      "summary": "Format context as markdown."
+    },
+    {
+      "type": "module",
+      "name": "coverage_index",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\coverage_index.py",
+      "summary": "Coverage Index"
+    },
+    {
+      "type": "class",
+      "name": "CoverageData",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\coverage_index.py",
+      "summary": "Coverage data for a file."
+    },
+    {
+      "type": "function",
+      "name": "load_coverage_file",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\coverage_index.py",
+      "summary": "Load coverage data from .coverage or coverage.json."
+    },
+    {
+      "type": "function",
+      "name": "get_file_coverage",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\coverage_index.py",
+      "summary": "Get coverage data for a specific file."
+    },
+    {
+      "type": "function",
+      "name": "get_tests_for_file",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\coverage_index.py",
+      "summary": "Find tests that likely cover a file."
+    },
+    {
+      "type": "function",
+      "name": "suggest_tests_needed",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\coverage_index.py",
+      "summary": "Suggest what tests are needed for a file."
+    },
+    {
+      "type": "function",
+      "name": "index_coverage",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\coverage_index.py",
+      "summary": "Build coverage index."
+    },
+    {
+      "type": "function",
+      "name": "main",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\coverage_index.py",
+      "summary": "CLI entry point."
+    },
+    {
+      "type": "module",
+      "name": "cybersec",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\cybersec.py",
+      "summary": "MCP Cybersecurity Tool Wrapper"
+    },
+    {
+      "type": "function",
+      "name": "get_impacket_tools",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\cybersec.py",
+      "summary": "List tools available in the Impacket virtualenv."
+    },
+    {
+      "type": "function",
+      "name": "show_help",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\cybersec.py",
+      "summary": "Show help for the cybersec command."
+    },
+    {
+      "type": "function",
+      "name": "list_tools",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\cybersec.py",
+      "summary": "List all tools organized by category."
+    },
+    {
+      "type": "function",
+      "name": "run_tool",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\cybersec.py",
+      "summary": "Run a specific tool, handling env activation if needed."
+    },
+    {
+      "type": "module",
+      "name": "dead_code",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\dead_code.py",
+      "summary": "Dead Code Detector"
+    },
+    {
+      "type": "class",
+      "name": "DeadCodeReport",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\dead_code.py",
+      "summary": "Report of detected dead code."
+    },
+    {
+      "type": "class",
+      "name": "DefinitionCollector",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\dead_code.py",
+      "summary": "Collect all definitions in a module."
+    },
+    {
+      "type": "class",
+      "name": "UsageCollector",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\dead_code.py",
+      "summary": "Collect all name usages in a module."
+    },
+    {
+      "type": "function",
+      "name": "analyze_file",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\dead_code.py",
+      "summary": "Analyze a single file for definitions and usages."
+    },
+    {
+      "type": "function",
+      "name": "detect_dead_code",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\dead_code.py",
+      "summary": "Detect dead code in a Python project."
+    },
+    {
+      "type": "function",
+      "name": "main",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\dead_code.py",
+      "summary": "CLI entry point."
+    },
+    {
+      "type": "function",
+      "name": "to_markdown",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\dead_code.py",
+      "summary": "Convert report to markdown format."
+    },
+    {
+      "type": "module",
+      "name": "deps",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\deps.py",
+      "summary": "Dependency Analyzer"
+    },
+    {
+      "type": "class",
+      "name": "DependencyInfo",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\deps.py",
+      "summary": "Dependency information for a module."
+    },
+    {
+      "type": "class",
+      "name": "DependencyReport",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\deps.py",
+      "summary": "Report of dependency analysis."
+    },
+    {
+      "type": "function",
+      "name": "analyze_imports",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\deps.py",
+      "summary": "Analyze imports in a Python file."
+    },
+    {
+      "type": "function",
+      "name": "path_to_module_name",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\deps.py",
+      "summary": "Convert a file path to a module name."
+    },
+    {
+      "type": "function",
+      "name": "analyze_dependencies",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\deps.py",
+      "summary": "Analyze dependencies in a Python project."
+    },
+    {
+      "type": "function",
+      "name": "generate_mermaid_diagram",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\deps.py",
+      "summary": "Generate a Mermaid diagram of dependencies."
+    },
+    {
+      "type": "function",
+      "name": "format_report_markdown",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\deps.py",
+      "summary": "Format dependency report as Markdown."
+    },
+    {
+      "type": "function",
+      "name": "main",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\deps.py",
+      "summary": "CLI entry point."
+    },
+    {
+      "type": "function",
+      "name": "all_dependencies",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\deps.py",
+      "summary": "Get all dependencies."
+    },
+    {
+      "type": "module",
+      "name": "doc_coverage",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\doc_coverage.py",
+      "summary": "Documentation Coverage Checker"
+    },
+    {
+      "type": "class",
+      "name": "CoverageItem",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\doc_coverage.py",
+      "summary": "A single item that should have documentation."
+    },
+    {
+      "type": "class",
+      "name": "CoverageReport",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\doc_coverage.py",
+      "summary": "Documentation coverage report."
+    },
+    {
+      "type": "class",
+      "name": "DocstringValidator",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\doc_coverage.py",
+      "summary": "Validate docstring format."
+    },
+    {
+      "type": "class",
+      "name": "CoverageAnalyzer",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\doc_coverage.py",
+      "summary": "Analyze documentation coverage."
+    },
+    {
+      "type": "function",
+      "name": "analyze_file",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\doc_coverage.py",
+      "summary": "Analyze documentation coverage in a file."
+    },
+    {
+      "type": "function",
+      "name": "check_coverage",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\doc_coverage.py",
+      "summary": "Check documentation coverage in a project."
+    },
+    {
+      "type": "function",
+      "name": "main",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\doc_coverage.py",
+      "summary": "CLI entry point."
+    },
+    {
+      "type": "function",
+      "name": "validate",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\doc_coverage.py",
+      "summary": "Validate docstring format."
+    },
+    {
+      "type": "module",
+      "name": "doc_index",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\doc_index.py",
+      "summary": "Documentation Index"
+    },
+    {
+      "type": "class",
+      "name": "DocItem",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\doc_index.py",
+      "summary": "A documentation item."
+    },
+    {
+      "type": "function",
+      "name": "extract_module_docstring",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\doc_index.py",
+      "summary": "Extract module docstring from a Python file."
+    },
+    {
+      "type": "function",
+      "name": "extract_docstrings",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\doc_index.py",
+      "summary": "Extract all docstrings from a file."
+    },
+    {
+      "type": "function",
+      "name": "find_readme_files",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\doc_index.py",
+      "summary": "Find README files in project."
+    },
+    {
+      "type": "function",
+      "name": "index_readme",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\doc_index.py",
+      "summary": "Index a README file."
+    },
+    {
+      "type": "function",
+      "name": "index_documentation",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\doc_index.py",
+      "summary": "Build documentation index."
+    },
+    {
+      "type": "function",
+      "name": "search_docs",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\doc_index.py",
+      "summary": "Search documentation index."
+    },
+    {
+      "type": "function",
+      "name": "get_module_summary",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\doc_index.py",
+      "summary": "Get summary of a module."
+    },
+    {
+      "type": "function",
+      "name": "main",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\doc_index.py",
+      "summary": "CLI entry point."
+    },
+    {
+      "type": "module",
+      "name": "embeddings",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\embeddings.py",
+      "summary": "Embeddings Generation"
+    },
+    {
+      "type": "function",
+      "name": "get_model",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\embeddings.py",
+      "summary": "Get or load embedding model."
+    },
+    {
+      "type": "function",
+      "name": "embed_text",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\embeddings.py",
+      "summary": "Generate embedding for text."
+    },
+    {
+      "type": "function",
+      "name": "embed_texts",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\embeddings.py",
+      "summary": "Generate embeddings for multiple texts."
+    },
+    {
+      "type": "function",
+      "name": "embed_code",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\embeddings.py",
+      "summary": "Generate embedding for code with language-aware preprocessing."
+    },
+    {
+      "type": "function",
+      "name": "_preprocess_code",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\embeddings.py",
+      "summary": "Preprocess code for embedding."
+    },
+    {
+      "type": "function",
+      "name": "_fallback_embed",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\embeddings.py",
+      "summary": "Simple fallback embedding using hashing + TF-IDF-like approach."
+    },
+    {
+      "type": "function",
+      "name": "cosine_similarity",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\embeddings.py",
+      "summary": "Compute cosine similarity between two vectors."
+    },
+    {
+      "type": "function",
+      "name": "embedding_dimension",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\embeddings.py",
+      "summary": "Get embedding dimension."
+    },
+    {
+      "type": "function",
+      "name": "is_transformers_available",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\embeddings.py",
+      "summary": "Check if sentence-transformers is available."
+    },
+    {
+      "type": "class",
+      "name": "EmbeddingResult",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\embeddings.py",
+      "summary": "Result of embedding generation."
+    },
+    {
+      "type": "function",
+      "name": "embed_with_info",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\embeddings.py",
+      "summary": "Generate embedding with metadata."
+    },
+    {
+      "type": "function",
+      "name": "main",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\embeddings.py",
+      "summary": "CLI entry point."
+    },
+    {
+      "type": "module",
+      "name": "errors",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\errors.py",
+      "summary": "Error Pattern Analyzer"
+    },
+    {
+      "type": "class",
+      "name": "ErrorPattern",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\errors.py",
+      "summary": "An error handling pattern."
+    },
+    {
+      "type": "class",
+      "name": "ErrorReport",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\errors.py",
+      "summary": "Complete error analysis report."
+    },
+    {
+      "type": "class",
+      "name": "ExceptionAnalyzer",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\errors.py",
+      "summary": "Analyze exception handling patterns."
+    },
+    {
+      "type": "class",
+      "name": "RaiseAnalyzer",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\errors.py",
+      "summary": "Analyze raise statements."
+    },
+    {
+      "type": "function",
+      "name": "analyze_file",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\errors.py",
+      "summary": "Analyze a file for error patterns."
+    },
+    {
+      "type": "function",
+      "name": "analyze_project",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\errors.py",
+      "summary": "Analyze project for error patterns."
+    },
+    {
+      "type": "function",
+      "name": "main",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\errors.py",
+      "summary": "CLI entry point."
+    },
+    {
+      "type": "function",
+      "name": "_is_swallowed",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\errors.py",
+      "summary": "Check if exception is swallowed (ignored)."
+    },
+    {
+      "type": "function",
+      "name": "_has_logging",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\errors.py",
+      "summary": "Check if handler has logging."
+    },
+    {
+      "type": "module",
+      "name": "finder",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\finder.py",
+      "summary": "Smart File Finder"
+    },
+    {
+      "type": "class",
+      "name": "SearchResult",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\finder.py",
+      "summary": "A search result."
+    },
+    {
+      "type": "class",
+      "name": "SearchResults",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\finder.py",
+      "summary": "Collection of search results."
+    },
+    {
+      "type": "function",
+      "name": "expand_query",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\finder.py",
+      "summary": "Expand query into search terms."
+    },
+    {
+      "type": "function",
+      "name": "score_filename_match",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\finder.py",
+      "summary": "Score a filename against search terms."
+    },
+    {
+      "type": "function",
+      "name": "search_file_content",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\finder.py",
+      "summary": "Search file content for terms."
+    },
+    {
+      "type": "function",
+      "name": "search_module_structure",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\finder.py",
+      "summary": "Search module functions and classes."
+    },
+    {
+      "type": "function",
+      "name": "find_files",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\finder.py",
+      "summary": "Find files matching a query."
+    },
+    {
+      "type": "function",
+      "name": "main",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\finder.py",
+      "summary": "CLI entry point."
+    },
+    {
+      "type": "module",
+      "name": "fix",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\fix.py",
+      "summary": "Auto-Fix Tool"
+    },
+    {
+      "type": "class",
+      "name": "FixResult",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\fix.py",
+      "summary": "Result of a fix operation."
+    },
+    {
+      "type": "class",
+      "name": "FixReport",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\fix.py",
+      "summary": "Complete fix report."
+    },
+    {
+      "type": "function",
+      "name": "sort_imports",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\fix.py",
+      "summary": "Sort and organize imports."
+    },
+    {
+      "type": "function",
+      "name": "fix_trailing_whitespace",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\fix.py",
+      "summary": "Remove trailing whitespace."
+    },
+    {
+      "type": "function",
+      "name": "fix_blank_lines",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\fix.py",
+      "summary": "Fix excessive blank lines."
+    },
+    {
+      "type": "function",
+      "name": "remove_unused_imports",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\fix.py",
+      "summary": "Remove unused imports."
+    },
+    {
+      "type": "function",
+      "name": "fix_file",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\fix.py",
+      "summary": "Fix issues in a single file."
+    },
+    {
+      "type": "function",
+      "name": "fix_project",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\fix.py",
+      "summary": "Fix issues in a project."
+    },
+    {
+      "type": "function",
+      "name": "fix_staged_files",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\fix.py",
+      "summary": "Fix only git staged files."
+    },
+    {
+      "type": "function",
+      "name": "main",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\fix.py",
+      "summary": "CLI entry point."
+    },
+    {
+      "type": "module",
+      "name": "git_index",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\git_index.py",
+      "summary": "Git History Index"
+    },
+    {
+      "type": "class",
+      "name": "Commit",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\git_index.py",
+      "summary": "A git commit."
+    },
+    {
+      "type": "class",
+      "name": "BlameInfo",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\git_index.py",
+      "summary": "Blame info for a line."
+    },
+    {
+      "type": "class",
+      "name": "FileHistory",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\git_index.py",
+      "summary": "History of a file."
+    },
+    {
+      "type": "function",
+      "name": "run_git",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\git_index.py",
+      "summary": "Run git command and return output."
+    },
+    {
+      "type": "function",
+      "name": "get_commits",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\git_index.py",
+      "summary": "Get list of commits."
+    },
+    {
+      "type": "function",
+      "name": "get_blame",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\git_index.py",
+      "summary": "Get blame info for file."
+    },
+    {
+      "type": "function",
+      "name": "get_file_history",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\git_index.py",
+      "summary": "Get complete history of a file."
+    },
+    {
+      "type": "function",
+      "name": "get_change_intent",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\git_index.py",
+      "summary": "Get the intent behind recent changes to a file."
+    },
+    {
+      "type": "function",
+      "name": "search_commits",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\git_index.py",
+      "summary": "Search commit messages."
+    },
+    {
+      "type": "function",
+      "name": "index_git_history",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\git_index.py",
+      "summary": "Build git history index."
+    },
+    {
+      "type": "function",
+      "name": "main",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\git_index.py",
+      "summary": "CLI entry point."
+    },
+    {
+      "type": "module",
+      "name": "impact",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\impact.py",
+      "summary": "Impact Analysis"
+    },
+    {
+      "type": "class",
+      "name": "ImpactReport",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\impact.py",
+      "summary": "Report of change impact."
+    },
+    {
+      "type": "class",
+      "name": "DependencyGraph",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\impact.py",
+      "summary": "Graph of file dependencies."
+    },
+    {
+      "type": "function",
+      "name": "build_dependency_graph",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\impact.py",
+      "summary": "Build and return dependency graph."
+    },
+    {
+      "type": "function",
+      "name": "analyze_impact",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\impact.py",
+      "summary": "Analyze impact of changing a file."
+    },
+    {
+      "type": "function",
+      "name": "save_impact_graph",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\impact.py",
+      "summary": "Save dependency graph to disk."
+    },
+    {
+      "type": "function",
+      "name": "main",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\impact.py",
+      "summary": "CLI entry point."
+    },
+    {
+      "type": "function",
+      "name": "add_file",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\impact.py",
+      "summary": "Add a file's imports to the graph."
+    },
+    {
+      "type": "function",
+      "name": "build",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\impact.py",
+      "summary": "Build full dependency graph."
+    },
+    {
+      "type": "function",
+      "name": "get_dependents",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\impact.py",
+      "summary": "Get files that depend on this file."
+    },
+    {
+      "type": "function",
+      "name": "get_dependencies",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\impact.py",
+      "summary": "Get files this file depends on."
+    },
+    {
+      "type": "function",
+      "name": "get_transitive_dependents",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\impact.py",
+      "summary": "Get all transitive dependents."
+    },
+    {
+      "type": "module",
+      "name": "index_all",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\index_all.py",
+      "summary": "Unified Index Manager"
+    },
+    {
+      "type": "function",
+      "name": "run_all_indexes",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\index_all.py",
+      "summary": "Run all indexes and return summary."
+    },
+    {
+      "type": "function",
+      "name": "show_index_status",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\index_all.py",
+      "summary": "Show what's currently indexed."
+    },
+    {
+      "type": "function",
+      "name": "main",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\index_all.py",
+      "summary": "CLI entry point."
+    },
+    {
+      "type": "module",
+      "name": "learning",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\learning.py",
+      "summary": "Learning System"
+    },
+    {
+      "type": "class",
+      "name": "Feedback",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\learning.py",
+      "summary": "A feedback entry."
+    },
+    {
+      "type": "class",
+      "name": "ErrorPattern",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\learning.py",
+      "summary": "A learned error pattern."
+    },
+    {
+      "type": "class",
+      "name": "Preference",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\learning.py",
+      "summary": "A user preference."
+    },
+    {
+      "type": "class",
+      "name": "LearningStore",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\learning.py",
+      "summary": "Store for learning data."
+    },
+    {
+      "type": "function",
+      "name": "record_feedback",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\learning.py",
+      "summary": "Record feedback."
+    },
+    {
+      "type": "function",
+      "name": "record_error",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\learning.py",
+      "summary": "Record an error pattern."
+    },
+    {
+      "type": "function",
+      "name": "suggest_fix",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\learning.py",
+      "summary": "Get suggested fix."
+    },
+    {
+      "type": "function",
+      "name": "main",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\learning.py",
+      "summary": "CLI entry point."
+    },
+    {
+      "type": "function",
+      "name": "load",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\learning.py",
+      "summary": "Load learning data."
+    },
+    {
+      "type": "function",
+      "name": "save",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\learning.py",
+      "summary": "Save all learning data."
+    },
+    {
+      "type": "function",
+      "name": "record_feedback",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\learning.py",
+      "summary": "Record feedback on an action."
+    },
+    {
+      "type": "function",
+      "name": "record_error",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\learning.py",
+      "summary": "Record an error and its fix."
+    },
+    {
+      "type": "function",
+      "name": "get_preference",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\learning.py",
+      "summary": "Get a preference value."
+    },
+    {
+      "type": "function",
+      "name": "set_preference",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\learning.py",
+      "summary": "Set a preference."
+    },
+    {
+      "type": "function",
+      "name": "suggest_fix",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\learning.py",
+      "summary": "Suggest a fix for an error based on patterns."
+    },
+    {
+      "type": "function",
+      "name": "get_action_success_rate",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\learning.py",
+      "summary": "Get success rate for an action type."
+    },
+    {
+      "type": "function",
+      "name": "get_common_errors",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\learning.py",
+      "summary": "Get most common errors."
+    },
+    {
+      "type": "function",
+      "name": "analyze_patterns",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\learning.py",
+      "summary": "Analyze learning patterns."
+    },
+    {
+      "type": "module",
+      "name": "memory",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\memory.py",
+      "summary": "Persistent Memory System"
+    },
+    {
+      "type": "class",
+      "name": "Memory",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\memory.py",
+      "summary": "A memory item."
+    },
+    {
+      "type": "class",
+      "name": "MemoryStore",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\memory.py",
+      "summary": "Persistent memory storage."
+    },
+    {
+      "type": "function",
+      "name": "get_store",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\memory.py",
+      "summary": "Get or create memory store."
+    },
+    {
+      "type": "function",
+      "name": "remember",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\memory.py",
+      "summary": "Store a memory."
+    },
+    {
+      "type": "function",
+      "name": "recall",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\memory.py",
+      "summary": "Search memories."
+    },
+    {
+      "type": "function",
+      "name": "forget",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\memory.py",
+      "summary": "Forget a memory."
+    },
+    {
+      "type": "function",
+      "name": "main",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\memory.py",
+      "summary": "CLI entry point."
+    },
+    {
+      "type": "function",
+      "name": "load",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\memory.py",
+      "summary": "Load memories from disk."
+    },
+    {
+      "type": "function",
+      "name": "save",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\memory.py",
+      "summary": "Save memories to disk."
+    },
+    {
+      "type": "function",
+      "name": "remember",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\memory.py",
+      "summary": "Store a memory."
+    },
+    {
+      "type": "function",
+      "name": "recall",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\memory.py",
+      "summary": "Search memories semantically."
+    },
+    {
+      "type": "function",
+      "name": "forget",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\memory.py",
+      "summary": "Remove a memory."
+    },
+    {
+      "type": "function",
+      "name": "list_all",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\memory.py",
+      "summary": "List all memories, optionally filtered by tag."
+    },
+    {
+      "type": "function",
+      "name": "get_by_key",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\memory.py",
+      "summary": "Get memory by exact key."
+    },
+    {
+      "type": "function",
+      "name": "export_all",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\memory.py",
+      "summary": "Export all memories as JSON."
+    },
+    {
+      "type": "function",
+      "name": "import_memories",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\memory.py",
+      "summary": "Import memories from JSON."
+    },
+    {
+      "type": "module",
+      "name": "migrate",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\migrate.py",
+      "summary": "Migration Helper"
+    },
+    {
+      "type": "class",
+      "name": "MigrationIssue",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\migrate.py",
+      "summary": "A migration issue or suggestion."
+    },
+    {
+      "type": "class",
+      "name": "MigrationReport",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\migrate.py",
+      "summary": "Complete migration report."
+    },
+    {
+      "type": "class",
+      "name": "DeprecationAnalyzer",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\migrate.py",
+      "summary": "Analyze code for deprecated patterns."
+    },
+    {
+      "type": "class",
+      "name": "SyntaxModernizer",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\migrate.py",
+      "summary": "Suggest syntax modernization."
+    },
+    {
+      "type": "class",
+      "name": "StringFormatAnalyzer",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\migrate.py",
+      "summary": "Check string formatting patterns."
+    },
+    {
+      "type": "function",
+      "name": "analyze_file",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\migrate.py",
+      "summary": "Analyze a file for migration issues."
+    },
+    {
+      "type": "function",
+      "name": "check_migration",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\migrate.py",
+      "summary": "Check project for migration issues."
+    },
+    {
+      "type": "function",
+      "name": "main",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\migrate.py",
+      "summary": "CLI entry point."
+    },
+    {
+      "type": "function",
+      "name": "_version_ge",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\migrate.py",
+      "summary": "Check if target version is >= specified version."
+    },
+    {
+      "type": "module",
+      "name": "model_manager",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\model_manager.py",
+      "summary": "Antigravity Model Priority Manager"
+    },
+    {
+      "type": "module",
+      "name": "multi_repo",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\multi_repo.py",
+      "summary": "Multi-Repo Search"
+    },
+    {
+      "type": "class",
+      "name": "RepoInfo",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\multi_repo.py",
+      "summary": "Information about a registered repository."
+    },
+    {
+      "type": "class",
+      "name": "SearchResult",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\multi_repo.py",
+      "summary": "A search result from multi-repo search."
+    },
+    {
+      "type": "class",
+      "name": "MultiRepoStore",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\multi_repo.py",
+      "summary": "Manage multiple repository indexes."
+    },
+    {
+      "type": "function",
+      "name": "main",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\multi_repo.py",
+      "summary": "CLI entry point."
+    },
+    {
+      "type": "function",
+      "name": "load",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\multi_repo.py",
+      "summary": "Load repo list."
+    },
+    {
+      "type": "function",
+      "name": "save",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\multi_repo.py",
+      "summary": "Save repo list."
+    },
+    {
+      "type": "function",
+      "name": "add_repo",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\multi_repo.py",
+      "summary": "Add a repository to track."
+    },
+    {
+      "type": "function",
+      "name": "remove_repo",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\multi_repo.py",
+      "summary": "Remove a repository."
+    },
+    {
+      "type": "function",
+      "name": "list_repos",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\multi_repo.py",
+      "summary": "List all registered repos."
+    },
+    {
+      "type": "function",
+      "name": "search_all",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\multi_repo.py",
+      "summary": "Search across all repos."
+    },
+    {
+      "type": "function",
+      "name": "find_similar_code",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\multi_repo.py",
+      "summary": "Find similar code across repos."
+    },
+    {
+      "type": "module",
+      "name": "nsync",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\nsync.py",
+      "summary": "MCP NSync Module"
+    },
+    {
+      "type": "class",
+      "name": "NSyncHandler",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\nsync.py",
+      "summary": "Handles file system events and triggers git sync."
+    },
+    {
+      "type": "function",
+      "name": "get_nsync_path",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\nsync.py",
+      "summary": "Determine the local NSync path based on OS."
+    },
+    {
+      "type": "function",
+      "name": "init_project",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\nsync.py",
+      "summary": "Initialize a sub-project within NSync with MCP links."
+    },
+    {
+      "type": "function",
+      "name": "remote_run",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\nsync.py",
+      "summary": "Sync and run a script on wizardpanda."
+    },
+    {
+      "type": "function",
+      "name": "check_status",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\nsync.py",
+      "summary": "Verify connectivity and repo states."
+    },
+    {
+      "type": "function",
+      "name": "setup_hooks",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\nsync.py",
+      "summary": "Install Git hooks for sync automation."
+    },
+    {
+      "type": "function",
+      "name": "sync",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\nsync.py",
+      "summary": "Perform a git sync cycle."
+    },
+    {
+      "type": "function",
+      "name": "ensure_rules_links",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\nsync.py",
+      "summary": "Iterate through all projects and ensure mcp-global-rules is linked."
+    },
+    {
+      "type": "module",
+      "name": "predict",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\predict.py",
+      "summary": "Bug Prediction"
+    },
+    {
+      "type": "class",
+      "name": "BugPrediction",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\predict.py",
+      "summary": "A predicted bug."
+    },
+    {
+      "type": "class",
+      "name": "RiskReport",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\predict.py",
+      "summary": "Risk assessment report."
+    },
+    {
+      "type": "class",
+      "name": "ComplexityAnalyzer",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\predict.py",
+      "summary": "Analyze code complexity."
+    },
+    {
+      "type": "class",
+      "name": "BugPredictor",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\predict.py",
+      "summary": "Predict bugs in code."
+    },
+    {
+      "type": "function",
+      "name": "predict_bugs",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\predict.py",
+      "summary": "Predict bugs in a file."
+    },
+    {
+      "type": "function",
+      "name": "predict_bugs_project",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\predict.py",
+      "summary": "Predict bugs across project."
+    },
+    {
+      "type": "function",
+      "name": "calculate_risk_score",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\predict.py",
+      "summary": "Calculate overall risk score (0-100)."
+    },
+    {
+      "type": "function",
+      "name": "get_risk_report",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\predict.py",
+      "summary": "Generate risk report for project."
+    },
+    {
+      "type": "function",
+      "name": "main",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\predict.py",
+      "summary": "CLI entry point."
+    },
+    {
+      "type": "function",
+      "name": "analyze_function",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\predict.py",
+      "summary": "Analyze a function for bug risks."
+    },
+    {
+      "type": "module",
+      "name": "profile",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\profile.py",
+      "summary": "Performance Profiler"
+    },
+    {
+      "type": "class",
+      "name": "PerformanceIssue",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\profile.py",
+      "summary": "A performance finding."
+    },
+    {
+      "type": "class",
+      "name": "PerformanceReport",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\profile.py",
+      "summary": "Complete performance analysis report."
+    },
+    {
+      "type": "class",
+      "name": "ComplexityAnalyzer",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\profile.py",
+      "summary": "Calculate cyclomatic complexity."
+    },
+    {
+      "type": "class",
+      "name": "PerformanceAnalyzer",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\profile.py",
+      "summary": "Analyze code for performance issues."
+    },
+    {
+      "type": "class",
+      "name": "MemoryAnalyzer",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\profile.py",
+      "summary": "Analyze code for memory issues."
+    },
+    {
+      "type": "class",
+      "name": "AsyncAnalyzer",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\profile.py",
+      "summary": "Analyze async code for issues."
+    },
+    {
+      "type": "function",
+      "name": "analyze_file",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\profile.py",
+      "summary": "Analyze a single file for performance issues."
+    },
+    {
+      "type": "function",
+      "name": "analyze_project",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\profile.py",
+      "summary": "Analyze project for performance issues."
+    },
+    {
+      "type": "function",
+      "name": "main",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\profile.py",
+      "summary": "CLI entry point."
+    },
+    {
+      "type": "function",
+      "name": "_check_nested_loops",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\profile.py",
+      "summary": "Detect nested loops (O(n^2) or worse)."
+    },
+    {
+      "type": "function",
+      "name": "_check_list_comprehension",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\profile.py",
+      "summary": "Check for expensive list comprehensions."
+    },
+    {
+      "type": "function",
+      "name": "_check_expensive_calls",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\profile.py",
+      "summary": "Check for expensive function calls."
+    },
+    {
+      "type": "module",
+      "name": "record",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\record.py",
+      "summary": "Context Recorder"
+    },
+    {
+      "type": "function",
+      "name": "get_git_status",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\record.py",
+      "summary": "Get concise git status."
+    },
+    {
+      "type": "function",
+      "name": "get_git_diff_stat",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\record.py",
+      "summary": "Get git diff stats."
+    },
+    {
+      "type": "function",
+      "name": "analyze_diff",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\record.py",
+      "summary": "Analyze the staged diff for semantic meaning."
+    },
+    {
+      "type": "function",
+      "name": "record_snapshot",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\record.py",
+      "summary": "Record a context snapshot of current state."
+    },
+    {
+      "type": "function",
+      "name": "main",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\record.py",
+      "summary": "CLI entry point."
+    },
+    {
+      "type": "module",
+      "name": "refactor",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\refactor.py",
+      "summary": "Auto-Refactorer"
+    },
+    {
+      "type": "class",
+      "name": "RefactoringSuggestion",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\refactor.py",
+      "summary": "A suggested refactoring."
+    },
+    {
+      "type": "class",
+      "name": "RefactoringReport",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\refactor.py",
+      "summary": "Complete refactoring report."
+    },
+    {
+      "type": "class",
+      "name": "LongFunctionDetector",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\refactor.py",
+      "summary": "Detect functions that are too long."
+    },
+    {
+      "type": "class",
+      "name": "ComplexityDetector",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\refactor.py",
+      "summary": "Detect overly complex code."
+    },
+    {
+      "type": "class",
+      "name": "DuplicateCodeDetector",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\refactor.py",
+      "summary": "Detect duplicate code blocks."
+    },
+    {
+      "type": "class",
+      "name": "NamingConventionChecker",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\refactor.py",
+      "summary": "Check naming conventions."
+    },
+    {
+      "type": "class",
+      "name": "ParameterCountChecker",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\refactor.py",
+      "summary": "Check for functions with too many parameters."
+    },
+    {
+      "type": "function",
+      "name": "analyze_file",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\refactor.py",
+      "summary": "Analyze a single file for refactoring opportunities."
+    },
+    {
+      "type": "function",
+      "name": "analyze_project",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\refactor.py",
+      "summary": "Analyze project for refactoring opportunities."
+    },
+    {
+      "type": "function",
+      "name": "main",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\refactor.py",
+      "summary": "CLI entry point."
+    },
+    {
+      "type": "function",
+      "name": "analyze_file",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\refactor.py",
+      "summary": "Analyze file for duplicate blocks."
+    },
+    {
+      "type": "function",
+      "name": "finalize",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\refactor.py",
+      "summary": "Generate issues for duplicates."
+    },
+    {
+      "type": "module",
+      "name": "review",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\review.py",
+      "summary": "Code Review Automation"
+    },
+    {
+      "type": "class",
+      "name": "Severity",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\review.py",
+      "summary": "Severity level for review issues."
+    },
+    {
+      "type": "class",
+      "name": "ReviewIssue",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\review.py",
+      "summary": "A single code review issue."
+    },
+    {
+      "type": "class",
+      "name": "ReviewReport",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\review.py",
+      "summary": "Complete code review report."
+    },
+    {
+      "type": "class",
+      "name": "ReviewChecks",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\review.py",
+      "summary": "Collection of review check functions."
+    },
+    {
+      "type": "function",
+      "name": "review_file",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\review.py",
+      "summary": "Review a single Python file."
+    },
+    {
+      "type": "function",
+      "name": "review_project",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\review.py",
+      "summary": "Review a Python project."
+    },
+    {
+      "type": "function",
+      "name": "format_report_console",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\review.py",
+      "summary": "Print report to console."
+    },
+    {
+      "type": "function",
+      "name": "format_report_markdown",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\review.py",
+      "summary": "Format report as Markdown."
+    },
+    {
+      "type": "function",
+      "name": "main",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\review.py",
+      "summary": "CLI entry point."
+    },
+    {
+      "type": "function",
+      "name": "check_docstrings",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\review.py",
+      "summary": "Check for missing docstrings."
+    },
+    {
+      "type": "function",
+      "name": "check_type_hints",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\review.py",
+      "summary": "Check for missing type hints."
+    },
+    {
+      "type": "function",
+      "name": "check_todo_fixme",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\review.py",
+      "summary": "Check for TODO/FIXME comments."
+    },
+    {
+      "type": "function",
+      "name": "check_naming_conventions",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\review.py",
+      "summary": "Check naming conventions."
+    },
+    {
+      "type": "function",
+      "name": "check_file_length",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\review.py",
+      "summary": "Check file length."
+    },
+    {
+      "type": "function",
+      "name": "check_function_length",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\review.py",
+      "summary": "Check function length."
+    },
+    {
+      "type": "function",
+      "name": "check_unused_imports",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\review.py",
+      "summary": "Check for potentially unused imports."
+    },
+    {
+      "type": "function",
+      "name": "check_security_issues",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\review.py",
+      "summary": "Check for common security issues."
+    },
+    {
+      "type": "module",
+      "name": "security",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\security.py",
+      "summary": "Security Auditor"
+    },
+    {
+      "type": "class",
+      "name": "SecurityIssue",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\security.py",
+      "summary": "A security finding."
+    },
+    {
+      "type": "class",
+      "name": "SecurityReport",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\security.py",
+      "summary": "Complete security audit report."
+    },
+    {
+      "type": "class",
+      "name": "SecurityAnalyzer",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\security.py",
+      "summary": "Analyze code for security issues."
+    },
+    {
+      "type": "function",
+      "name": "check_secrets",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\security.py",
+      "summary": "Check for hardcoded secrets."
+    },
+    {
+      "type": "function",
+      "name": "check_sql_injection",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\security.py",
+      "summary": "Check for SQL injection patterns."
+    },
+    {
+      "type": "function",
+      "name": "audit_file",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\security.py",
+      "summary": "Audit a single file for security issues."
+    },
+    {
+      "type": "function",
+      "name": "security_audit",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\security.py",
+      "summary": "Perform security audit on a project."
+    },
+    {
+      "type": "function",
+      "name": "main",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\security.py",
+      "summary": "CLI entry point."
+    },
+    {
+      "type": "module",
+      "name": "setup",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\setup.py",
+      "summary": "MCP Setup Commands"
+    },
+    {
+      "type": "function",
+      "name": "install_git_hooks",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\setup.py",
+      "summary": "Install MCP git hooks to a project."
+    },
+    {
+      "type": "function",
+      "name": "install_shell_profile",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\setup.py",
+      "summary": "Install shell startup script to user profile."
+    },
+    {
+      "type": "function",
+      "name": "install_ci_cd",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\setup.py",
+      "summary": "Auto-create CI/CD if not exists."
+    },
+    {
+      "type": "function",
+      "name": "full_setup",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\setup.py",
+      "summary": "Run full MCP setup."
+    },
+    {
+      "type": "function",
+      "name": "main",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\setup.py",
+      "summary": "CLI entry point."
+    },
+    {
+      "type": "module",
+      "name": "summarize",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\summarize.py",
+      "summary": "Codebase Summarizer"
+    },
+    {
+      "type": "class",
+      "name": "CodebaseSummary",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\summarize.py",
+      "summary": "Summary of an entire codebase."
+    },
+    {
+      "type": "function",
+      "name": "count_lines",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\summarize.py",
+      "summary": "Count non-empty lines in a file."
+    },
+    {
+      "type": "function",
+      "name": "build_directory_tree",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\summarize.py",
+      "summary": "Build a hierarchical directory tree structure."
+    },
+    {
+      "type": "function",
+      "name": "format_tree_ascii",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\summarize.py",
+      "summary": "Format directory tree as ASCII art."
+    },
+    {
+      "type": "function",
+      "name": "detect_patterns",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\summarize.py",
+      "summary": "Detect common patterns in the codebase."
+    },
+    {
+      "type": "function",
+      "name": "find_entry_points",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\summarize.py",
+      "summary": "Find likely entry points in the codebase."
+    },
+    {
+      "type": "function",
+      "name": "extract_external_deps",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\summarize.py",
+      "summary": "Extract external dependencies from imports."
+    },
+    {
+      "type": "function",
+      "name": "summarize_codebase",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\summarize.py",
+      "summary": "Generate a comprehensive summary of a codebase."
+    },
+    {
+      "type": "function",
+      "name": "format_summary_markdown",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\summarize.py",
+      "summary": "Format summary as Markdown."
+    },
+    {
+      "type": "function",
+      "name": "main",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\summarize.py",
+      "summary": "CLI entry point."
+    },
+    {
+      "type": "module",
+      "name": "telegram_bridge",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\telegram_bridge.py",
+      "summary": "Telegram C2 Bridge"
+    },
+    {
+      "type": "module",
+      "name": "test_gen",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\test_gen.py",
+      "summary": "Auto-Test Implementation Generator"
+    },
+    {
+      "type": "class",
+      "name": "FunctionSignature",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\test_gen.py",
+      "summary": "Function signature info."
+    },
+    {
+      "type": "class",
+      "name": "SignatureExtractor",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\test_gen.py",
+      "summary": "Extract function signatures."
+    },
+    {
+      "type": "function",
+      "name": "get_test_value",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\test_gen.py",
+      "summary": "Get example test value for a type."
+    },
+    {
+      "type": "function",
+      "name": "get_assertion",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\test_gen.py",
+      "summary": "Get appropriate assertion for return type."
+    },
+    {
+      "type": "function",
+      "name": "generate_test_impl",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\test_gen.py",
+      "summary": "Generate full test implementation for a function."
+    },
+    {
+      "type": "function",
+      "name": "generate_edge_case_tests",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\test_gen.py",
+      "summary": "Generate edge case tests."
+    },
+    {
+      "type": "function",
+      "name": "generate_test_file",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\test_gen.py",
+      "summary": "Generate full test file for a module."
+    },
+    {
+      "type": "function",
+      "name": "main",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\test_gen.py",
+      "summary": "CLI entry point."
+    },
+    {
+      "type": "module",
+      "name": "todo_index",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\todo_index.py",
+      "summary": "TODO/FIXME Index"
+    },
+    {
+      "type": "class",
+      "name": "TodoItem",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\todo_index.py",
+      "summary": "A TODO/FIXME item."
+    },
+    {
+      "type": "function",
+      "name": "detect_priority",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\todo_index.py",
+      "summary": "Detect priority from type and message."
+    },
+    {
+      "type": "function",
+      "name": "scan_file",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\todo_index.py",
+      "summary": "Scan a file for TODOs."
+    },
+    {
+      "type": "function",
+      "name": "scan_project",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\todo_index.py",
+      "summary": "Scan entire project for TODOs."
+    },
+    {
+      "type": "function",
+      "name": "group_by_priority",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\todo_index.py",
+      "summary": "Group TODOs by priority."
+    },
+    {
+      "type": "function",
+      "name": "group_by_type",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\todo_index.py",
+      "summary": "Group TODOs by type."
+    },
+    {
+      "type": "function",
+      "name": "index_todos",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\todo_index.py",
+      "summary": "Build TODO index and save to disk."
+    },
+    {
+      "type": "function",
+      "name": "main",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\todo_index.py",
+      "summary": "CLI entry point."
+    },
+    {
+      "type": "module",
+      "name": "treesitter_utils",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\treesitter_utils.py",
+      "summary": "Tree-sitter Utilities"
+    },
+    {
+      "type": "class",
+      "name": "CodeItem",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\treesitter_utils.py",
+      "summary": "A code item (function, class, etc)."
+    },
+    {
+      "type": "class",
+      "name": "ParsedFile",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\treesitter_utils.py",
+      "summary": "Result of parsing a file."
+    },
+    {
+      "type": "function",
+      "name": "detect_language",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\treesitter_utils.py",
+      "summary": "Detect language from file extension."
+    },
+    {
+      "type": "function",
+      "name": "get_parser",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\treesitter_utils.py",
+      "summary": "Get or create parser for language."
+    },
+    {
+      "type": "function",
+      "name": "parse_source",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\treesitter_utils.py",
+      "summary": "Parse source code into tree."
+    },
+    {
+      "type": "function",
+      "name": "parse_file",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\treesitter_utils.py",
+      "summary": "Parse a source file."
+    },
+    {
+      "type": "function",
+      "name": "_parse_python_fallback",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\treesitter_utils.py",
+      "summary": "Fallback parser for Python using stdlib ast."
+    },
+    {
+      "type": "function",
+      "name": "extract_functions",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\treesitter_utils.py",
+      "summary": "Extract functions from tree."
+    },
+    {
+      "type": "function",
+      "name": "extract_classes",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\treesitter_utils.py",
+      "summary": "Extract classes from tree."
+    },
+    {
+      "type": "function",
+      "name": "extract_imports",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\treesitter_utils.py",
+      "summary": "Extract imports from tree."
+    },
+    {
+      "type": "function",
+      "name": "_get_node_name",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\treesitter_utils.py",
+      "summary": "Extract name from node."
+    },
+    {
+      "type": "function",
+      "name": "_get_signature",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\treesitter_utils.py",
+      "summary": "Get function/method signature."
+    },
+    {
+      "type": "function",
+      "name": "walk_tree",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\treesitter_utils.py",
+      "summary": "Walk entire tree calling callback on each node."
+    },
+    {
+      "type": "function",
+      "name": "find_nodes",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\treesitter_utils.py",
+      "summary": "Find all nodes of given types."
+    },
+    {
+      "type": "function",
+      "name": "get_node_text",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\treesitter_utils.py",
+      "summary": "Get text content of node."
+    },
+    {
+      "type": "function",
+      "name": "supported_languages",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\treesitter_utils.py",
+      "summary": "Get list of supported languages."
+    },
+    {
+      "type": "function",
+      "name": "is_tree_sitter_available",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\treesitter_utils.py",
+      "summary": "Check if tree-sitter is available."
+    },
+    {
+      "type": "function",
+      "name": "main",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\treesitter_utils.py",
+      "summary": "CLI entry point."
+    },
+    {
+      "type": "module",
+      "name": "trigger_loop",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\trigger_loop.py",
+      "summary": "Auto-Dev Loop Trigger"
+    },
+    {
+      "type": "function",
+      "name": "main",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\trigger_loop.py",
+      "summary": "Check config and trigger loop if enabled."
+    },
+    {
+      "type": "module",
+      "name": "utils",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\utils.py",
+      "summary": "MCP Global Rules - Shared Utilities"
+    },
+    {
+      "type": "class",
+      "name": "FunctionInfo",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\utils.py",
+      "summary": "Information about a Python function."
+    },
+    {
+      "type": "class",
+      "name": "ClassInfo",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\utils.py",
+      "summary": "Information about a Python class."
+    },
+    {
+      "type": "class",
+      "name": "ModuleInfo",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\utils.py",
+      "summary": "Information about a Python module."
+    },
+    {
+      "type": "class",
+      "name": "GitCommit",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\utils.py",
+      "summary": "Information about a git commit."
+    },
+    {
+      "type": "function",
+      "name": "find_python_files",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\utils.py",
+      "summary": "Find all Python files in a directory tree."
+    },
+    {
+      "type": "function",
+      "name": "find_project_root",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\utils.py",
+      "summary": "Find the project root by looking for common markers."
+    },
+    {
+      "type": "function",
+      "name": "get_package_root",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\utils.py",
+      "summary": "Get the absolute path to the mcp-global-rules package directory."
+    },
+    {
+      "type": "function",
+      "name": "parse_file",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\utils.py",
+      "summary": "Parse a Python file into an AST."
+    },
+    {
+      "type": "function",
+      "name": "get_type_annotation",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\utils.py",
+      "summary": "Convert an AST type annotation to a string."
+    },
+    {
+      "type": "function",
+      "name": "extract_function_info",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\utils.py",
+      "summary": "Extract information from a function definition node."
+    },
+    {
+      "type": "function",
+      "name": "extract_class_info",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\utils.py",
+      "summary": "Extract information from a class definition node."
+    },
+    {
+      "type": "function",
+      "name": "analyze_module",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\utils.py",
+      "summary": "Analyze a Python module and extract all information."
+    },
+    {
+      "type": "function",
+      "name": "run_git_command",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\utils.py",
+      "summary": "Run a git command and return output."
+    },
+    {
+      "type": "function",
+      "name": "get_git_log",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\utils.py",
+      "summary": "Get recent git commits."
+    },
+    {
+      "type": "function",
+      "name": "get_changed_files",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\utils.py",
+      "summary": "Get list of files changed since a commit."
+    },
+    {
+      "type": "function",
+      "name": "get_staged_files",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\utils.py",
+      "summary": "Get list of staged files."
+    },
+    {
+      "type": "function",
+      "name": "format_as_json",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\utils.py",
+      "summary": "Format data as JSON string."
+    },
+    {
+      "type": "function",
+      "name": "format_as_markdown_table",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\utils.py",
+      "summary": "Format data as a Markdown table."
+    },
+    {
+      "type": "function",
+      "name": "get_mcp_data_dir",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\utils.py",
+      "summary": "Find the .mcp directory."
+    },
+    {
+      "type": "function",
+      "name": "record_to_memory",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\utils.py",
+      "summary": "Record an entry to MCP memory."
+    },
+    {
+      "type": "class",
+      "name": "Console",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\utils.py",
+      "summary": "Simple console output with colors."
+    },
+    {
+      "type": "function",
+      "name": "_supports_color",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\utils.py",
+      "summary": "Check if terminal supports color."
+    },
+    {
+      "type": "function",
+      "name": "_color",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\utils.py",
+      "summary": "Apply color to text."
+    },
+    {
+      "type": "function",
+      "name": "info",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\utils.py",
+      "summary": "Print info message."
+    },
+    {
+      "type": "function",
+      "name": "ok",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\utils.py",
+      "summary": "Print success message."
+    },
+    {
+      "type": "function",
+      "name": "warn",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\utils.py",
+      "summary": "Print warning message."
+    },
+    {
+      "type": "function",
+      "name": "fail",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\utils.py",
+      "summary": "Print failure message."
+    },
+    {
+      "type": "function",
+      "name": "header",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\utils.py",
+      "summary": "Print header."
+    },
+    {
+      "type": "module",
+      "name": "vector_store",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\vector_store.py",
+      "summary": "Vector Store"
+    },
+    {
+      "type": "class",
+      "name": "CodeChunk",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\vector_store.py",
+      "summary": "A chunk of code with metadata."
+    },
+    {
+      "type": "class",
+      "name": "SearchResult",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\vector_store.py",
+      "summary": "A search result."
+    },
+    {
+      "type": "class",
+      "name": "VectorStore",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\vector_store.py",
+      "summary": "Local vector store for semantic code search."
+    },
+    {
+      "type": "function",
+      "name": "main",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\vector_store.py",
+      "summary": "CLI entry point."
+    },
+    {
+      "type": "function",
+      "name": "index_codebase",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\vector_store.py",
+      "summary": "Index all code files in directory."
+    },
+    {
+      "type": "function",
+      "name": "_extract_chunks",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\vector_store.py",
+      "summary": "Extract code chunks from file."
+    },
+    {
+      "type": "function",
+      "name": "_build_faiss_index",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\vector_store.py",
+      "summary": "Build FAISS index from embeddings."
+    },
+    {
+      "type": "function",
+      "name": "search",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\vector_store.py",
+      "summary": "Search for code matching query."
+    },
+    {
+      "type": "function",
+      "name": "_faiss_search",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\vector_store.py",
+      "summary": "Search using FAISS."
+    },
+    {
+      "type": "function",
+      "name": "_brute_force_search",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\vector_store.py",
+      "summary": "Brute force cosine similarity search."
+    },
+    {
+      "type": "function",
+      "name": "save",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\vector_store.py",
+      "summary": "Save index to disk."
+    },
+    {
+      "type": "function",
+      "name": "load",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\vector_store.py",
+      "summary": "Load index from disk."
+    },
+    {
+      "type": "function",
+      "name": "update",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\vector_store.py",
+      "summary": "Update index for changed files."
+    },
+    {
+      "type": "module",
+      "name": "warm",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\warm.py",
+      "summary": "Warm-Up Command"
+    },
+    {
+      "type": "function",
+      "name": "warm_all",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\warm.py",
+      "summary": "Pre-warm all indexes and caches."
+    },
+    {
+      "type": "function",
+      "name": "main",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\warm.py",
+      "summary": "CLI entry point."
+    },
+    {
+      "type": "module",
+      "name": "watcher",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\watcher.py",
+      "summary": "File System Watcher"
+    },
+    {
+      "type": "class",
+      "name": "WatcherState",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\watcher.py",
+      "summary": "State of the file watcher."
+    },
+    {
+      "type": "class",
+      "name": "CodeChangeHandler",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\watcher.py",
+      "summary": "Handles file changes for indexing."
+    },
+    {
+      "type": "function",
+      "name": "poll_watch",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\watcher.py",
+      "summary": "Polling-based file watcher (fallback)."
+    },
+    {
+      "type": "function",
+      "name": "watchdog_watch",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\watcher.py",
+      "summary": "Watchdog-based efficient file watching."
+    },
+    {
+      "type": "function",
+      "name": "start_watch",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\watcher.py",
+      "summary": "Start the file watcher."
+    },
+    {
+      "type": "function",
+      "name": "stop_watch",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\watcher.py",
+      "summary": "Stop the file watcher."
+    },
+    {
+      "type": "function",
+      "name": "get_watch_status",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\watcher.py",
+      "summary": "Get watcher PID if running."
+    },
+    {
+      "type": "function",
+      "name": "main",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\watcher.py",
+      "summary": "CLI entry point."
+    },
+    {
+      "type": "function",
+      "name": "on_modified",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\watcher.py",
+      "summary": "Handle file modification."
+    },
+    {
+      "type": "function",
+      "name": "_get_file_hash",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\watcher.py",
+      "summary": "Get hash of file contents."
+    },
+    {
+      "type": "function",
+      "name": "process_pending",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\watcher.py",
+      "summary": "Process pending files if debounce period passed."
+    },
+    {
+      "type": "class",
+      "name": "WatchdogHandler",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\watcher.py",
+      "summary": "Watchdog event handler."
+    },
+    {
+      "type": "module",
+      "name": "__init__",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\__init__.py",
+      "summary": "MCP Global Rules - Scripts Package"
+    },
+    {
+      "type": "module",
+      "name": "test_scripts",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\tests\\test_scripts.py",
+      "summary": "Tests for MCP Global Rules Scripts"
+    },
+    {
+      "type": "function",
+      "name": "temp_project",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\tests\\test_scripts.py",
+      "summary": "Create a temporary project directory with sample files."
+    },
+    {
+      "type": "class",
+      "name": "TestUtils",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\tests\\test_scripts.py",
+      "summary": "Tests for utils.py module."
+    },
+    {
+      "type": "class",
+      "name": "TestDeadCode",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\tests\\test_scripts.py",
+      "summary": "Tests for dead_code.py module."
+    },
+    {
+      "type": "class",
+      "name": "TestAutoDocs",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\tests\\test_scripts.py",
+      "summary": "Tests for auto_docs.py module."
+    },
+    {
+      "type": "class",
+      "name": "TestAutoTest",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\tests\\test_scripts.py",
+      "summary": "Tests for auto_test.py module."
+    },
+    {
+      "type": "class",
+      "name": "TestSummarize",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\tests\\test_scripts.py",
+      "summary": "Tests for summarize.py module."
+    },
+    {
+      "type": "class",
+      "name": "TestChangelog",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\tests\\test_scripts.py",
+      "summary": "Tests for changelog.py module."
+    },
+    {
+      "type": "class",
+      "name": "TestDeps",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\tests\\test_scripts.py",
+      "summary": "Tests for deps.py module."
+    },
+    {
+      "type": "class",
+      "name": "TestReview",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\tests\\test_scripts.py",
+      "summary": "Tests for review.py module."
+    },
+    {
+      "type": "function",
+      "name": "test_find_python_files",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\tests\\test_scripts.py",
+      "summary": "Test finding Python files."
+    },
+    {
+      "type": "function",
+      "name": "test_parse_file",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\tests\\test_scripts.py",
+      "summary": "Test parsing Python file."
+    },
+    {
+      "type": "function",
+      "name": "test_analyze_module",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\tests\\test_scripts.py",
+      "summary": "Test analyzing module."
+    },
+    {
+      "type": "function",
+      "name": "test_format_as_markdown_table",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\tests\\test_scripts.py",
+      "summary": "Test markdown table formatting."
+    },
+    {
+      "type": "function",
+      "name": "test_detect_dead_code",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\tests\\test_scripts.py",
+      "summary": "Test dead code detection."
+    },
+    {
+      "type": "function",
+      "name": "test_report_to_markdown",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\tests\\test_scripts.py",
+      "summary": "Test report conversion to markdown."
+    },
+    {
+      "type": "function",
+      "name": "test_analyze_file_for_docstrings",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\tests\\test_scripts.py",
+      "summary": "Test docstring analysis."
+    },
+    {
+      "type": "function",
+      "name": "test_generate_function_docstring",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\tests\\test_scripts.py",
+      "summary": "Test docstring generation."
+    },
+    {
+      "type": "function",
+      "name": "test_generate_test_function",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\tests\\test_scripts.py",
+      "summary": "Test test function generation."
+    },
+    {
+      "type": "function",
+      "name": "test_summarize_codebase",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\tests\\test_scripts.py",
+      "summary": "Test codebase summarization."
+    },
+    {
+      "type": "function",
+      "name": "test_format_summary_markdown",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\tests\\test_scripts.py",
+      "summary": "Test summary markdown formatting."
+    },
+    {
+      "type": "function",
+      "name": "test_parse_commit_message",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\tests\\test_scripts.py",
+      "summary": "Test commit message parsing."
+    },
+    {
+      "type": "function",
+      "name": "test_parse_commit_message_breaking",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\tests\\test_scripts.py",
+      "summary": "Test breaking change detection."
+    },
+    {
+      "type": "function",
+      "name": "test_analyze_dependencies",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\tests\\test_scripts.py",
+      "summary": "Test dependency analysis."
+    },
+    {
+      "type": "function",
+      "name": "test_format_report_markdown",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\tests\\test_scripts.py",
+      "summary": "Test dependency report markdown."
+    },
+    {
+      "type": "function",
+      "name": "test_review_file",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\tests\\test_scripts.py",
+      "summary": "Test file review."
+    },
+    {
+      "type": "function",
+      "name": "test_review_project",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\tests\\test_scripts.py",
+      "summary": "Test project review."
+    },
+    {
+      "type": "function",
+      "name": "test_security_check",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\tests\\test_scripts.py",
+      "summary": "Test security issue detection."
+    },
+    {
+      "type": "module",
+      "name": "__init__",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\tests\\__init__.py",
+      "summary": "Tests package."
+    }
+  ]
+}

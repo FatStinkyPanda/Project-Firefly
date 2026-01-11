@@ -1,0 +1,381 @@
+{
+  "commit_count": 41,
+  "authors": {
+    "Daniel Anthony Bissey": 1,
+    "Singularity Labs": 27,
+    "ishan dutta": 13
+  },
+  "files": {
+    "CONTRIBUTING.md": [
+      "ccf8964",
+      "622ac06"
+    ],
+    "README.md": [
+      "ccf8964",
+      "358b7a6",
+      "87e6538",
+      "a38f791",
+      "b973b00",
+      "3b7ae68",
+      "98fdded",
+      "c12724e",
+      "591343e",
+      "064af25",
+      "8f50bb1",
+      "cee5483",
+      "622ac06",
+      "106ff78",
+      "8731d33",
+      "8ba379b",
+      "ee49192",
+      "6655603",
+      "e5ef487",
+      "5675680",
+      "568889b",
+      "6a2956e"
+    ],
+    "README.zh-CN.md": [
+      "ccf8964",
+      "29a9b0d"
+    ],
+    "ROADMAP.md": [
+      "ccf8964",
+      "ac0a5bb"
+    ],
+    "mitmserver/README.md": [
+      "ccf8964",
+      "0f3e958",
+      "5638a9a"
+    ],
+    ".github/ISSUE_TEMPLATE/bug_report.md": [
+      "da502a3"
+    ],
+    ".github/ISSUE_TEMPLATE/feature_request.md": [
+      "cdf282e"
+    ],
+    ".github/FUNDING.yml": [
+      "2d43a49"
+    ],
+    ".github/assets/google-antigravity-logo.svg": [
+      "3b7ae68"
+    ],
+    "README.md.bak": [
+      "3b7ae68",
+      "98fdded"
+    ],
+    "mitmserver/package-lock.json": [
+      "9840ee0",
+      "5638a9a"
+    ],
+    "mitmserver/package-lock.json.bak": [
+      "9840ee0",
+      "0f3e958"
+    ],
+    "@mitmserver/README.md": [
+      "ff7be6a",
+      "469449b"
+    ],
+    "@mitmserver/package-lock.json": [
+      "ff7be6a",
+      "469449b"
+    ],
+    "@mitmserver/package.json": [
+      "ff7be6a",
+      "469449b"
+    ],
+    "@mitmserver/server.js": [
+      "ff7be6a",
+      "469449b"
+    ],
+    "mitmserver/package.json": [
+      "5638a9a"
+    ],
+    "mitmserver/server.js": [
+      "5638a9a"
+    ],
+    ".gemini/settings.json": [
+      "8d0b5b6",
+      "f05586f",
+      "5496955"
+    ],
+    ".gitignore": [
+      "bbbf655",
+      "b9f54ac",
+      "10f4961",
+      "6a2956e"
+    ],
+    ".gemini/gemini.prompt": [
+      "5496955"
+    ],
+    "LICENSE": [
+      "d451e2a"
+    ],
+    ".github/assets/logo.svg": [
+      "88e6076",
+      "570656c"
+    ],
+    ".github/assets/long_logo.svg": [
+      "88e6076"
+    ],
+    ".github/assets/shorter_logo.svg": [
+      "88e6076"
+    ],
+    ".github/assets/short_logo.svg": [
+      "6655603"
+    ],
+    ".github/assets": [
+      "e5ef487"
+    ],
+    "gemini.prompt": [
+      "568889b"
+    ]
+  },
+  "commits": [
+    {
+      "hash": "ccf8964",
+      "author": "Daniel Anthony Bissey",
+      "date": "2026-01-10T21:59:14-07:00",
+      "message": "Rename project to Project-Firefly"
+    },
+    {
+      "hash": "29a9b0d",
+      "author": "Singularity Labs",
+      "date": "2025-12-08T08:52:43+05:30",
+      "message": ".\\README.zh-CN.md"
+    },
+    {
+      "hash": "358b7a6",
+      "author": "Singularity Labs",
+      "date": "2025-12-08T08:47:00+05:30",
+      "message": "CodeMender"
+    },
+    {
+      "hash": "87e6538",
+      "author": "ishan dutta",
+      "date": "2025-12-06T02:25:50+05:30",
+      "message": "Update README.md"
+    },
+    {
+      "hash": "a38f791",
+      "author": "ishan dutta",
+      "date": "2025-12-06T02:23:43+05:30",
+      "message": "Update README.md"
+    },
+    {
+      "hash": "da502a3",
+      "author": "ishan dutta",
+      "date": "2025-12-02T11:10:42+05:30",
+      "message": "Update issue templates"
+    },
+    {
+      "hash": "cdf282e",
+      "author": "ishan dutta",
+      "date": "2025-12-02T11:10:23+05:30",
+      "message": "Update issue templates"
+    },
+    {
+      "hash": "2d43a49",
+      "author": "ishan dutta",
+      "date": "2025-12-02T11:10:01+05:30",
+      "message": "Create FUNDING.yml"
+    },
+    {
+      "hash": "b973b00",
+      "author": "ishan dutta",
+      "date": "2025-11-29T22:08:56+05:30",
+      "message": "Update README.md"
+    },
+    {
+      "hash": "3b7ae68",
+      "author": "Singularity Labs",
+      "date": "2025-11-29T13:16:56+05:30",
+      "message": "cleanup"
+    },
+    {
+      "hash": "98fdded",
+      "author": "Singularity Labs",
+      "date": "2025-11-29T13:09:45+05:30",
+      "message": "minor README changes"
+    },
+    {
+      "hash": "c12724e",
+      "author": "ishan dutta",
+      "date": "2025-11-29T12:43:15+05:30",
+      "message": "Update README.md"
+    },
+    {
+      "hash": "591343e",
+      "author": "ishan dutta",
+      "date": "2025-11-29T12:41:59+05:30",
+      "message": "Update README.md"
+    },
+    {
+      "hash": "064af25",
+      "author": "ishan dutta",
+      "date": "2025-11-26T12:08:07+05:30",
+      "message": "Update README.md"
+    },
+    {
+      "hash": "8f50bb1",
+      "author": "ishan dutta",
+      "date": "2025-11-26T12:05:23+05:30",
+      "message": "Update README.md"
+    },
+    {
+      "hash": "9840ee0",
+      "author": "Singularity Labs",
+      "date": "2025-11-25T08:53:19+05:30",
+      "message": "renaming"
+    },
+    {
+      "hash": "0f3e958",
+      "author": "Singularity Labs",
+      "date": "2025-11-25T08:46:26+05:30",
+      "message": "minor_docs"
+    },
+    {
+      "hash": "ff7be6a",
+      "author": "Singularity Labs",
+      "date": "2025-11-25T08:37:29+05:30",
+      "message": "renaming"
+    },
+    {
+      "hash": "5638a9a",
+      "author": "Singularity Labs",
+      "date": "2025-11-25T08:36:29+05:30",
+      "message": "refactor: rename @mitmserver to mitmserver"
+    },
+    {
+      "hash": "469449b",
+      "author": "Singularity Labs",
+      "date": "2025-11-25T08:17:56+05:30",
+      "message": "feat: add mitm server for gateway development"
+    },
+    {
+      "hash": "cee5483",
+      "author": "Singularity Labs",
+      "date": "2025-11-25T05:51:06+05:30",
+      "message": "feat: add best of all worlds feature"
+    },
+    {
+      "hash": "8d0b5b6",
+      "author": "Singularity Labs",
+      "date": "2025-11-25T05:43:42+05:30",
+      "message": "minor_settings"
+    },
+    {
+      "hash": "bbbf655",
+      "author": "Singularity Labs",
+      "date": "2025-11-25T05:38:45+05:30",
+      "message": "chore: update .gitignore"
+    },
+    {
+      "hash": "b9f54ac",
+      "author": "Singularity Labs",
+      "date": "2025-11-25T05:38:17+05:30",
+      "message": "docs: add CONTRIBUTING.md"
+    },
+    {
+      "hash": "622ac06",
+      "author": "Singularity Labs",
+      "date": "2025-11-25T05:35:07+05:30",
+      "message": "minor_fix"
+    },
+    {
+      "hash": "f05586f",
+      "author": "Singularity Labs",
+      "date": "2025-11-25T05:24:16+05:30",
+      "message": ".gemini"
+    },
+    {
+      "hash": "5496955",
+      "author": "Singularity Labs",
+      "date": "2025-11-25T05:19:17+05:30",
+      "message": ".gemini"
+    },
+    {
+      "hash": "d451e2a",
+      "author": "Singularity Labs",
+      "date": "2025-11-25T05:10:13+05:30",
+      "message": "\\\"Docs: Add disclaimer to README and create MIT LICENSE file\\\""
+    },
+    {
+      "hash": "106ff78",
+      "author": "Singularity Labs",
+      "date": "2025-11-25T05:07:00+05:30",
+      "message": "minor"
+    },
+    {
+      "hash": "88e6076",
+      "author": "Singularity Labs",
+      "date": "2025-11-25T03:42:41+05:30",
+      "message": "minor_asset_change"
+    },
+    {
+      "hash": "8731d33",
+      "author": "Singularity Labs",
+      "date": "2025-11-25T03:38:03+05:30",
+      "message": "docs(readme): Add Grok and Qwen to LLM examples"
+    },
+    {
+      "hash": "8ba379b",
+      "author": "Singularity Labs",
+      "date": "2025-11-25T03:33:29+05:30",
+      "message": "docs(readme): Emphasize Universal LLM Gateway as core feature"
+    },
+    {
+      "hash": "ee49192",
+      "author": "Singularity Labs",
+      "date": "2025-11-24T17:19:23+05:30",
+      "message": "detailed_roadmap"
+    },
+    {
+      "hash": "ac0a5bb",
+      "author": "Singularity Labs",
+      "date": "2025-11-24T17:11:06+05:30",
+      "message": "detailed_roadmap"
+    },
+    {
+      "hash": "6655603",
+      "author": "Singularity Labs",
+      "date": "2025-11-24T17:04:26+05:30",
+      "message": "logo_fix"
+    },
+    {
+      "hash": "570656c",
+      "author": "Singularity Labs",
+      "date": "2025-11-24T17:00:20+05:30",
+      "message": "logo_fix"
+    },
+    {
+      "hash": "e5ef487",
+      "author": "Singularity Labs",
+      "date": "2025-11-24T16:58:37+05:30",
+      "message": "logo"
+    },
+    {
+      "hash": "5675680",
+      "author": "ishan dutta",
+      "date": "2025-11-24T16:39:06+05:30",
+      "message": "Update README.md"
+    },
+    {
+      "hash": "568889b",
+      "author": "Singularity Labs",
+      "date": "2025-11-24T16:34:10+05:30",
+      "message": "readme"
+    },
+    {
+      "hash": "10f4961",
+      "author": "ishan dutta",
+      "date": "2025-11-24T16:27:54+05:30",
+      "message": "Update .gitignore"
+    },
+    {
+      "hash": "6a2956e",
+      "author": "ishan dutta",
+      "date": "2025-11-24T16:27:32+05:30",
+      "message": "Initial commit"
+    }
+  ]
+}

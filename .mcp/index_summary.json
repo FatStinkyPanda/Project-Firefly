@@ -1,0 +1,34 @@
+{
+  "timestamp": "2026-01-11T05:12:53.190789Z",
+  "duration_seconds": 17.03,
+  "root": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly",
+  "indexes": {
+    "semantic": {
+      "status": "ok",
+      "items": 786
+    },
+    "git": {
+      "status": "ok",
+      "commits": 41
+    },
+    "todos": {
+      "status": "ok",
+      "items": 10
+    },
+    "impact": {
+      "status": "ok"
+    },
+    "docs": {
+      "status": "ok",
+      "items": 562
+    },
+    "config": {
+      "status": "ok",
+      "vars": 0
+    },
+    "coverage": {
+      "status": "ok",
+      "files": 0
+    }
+  }
+}
