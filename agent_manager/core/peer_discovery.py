@@ -1,11 +1,11 @@
+from pathlib import Path
+from typing import Dict, Any, List, Optional
 import json
 import logging
 import os
 import socket
-import time
 import threading
-from pathlib import Path
-from typing import Dict, Any, List, Optional
+import time
 
 logger = logging.getLogger("FireflyPeerDiscovery")
 
@@ -20,10 +20,12 @@ class PeerDiscoveryService:
         self.nsync_path = Path(nsync_path or os.environ.get("NSYNC_PATH", "C:/Users/dbiss/Desktop/Projects/_BLANK_/NSync"))
         self.comms_dir = self.nsync_path / ".nsync_agents"
         self.mailbox_dir = self.comms_dir / "messages"
-        
+
         self.hostname = socket.gethostname()
         self.identity = os.environ.get("AGENT_IDENTITY", self.hostname)
-        
+        self.role = os.environ.get("AGENT_ROLE", "generalist")
+        self.capabilities = os.environ.get("AGENT_CAPABILITIES", "standard").split(",")
+
         self.peers = {} # hostname -> presence_data
         self.running = False
         self._poll_thread = None
@@ -69,6 +71,8 @@ class PeerDiscoveryService:
         data = {
             "hostname": self.hostname,
             "identity": self.identity,
+            "role": self.role,
+            "capabilities": self.capabilities,
             "timestamp": time.time(),
             "status": status,
             "current_task": task,
@@ -83,16 +87,16 @@ class PeerDiscoveryService:
     def _discover_peers(self):
         current_time = time.time()
         found_peers = []
-        
+
         try:
             for f in self.comms_dir.glob("*.json"):
                 if f.stem == self.hostname: continue
-                
+
                 try:
                     with open(f, "r") as pf:
                         data = json.load(pf)
                         peer_id = data.get("identity", f.stem)
-                        
+
                         # Check pulse (stale if > 120s)
                         if current_time - data.get("timestamp", 0) < 120:
                             if peer_id not in self.peers:
@@ -112,7 +116,7 @@ class PeerDiscoveryService:
                 logger.info(f"Peer left or stale: {peer_id}")
                 self.event_bus.publish("peer_left", {"identity": peer_id})
                 to_remove.append(peer_id)
-        
+
         for p in to_remove:
             del self.peers[p]
 
@@ -139,7 +143,7 @@ class PeerDiscoveryService:
     def send_message(self, recipient: str, msg_type: str, content: dict):
         msg_id = int(time.time() * 1000)
         msg_file = self.mailbox_dir / f"{recipient}_{self.identity}_{msg_id}.json"
-        
+
         payload = {
             "id": msg_id,
             "from": self.identity,
@@ -148,7 +152,7 @@ class PeerDiscoveryService:
             "content": content,
             "timestamp": time.time()
         }
-        
+
         try:
             with open(msg_file, "w") as f:
                 json.dump(payload, f, indent=2)

@@ -1,7 +1,7 @@
-import logging
-import time
 from collections import deque
 from typing import List, Dict, Any, Optional
+import logging
+import time
 
 logger = logging.getLogger("FireflySessionManager")
 
@@ -24,7 +24,7 @@ class SessionManager:
         """Adds a message to the session history."""
         if session_id not in self.sessions:
             self.sessions[session_id] = deque(maxlen=self.max_history)
-        
+
         self.sessions[session_id].append({
             "role": role,
             "content": content,
@@ -43,7 +43,7 @@ class SessionManager:
         history = self.get_history(session_id)
         if not history:
             return ""
-        
+
         formatted = "\n--- CONVERSATION HISTORY ---\n"
         for msg in history:
             formatted += f"{msg['role'].upper()}: {msg['content']}\n"

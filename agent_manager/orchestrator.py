@@ -1,6 +1,7 @@
 import logging
-import subprocess
 import re
+import subprocess
+
 from agent_manager.core.tag_parser import TagParserService
 
 logger = logging.getLogger("FireflyOrchestrator")
@@ -36,7 +37,7 @@ class OrchestratorManager:
     def handle_event(self, event_type: str, payload: dict):
         """Main routing hub for incoming events."""
         if not self.is_running: return
-        
+
         logger.info(f"Orchestrator received event: {event_type}")
 
         if event_type == "webhook_event":
@@ -77,7 +78,7 @@ class OrchestratorManager:
         try:
             response = self.model_client.generate(prompt, system_prompt=system_prompt)
             parsed = self.tag_parser.parse(response.text)
-            
+
             # Record assistant response in history
             if self.session_manager:
                 self.session_manager.add_message(session_id, "assistant", response.text)
@@ -143,7 +144,7 @@ class OrchestratorManager:
         msg_from = payload.get("from")
         msg_type = payload.get("type")
         content = payload.get("content", {})
-        
+
         logger.info(f"Peer Message from {msg_from}: {msg_type}")
         if msg_type == "result":
             self.process_request(f"Agent {msg_from} returned result: {content.get('text')}", source="peer", session_id=session_id)
@@ -156,17 +157,41 @@ class OrchestratorManager:
             self.delegate_task(recipient, task.strip())
 
     def delegate_task(self, recipient: str, task: str):
-        """Delegates a task to a discovered peer."""
+        """Delegates a task to a discovered peer by identity, role, or capability."""
         if not self.peer_discovery:
             logger.warning("No PeerDiscoveryService available.")
             return
 
-        if recipient not in self.peer_discovery.peers and recipient != "broadcast":
-            logger.warning(f"Recipient {recipient} not found in peer registry.")
+        target_agents = []
+        
+        # 1. Match by Identity
+        if recipient in self.peer_discovery.peers:
+            target_agents.append(recipient)
+        
+        # 2. Match by Role
+        elif recipient != "broadcast":
+            for p_id, p_data in self.peer_discovery.peers.items():
+                if p_data.get("role") == recipient:
+                    target_agents.append(p_id)
+                elif recipient in p_data.get("capabilities", []):
+                    target_agents.append(p_id)
+
+        # 3. Handle Broadcast
+        if recipient == "broadcast":
+            target_agents = list(self.peer_discovery.peers.keys())
+
+        if not target_agents:
+            logger.warning(f"No agents found for target/role/capability: {recipient}")
             return
 
-        logger.info(f"DELEGATING: '{task}' to {recipient}")
-        self.peer_discovery.send_message(recipient, "task", {"text": task})
+        # For specific roles, we pick the first available or broadcast to all?
+        # Logic: If it's a specific identity, send to one. If it's a role/capability, pick one (load balance later).
+        # For now, if identity not found but role found, pick the first one.
+        for agent_id in target_agents:
+            logger.info(f"DELEGATING: '{task}' to {agent_id} (Target: {recipient})")
+            self.peer_discovery.send_message(agent_id, "task", {"text": task})
+            if recipient != "broadcast" and recipient not in self.peer_discovery.peers:
+                break # Only send to one if it was a role/capability match
 
     def handle_peer_auth(self, payload: dict):
         """Handle new peer discovery."""

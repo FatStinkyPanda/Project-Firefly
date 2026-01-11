@@ -1,4 +1,3 @@
-from __future__ import annotations
 from typing import Optional, TYPE_CHECKING, Dict, Any
 import json
 import logging
@@ -6,6 +5,7 @@ import urllib.error
 import urllib.request
 
 from .base import BaseModelService
+from __future__ import annotations
 
 if TYPE_CHECKING:
     from .base import ModelResponse
@@ -27,7 +27,7 @@ class OllamaService(BaseModelService):
 
     def generate(self, prompt: str, system_prompt: Optional[str] = None) -> ModelResponse:
         from .base import ModelResponse
-        
+
         full_prompt = prompt
         if system_prompt:
             full_prompt = f"System: {system_prompt}\n\nUser: {prompt}"
@@ -44,14 +44,14 @@ class OllamaService(BaseModelService):
         try:
             with urllib.request.urlopen(req) as response:
                 result = json.loads(response.read().decode('utf-8'))
-                
+
                 try:
                     text = result.get('response', "")
-                    
+
                     # Ollama counts
                     pt = result.get('prompt_eval_count', 0)
                     ct = result.get('eval_count', 0)
-                    
+
                     return ModelResponse(
                         text=text.strip(),
                         prompt_tokens=pt,

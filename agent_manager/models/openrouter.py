@@ -1,4 +1,3 @@
-from __future__ import annotations
 from typing import Optional, TYPE_CHECKING, Dict, Any
 import json
 import logging
@@ -7,6 +6,7 @@ import urllib.error
 import urllib.request
 
 from .base import BaseModelService
+from __future__ import annotations
 
 if TYPE_CHECKING:
     from .base import ModelResponse
@@ -56,13 +56,13 @@ class OpenRouterService(BaseModelService):
         try:
             with urllib.request.urlopen(req) as response:
                 result = json.loads(response.read().decode('utf-8'))
-                
+
                 try:
                     text = result['choices'][0]['message']['content']
                     usage = result.get('usage', {})
                     pt = usage.get('prompt_tokens', 0)
                     ct = usage.get('completion_tokens', 0)
-                    
+
                     # Cost is provided by OpenRouter sometimes, but we'll fallback to 0.0
                     # if not explicitly calculated per model here.
                     cost = result.get('cost', 0.0)

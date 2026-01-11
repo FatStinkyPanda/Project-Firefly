@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
-from typing import Iterator, Optional, Dict, Any
 from dataclasses import dataclass, field
+from typing import Iterator, Optional, Dict, Any
 
 @dataclass
 class ModelResponse:

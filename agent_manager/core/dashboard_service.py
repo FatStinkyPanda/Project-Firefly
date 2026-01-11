@@ -1,8 +1,8 @@
+from typing import Dict, Any, List
 import logging
 import os
-import time
 import threading
-from typing import Dict, Any, List
+import time
 
 logger = logging.getLogger("FireflyDashboard")
 
@@ -27,7 +27,7 @@ class DashboardService:
         self.event_bus.subscribe("system_event", self._on_event)
         self.event_bus.subscribe("telegram_input", self._on_event)
         self.event_bus.subscribe("webhook_event", self._on_event)
-        
+
         self._render_thread = threading.Thread(target=self._render_loop, daemon=True)
         self._render_thread.start()
         logger.info("DashboardService started.")
@@ -62,34 +62,34 @@ class DashboardService:
             time.sleep(5) # Refresh every 5 seconds
 
     def _render(self):
-        # Use terminal escape codes to clear and home on supported terminals, 
+        # Use terminal escape codes to clear and home on supported terminals,
         # but for simplicity and compatibility with standard logs, we'll just print a headered block.
-        # os.system('cls' if os.name == 'nt' else 'clear') 
-        
+        # os.system('cls' if os.name == 'nt' else 'clear')
+
         output = []
         output.append("\n" + "="*50)
         output.append("🦉 PROJECT-FIREFLY AGENT HUB DASHBOARD")
         output.append("="*50)
-        
+
         # 1. Resource Usage
         output.append(f"\n[RESOURCE USAGE]")
         output.append(f"  - Total Tokens: {self.usage['tokens']}")
         output.append(f"  - Total Cost:   ${self.usage['cost']:.4f}")
         output.append(f"  - Completions:  {self.usage['completions']}")
-        
+
         # 2. Peer Registry
         output.append(f"\n[PEER REGISTRY] ({len(self.peers)} active)")
         for p_id, p_data in self.peers.items():
             output.append(f"  - {p_id} (@{p_data.get('hostname')}) | Status: {p_data.get('status')}")
-            
+
         # 3. Recent Activity
         output.append(f"\n[RECENT ACTIVITY]")
         if not self.last_events:
             output.append("  (Waiting for events...)")
         for ev in reversed(self.last_events):
             output.append(f"  {ev}")
-            
+
         output.append("="*50 + "\n")
-        
+
         # In a real CLI we would sys.stdout.write, but for logs:
         print("\n".join(output))

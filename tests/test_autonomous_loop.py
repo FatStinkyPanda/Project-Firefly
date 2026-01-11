@@ -1,9 +1,10 @@
+from unittest.mock import MagicMock, patch
 import unittest
-from agent_manager.core.event_bus import EventBusService
+
 from agent_manager.core.config_service import ConfigurationService
+from agent_manager.core.event_bus import EventBusService
 from agent_manager.core.tag_parser import TagParserService
 from agent_manager.orchestrator import OrchestratorManager
-from unittest.mock import MagicMock, patch
 
 class TestFireflyAutonomousLoop(unittest.TestCase):
     def setUp(self):
@@ -30,10 +31,10 @@ class TestFireflyAutonomousLoop(unittest.TestCase):
 
         with patch('subprocess.run') as mock_run:
             mock_run.return_value = MagicMock(stdout="On branch main", stderr="", returncode=0)
-            
+
             # Trigger telegram input
             self.bus.publish("telegram_input", {"text": "check status", "chat_id": 123, "user": "test_user"})
-            
+
             # Check if subprocess was called with the correct command
             mock_run.assert_called_with("git status", shell=True, capture_output=True, text=True, timeout=30)
 
@@ -45,7 +46,7 @@ class TestFireflyAutonomousLoop(unittest.TestCase):
 
         with patch('subprocess.run') as mock_run:
             self.bus.publish("telegram_input", {"text": "delete everything", "chat_id": 123, "user": "test_user"})
-            
+
             # Subprocess should NOT be called for unsafe command
             mock_run.assert_not_called()
 

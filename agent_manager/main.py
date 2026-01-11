@@ -2,15 +2,15 @@ import logging
 import os # Added for os.environ.get
 import time
 
-from agent_manager.core.event_bus import EventBusService
 from agent_manager.core.config_service import ConfigurationService
-from agent_manager.core.session_manager import SessionManager
 from agent_manager.core.dashboard_service import DashboardService
+from agent_manager.core.event_bus import EventBusService
+from agent_manager.core.session_manager import SessionManager
 from agent_manager.models.manager import ModelClientManager
 from agent_manager.orchestrator import OrchestratorManager
+from agent_manager.triggers.system_events import WorkspaceMonitoringService
 from agent_manager.triggers.telegram import TelegramService
 from agent_manager.triggers.webhook import WebhookService
-from agent_manager.triggers.system_events import WorkspaceMonitoringService
 
 # Configure Logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -25,7 +25,7 @@ def main():
 
     # 1. Initialize Event Bus
     bus = EventBusService()
-    
+
     # 2. Initialize Configuration
     config = ConfigurationService()
 
@@ -41,8 +41,8 @@ def main():
 
     # 5. Initialize Orchestrator
     orchestrator = OrchestratorManager(
-        event_bus=bus, 
-        model_client=model_client, 
+        event_bus=bus,
+        model_client=model_client,
         config_service=config,
         peer_discovery=peer_discovery,
         session_manager=session_manager

@@ -1,4 +1,3 @@
-from __future__ import annotations
 from typing import Optional, TYPE_CHECKING
 import json
 import logging
@@ -7,6 +6,7 @@ import urllib.error
 import urllib.request
 
 from .base import BaseModelService
+from __future__ import annotations
 
 logger = logging.getLogger("FireflyOpenAIService")
 
@@ -51,13 +51,13 @@ class OpenAIService(BaseModelService):
         try:
             with urllib.request.urlopen(req) as response:
                 result = json.loads(response.read().decode('utf-8'))
-                
+
                 try:
                     text = result['choices'][0]['message']['content']
                     usage = result.get('usage', {})
                     pt = usage.get('prompt_tokens', 0)
                     ct = usage.get('completion_tokens', 0)
-                    
+
                     # Estimate cost (GPT-4o-mini prices approx)
                     # $0.15 / 1M tokens prompt, $0.60 / 1M tokens completion
                     cost = (pt * 0.00000015) + (ct * 0.0000006)

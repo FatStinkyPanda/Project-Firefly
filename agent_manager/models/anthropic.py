@@ -1,4 +1,3 @@
-from __future__ import annotations
 from typing import Optional, TYPE_CHECKING, Dict, Any
 import json
 import logging
@@ -7,6 +6,7 @@ import urllib.error
 import urllib.request
 
 from .base import BaseModelService
+from __future__ import annotations
 
 if TYPE_CHECKING:
     from .base import ModelResponse
@@ -51,18 +51,18 @@ class AnthropicService(BaseModelService):
         try:
             with urllib.request.urlopen(req) as response:
                 result = json.loads(response.read().decode('utf-8'))
-                
+
                 try:
                     # Anthropic returns a list of content blocks
                     text = ""
                     for block in result.get("content", []):
                         if block.get("type") == "text":
                             text += block.get("text", "")
-                    
+
                     usage = result.get('usage', {})
                     pt = usage.get('input_tokens', 0)
                     ct = usage.get('output_tokens', 0)
-                    
+
                     # Estimate cost (Claude 3.5 Sonnet approx)
                     # $3 / 1M input, $15 / 1M output
                     cost = (pt * 0.000003) + (ct * 0.000015)

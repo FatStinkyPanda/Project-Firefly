@@ -1,7 +1,7 @@
-import re
-import logging
 from dataclasses import dataclass, field
 from typing import List, Dict, Any, Optional
+import logging
+import re
 
 logger = logging.getLogger("FireflyTagParser")
 
@@ -41,7 +41,7 @@ class TagParserService:
         # e.g. ```xml <command>ls</command> ```
         text = re.sub(r"```[a-z]*\n?", "", text)
         text = re.sub(r"\n?```", "", text)
-        
+
         response = TagResponse(raw_text=text)
 
         # Extract standard tags
@@ -49,7 +49,7 @@ class TagParserService:
         response.commands = self._extract_all(text, "command")
         response.messages = self._extract_all(text, "message")
         response.status_updates = self._extract_all(text, "status")
-        
+
         # Special handling for calls (might contain JSON inside tags)
         raw_calls = self._extract_all(text, "call")
         for raw in raw_calls:
@@ -70,7 +70,7 @@ class TagParserService:
         pattern = self.TAG_PATTERNS.get(tag_name)
         if not pattern:
             return []
-            
+
         matches = re.findall(pattern, text, re.DOTALL | re.IGNORECASE)
         return [m.strip() for m in matches]
 

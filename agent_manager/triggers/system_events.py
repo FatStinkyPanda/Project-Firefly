@@ -1,9 +1,9 @@
-import os
-import time
-import logging
 from pathlib import Path
 from threading import Thread
 from typing import Set
+import logging
+import os
+import time
 
 logger = logging.getLogger("WorkspaceMonitor")
 
@@ -31,12 +31,12 @@ class WorkspaceMonitoringService:
         if self.is_running:
             return
         self.is_running = True
-        
+
         if HAS_WATCHDOG:
             self._start_watchdog()
         else:
             self._start_polling()
-        
+
         logger.info(f"Workspace Monitoring started at {self.root_path} ({'watchdog' if HAS_WATCHDOG else 'polling'} mode)")
 
     def stop(self):
@@ -72,7 +72,7 @@ class WorkspaceMonitoringService:
                             continue
                         if path.suffix not in self.relevant_extensions:
                             continue
-                        
+
                         mtime = path.stat().st_mtime
                         if str(path) not in file_states:
                             file_states[str(path)] = mtime
@@ -81,7 +81,7 @@ class WorkspaceMonitoringService:
                             self._handle_change(str(path))
                 except Exception as e:
                     logger.error(f"Polling error: {e}")
-                
+
                 time.sleep(2) # Poll every 2 seconds
 
         self._thread = Thread(target=poll_loop, daemon=True)

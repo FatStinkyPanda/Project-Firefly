@@ -1,4 +1,3 @@
-from __future__ import annotations
 from typing import Optional, TYPE_CHECKING
 import json
 import logging
@@ -7,6 +6,7 @@ import urllib.error
 import urllib.request
 
 from .base import BaseModelService
+from __future__ import annotations
 
 logger = logging.getLogger("FireflyGeminiService")
 
@@ -51,13 +51,13 @@ class GeminiService(BaseModelService):
         try:
             with urllib.request.urlopen(req) as response:
                 result = json.loads(response.read().decode('utf-8'))
-                
+
                 try:
                     text = result['candidates'][0]['content']['parts'][0]['text']
                     usage = result.get('usageMetadata', {})
                     pt = usage.get('promptTokenCount', 0)
                     ct = usage.get('candidatesTokenCount', 0)
-                    
+
                     # Estimate cost (Gemini 1.5 Flash prices approx)
                     # $0.075 / 1M tokens prompt, $0.30 / 1M tokens completion
                     cost = (pt * 0.000000075) + (ct * 0.0000003)

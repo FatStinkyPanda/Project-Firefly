@@ -1,12 +1,12 @@
 from typing import List, Optional, Dict, Any
 import logging
 
+from .anthropic import AnthropicService
 from .base import BaseModelService, ModelResponse
 from .gemini import GeminiService
-from .openai import OpenAIService
-from .anthropic import AnthropicService
-from .openrouter import OpenRouterService
 from .ollama import OllamaService
+from .openai import OpenAIService
+from .openrouter import OpenRouterService
 
 logger = logging.getLogger("FireflyModelClient")
 
@@ -26,7 +26,7 @@ class ModelClientManager:
             "total_cost_usd": 0.0,
             "by_model": {}
         }
-        
+
         if not self.providers:
             # Default fallback chain if none provided
             self._initialize_default_providers()
@@ -73,11 +73,11 @@ class ModelClientManager:
         self.usage_ledger["total_prompt_tokens"] += response.prompt_tokens
         self.usage_ledger["total_completion_tokens"] += response.completion_tokens
         self.usage_ledger["total_cost_usd"] += response.cost_usd
-        
+
         m_name = response.model_name
         if m_name not in self.usage_ledger["by_model"]:
             self.usage_ledger["by_model"][m_name] = {"prompt": 0, "completion": 0, "cost": 0.0}
-        
+
         self.usage_ledger["by_model"][m_name]["prompt"] += response.prompt_tokens
         self.usage_ledger["by_model"][m_name]["completion"] += response.completion_tokens
         self.usage_ledger["by_model"][m_name]["cost"] += response.cost_usd
@@ -110,10 +110,10 @@ class ModelClientManager:
                 logger.info(f"Generating with {provider_name}...")
                 response = provider.generate(prompt, system_prompt)
                 logger.info(f"Success with {provider_name}")
-                
+
                 # Record usage
                 self._record_usage(response)
-                
+
                 return response
 
             except Exception as e:

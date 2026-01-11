@@ -1,8 +1,8 @@
+from pathlib import Path
+from typing import Dict, Any, List
 import json
 import logging
 import os
-from pathlib import Path
-from typing import Dict, Any, List
 
 logger = logging.getLogger("FireflyConfigService")
 
@@ -33,7 +33,7 @@ class ConfigurationService:
             logger.info(f"Config file not found. Creating default at {self.config_path}")
             self.save_config(self.DEFAULT_CONFIG)
             return self.DEFAULT_CONFIG.copy()
-        
+
         try:
             with open(self.config_path, 'r') as f:
                 return json.load(f)
@@ -60,7 +60,7 @@ class ConfigurationService:
         Check if a command is approved based on the current policy.
         """
         policy = self.get("approval_policy", "MANUAL")
-        
+
         if policy == "AUTO":
             # Still check against 'always_ask' for extreme safety
             if any(forbidden in command.lower() for forbidden in self.get("always_ask_commands", [])):
@@ -76,5 +76,5 @@ class ConfigurationService:
                 # Check if it's in the orchestrator-approved list
                 if any(cmd in command for cmd in self.get("orchestrator_approved_commands", [])):
                     return True
-        
+
         return False

@@ -10,20 +10,20 @@ Usage:
 """
 
 from pathlib import Path
-import importlib
 import os
 import shutil
+import subprocess
 import sys
 
 from .utils import Console, find_project_root, get_package_root
+import importlib
 import stat
-import subprocess
 
 
 def install_dependencies() -> int:
     """Install required Python dependencies."""
     Console.info("Checking dependencies...")
-    
+
     # Detect NVIDIA GPU
     has_gpu = False
     try:
@@ -35,16 +35,16 @@ def install_dependencies() -> int:
 
     faiss_pkg = 'faiss-gpu' if has_gpu else 'faiss-cpu'
     dependencies = [faiss_pkg, 'watchdog']
-    
+
     for dep in dependencies:
         # Check for faiss generically but verify GPU support if needed
         is_faiss = 'faiss' in dep
         check_name = 'faiss' if is_faiss else dep.replace('-', '_')
-        
+
         try:
             # Check if already installed
             module = importlib.import_module(check_name)
-            
+
             # Special check for FAISS GPU support
             if dep == 'faiss-gpu':
                 try:
@@ -65,7 +65,7 @@ def install_dependencies() -> int:
             # If we're installing faiss-gpu, ensure faiss-cpu is gone to avoid conflicts
             if dep == 'faiss-gpu':
                 subprocess.run([sys.executable, '-m', 'pip', 'uninstall', '-y', 'faiss-cpu'], capture_output=True)
-            
+
             try:
                 subprocess.check_call([sys.executable, '-m', 'pip', 'install', dep])
                 Console.ok(f"Successfully installed {dep}")
@@ -81,7 +81,7 @@ def install_dependencies() -> int:
                 else:
                     Console.fail(f"Failed to install {dep}: {e}")
                     return 1
-    
+
     return 0
 
 
