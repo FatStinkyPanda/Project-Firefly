@@ -52,7 +52,7 @@ class GitMonitoringService:
         logger.info("Git Monitoring stopped.")
 
     def _start_watchdog(self):
-        class GitHandler(FileSystemEventHandler):
+        class GitEventHandlerService(FileSystemEventHandler):
             def __init__(self, service):
                 self.service = service
 
@@ -67,10 +67,10 @@ class GitMonitoringService:
 
         self._observer = Observer()
         # Monitor HEAD and refs
-        self._observer.schedule(GitHandler(self), str(self.git_path / "HEAD"), recursive=False)
-        self._observer.schedule(GitHandler(self), str(self.git_path / "refs"), recursive=True)
+        self._observer.schedule(GitEventHandlerService(self), str(self.git_path / "HEAD"), recursive=False)
+        self._observer.schedule(GitEventHandlerService(self), str(self.git_path / "refs"), recursive=True)
         if (self.git_path / "index").exists():
-             self._observer.schedule(GitHandler(self), str(self.git_path / "index"), recursive=False)
+             self._observer.schedule(GitEventHandlerService(self), str(self.git_path / "index"), recursive=False)
 
         self._observer.start()
 
