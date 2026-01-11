@@ -10,12 +10,79 @@ Usage:
 """
 
 from pathlib import Path
+import importlib
 import os
 import shutil
 import sys
 
 from .utils import Console, find_project_root, get_package_root
 import stat
+import subprocess
+
+
+def install_dependencies() -> int:
+    """Install required Python dependencies."""
+    Console.info("Checking dependencies...")
+    
+    # Detect NVIDIA GPU
+    has_gpu = False
+    try:
+        subprocess.run(['nvidia-smi'], capture_output=True, check=True)
+        has_gpu = True
+        Console.ok("NVIDIA GPU detected, will use faiss-gpu")
+    except (subprocess.CalledProcessError, FileNotFoundError):
+        Console.info("No NVIDIA GPU detected, using faiss-cpu fallback")
+
+    faiss_pkg = 'faiss-gpu' if has_gpu else 'faiss-cpu'
+    dependencies = [faiss_pkg, 'watchdog']
+    
+    for dep in dependencies:
+        # Check for faiss generically but verify GPU support if needed
+        is_faiss = 'faiss' in dep
+        check_name = 'faiss' if is_faiss else dep.replace('-', '_')
+        
+        try:
+            # Check if already installed
+            module = importlib.import_module(check_name)
+            
+            # Special check for FAISS GPU support
+            if dep == 'faiss-gpu':
+                try:
+                    import faiss
+                    if faiss.get_num_gpus() > 0:
+                        Console.ok(f"Dependency already satisfied: {dep} (GPU support verified)")
+                        continue
+                    else:
+                        Console.warn("FAISS installed but NO GPU support found. Upgrading to faiss-gpu...")
+                        raise ImportError("No GPU support")
+                except Exception:
+                    raise ImportError("FAISS GPU check failed")
+            else:
+                Console.ok(f"Dependency already satisfied: {dep}")
+                continue
+        except ImportError:
+            Console.info(f"Installing missing dependency: {dep}...")
+            # If we're installing faiss-gpu, ensure faiss-cpu is gone to avoid conflicts
+            if dep == 'faiss-gpu':
+                subprocess.run([sys.executable, '-m', 'pip', 'uninstall', '-y', 'faiss-cpu'], capture_output=True)
+            
+            try:
+                subprocess.check_call([sys.executable, '-m', 'pip', 'install', dep])
+                Console.ok(f"Successfully installed {dep}")
+            except Exception as e:
+                if dep == 'faiss-gpu':
+                    Console.warn(f"Failed to install faiss-gpu: {e}. Falling back to faiss-cpu...")
+                    try:
+                        subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'faiss-cpu'])
+                        Console.ok("Successfully installed faiss-cpu fallback")
+                    except Exception as e2:
+                        Console.fail(f"Failed to install faiss-cpu fallback: {e2}")
+                        return 1
+                else:
+                    Console.fail(f"Failed to install {dep}: {e}")
+                    return 1
+    
+    return 0
 
 
 def install_git_hooks(project_root: Path = None) -> int:
@@ -135,6 +202,12 @@ def full_setup(project_root: Path = None) -> int:
     project_root = project_root or find_project_root() or Path.cwd()
 
     Console.header("MCP Full Setup")
+
+    # 0. Install dependencies
+    Console.info("Verifying dependencies...")
+    if install_dependencies() != 0:
+        Console.fail("Dependency installation failed, aborting setup.")
+        return 1
 
     # 1. Install hooks
     Console.info("Installing git hooks...")

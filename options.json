@@ -1,0 +1,37 @@
+{
+    "model_priority": [
+        "gemini",
+        "openai",
+        "anthropic",
+        "openrouter",
+        "ollama"
+    ],
+    "approval_policy": "ORCHESTRATOR_ONLY",
+    "auto_approved_commands": [
+        "ls",
+        "pwd",
+        "git status",
+        "git diff",
+        "cat",
+        "mcp.py context",
+        "mcp.py search"
+    ],
+    "orchestrator_approved_commands": [
+        "git add",
+        "git commit",
+        "git push",
+        "mcp.py fix",
+        "mcp.py review",
+        "npm test",
+        "pytest"
+    ],
+    "always_ask_commands": [
+        "rm -rf",
+        "format C:",
+        "del /s",
+        "curl -X POST",
+        "sh",
+        "bash",
+        "powershell"
+    ]
+}

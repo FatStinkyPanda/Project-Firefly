@@ -1,4 +1,5 @@
-from typing import Optional
+from __future__ import annotations
+from typing import Optional, TYPE_CHECKING
 import json
 import logging
 import os
@@ -22,7 +23,8 @@ class GeminiService(BaseModelService):
     def validate_config(self) -> bool:
         return bool(self.api_key)
 
-    def generate(self, prompt: str, system_prompt: Optional[str] = None) -> str:
+    def generate(self, prompt: str, system_prompt: Optional[str] = None) -> ModelResponse:
+        from .base import ModelResponse
         if not self.validate_config():
             raise ValueError("Gemini API Key not found. Set GEMINI_API_KEY environment variable.")
 
@@ -49,9 +51,25 @@ class GeminiService(BaseModelService):
         try:
             with urllib.request.urlopen(req) as response:
                 result = json.loads(response.read().decode('utf-8'))
-                # Parse response
+                
                 try:
-                    return result['candidates'][0]['content']['parts'][0]['text']
+                    text = result['candidates'][0]['content']['parts'][0]['text']
+                    usage = result.get('usageMetadata', {})
+                    pt = usage.get('promptTokenCount', 0)
+                    ct = usage.get('candidatesTokenCount', 0)
+                    
+                    # Estimate cost (Gemini 1.5 Flash prices approx)
+                    # $0.075 / 1M tokens prompt, $0.30 / 1M tokens completion
+                    cost = (pt * 0.000000075) + (ct * 0.0000003)
+
+                    return ModelResponse(
+                        text=text,
+                        prompt_tokens=pt,
+                        completion_tokens=ct,
+                        model_name=self.model_name,
+                        cost_usd=cost,
+                        metadata={"raw_usage": usage}
+                    )
                 except (KeyError, IndexError):
                      logger.error(f"Unexpected Gemini response format: {result}")
                      raise ValueError("Failed to parse Gemini response")

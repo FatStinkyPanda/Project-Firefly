@@ -34,7 +34,7 @@ class TelegramService:
             return
 
         self.is_running = True
-        self.polling_thread = threading.Thread(target(self._poll_loop), daemon=True)
+        self.polling_thread = threading.Thread(target=self._poll_loop, daemon=True)
         self.polling_thread.start()
         logger.info("TelegramService started polling.")
 
@@ -98,7 +98,7 @@ class TelegramService:
             # Publish to Event Bus
             self.event_bus.publish("telegram_input", payload)
 
-    def handle_outgoing_message(self, payload: Dict[str, Any]):
+    def handle_outgoing_message(self, event_type: str, payload: Dict[str, Any]):
         """Handle 'telegram_output' events -> Send message to Telegram."""
         chat_id = payload.get("chat_id")
         text = payload.get("text")

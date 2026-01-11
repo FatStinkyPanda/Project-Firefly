@@ -2,8 +2,16 @@
 # MCP Post-commit Hook
 # Learning, index update, context map refresh
 echo "[MCP] Updating learning and indexes..."
-PYTHON_CMD="/c/Users/CSquared/AppData/Local/Programs/Python/Python312/python.exe"
-$PYTHON_CMD mcp-global-rules/mcp.py learn
-$PYTHON_CMD mcp-global-rules/mcp.py summarize --output CODEBASE_SUMMARY.md
-$PYTHON_CMD mcp-global-rules/mcp.py index-all --quick
-$PYTHON_CMD mcp-global-rules/mcp.py trigger-loop
+# Use virtual environment python if available
+if [ -f "./.venv/Scripts/python" ]; then
+    PYTHON_CMD="./.venv/Scripts/python"
+elif [ -f "./.venv/bin/python" ]; then
+    PYTHON_CMD="./.venv/bin/python"
+else
+    PYTHON_CMD="python"
+fi
+
+$PYTHON_CMD mcp-global/mcp-global-rules/mcp.py learn
+$PYTHON_CMD mcp-global/mcp-global-rules/mcp.py summarize --output CODEBASE_SUMMARY.md
+$PYTHON_CMD mcp-global/mcp-global-rules/mcp.py index-all --quick
+$PYTHON_CMD mcp-global/mcp-global-rules/mcp.py trigger-loop

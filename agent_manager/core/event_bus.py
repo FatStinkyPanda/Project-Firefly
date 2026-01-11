@@ -35,6 +35,6 @@ class EventBusService:
         logger.info(f"Publishing event: {event_type}")
         for callback in subscribers:
             try:
-                callback(data)
+                callback(event_type, data)
             except Exception as e:
                 logger.error(f"Error in subscriber callback for {event_type}: {e}")

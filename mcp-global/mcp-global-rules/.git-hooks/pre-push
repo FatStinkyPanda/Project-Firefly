@@ -4,7 +4,15 @@
 set -e # Exit immediately if a command exits with a non-zero status.
 
 echo "[MCP] Running pre-push validation..."
-PYTHON_CMD="python"
+# Use virtual environment python if available
+if [ -f "./.venv/Scripts/python" ]; then
+    PYTHON_CMD="./.venv/Scripts/python"
+elif [ -f "./.venv/bin/python" ]; then
+    PYTHON_CMD="./.venv/bin/python"
+else
+    PYTHON_CMD="python"
+fi
+
 $PYTHON_CMD mcp-global/mcp-global-rules/mcp.py security .
 $PYTHON_CMD mcp-global/mcp-global-rules/mcp.py architecture . --strict
 

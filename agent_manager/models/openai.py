@@ -1,4 +1,5 @@
-from typing import Optional
+from __future__ import annotations
+from typing import Optional, TYPE_CHECKING
 import json
 import logging
 import os
@@ -22,7 +23,8 @@ class OpenAIService(BaseModelService):
     def validate_config(self) -> bool:
         return bool(self.api_key)
 
-    def generate(self, prompt: str, system_prompt: Optional[str] = None) -> str:
+    def generate(self, prompt: str, system_prompt: Optional[str] = None) -> ModelResponse:
+        from .base import ModelResponse
         if not self.validate_config():
             raise ValueError("OpenAI API Key not found. Set OPENAI_API_KEY environment variable.")
 
@@ -49,9 +51,25 @@ class OpenAIService(BaseModelService):
         try:
             with urllib.request.urlopen(req) as response:
                 result = json.loads(response.read().decode('utf-8'))
-                # Parse response
+                
                 try:
-                    return result['choices'][0]['message']['content']
+                    text = result['choices'][0]['message']['content']
+                    usage = result.get('usage', {})
+                    pt = usage.get('prompt_tokens', 0)
+                    ct = usage.get('completion_tokens', 0)
+                    
+                    # Estimate cost (GPT-4o-mini prices approx)
+                    # $0.15 / 1M tokens prompt, $0.60 / 1M tokens completion
+                    cost = (pt * 0.00000015) + (ct * 0.0000006)
+
+                    return ModelResponse(
+                        text=text,
+                        prompt_tokens=pt,
+                        completion_tokens=ct,
+                        model_name=self.model_name,
+                        cost_usd=cost,
+                        metadata={"raw_usage": usage}
+                    )
                 except (KeyError, IndexError):
                      logger.error(f"Unexpected OpenAI response format: {result}")
                      raise ValueError("Failed to parse OpenAI response")

@@ -1,5 +1,18 @@
 from abc import ABC, abstractmethod
 from typing import Iterator, Optional, Dict, Any
+from dataclasses import dataclass, field
+
+@dataclass
+class ModelResponse:
+    """
+    Standardized response from an AI Model Service.
+    """
+    text: str
+    prompt_tokens: int = 0
+    completion_tokens: int = 0
+    model_name: str = "unknown"
+    cost_usd: float = 0.0
+    metadata: Dict[str, Any] = field(default_factory=dict)
 
 class BaseModelService(ABC):
     """
@@ -12,7 +25,7 @@ class BaseModelService(ABC):
         self.model_name = model_name
 
     @abstractmethod
-    def generate(self, prompt: str, system_prompt: Optional[str] = None) -> str:
+    def generate(self, prompt: str, system_prompt: Optional[str] = None) -> ModelResponse:
         """
         Generate a complete response from the model.
 
@@ -21,10 +34,10 @@ class BaseModelService(ABC):
             system_prompt: Optional system instruction.
 
         Returns:
-            The generated text string.
+            ModelResponse: The generated text and usage metadata.
 
         Raises:
-            Exception: If the API call fails (network, auth, rate limit).
+            Exception: If the API call fails.
         """
         pass
 

@@ -1,17 +1,18 @@
 {
-  "total": 822,
+  "total": 823,
   "by_type": {
+    "NOTE": 194,
     "TODO": 586,
-    "NOTE": 193,
     "HACK": 41,
     "FIXME": 2
   },
   "by_priority": {
     "1": 6,
     "2": 626,
-    "3": 190
+    "3": 191
   },
   "by_file": {
+    "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\orchestrator.py": 1,
     "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\auto_test.py": 8,
     "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\nsync.py": 1,
     "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\test_gen.py": 1,
@@ -408,6 +409,15 @@
   },
   "items": [
     {
+      "type": "NOTE",
+      "message": "In production, consider non-blocking execution",
+      "file": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\orchestrator.py",
+      "line": 118,
+      "author": null,
+      "priority": 3,
+      "context": "        try:\n            # Note: In production, consider non-blocking execution\n            result = subprocess.run(command, shell=True, capture_output=True, text=True, timeout=30)\n            if resu"
+    },
+    {
       "type": "TODO",
       "message": "Add specific assertion\")",
       "file": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\auto_test.py",
@@ -483,7 +493,7 @@
       "type": "NOTE",
       "message": "On Windows Git Bash uses the same name",
       "file": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\scripts\\nsync.py",
-      "line": 311,
+      "line": 316,
       "author": null,
       "priority": 3,
       "context": "    post_commit_path = hooks_dir / (\"post-commit\" if os.name != 'nt' else \"post-commit\")\n    # Note: On Windows Git Bash uses the same name\n\n    sync_cmd = \"mcp nsync sync\"\n"

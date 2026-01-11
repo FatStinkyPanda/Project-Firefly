@@ -2,61 +2,79 @@ import logging
 import os # Added for os.environ.get
 import time
 
-from agent_manager.core.event_bus import EventBus
-from agent_manager.models.gemini import GeminiService # Added
+from agent_manager.core.event_bus import EventBusService
+from agent_manager.core.config_service import ConfigurationService
+from agent_manager.core.session_manager import SessionManager
+from agent_manager.core.dashboard_service import DashboardService
 from agent_manager.models.manager import ModelClientManager
-from agent_manager.models.openai import OpenAIService # Added
 from agent_manager.orchestrator import OrchestratorManager
-from agent_manager.triggers.telegram import TelegramService # Added
-from agent_manager.triggers.webhook import WebhookTrigger
+from agent_manager.triggers.telegram import TelegramService
+from agent_manager.triggers.webhook import WebhookService
+from agent_manager.triggers.system_events import WorkspaceMonitoringService
 
 # Configure Logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger("FireflyAgentManager")
+
+from agent_manager.core.peer_discovery import PeerDiscoveryService
+
+# [Existing imports ...]
 
 def main():
     logger.info("Initializing Firefly Agent Manager...")
 
     # 1. Initialize Event Bus
     bus = EventBusService()
+    
+    # 2. Initialize Configuration
+    config = ConfigurationService()
 
-    # 2. Initialize Model Client Manager
-    # Load keys from environment
-    gemini_key = os.environ.get("GEMINI_API_KEY")
-    openai_key = os.environ.get("OPENAI_API_KEY")
+    # 3. Initialize Model Client Manager
+    model_client = ModelClientManager(event_bus=bus, config_service=config)
 
-    providers = []
-    if gemini_key:
-        providers.append(GeminiService(api_key=gemini_key))
-    if openai_key:
-        providers.append(OpenAIService(api_key=openai_key))
+    # 3.5 Initialize Session Management
+    session_manager = SessionManager()
 
-    if not providers:
-        logger.warning("No AI providers configured (missing API keys). Model features will be disabled.")
+    # 4. Initialize Peer Discovery
+    peer_discovery = PeerDiscoveryService(event_bus=bus)
+    peer_discovery.start()
 
-    model_client = ModelClientManager(providers)
+    # 5. Initialize Orchestrator
+    orchestrator = OrchestratorManager(
+        event_bus=bus, 
+        model_client=model_client, 
+        config_service=config,
+        peer_discovery=peer_discovery,
+        session_manager=session_manager
+    )
+    orchestrator.start()
 
-    # 3. Initialize Orchestrator
-    orchestrator = OrchestratorManager(event_bus=bus, model_client=model_client)
-
-    # 4. Initialize Triggers
-    webhook_trigger = WebhookService(event_bus=bus, port=5000)
+    # 5. Initialize Triggers
+    webhook_service = WebhookService(event_bus=bus, port=5000)
     telegram_service = TelegramService(event_bus=bus)
+    workspace_service = WorkspaceMonitoringService(event_bus=bus)
 
-    # 5. Start Services
-    webhook_trigger.start()
+    # 6. Initialize Dashboard
+    dashboard = DashboardService(event_bus=bus)
+    dashboard.start()
+
+    # 7. Start Services
+    webhook_service.start()
     telegram_service.start()
+    workspace_service.start()
 
-    # 6. Keep Alive Loop
+    # 7. Keep Alive Loop
     try:
         while True:
-            logger.info("   - Status: Waiting for events...")
-            time.sleep(10)
+            logger.info("   - Status: Active. Monitoring events...")
+            time.sleep(15)
     except KeyboardInterrupt:
         logger.info("Shutdown signal received. Exiting...")
     finally:
-        webhook_trigger.stop()
+        dashboard.stop()
+        workspace_service.stop()
         telegram_service.stop()
+        webhook_service.stop()
         orchestrator.stop()
 
 if __name__ == "__main__":
