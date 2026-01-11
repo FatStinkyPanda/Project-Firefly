@@ -94,24 +94,30 @@ class TestUtils:
         from scripts.utils import find_python_files
 
         files = list(find_python_files(temp_project))
-        assert len(files) >= 2
-        assert any(f.name == "sample.py" for f in files)
+        if not len(files) >= 2:
+            raise AssertionError("Should have found at least 2 files")
+        if not any(f.name == "sample.py" for f in files):
+            raise AssertionError("Should have found sample.py")
 
     def test_parse_file(self, temp_project):
         """Test parsing Python file."""
         from scripts.utils import parse_file
 
         tree = parse_file(temp_project / "sample.py")
-        assert tree is not None
+        if tree is None:
+            raise AssertionError("Tree should not be None")
 
     def test_analyze_module(self, temp_project):
         """Test analyzing module."""
         from scripts.utils import analyze_module
 
         info = analyze_module(temp_project / "sample.py")
-        assert info is not None
-        assert len(info.functions) >= 2
-        assert len(info.classes) >= 1
+        if info is None:
+            raise AssertionError("Info should not be None")
+        if not len(info.functions) >= 2:
+            raise AssertionError("Should identify at least 2 functions")
+        if not len(info.classes) >= 1:
+            raise AssertionError("Should identify at least 1 class")
 
     def test_format_as_markdown_table(self):
         """Test markdown table formatting."""
@@ -121,8 +127,10 @@ class TestUtils:
             ["Name", "Value"],
             [["foo", "bar"], ["baz", "qux"]]
         )
-        assert "Name" in table
-        assert "foo" in table
+        if "Name" not in table:
+            raise AssertionError("Table should contain header 'Name'")
+        if "foo" not in table:
+            raise AssertionError("Table should contain value 'foo'")
 
 
 class TestDeadCode:
@@ -133,8 +141,10 @@ class TestDeadCode:
         from scripts.dead_code import detect_dead_code
 
         report = detect_dead_code(temp_project)
-        assert report is not None
-        assert report.total_issues >= 0
+        if report is None:
+            raise AssertionError("Report should not be None")
+        if not report.total_issues >= 0:
+            raise AssertionError("Total issues should be non-negative")
 
     def test_report_to_markdown(self, temp_project):
         """Test report conversion to markdown."""
@@ -142,7 +152,8 @@ class TestDeadCode:
 
         report = detect_dead_code(temp_project)
         markdown = report.to_markdown()
-        assert "Dead Code Report" in markdown
+        if "Dead Code Report" not in markdown:
+            raise AssertionError("Markdown should contain 'Dead Code Report'")
 
 
 class TestAutoDocs:
@@ -153,7 +164,8 @@ class TestAutoDocs:
         from scripts.auto_docs import analyze_file_for_docstrings
 
         suggestions = analyze_file_for_docstrings(temp_project / "no_docs.py")
-        assert len(suggestions) >= 2  # Class and function
+        if not len(suggestions) >= 2:
+            raise AssertionError("Should find at least 2 suggestions")
 
     def test_generate_function_docstring(self):
         """Test docstring generation."""
@@ -167,8 +179,10 @@ class TestAutoDocs:
         node = tree.body[0]
 
         docstring = generate_function_docstring(node, "    ")
-        assert '"""' in docstring
-        assert "Args:" in docstring
+        if '"""' not in docstring:
+            raise AssertionError("Docstring should contain quotes")
+        if 'Args:' not in docstring:
+            raise AssertionError("Docstring should contain Args section")
 
 
 class TestAutoTest:
@@ -190,8 +204,10 @@ class TestAutoTest:
         )
 
         test_code = generate_test_function(func, "mymodule")
-        assert "def test_my_function" in test_code
-        assert "assert" in test_code
+        if "def test_my_function" not in test_code:
+            raise AssertionError("Should generate test function definition")
+        if "assert" not in test_code:
+            raise AssertionError("Should contain assertion in generated code")
 
 
 class TestSummarize:
@@ -202,8 +218,10 @@ class TestSummarize:
         from scripts.summarize import summarize_codebase
 
         summary = summarize_codebase(temp_project)
-        assert summary.total_files >= 2
-        assert summary.total_functions >= 2
+        if not summary.total_files >= 2:
+            raise AssertionError("Should handle at least 2 files")
+        if not summary.total_functions >= 2:
+            raise AssertionError("Should handle at least 2 functions")
 
     def test_format_summary_markdown(self, temp_project):
         """Test summary markdown formatting."""
@@ -211,7 +229,8 @@ class TestSummarize:
 
         summary = summarize_codebase(temp_project)
         markdown = format_summary_markdown(summary)
-        assert "# Codebase Summary" in markdown
+        if "# Codebase Summary" not in markdown:
+            raise AssertionError("Markdown should contain header")
 
 
 class TestChangelog:
@@ -222,18 +241,24 @@ class TestChangelog:
         from scripts.changelog import parse_commit_message
 
         entry = parse_commit_message("feat(auth): add login functionality")
-        assert entry is not None
-        assert entry.commit_type == "feat"
-        assert entry.scope == "auth"
-        assert "login" in entry.description
+        if entry is None:
+            raise AssertionError("Entry should not be None")
+        if entry.commit_type != "feat":
+            raise AssertionError("Commit type should be feat")
+        if entry.scope != "auth":
+            raise AssertionError("Scope should be auth")
+        if "login" not in entry.description:
+            raise AssertionError("Description should contain login")
 
     def test_parse_commit_message_breaking(self):
         """Test breaking change detection."""
         from scripts.changelog import parse_commit_message
 
         entry = parse_commit_message("feat!: breaking change")
-        assert entry is not None
-        assert entry.breaking == True
+        if entry is None:
+            raise AssertionError("Entry should not be None")
+        if entry.breaking != True:
+            raise AssertionError("Should detect breaking change")
 
 
 class TestDeps:
@@ -244,8 +269,10 @@ class TestDeps:
         from scripts.deps import analyze_dependencies
 
         report = analyze_dependencies(temp_project)
-        assert report is not None
-        assert len(report.modules) >= 2
+        if report is None:
+            raise AssertionError("Report should not be None")
+        if not len(report.modules) >= 2:
+            raise AssertionError("Should find at least 2 modules")
 
     def test_format_report_markdown(self, temp_project):
         """Test dependency report markdown."""
@@ -253,7 +280,8 @@ class TestDeps:
 
         report = analyze_dependencies(temp_project)
         markdown = format_report_markdown(report)
-        assert "# Dependency Analysis" in markdown
+        if "# Dependency Analysis" not in markdown:
+            raise AssertionError("Markdown should contain header")
 
 
 class TestReview:
@@ -264,14 +292,16 @@ class TestReview:
         from scripts.review import review_file
 
         issues = review_file(temp_project / "no_docs.py")
-        assert len(issues) >= 1  # Should find missing docstrings
+        if not len(issues) >= 1:
+            raise AssertionError("Should find missing docstrings")
 
     def test_review_project(self, temp_project):
         """Test project review."""
         from scripts.review import review_project
 
         report = review_project(temp_project)
-        assert report.files_reviewed >= 2
+        if not report.files_reviewed >= 2:
+            raise AssertionError("Should review at least 2 files")
 
     def test_security_check(self):
         """Test security issue detection."""
@@ -289,7 +319,8 @@ eval(user_input)
             f.flush()
 
             issues = ReviewChecks.check_security_issues(Path(f.name), tree)
-            assert len(issues) >= 1  # Should find eval or hardcoded secret
+            if not len(issues) >= 1:
+                raise AssertionError("Should find security issue")
 
             os.unlink(f.name)
 

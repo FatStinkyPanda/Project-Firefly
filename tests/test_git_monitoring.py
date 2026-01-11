@@ -1,6 +1,7 @@
 from pathlib import Path
 import os
 import shutil
+import subprocess
 import time
 import unittest
 
@@ -15,7 +16,9 @@ class TestGitMonitoring(unittest.TestCase):
         self.tmp_dir.mkdir()
 
         # Initialize git repo in tmp_dir
-        os.system(f'cd {self.tmp_dir} && git init && git config user.email "test@example.com" && git config user.name "Test User"')
+        subprocess.run(['git', 'init'], cwd=self.tmp_dir, check=True, capture_output=True)
+        subprocess.run(['git', 'config', 'user.email', 'test@example.com'], cwd=self.tmp_dir, check=True, capture_output=True)
+        subprocess.run(['git', 'config', 'user.name', 'Test User'], cwd=self.tmp_dir, check=True, capture_output=True)
 
         self.bus = EventBusService()
         self.events = []
@@ -37,7 +40,7 @@ class TestGitMonitoring(unittest.TestCase):
     def test_detection(self):
         try:
             print("--- Branch Checkout ---")
-            os.system(f'cd {self.tmp_dir} && git checkout -b test-branch')
+            subprocess.run(['git', 'checkout', '-b', 'test-branch'], cwd=self.tmp_dir, check=True, capture_output=True)
             time.sleep(2)
 
             checkout_branches = [e['data']['branch'] for e in self.events if e['type'] == 'branch_checkout']
@@ -47,7 +50,8 @@ class TestGitMonitoring(unittest.TestCase):
             print("--- Git Commit ---")
             with open(self.tmp_dir / "test.txt", "w") as f:
                 f.write("test content")
-            os.system(f'cd {self.tmp_dir} && git add test.txt && git commit -m "test commit"')
+            subprocess.run(['git', 'add', 'test.txt'], cwd=self.tmp_dir, check=True, capture_output=True)
+            subprocess.run(['git', 'commit', '-m', 'test commit'], cwd=self.tmp_dir, check=True, capture_output=True)
             time.sleep(2)
 
             commit_events = [e for e in self.events if e['type'] == 'commit_detected']

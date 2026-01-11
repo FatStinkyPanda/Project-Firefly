@@ -1,7 +1,7 @@
 from pathlib import Path
-import os
 import shutil
 import time
+import subprocess
 
 from agent_manager.core.event_bus import EventBusService
 from agent_manager.core.git_service import GitMonitoringService
@@ -13,7 +13,9 @@ if tmp_dir.exists():
 tmp_dir.mkdir()
 
 print(f"Initializing git in {tmp_dir}...")
-os.system(f'cd {tmp_dir} && git init && git config user.email "test@example.com" && git config user.name "Test User"')
+subprocess.run(['git', 'init'], cwd=tmp_dir, check=True, capture_output=True)
+subprocess.run(['git', 'config', 'user.email', 'test@example.com'], cwd=tmp_dir, check=True, capture_output=True)
+subprocess.run(['git', 'config', 'user.name', 'Test User'], cwd=tmp_dir, check=True, capture_output=True)
 
 bus = EventBusService()
 def log_event(t, d):
@@ -29,13 +31,14 @@ monitor.start()
 time.sleep(1)
 
 print("--- Creating branch ---")
-os.system(f'cd {tmp_dir} && git checkout -b feature/ai-git')
+subprocess.run(['git', 'checkout', '-b', 'feature/ai-git'], cwd=tmp_dir, check=True, capture_output=True)
 time.sleep(2)
 
 print("--- Creating commit ---")
 with open(tmp_dir / "firefly.txt", "w") as f:
     f.write("Firefly is watching.")
-os.system(f'cd {tmp_dir} && git add firefly.txt && git commit -m "feat: firefly observation"')
+subprocess.run(['git', 'add', 'firefly.txt'], cwd=tmp_dir, check=True, capture_output=True)
+subprocess.run(['git', 'commit', '-m', 'feat: firefly observation'], cwd=tmp_dir, check=True, capture_output=True)
 time.sleep(2)
 
 monitor.stop()
