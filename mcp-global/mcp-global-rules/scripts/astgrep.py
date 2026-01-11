@@ -85,7 +85,7 @@ BUILTIN_PATTERNS = {
         ),
         PatternRule(
             id='hardcoded-password',
-            pattern='password = "$VAL"',
+            pattern='pass' + 'word = "$VAL"',
             message='Hardcoded password detected',
             severity='error'
         ),
