@@ -123,6 +123,8 @@ import { INativeMcpDiscoveryHelperService, NativeMcpDiscoveryHelperChannelName }
 import { NativeMcpDiscoveryHelperService } from '../../platform/mcp/node/nativeMcpDiscoveryHelperService.js';
 import { IWebContentExtractorService } from '../../platform/webContentExtractor/common/webContentExtractor.js';
 import { NativeWebContentExtractorService } from '../../platform/webContentExtractor/electron-main/webContentExtractorService.js';
+import { IFireflyMainService } from '../../platform/firefly/electron-main/firefly.js';
+import { FireflyChannel } from '../../platform/firefly/common/fireflyIpc.js';
 import ErrorTelemetry from '../../platform/telemetry/electron-main/errorTelemetry.js';
 
 /**
@@ -1235,6 +1237,10 @@ export class CodeApplication extends Disposable {
 		// MCP
 		const mcpDiscoveryChannel = ProxyChannel.fromService(accessor.get(INativeMcpDiscoveryHelperService), disposables);
 		mainProcessElectronServer.registerChannel(NativeMcpDiscoveryHelperChannelName, mcpDiscoveryChannel);
+
+		// Firefly
+		const fireflyChannel = new FireflyChannel(accessor.get(IFireflyMainService));
+		mainProcessElectronServer.registerChannel('firefly', fireflyChannel);
 
 		// Logger
 		const loggerChannel = new LoggerChannel(accessor.get(ILoggerMainService),);

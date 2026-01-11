@@ -10,6 +10,24 @@ import { InstantiationService } from '../../../../../platform/instantiation/comm
 import { NullLogService } from '../../../../../platform/log/common/log.js';
 import { NullExtensionService } from '../../../extensions/common/extensions.js';
 import { CommandService } from '../../common/commandService.js';
+import { IFireflyWorkbenchService, IFireflyThought } from '../../../firefly/common/firefly.js';
+import { Event } from '../../../../../base/common/event.js';
+
+class MockFireflyService implements IFireflyWorkbenchService {
+	readonly _serviceBrand: undefined;
+	readonly onDidChangeThought = Event.None;
+	readonly onDidChangeMode = Event.None;
+	readonly onDidChangeStatus = Event.None;
+
+	isAutonomousMode(): boolean { return false; }
+	setAutonomousMode(enabled: boolean): void { }
+
+	getCurrentThought(): IFireflyThought | undefined { return undefined; }
+	getTotalCost(): number { return 0; }
+
+	reportIntent(commandId: string, args: unknown[]): void { }
+}
+
 
 suite('CommandService', function () {
 
@@ -28,7 +46,7 @@ suite('CommandService', function () {
 				lastEvent = activationEvent;
 				return super.activateByEvent(activationEvent);
 			}
-		}, new NullLogService()));
+		}, new NullLogService(), new MockFireflyService()));
 
 		return service.executeCommand('foo').then(() => {
 			assert.ok(lastEvent, 'onCommand:foo');
@@ -48,7 +66,7 @@ suite('CommandService', function () {
 			}
 		};
 
-		const service = store.add(new CommandService(new InstantiationService(), extensionService, new NullLogService()));
+		const service = store.add(new CommandService(new InstantiationService(), extensionService, new NullLogService(), new MockFireflyService()));
 
 		await extensionService.whenInstalledExtensionsRegistered();
 
@@ -66,7 +84,7 @@ suite('CommandService', function () {
 			override whenInstalledExtensionsRegistered() {
 				return new Promise<boolean>(_resolve => { /*ignore*/ });
 			}
-		}, new NullLogService()));
+		}, new NullLogService(), new MockFireflyService()));
 
 		service.executeCommand('bar');
 		assert.strictEqual(callCounter, 1);
@@ -83,7 +101,7 @@ suite('CommandService', function () {
 			override whenInstalledExtensionsRegistered() {
 				return whenInstalledExtensionsRegistered;
 			}
-		}, new NullLogService()));
+		}, new NullLogService(), new MockFireflyService()));
 
 		const r = service.executeCommand('bar');
 		assert.strictEqual(callCounter, 0);
@@ -123,7 +141,7 @@ suite('CommandService', function () {
 				return Promise.resolve();
 			}
 
-		}, new NullLogService()));
+		}, new NullLogService(), new MockFireflyService()));
 
 		return service.executeCommand('farboo').then(() => {
 			assert.strictEqual(callCounter, 1);
@@ -164,7 +182,7 @@ suite('CommandService', function () {
 				return Promise.resolve();
 			}
 
-		}, new NullLogService()));
+		}, new NullLogService(), new MockFireflyService()));
 
 		return service.executeCommand('farboo2').then(() => {
 			assert.deepStrictEqual(actualOrder, expectedOrder);
@@ -185,7 +203,7 @@ suite('CommandService', function () {
 				return true;
 			}
 		};
-		const service = store.add(new CommandService(new InstantiationService(), extensionService, new NullLogService()));
+		const service = store.add(new CommandService(new InstantiationService(), extensionService, new NullLogService(), new MockFireflyService()));
 
 		await extensionService.whenInstalledExtensionsRegistered();
 

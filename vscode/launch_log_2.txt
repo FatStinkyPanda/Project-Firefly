@@ -1,0 +1,49 @@
+
+> code-oss-dev@1.109.0 electron
+> node build/lib/electron.ts
+
+[[90m07:34:16[39m] Synchronizing built-in extensions...
+[[90m07:34:16[39m] You can manage built-in extensions with the [36m--builtin[39m flag
+[[90m07:34:16[39m] [34m[github][39m ms-vscode.js-debug-companion@1.1.3 [32m✔︎[39m
+[[90m07:34:16[39m] [34m[github][39m ms-vscode.js-debug@1.105.0 [32m✔︎[39m
+[[90m07:34:16[39m] [34m[github][39m ms-vscode.vscode-js-profile-table@1.0.10 [32m✔︎[39m
+
+[main 2026-01-11T14:34:17.599Z] [Firefly] Initializing Core Intelligence...
+[main 2026-01-11T14:34:17.603Z] [Firefly] Spawning Agent Backend: python c:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\agent_manager\main.py
+[main 2026-01-11T14:34:17.655Z] Error: Could not locate the bindings file. Tried:
+ → C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\policy-watcher\build\vscode-policy-watcher.node
+ → C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\policy-watcher\build\Debug\vscode-policy-watcher.node
+ → C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\policy-watcher\build\Release\vscode-policy-watcher.node
+ → C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\policy-watcher\out\Debug\vscode-policy-watcher.node
+ → C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\policy-watcher\Debug\vscode-policy-watcher.node
+ → C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\policy-watcher\out\Release\vscode-policy-watcher.node
+ → C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\policy-watcher\Release\vscode-policy-watcher.node
+ → C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\policy-watcher\build\default\vscode-policy-watcher.node
+ → C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\policy-watcher\compiled\22.21.1\win32\x64\vscode-policy-watcher.node
+ → C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\policy-watcher\addon-build\release\install-root\vscode-policy-watcher.node
+ → C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\policy-watcher\addon-build\debug\install-root\vscode-policy-watcher.node
+ → C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\policy-watcher\addon-build\default\install-root\vscode-policy-watcher.node
+ → C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\policy-watcher\lib\binding\node-v140-win32-x64\vscode-policy-watcher.node
+    at bindings (C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\bindings\bindings.js:126:9)
+    at Object.<anonymous> (C:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\vscode\node_modules\@vscode\policy-watcher\index.js:6:44)
+    at Module._compile (node:internal/modules/cjs/loader:1714:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1848:10)
+    at Module.load (node:internal/modules/cjs/loader:1448:32)
+    at Module._load (node:internal/modules/cjs/loader:1270:12)
+    at c._load (node:electron/js2c/node_init:2:17993)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)
+    at cjsLoader (node:internal/modules/esm/translators:313:5)
+    at ModuleWrap.<anonymous> (node:internal/modules/esm/translators:202:7)
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26)
+    at async NativePolicyService._updatePolicyDefinitions (file:///C:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/platform/policy/node/nativePolicyService.js:28:35)
+    at async NativePolicyService.updatePolicyDefinitions (file:///C:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/platform/policy/common/policy.js:22:13)
+    at async PolicyConfiguration.updatePolicyDefinitions (file:///C:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/platform/configuration/common/configurations.js:129:13)
+    at async PolicyConfiguration.initialize (file:///C:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/platform/configuration/common/configurations.js:96:21)
+    at async Promise.all (index 1)
+    at async ConfigurationService.initialize (file:///C:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/platform/configuration/common/configurationService.js:39:56)
+    at async Promise.all (index 2)
+    at async Object.settled (file:///C:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/base/common/async.js:1396:24)
+    at async CodeMain.initServices (file:///C:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/code/electron-main/main.js:232:9)
+    at async CodeMain.startup (file:///C:/Users/dbiss/Desktop/Projects/Personal/Project-Firefly/vscode/out/vs/code/electron-main/main.js:99:17)

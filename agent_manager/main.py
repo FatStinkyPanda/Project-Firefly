@@ -5,6 +5,7 @@ import time
 from agent_manager.core.config_service import ConfigurationService
 from agent_manager.core.dashboard_service import DashboardService
 from agent_manager.core.event_bus import EventBusService
+from agent_manager.core.git_service import GitMonitoringService
 from agent_manager.core.session_manager import SessionManager
 from agent_manager.models.manager import ModelClientManager
 from agent_manager.orchestrator import OrchestratorManager
@@ -53,6 +54,7 @@ def main():
     webhook_service = WebhookService(event_bus=bus, port=5000)
     telegram_service = TelegramService(event_bus=bus)
     workspace_service = WorkspaceMonitoringService(event_bus=bus)
+    git_monitor = GitMonitoringService(event_bus=bus)
 
     # 6. Initialize Dashboard
     dashboard = DashboardService(event_bus=bus)
@@ -62,6 +64,7 @@ def main():
     webhook_service.start()
     telegram_service.start()
     workspace_service.start()
+    git_monitor.start()
 
     # 7. Keep Alive Loop
     try:
@@ -75,6 +78,7 @@ def main():
         workspace_service.stop()
         telegram_service.stop()
         webhook_service.stop()
+        git_monitor.stop()
         orchestrator.stop()
 
 if __name__ == "__main__":

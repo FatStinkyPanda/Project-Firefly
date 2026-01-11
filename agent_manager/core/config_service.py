@@ -17,11 +17,12 @@ class ConfigurationService:
             "ls", "pwd", "git status", "git diff", "cat", "mcp.py context", "mcp.py search"
         ],
         "orchestrator_approved_commands": [
-            "git add", "git commit", "git push", "mcp.py fix", "mcp.py review", "npm test", "pytest"
+            "git add", "git commit", "git push", "git merge", "git checkout", "git branch", "mcp.py fix", "mcp.py review", "npm test", "pytest"
         ],
         "always_ask_commands": [
             "rm -rf", "format C:", "del /s", "curl -X POST", "sh", "bash", "powershell"
-        ]
+        ],
+        "git_agent_always_live": False
     }
 
     def __init__(self, config_path: str = "options.json"):

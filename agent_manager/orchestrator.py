@@ -2,6 +2,7 @@ import logging
 import re
 import subprocess
 
+from agent_manager.core.git_manager import GitManager
 from agent_manager.core.tag_parser import TagParserService
 
 logger = logging.getLogger("FireflyOrchestrator")
@@ -17,7 +18,10 @@ class OrchestratorManager:
         self.config_service = config_service
         self.peer_discovery = peer_discovery
         self.session_manager = session_manager
-        self.tag_parser = TagParserService()
+        self.git_manager = GitManager()
+        self._current_conflicts = set()
+        self._total_cost = 0.0
+        self._is_autonomous = False
         self.is_running = False
 
     def start(self):
@@ -29,6 +33,7 @@ class OrchestratorManager:
         self.event_bus.subscribe("peer_message", self.handle_event)
         self.event_bus.subscribe("peer_joined", self.handle_event)
         self.event_bus.subscribe("peer_left", self.handle_event)
+        self.event_bus.subscribe("git_event", self.handle_event)
 
     def stop(self):
         self.is_running = False
@@ -47,11 +52,13 @@ class OrchestratorManager:
             self.process_request(payload.get("text"), source="telegram", context=payload, session_id=session_id)
         elif event_type == "system_event":
             self.handle_system_event(payload)
-        elif event_type == "peer_message":
-            session_id = f"peer_{payload.get('from')}"
-            self.handle_peer_message(payload, session_id=session_id)
+        elif event_type == "git_event":
+            self.handle_git_event(payload)
+        elif event_type == "usage_report":
+            self._total_cost += payload.get("cost", 0)
+            self.set_status(cost=self._total_cost)
 
-    def process_request(self, prompt: str, source: str, context: dict = None, session_id: str = "default"):
+    def process_request(self, prompt: str, source: str, context: dict = None, session_id: str = "default", agent_role: str = "Lead Orchestrator"):
         """
         Unified processing logic using AI + Tag Parsing + Session Memory.
         """
@@ -59,18 +66,36 @@ class OrchestratorManager:
             logger.warning("No Model Client available.")
             return
 
+        # 0. Sync UI Mode
+        if source in ["system", "git", "delegate", "peer"]:
+            self.set_status(mode="autonomous")
+        else:
+            self.set_status(mode="interactive")
+
         # 1. Manage History
         history_context = ""
         if self.session_manager:
             self.session_manager.add_message(session_id, "user", prompt)
             history_context = self.session_manager.format_for_ai(session_id)
 
+        role_instructions = ""
+        if agent_role == "GitFlowManager":
+            role_instructions = (
+                "You are the Firefly GitFlowManager. Your primary responsibility is maintaining repository health. "
+                "You must review all incoming commits, resolve merge conflicts intelligently, and manage branch lifecycles. "
+                "When a conflict occurs, analyze the conflict markers and provide a clean, production-ready resolution. "
+                "Always run tests (`npm test` or `pytest`) before finalizing a merge resolution."
+            )
+        else:
+            role_instructions = f"You are the Firefly {agent_role}."
+
         system_prompt = (
-            "You are the Firefly Lead Orchestrator. "
+            f"{role_instructions} "
             "Use <thought> tags for your reasoning. "
             "Use <command> tags to execute shell commands. "
             "Use <message> tags to communicate back to the user. "
             "Use <delegate recipient=\"agent_name\">task_description</delegate> to assign work to a peer. "
+            "If a Git conflict is detected, you must use <git_resolve path=\"file/path\">resolved_content</git_resolve> after reviewing the conflict in the file.\n"
             "Be precise and autonomous.\n"
             f"{history_context}"
         )
@@ -86,6 +111,7 @@ class OrchestratorManager:
             # 2. Log thoughts
             for thought in parsed.thoughts:
                 logger.info(f"CORE THOUGHT: {thought}")
+                self.set_status(thought=thought)
 
             # 2. Execute commands (with safety)
             for cmd in parsed.commands:
@@ -103,6 +129,16 @@ class OrchestratorManager:
                     })
                 else:
                     logger.info(f"AI MESSAGE: {msg}")
+
+            # 5. Handle Git Resolutions
+            resolutions = re.findall(r'<git_resolve\s+path=["\'](.*?)["\']>(.*?)</git_resolve>', response.text, re.DOTALL | re.IGNORECASE)
+            for path, resolved in resolutions:
+                logger.info(f"Applying Git resolution for: {path}")
+                self.git_manager.resolve_file(path, resolved.strip())
+                self._current_conflicts.discard(path)
+                if not self._current_conflicts:
+                    logger.info("All conflicts resolved. Committing merge.")
+                    self.git_manager.commit("chore: resolve merge conflicts autonomously", all_files=True)
 
         except Exception as e:
             logger.error(f"Failed to process request: {e}")
@@ -132,12 +168,66 @@ class OrchestratorManager:
             logger.error(f"Execution Error: {e}")
             return False
 
+    def set_status(self, thought=None, cost=None, mode=None):
+        """Communicates the current status to the Firefly IDE host."""
+        status_parts = ["[FIREFLY:STATUS]"]
+        if thought: status_parts.append(f'thought="{thought}"')
+        if cost is not None: status_parts.append(f"cost={cost:.6f}")
+        if mode:
+            self._is_autonomous = (mode.lower() == "autonomous")
+            status_parts.append(f"mode={mode}")
+        elif self._is_autonomous:
+            status_parts.append("mode=autonomous")
+        else:
+            status_parts.append("mode=idle")
+
+        print(" ".join(status_parts), flush=True)
+
     def handle_system_event(self, payload: dict):
         """Logic for file changes and other system events."""
         ev_type = payload.get("type")
         path = payload.get("path")
         if ev_type == "file_change" and path.endswith(".py"):
              self.process_request(f"Analyze change in file: {path}", source="system")
+
+    def handle_git_event(self, payload: dict):
+        """Logic for Git events like commits, checkouts, and merges."""
+        ev_type = payload.get("type")
+        data = payload.get("data", {})
+
+        if ev_type == "merge_state_change":
+            # Check for conflicts
+            conflicts = self.git_manager.get_conflicts()
+            if conflicts:
+                self._current_conflicts = set(conflicts)
+                logger.warning(f"Git Conflicts detected in files: {conflicts}")
+                self.set_status(mode="autonomous", thought="Analyzing merge conflicts...")
+
+                # Activate GitFlowManager logic or handle in Orchestrator
+                for conflict_file in conflicts:
+                    content = self.git_manager.get_file_content_with_conflicts(conflict_file)
+                    self.process_request(
+                        f"CRITICAL: Git merge conflict detected in {conflict_file}.\n"
+                        f"Content with markers:\n{content}\n"
+                        "Please provide the resolved content using <git_resolve path=\"...\">...</git_resolve> tags.",
+                        source="system",
+                        session_id="git_conflict_resolution",
+                        agent_role="GitFlowManager"
+                    )
+
+        elif ev_type == "branch_checkout":
+             logger.info(f"Switched to branch: {data.get('branch')}")
+
+        elif ev_type == "commit_detected":
+             if self.config_service and self.config_service.get("git_agent_always_live"):
+                 # Review the commit autonomously
+                 self.process_request(
+                     f"New commit detected on branch {data.get('branch')} ({data.get('commit')}). "
+                     "Perform an autonomous review of the changes and ensure quality standards are met.",
+                     source="system",
+                     session_id=f"git_review_{data.get('branch')}",
+                     agent_role="GitFlowManager"
+                 )
 
     def handle_peer_message(self, payload: dict, session_id: str = "peer_unknown"):
         """Handle coordination messages from other agents."""
@@ -162,12 +252,17 @@ class OrchestratorManager:
             logger.warning("No PeerDiscoveryService available.")
             return
 
+        if recipient == "GitFlowManager" and not any(p.get("role") == "GitFlowManager" for p in self.peer_discovery.peers.values()):
+            logger.info("No remote GitFlowManager found. Spawning local GitFlowManager logic.")
+            self.process_request(task, source="delegate", agent_role="GitFlowManager")
+            return
+
         target_agents = []
-        
+
         # 1. Match by Identity
         if recipient in self.peer_discovery.peers:
             target_agents.append(recipient)
-        
+
         # 2. Match by Role
         elif recipient != "broadcast":
             for p_id, p_data in self.peer_discovery.peers.items():

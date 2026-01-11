@@ -37,6 +37,7 @@ import { WorkbenchContextKeysHandler } from './contextkeys.js';
 import { coalesce } from '../../base/common/arrays.js';
 import { InstantiationService } from '../../platform/instantiation/common/instantiationService.js';
 import { Layout } from './layout.js';
+import { ThoughtStreamPart } from './parts/thoughtstream/thoughtStreamPart.js';
 import { IHostService } from '../services/host/browser/host.js';
 import { IDialogService } from '../../platform/dialogs/common/dialogs.js';
 import { mainWindow } from '../../base/browser/window.js';
@@ -206,6 +207,9 @@ export class Workbench extends Layout {
 
 		const instantiationService = new InstantiationService(serviceCollection, true);
 
+		// ThoughtStream Part - Instantiate to register with layout service (via Part constructor)
+		instantiationService.createInstance(ThoughtStreamPart);
+
 		// Wrap up
 		instantiationService.invokeFunction(accessor => {
 			const lifecycleService = accessor.get(ILifecycleService);
@@ -346,6 +350,7 @@ export class Workbench extends Layout {
 			{ id: Parts.EDITOR_PART, role: 'main', classes: ['editor'], options: { restorePreviousState: this.willRestoreEditors() } },
 			{ id: Parts.PANEL_PART, role: 'none', classes: ['panel', 'basepanel', positionToString(this.getPanelPosition())] },
 			{ id: Parts.AUXILIARYBAR_PART, role: 'none', classes: ['auxiliarybar', 'basepanel', this.getSideBarPosition() === Position.LEFT ? 'right' : 'left'] },
+			{ id: Parts.THOUGHTSTREAM_PART, role: 'none', classes: ['thoughtstream'] },
 			{ id: Parts.STATUSBAR_PART, role: 'status', classes: ['statusbar'] }
 		]) {
 			const partContainer = this.createPart(id, role, classes);

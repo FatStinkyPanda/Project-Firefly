@@ -44,6 +44,7 @@ import { DeferredPromise, Promises } from '../../base/common/async.js';
 import { IBannerService } from '../services/banner/browser/bannerService.js';
 import { IPaneCompositePartService } from '../services/panecomposite/browser/panecomposite.js';
 import { AuxiliaryBarPart } from './parts/auxiliarybar/auxiliaryBarPart.js';
+import { ThoughtStreamPart } from './parts/thoughtstream/thoughtStreamPart.js';
 import { ITelemetryService } from '../../platform/telemetry/common/telemetry.js';
 import { IAuxiliaryWindowService } from '../services/auxiliaryWindow/browser/auxiliaryWindowService.js';
 import { CodeWindow, mainWindow } from '../../base/browser/window.js';
@@ -266,6 +267,7 @@ export abstract class Layout extends Disposable implements IWorkbenchLayoutServi
 
 	private titleBarPartView!: ISerializableView;
 	private bannerPartView!: ISerializableView;
+	private thoughtStreamPartView!: ISerializableView;
 	private activityBarPartView!: ISerializableView;
 	private sideBarPartView!: ISerializableView;
 	private panelPartView!: ISerializableView;
@@ -1530,6 +1532,7 @@ export abstract class Layout extends Disposable implements IWorkbenchLayoutServi
 	protected createWorkbenchLayout(): void {
 		const titleBar = this.getPart(Parts.TITLEBAR_PART);
 		const bannerPart = this.getPart(Parts.BANNER_PART);
+		const thoughtStreamPart = this.getPart(Parts.THOUGHTSTREAM_PART);
 		const editorPart = this.getPart(Parts.EDITOR_PART);
 		const activityBar = this.getPart(Parts.ACTIVITYBAR_PART);
 		const panelPart = this.getPart(Parts.PANEL_PART);
@@ -1540,6 +1543,7 @@ export abstract class Layout extends Disposable implements IWorkbenchLayoutServi
 		// View references for all parts
 		this.titleBarPartView = titleBar;
 		this.bannerPartView = bannerPart;
+		this.thoughtStreamPartView = thoughtStreamPart;
 		this.sideBarPartView = sideBar;
 		this.activityBarPartView = activityBar;
 		this.editorPartView = editorPart;
@@ -1550,6 +1554,7 @@ export abstract class Layout extends Disposable implements IWorkbenchLayoutServi
 		const viewMap = {
 			[Parts.ACTIVITYBAR_PART]: this.activityBarPartView,
 			[Parts.BANNER_PART]: this.bannerPartView,
+			[Parts.THOUGHTSTREAM_PART]: this.thoughtStreamPartView,
 			[Parts.TITLEBAR_PART]: this.titleBarPartView,
 			[Parts.EDITOR_PART]: this.editorPartView,
 			[Parts.PANEL_PART]: this.panelPartView,
@@ -2515,11 +2520,12 @@ export abstract class Layout extends Disposable implements IWorkbenchLayoutServi
 
 		const titleBarHeight = this.titleBarPartView.minimumHeight;
 		const bannerHeight = this.bannerPartView.minimumHeight;
+		const thoughtStreamHeight = ThoughtStreamPart.HEIGHT;
 		const statusBarHeight = this.statusBarPartView.minimumHeight;
 		const activityBarWidth = this.activityBarPartView.minimumWidth;
-		const middleSectionHeight = height - titleBarHeight - statusBarHeight;
+		const middleSectionHeight = height - titleBarHeight - bannerHeight - thoughtStreamHeight - statusBarHeight;
 
-		const titleAndBanner: ISerializedNode[] = [
+		const headerParts: ISerializedNode[] = [
 			{
 				type: 'leaf',
 				data: { type: Parts.TITLEBAR_PART },
@@ -2531,6 +2537,12 @@ export abstract class Layout extends Disposable implements IWorkbenchLayoutServi
 				data: { type: Parts.BANNER_PART },
 				size: bannerHeight,
 				visible: false
+			},
+			{
+				type: 'leaf',
+				data: { type: Parts.THOUGHTSTREAM_PART },
+				size: thoughtStreamHeight,
+				visible: true
 			}
 		];
 
@@ -2582,7 +2594,7 @@ export abstract class Layout extends Disposable implements IWorkbenchLayoutServi
 				type: 'branch',
 				size: width,
 				data: [
-					...(this.shouldShowBannerFirst() ? titleAndBanner.reverse() : titleAndBanner),
+					...(this.shouldShowBannerFirst() ? headerParts.reverse() : headerParts),
 					{
 						type: 'branch',
 						data: middleSection,

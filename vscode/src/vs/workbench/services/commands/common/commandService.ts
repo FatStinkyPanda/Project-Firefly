@@ -11,6 +11,7 @@ import { InstantiationType, registerSingleton } from '../../../../platform/insta
 import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
 import { ILogService } from '../../../../platform/log/common/log.js';
 import { IExtensionService } from '../../extensions/common/extensions.js';
+import { IFireflyWorkbenchService } from '../../firefly/common/firefly.js';
 
 export class CommandService extends Disposable implements ICommandService {
 
@@ -28,7 +29,8 @@ export class CommandService extends Disposable implements ICommandService {
 	constructor(
 		@IInstantiationService private readonly _instantiationService: IInstantiationService,
 		@IExtensionService private readonly _extensionService: IExtensionService,
-		@ILogService private readonly _logService: ILogService
+		@ILogService private readonly _logService: ILogService,
+		@IFireflyWorkbenchService private readonly _fireflyService: IFireflyWorkbenchService
 	) {
 		super();
 		this._extensionService.whenInstalledExtensionsRegistered().then(value => this._extensionHostIsReady = value);
@@ -51,6 +53,7 @@ export class CommandService extends Disposable implements ICommandService {
 
 	async executeCommand<T>(id: string, ...args: unknown[]): Promise<T> {
 		this._logService.trace('CommandService#executeCommand', id);
+		this._fireflyService.reportIntent(id, args);
 
 		const activationEvent = `onCommand:${id}`;
 		const commandIsRegistered = !!CommandsRegistry.getCommand(id);
