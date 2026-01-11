@@ -30,7 +30,6 @@ src/vs/workbench/contrib/void/browser/react/out/**
 src/vs/workbench/contrib/void/browser/react/src2/**
 
 # Firefly ignores
-vscode/
 report2.txt
 security_report.txt
 .mcp/
