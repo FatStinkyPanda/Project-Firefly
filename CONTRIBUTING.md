@@ -1,10 +1,10 @@
-# Contributing to Open Antigravity
+# Contributing to Project-Firefly
 
-First off, thank you for considering contributing to Open Antigravity! It's people like you that make Open Antigravity such a great tool.
+First off, thank you for considering contributing to Project-Firefly! It's people like you that make Project-Firefly such a great tool.
 
 ## Where do I go from here?
 
-If you've noticed a bug or have a question, [search the issue tracker](https://github.com/your-repo/issues) to see if someone else has already reported the issue. If not, feel free to create a new issue.
+If you've noticed a bug or have a question, [search the issue tracker](https://github.com/ishandutta2007/open-antigravity/issues) to see if someone else has already reported the issue. If not, feel free to create a new issue.
 
 ## Fork & create a branch
 

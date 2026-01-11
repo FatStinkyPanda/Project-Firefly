@@ -2,9 +2,9 @@
   <br />
   <img src=".github/assets/google-antigravity-logo.svg" width="200" />
   <br />
-  <h1>Open-Antigravity</h1>
+  <h1>Project-Firefly</h1>
 
-  [Download](https://antigravity.google)
+  [Download](https://github.com/ishandutta2007/open-antigravity)
   <p><b>The Open-Source, Universal AI Gateway for Agentic Development</b></p>
   <p>
     <i>An open, community-driven effort to build a truly model-agnostic alternative to proprietary agentic coding platforms.</i>
@@ -20,7 +20,7 @@
 
 ---
 
-**Open-Antigravity** is not just another code editor or AI assistant. It's an ambitious open-source project to build a web-native, **agent-first** integrated development environment (IDE). Unlike proprietary platforms that lock you into a single AI ecosystem, Open-Antigravity is designed from the ground up to be a **universal gateway to any LLM**. Our goal is to create a platform where developers can delegate complex tasks to autonomous AI agents, powered by the models of their choice.
+**Project-Firefly** is not just another code editor or AI assistant. It's an ambitious open-source project to build a web-native, **agent-first** integrated development environment (IDE). Unlike proprietary platforms that lock you into a single AI ecosystem, Project-Firefly is designed from the ground up to be a **universal gateway to any LLM**. Our goal is to create a platform where developers can delegate complex tasks to autonomous AI agents, powered by the models of their choice.
 
 This project is for you if you believe in:
 - **True Model Freedom:** Building a future that isn't tied to a single AI provider.
@@ -39,7 +39,7 @@ We aim to build a platform that redefines developer productivity. Here are the k
 - **🔒 Privacy First:** No code information, environment information, OS information or user information or usage pattern would be sent to google.
 
 - **🔌 Universal LLM Gateway:**
-  Break free from vendor lock-in. Open-Antigravity is designed as a universal translation layer for Large Language Models. Connect to anything from OpenAI's GPT-5, Anthropic's Claude, and Google's Gemini to open models like Llama, Grok, and Qwen, or specialized APIs like Deepseek and Kimi. A unified interface means your agents and tools work seamlessly across all of them.
+  Break free from vendor lock-in. Project-Firefly is designed as a universal translation layer for Large Language Models. Connect to anything from OpenAI's GPT-5, Anthropic's Claude, and Google's Gemini to open models like Llama, Grok, and Qwen, or specialized APIs like Deepseek and Kimi. A unified interface means your agents and tools work seamlessly across all of them.
 
 - **🤖 Agent-First Workflow:**
   Delegate high-level tasks like "implement a new API endpoint for user authentication" or "refactor the database schema and update all related services" to AI agents powered by your chosen LLM.
@@ -62,7 +62,7 @@ We aim to build a platform that redefines developer productivity. Here are the k
 
 ## 🏛️ High-Level Architecture
 
-Open-Antigravity is being designed as a modular, container-native application that you can run anywhere.
+Project-Firefly is being designed as a modular, container-native application that you can run anywhere.
 
 ```
 ┌──────────────────────────┐
@@ -129,7 +129,7 @@ Interested in building the future of software development with us? Here’s how 
 1.  **Clone the repository:**
     ```bash
     git clone https://github.com/ishandutta2007/open-antigravity.git
-    cd open-antigravity
+    cd Project-Firefly
     ```
 
 2.  **Setup environment variables:**
@@ -142,7 +142,7 @@ Interested in building the future of software development with us? Here’s how 
     ```bash
     docker-compose up --build
     ```
-    This will build all the services and launch the Open-Antigravity platform. You can access it at `http://localhost:3000`.
+    This will build all the services and launch the Project-Firefly platform. You can access it at `http://localhost:3000`.
 
 ## 🙌 How to Contribute
 

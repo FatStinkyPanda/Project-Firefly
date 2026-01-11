@@ -1,6 +1,6 @@
-# Open Antigravity - MITM Server
+# Project-Firefly - MITM Server
 
-This is a man-in-the-middle (MITM) proxy server designed to intercept and inspect the network requests made by the official Antigravity application. It's a crucial tool for understanding the Antigravity API and for developing the Open Antigravity gateway.
+This is a man-in-the-middle (MITM) proxy server designed to intercept and inspect the network requests made by the official Antigravity application. It's a crucial tool for understanding the Antigravity API and for developing the Project-Firefly gateway.
 
 ## How it Works
 

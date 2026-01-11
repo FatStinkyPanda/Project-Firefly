@@ -2,9 +2,9 @@
   <br />
   <img src=".github/assets/google-antigravity-logo.svg" width="200" />
   <br />
-  <h1>Open-Antigravity</h1>
+  <h1>Project-Firefly</h1>
 
-  [下载](https://antigravity.google)
+  [下载](https://github.com/ishandutta2007/open-antigravity)
   <p><b>用于代理开发的开源通用 AI 网关</b></p>
   <p>
     <i>一个开放的、社区驱动的努力，旨在为专有的代理编码平台构建一个真正的模型无关的替代方案。</i>
@@ -20,7 +20,7 @@
 
 ---
 
-**Open-Antigravity** 不仅仅是另一个代码编辑器或 AI 助手。它是一个雄心勃勃的开源项目，旨在构建一个 Web 原生的、**代理优先**的集成开发环境 (IDE)。与将您锁定在单个 AI 生态系统中的专有平台不同，Open-Antigravity 从头开始设计，旨在成为**任何 LLM 的通用网关**。我们的目标是创建一个平台，让开发人员可以将复杂的任务委托给自主的 AI 代理，并由他们选择的模型提供支持。
+**Project-Firefly** 不仅仅是另一个代码编辑器或 AI 助手。它是一个雄心勃勃的开源项目，旨在构建一个 Web 原生的、**代理优先**的集成开发环境 (IDE)。与将您锁定在单个 AI 生态系统中的专有平台不同，Project-Firefly 从头开始设计，旨在成为**任何 LLM 的通用网关**。我们的目标是创建一个平台，让开发人员可以将复杂的任务委托给自主的 AI 代理，并由他们选择的模型提供支持。
 
 如果您相信以下几点，那么这个项目就适合您：
 - **真正的模型自由：** 构建一个不依赖于单个 AI 提供商的未来。
@@ -39,7 +39,7 @@
 - **🔒 隐私第一：** 不会将任何代码信息、环境信息、操作系统信息或用户信息或使用模式发送给谷歌。
 
 - **🔌 通用 LLM 网关：**
-  摆脱供应商锁定。Open-Antigravity 被设计为大型语言模型的通用转换层。可以连接从 OpenAI 的 GPT-5、Anthropic 的 Claude 和 Google 的 Gemini 到 Llama、Grok 和 Qwen 等开放模型，或 Deepseek 和 Kimi 等专用 API 的任何东西。统一的界面意味着您的代理和工具可以在所有这些模型上无缝工作。
+  摆脱供应商锁定。Project-Firefly 被设计为大型语言模型的通用转换层。可以连接从 OpenAI 的 GPT-5、Anthropic 的 Claude 和 Google 的 Gemini 到 Llama、Grok 和 Qwen 等开放模型，或 Deepseek 和 Kimi 等专用 API 的任何东西。统一的界面意味着您的代理和工具可以在所有这些模型上无缝工作。
 
 - **🤖 代理优先的工作流程：**
   将“为用户身份验证实现新的 API 端点”或“重构数据库模式并更新所有相关服务”等高级任务委托给由您选择的 LLM 提供支持的 AI 代理。
@@ -62,7 +62,7 @@
 
 ## 🏛️ 高级架构
 
-Open-Antigravity 被设计为一个模块化的、容器原生的应用程序，您可以在任何地方运行。
+Project-Firefly 被设计为一个模块化的、容器原生的应用程序，您可以在任何地方运行。
 
 ```
 ┌──────────────────────────┐
@@ -90,7 +90,7 @@ Open-Antigravity 被设计为一个模块化的、容器原生的应用程序，
 
 ## 🚀 路线图
 
-我们的路线图是一个活的文件。有关即将推出的功能、技术规格和时间表的详细分解，请参阅我们的完整 [**ROADMAP.md**](./ROADMAP.md)。
+我们的路线图是一个活的文件。有关即将推出的功能、技术规格和时间表的详细分解，请参阅我们的完整 [**ROADMAP.md**](./ROADMAP.md).
 
 以下是关键阶段的高级概述：
 
@@ -129,7 +129,7 @@ Open-Antigravity 被设计为一个模块化的、容器原生的应用程序，
 1.  **克隆存储库：**
     ```bash
     git clone https://github.com/ishandutta2007/open-antigravity.git
-    cd open-antigravity
+    cd Project-Firefly
     ```
 
 2.  **设置环境变量：**
@@ -142,7 +142,7 @@ Open-Antigravity 被设计为一个模块化的、容器原生的应用程序，
     ```bash
     docker-compose up --build
     ```
-    这将构建所有服务并启动 Open-Antigravity 平台。您可以在 `http://localhost:3000` 访问它。
+    这将构建所有服务并启动 Project-Firefly 平台。您可以在 `http://localhost:3000` 访问它。
 
 ## 🙌 如何贡献
 
