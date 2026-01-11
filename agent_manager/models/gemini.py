@@ -1,16 +1,16 @@
-from __future__ import annotations
-from typing import Optional, TYPE_CHECKING
+from typing import Optional, TYPE_CHECKING, Dict, Any
 import json
 import logging
 import os
 import urllib.error
 import urllib.request
 
-from .base import BaseModelService
+from .base import BaseHandler
+from __future__ import annotations
 
-logger = logging.getLogger("FireflyGeminiService")
+logger = logging.getLogger("FireflyGeminiHandler")
 
-class GeminiService(BaseModelService):
+class GeminiHandler(BaseHandler):
     """
     Google Gemini Service using standard library (zero-dependency).
     """
@@ -23,8 +23,8 @@ class GeminiService(BaseModelService):
     def validate_config(self) -> bool:
         return bool(self.api_key)
 
-    def generate(self, prompt: str, system_prompt: Optional[str] = None) -> ModelResponse:
-        from .base import ModelResponse
+    def generate(self, prompt: str, system_prompt: Optional[str] = None) -> HandlerResponse:
+        from .base import HandlerResponse
         if not self.validate_config():
             raise ValueError("Gemini API Key not found. Set GEMINI_API_KEY environment variable.")
 
@@ -62,7 +62,7 @@ class GeminiService(BaseModelService):
                     # $0.075 / 1M tokens prompt, $0.30 / 1M tokens completion
                     cost = (pt * 0.000000075) + (ct * 0.0000003)
 
-                    return ModelResponse(
+                    return HandlerResponse(
                         text=text,
                         prompt_tokens=pt,
                         completion_tokens=ct,

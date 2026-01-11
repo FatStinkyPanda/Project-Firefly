@@ -1,4 +1,3 @@
-import asyncio
 import logging
 import os
 import re
@@ -6,6 +5,7 @@ import subprocess
 
 from agent_manager.core.git_manager import GitManager
 from agent_manager.core.tag_parser import TagParserService
+import asyncio
 
 logger = logging.getLogger("FireflyOrchestrator")
 
@@ -14,13 +14,13 @@ class OrchestratorManager:
     Manages the lifecycle and execution of agents based on triggers.
     Robustly handles AI responses using the Firefly Tagging System (FTS).
     """
-    def __init__(self, event_bus, model_client, config_service=None, peer_discovery=None, session_manager=None, browser_adapter=None):
+    def __init__(self, event_bus, model_client, config_service=None, peer_discovery=None, session_manager=None, browser_service=None):
         self.event_bus = event_bus
         self.model_client = model_client
         self.config_service = config_service
         self.peer_discovery = peer_discovery
         self.session_manager = session_manager
-        self.browser_adapter = browser_adapter
+        self.browser_service = browser_service
         self.git_manager = GitManager()
         self.tag_parser = TagParserService()
         self._current_conflicts = set()
@@ -41,8 +41,8 @@ class OrchestratorManager:
 
     def stop(self):
         self.is_running = False
-        if self.browser_adapter:
-            asyncio.run(self.browser_adapter.stop())
+        if self.browser_service:
+            asyncio.run(self.browser_service.stop())
         logger.info("Orchestrator stopped.")
 
     def handle_event(self, event_type: str, payload: dict):
@@ -73,7 +73,7 @@ class OrchestratorManager:
         except RuntimeError:
             loop = asyncio.new_event_loop()
             asyncio.set_event_loop(loop)
-        
+
         return loop.run_until_complete(self.process_request_async(prompt, source, context, session_id, agent_role))
 
     async def process_request_async(self, prompt: str, source: str, context: dict = None, session_id: str = "default", agent_role: str = "Lead Orchestrator"):
@@ -167,7 +167,7 @@ class OrchestratorManager:
 
     async def _handle_browser_actions(self, text: str, session_id: str):
         """Extracts and executes <browser> tags."""
-        if not self.browser_adapter:
+        if not self.browser_service:
             return
 
         # Regex to find <browser action="..." ... />
@@ -182,14 +182,14 @@ class OrchestratorManager:
 
             logger.info(f"Browser Action: {action} with {attrs}")
             self.set_status(thought=f"Executing browser action: {action}")
-            
-            result = await self.browser_adapter.run_action(action, **attrs)
-            
+
+            result = await self.browser_service.run_action(action, **attrs)
+
             # Feed result back to the session history
             if self.session_manager:
                 result_msg = f"[BROWSER RESULT] {action}: {result}"
                 self.session_manager.add_message(session_id, "system", result_msg)
-                
+
                 # Optional: Proactively trigger a follow-up if it was a scrape/screenshot
                 if action in ["get_text", "navigate", "screenshot"]:
                     # We might want to trigger the agent again with the new context

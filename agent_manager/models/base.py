@@ -3,7 +3,7 @@ from dataclasses import dataclass, field
 from typing import Iterator, Optional, Dict, Any
 
 @dataclass
-class ModelResponse:
+class HandlerResponse:
     """
     Standardized response from an AI Model Service.
     """
@@ -14,9 +14,9 @@ class ModelResponse:
     cost_usd: float = 0.0
     metadata: Dict[str, Any] = field(default_factory=dict)
 
-class BaseModelService(ABC):
+class BaseHandler(ABC):
     """
-    Abstract Base Class for all AI Model Services.
+    Abstract base class for all LLM providers.
     Enforces a consistent interface for the ModelClientManager.
     """
 
@@ -25,7 +25,7 @@ class BaseModelService(ABC):
         self.model_name = model_name
 
     @abstractmethod
-    def generate(self, prompt: str, system_prompt: Optional[str] = None) -> ModelResponse:
+    def generate(self, prompt: str, system_prompt: Optional[str] = None) -> HandlerResponse:
         """
         Generate a complete response from the model.
 
@@ -34,7 +34,7 @@ class BaseModelService(ABC):
             system_prompt: Optional system instruction.
 
         Returns:
-            ModelResponse: The generated text and usage metadata.
+            HandlerResponse: The generated text and usage metadata.
 
         Raises:
             Exception: If the API call fails.

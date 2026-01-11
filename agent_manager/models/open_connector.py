@@ -1,4 +1,3 @@
-from __future__ import annotations
 from typing import Optional, TYPE_CHECKING, Dict, Any
 import json
 import logging
@@ -6,14 +5,15 @@ import os
 import urllib.error
 import urllib.request
 
-from .base import BaseModelService
+from .base import BaseHandler
+from __future__ import annotations
 
 if TYPE_CHECKING:
-    from .base import ModelResponse
+    from .base import BaseHandler
 
-logger = logging.getLogger("FireflyOpenRouterService")
+logger = logging.getLogger("FireflyOpenRouterHandler")
 
-class OpenRouterManager(BaseModelService):
+class OpenRouterHandler(BaseHandler):
     """
     OpenRouter Service using standard library (zero-dependency).
     """
@@ -26,8 +26,8 @@ class OpenRouterManager(BaseModelService):
     def validate_config(self) -> bool:
         return bool(self.api_key)
 
-    def generate(self, prompt: str, system_prompt: Optional[str] = None) -> ModelResponse:
-        from .base import ModelResponse
+    def generate(self, prompt: str, system_prompt: Optional[str] = None) -> HandlerResponse:
+        from .base import HandlerResponse
         if not self.validate_config():
             raise ValueError("OpenRouter API Key not found. Set OPENROUTER_API_KEY environment variable.")
 
@@ -67,7 +67,7 @@ class OpenRouterManager(BaseModelService):
                     # if not explicitly calculated per model here.
                     cost = result.get('cost', 0.0)
 
-                    return ModelResponse(
+                    return HandlerResponse(
                         text=text.strip(),
                         prompt_tokens=pt,
                         completion_tokens=ct,

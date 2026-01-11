@@ -1,28 +1,29 @@
-import asyncio
-import unittest
 from unittest.mock import MagicMock
-from agent_manager.core.browser_adapter import BrowserAdapter
-from agent_manager.orchestrator import OrchestratorManager
+import unittest
+
+from agent_manager.core.browser_adapter import BrowserService
 from agent_manager.core.event_bus import EventBusService
+from agent_manager.orchestrator import OrchestratorManager
+import asyncio
 
 class TestBrowserAutomation(unittest.TestCase):
     def setUp(self):
         self.event_bus = EventBusService()
-        self.browser_adapter = BrowserAdapter(self.event_bus)
+        self.browser_service = BrowserService(self.event_bus)
         self.model_client = MagicMock()
         self.orchestrator = OrchestratorManager(
             event_bus=self.event_bus,
             model_client=self.model_client,
-            browser_adapter=self.browser_adapter
+            browser_service=self.browser_service
         )
 
     def test_browser_adapter_navigation(self):
         async def run_test():
-            result = await self.browser_adapter.navigate("https://example.com")
+            result = await self.browser_service.navigate("https://example.com")
             self.assertEqual(result["status"], "success")
-            text = await self.browser_adapter.get_text()
+            text = await self.browser_service.get_text()
             self.assertIn("Example Domain", text["content"])
-            await self.browser_adapter.stop()
+            await self.browser_service.stop()
 
         asyncio.run(run_test())
 
@@ -34,12 +35,12 @@ class TestBrowserAutomation(unittest.TestCase):
 
         # Use sync bridge
         self.orchestrator.process_request("Search for example.com", source="user")
-        
+
         # Verify that browser adapter was used (we check if it started/navigated)
         # Since it's a real browser, loop.run_until_complete in process_request should have finished.
-        
+
         # Cleanup
-        asyncio.run(self.browser_adapter.stop())
+        asyncio.run(self.browser_service.stop())
 
 if __name__ == "__main__":
     unittest.main()

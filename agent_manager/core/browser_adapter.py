@@ -1,10 +1,11 @@
 import logging
-import asyncio
+
 from playwright.async_api import async_playwright
+import asyncio
 
-logger = logging.getLogger("FireflyBrowserAdapter")
+logger = logging.getLogger("FireflyBrowserService")
 
-class BrowserAdapter:
+class BrowserService:
     """
     Adapter for browser automation using Playwright.
     Supports navigation, clicking, typing, screenshots, and text extraction.

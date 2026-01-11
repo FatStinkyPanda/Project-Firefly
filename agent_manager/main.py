@@ -2,6 +2,7 @@ import logging
 import os # Added for os.environ.get
 import time
 
+from agent_manager.core.browser_adapter import BrowserService
 from agent_manager.core.config_service import ConfigurationService
 from agent_manager.core.dashboard_service import DashboardService
 from agent_manager.core.event_bus import EventBusService
@@ -12,7 +13,6 @@ from agent_manager.orchestrator import OrchestratorManager
 from agent_manager.triggers.system_events import WorkspaceMonitoringService
 from agent_manager.triggers.telegram import TelegramService
 from agent_manager.triggers.webhook import WebhookService
-from agent_manager.core.browser_adapter import BrowserAdapter
 
 # Configure Logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -38,7 +38,7 @@ def main():
     session_manager = SessionManager()
 
     # 3.6 Initialize Browser Adapter
-    browser_adapter = BrowserAdapter(event_bus=bus)
+    browser_adapter = BrowserService(event_bus=bus)
 
     # 4. Initialize Peer Discovery
     peer_discovery = PeerDiscoveryService(event_bus=bus)
