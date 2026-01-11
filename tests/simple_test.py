@@ -1,7 +1,7 @@
 from pathlib import Path
 import shutil
-import time
 import subprocess
+import time
 
 from agent_manager.core.event_bus import EventBusService
 from agent_manager.core.git_service import GitMonitoringService

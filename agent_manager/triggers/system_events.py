@@ -46,7 +46,7 @@ class WorkspaceMonitoringService:
         logger.info("Workspace Monitoring stopped.")
 
     def _start_watchdog(self):
-        class Handler(FileSystemEventHandler):
+        class WorkspaceEventHandlerService(FileSystemEventHandler):
             def __init__(self, service):
                 self.service = service
 
@@ -59,7 +59,7 @@ class WorkspaceMonitoringService:
                     self.service._handle_change(event.src_path)
 
         self.observer = Observer()
-        self.observer.schedule(Handler(self), str(self.root_path), recursive=True)
+        self.observer.schedule(WorkspaceEventHandlerService(self), str(self.root_path), recursive=True)
         self.observer.start()
 
     def _start_polling(self):
