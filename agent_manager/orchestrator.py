@@ -42,6 +42,7 @@ class OrchestratorManager:
         self.event_bus.subscribe("peer_joined", self.handle_event)
         self.event_bus.subscribe("peer_left", self.handle_event)
         self.event_bus.subscribe("git_event", self.handle_event)
+        self.event_bus.subscribe("email_input", self.handle_event)
 
     def stop(self):
         self.is_running = False
@@ -60,6 +61,10 @@ class OrchestratorManager:
         elif event_type == "telegram_input":
             session_id = f"tg_{payload.get('chat_id')}"
             self.process_request(payload.get("text"), source="telegram", context=payload, session_id=session_id)
+        elif event_type == "email_input":
+            from_addr = payload.get("from")
+            session_id = f"email_{from_addr.replace('@', '_').replace('.', '_')}"
+            self.process_request(payload.get("text"), source="email", context=payload, session_id=session_id)
         elif event_type == "system_event":
             self.handle_system_event(payload)
         elif event_type == "git_event":
@@ -153,6 +158,12 @@ class OrchestratorManager:
                 if source == "telegram" and context:
                     self.event_bus.publish("telegram_output", {
                         "chat_id": context.get("chat_id"),
+                        "text": msg
+                    })
+                elif source == "email" and context:
+                    self.event_bus.publish("email_output", {
+                        "to": context.get("from"),
+                        "subject": f"Re: {context.get('subject', 'Firefly Response')}",
                         "text": msg
                     })
                 else:

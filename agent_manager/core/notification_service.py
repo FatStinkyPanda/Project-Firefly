@@ -35,6 +35,15 @@ class NotificationService:
         # If we have a default chat ID in env, TelegramService will handle it,
         # but here we can explicitly try to find one.
         self.event_bus.publish("telegram_output", tg_payload)
+
+        # also email if it is a critical alert
+        if priority == "critical":
+            self.event_bus.publish("email_output", {
+                "to": self.config_service.get("admin_email") if self.config_service else None,
+                "subject": f"FIREFLY CRITICAL: {message}",
+                "text": message
+            })
+
         self.event_bus.publish("webhook_event", {"type": "notification", "data": payload})
 
     def on_broadcast(self, event_type: str, payload: Dict[str, Any]):

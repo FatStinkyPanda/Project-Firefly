@@ -17,6 +17,7 @@ from agent_manager.orchestrator import OrchestratorManager
 from agent_manager.triggers.system_events import WorkspaceMonitoringService
 from agent_manager.triggers.telegram import TelegramService
 from agent_manager.triggers.webhook import WebhookService
+from agent_manager.triggers.email import EmailService
 
 # Configure Logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -78,6 +79,7 @@ def main():
     # 5. Initialize Triggers
     webhook_service = WebhookService(event_bus=bus, port=5000)
     telegram_service = TelegramService(event_bus=bus)
+    email_service = EmailService(event_bus=bus)
     workspace_service = WorkspaceMonitoringService(event_bus=bus)
     git_monitor = GitMonitoringService(event_bus=bus)
 
@@ -88,6 +90,7 @@ def main():
     # 7. Start Services
     webhook_service.start()
     telegram_service.start()
+    email_service.start()
     workspace_service.start()
     git_monitor.start()
 
@@ -105,6 +108,7 @@ def main():
         workspace_service.stop()
         telegram_service.stop()
         webhook_service.stop()
+        email_service.stop()
         git_monitor.stop()
         orchestrator.stop()
 
