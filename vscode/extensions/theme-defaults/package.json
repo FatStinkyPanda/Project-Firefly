@@ -14,6 +14,12 @@
   "contributes": {
     "themes": [
       {
+        "id": "Firefly Sunset: Ember & Ash",
+        "label": "Firefly Sunset: Ember & Ash",
+        "uiTheme": "vs-dark",
+        "path": "./themes/firefly_sunset.json"
+      },
+      {
         "id": "Default Dark+",
         "label": "%darkPlusColorThemeLabel%",
         "uiTheme": "vs-dark",

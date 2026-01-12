@@ -1,0 +1,105 @@
+{
+    "$schema": "vscode://schemas/color-theme",
+    "name": "Firefly Sunset: Ember & Ash",
+    "colors": {
+        "editor.background": "#1A110A",
+        "editor.foreground": "#E0D0C0",
+        "sideBar.background": "#24170D",
+        "sideBar.foreground": "#B0A090",
+        "sideBarTitle.foreground": "#FF8C00",
+        "activityBar.background": "#120A05",
+        "activityBar.foreground": "#FFD700",
+        "activityBar.inactiveForeground": "#8B4513",
+        "activityBarBadge.background": "#FF8C00",
+        "activityBarBadge.foreground": "#FFFFFF",
+        "list.activeSelectionBackground": "#3D2A1A",
+        "list.activeSelectionForeground": "#FFD700",
+        "list.inactiveSelectionBackground": "#2F2012",
+        "list.hoverBackground": "#362415",
+        "statusBar.background": "#120A05",
+        "statusBar.foreground": "#A09080",
+        "titleBar.activeBackground": "#120A05",
+        "titleBar.activeForeground": "#FF8C00",
+        "editorGroupHeader.tabsBackground": "#1A110A",
+        "tab.activeBackground": "#24170D",
+        "tab.activeForeground": "#FFD700",
+        "tab.inactiveBackground": "#1A110A",
+        "tab.inactiveForeground": "#8B4513",
+        "tab.activeBorder": "#FF8C00",
+        "button.background": "#8B4513",
+        "button.foreground": "#FFFFFF",
+        "button.hoverBackground": "#A0522D",
+        "focusBorder": "#FF8C00",
+        "widget.shadow": "#000000"
+    },
+    "tokenColors": [
+        {
+            "scope": [
+                "comment",
+                "punctuation.definition.comment"
+            ],
+            "settings": {
+                "foreground": "#695A4B"
+            }
+        },
+        {
+            "scope": [
+                "keyword",
+                "storage.type",
+                "storage.modifier"
+            ],
+            "settings": {
+                "foreground": "#D2691E"
+            }
+        },
+        {
+            "scope": [
+                "string",
+                "constant.other.symbol",
+                "entity.other.inherited-class"
+            ],
+            "settings": {
+                "foreground": "#DEB887"
+            }
+        },
+        {
+            "scope": [
+                "constant.numeric",
+                "variable.other.constant"
+            ],
+            "settings": {
+                "foreground": "#FFD700"
+            }
+        },
+        {
+            "scope": [
+                "variable",
+                "variable.parameter",
+                "variable.language",
+                "variable.other"
+            ],
+            "settings": {
+                "foreground": "#E0D0C0"
+            }
+        },
+        {
+            "scope": [
+                "entity.name.function",
+                "support.function"
+            ],
+            "settings": {
+                "foreground": "#FF8C00"
+            }
+        },
+        {
+            "scope": [
+                "entity.name.tag",
+                "meta.tag.sgml",
+                "punctuation.definition.tag.html"
+            ],
+            "settings": {
+                "foreground": "#CD853F"
+            }
+        }
+    ]
+}

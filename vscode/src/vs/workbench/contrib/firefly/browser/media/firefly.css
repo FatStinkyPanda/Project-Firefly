@@ -1,0 +1,477 @@
+:root {
+    --firefly-charred-oak: #1A110A;
+    --firefly-deep-bark: #24170D;
+    --firefly-humus: #120A05;
+    --firefly-orange: #FF8C00;
+    --firefly-gold: #FFD700;
+    --firefly-rust: #8B4513;
+    --firefly-text: #E0D0C0;
+    --firefly-text-subtle: #8B4513;
+    --glass-background: rgba(36, 23, 13, 0.7);
+    --glass-border: rgba(255, 140, 0, 0.2);
+}
+
+.firefly-agent-hub {
+    padding: 16px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background: var(--firefly-humus);
+    color: var(--firefly-text);
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    overflow-y: auto;
+}
+
+/* Premium Header */
+.firefly-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.firefly-title {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--firefly-gold);
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.firefly-status-tag {
+    font-size: 0.75em;
+    padding: 2px 8px;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.firefly-status-tag.online {
+    color: #4CAF50;
+    border-color: rgba(76, 175, 80, 0.3);
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.2);
+}
+
+.firefly-status-tag.autonomous {
+    color: var(--firefly-gold);
+    border-color: var(--firefly-gold);
+    animation: firefly-pulse 2s infinite ease-in-out;
+}
+
+/* Agent List Dashboard */
+.firefly-agent-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.firefly-agent-card {
+    background: var(--glass-background);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    padding: 14px;
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.firefly-agent-card:hover {
+    border-color: var(--firefly-orange);
+    box-shadow: 0 4px 15px rgba(255, 140, 0, 0.15);
+}
+
+.firefly-agent-card.active {
+    border-color: var(--firefly-gold);
+    box-shadow: 0 0 12px rgba(255, 215, 0, 0.2);
+}
+
+.agent-card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.agent-icon {
+    font-size: 1.2em;
+    color: var(--firefly-orange);
+}
+
+.agent-name {
+    font-weight: 500;
+    color: var(--firefly-text);
+}
+
+.agent-status-indicator {
+    margin-left: auto;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #4CAF50;
+    box-shadow: 0 0 4px #4CAF50;
+}
+
+.agent-card-body {
+    font-size: 0.85em;
+    color: var(--firefly-text-subtle);
+    font-style: italic;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Section Labels */
+.firefly-section-label {
+    font-size: 0.75em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--firefly-rust);
+    margin-top: 8px;
+    margin-bottom: 4px;
+}
+
+/* Controls & Buttons */
+.firefly-controls {
+    display: flex;
+    gap: 8px;
+}
+
+.firefly-button {
+    background: linear-gradient(135deg, var(--firefly-rust), #5C2E0C);
+    color: #FFF;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9em;
+    flex: 1;
+    transition: filter 0.2s, transform 0.1s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.firefly-button:hover {
+    filter: brightness(1.2);
+}
+
+.firefly-button:active {
+    transform: scale(0.98);
+}
+
+.firefly-button.create-btn {
+    background: linear-gradient(135deg, var(--firefly-orange), #D2691E);
+}
+
+/* Usage Container */
+.firefly-usage-container {
+    margin-top: auto;
+    padding-top: 16px;
+    border-top: 1px solid var(--glass-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.firefly-cost {
+    font-weight: 600;
+    color: var(--firefly-gold);
+    font-size: 1.1em;
+}
+
+/* Animations */
+@keyframes firefly-pulse {
+    0% {
+        box-shadow: 0 0 5px rgba(255, 215, 0, 0.2);
+        border-color: rgba(255, 215, 0, 0.3);
+    }
+
+    50% {
+        box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+        border-color: rgba(255, 215, 0, 0.8);
+    }
+
+    100% {
+        box-shadow: 0 0 5px rgba(255, 215, 0, 0.2);
+        border-color: rgba(255, 215, 0, 0.3);
+    }
+}
+
+/* ============================================
+   GLOBAL WORKBENCH OVERRIDES - EMBER & ASH
+   Premium Glassmorphism & Autumn Aesthetic
+   ============================================ */
+
+/* Frosted Glass Sidebar */
+.part.sidebar {
+    background: rgba(26, 17, 10, 0.85) !important;
+    backdrop-filter: blur(12px) saturate(120%) !important;
+    -webkit-backdrop-filter: blur(12px) saturate(120%) !important;
+    border-right: 1px solid rgba(255, 140, 0, 0.15) !important;
+}
+
+/* Activity Bar (Left Icon Strip) */
+.part.activitybar {
+    background: linear-gradient(180deg, #120A05 0%, #1A110A 100%) !important;
+    border-right: 1px solid rgba(255, 140, 0, 0.1) !important;
+}
+
+.action-item .codicon {
+    color: #8B4513 !important;
+    transition: color 0.2s, filter 0.2s !important;
+}
+
+.action-item.checked .codicon,
+.action-item:hover .codicon {
+    color: #FFD700 !important;
+    filter: drop-shadow(0 0 4px rgba(255, 215, 0, 0.3)) !important;
+}
+
+/* Title Bar */
+.part.titlebar {
+    background: linear-gradient(90deg, #120A05 0%, #1A110A 50%, #120A05 100%) !important;
+    border-bottom: 1px solid rgba(255, 140, 0, 0.1) !important;
+}
+
+.part.titlebar .window-title {
+    color: #FF8C00 !important;
+    text-shadow: 0 0 8px rgba(255, 140, 0, 0.3) !important;
+}
+
+/* Status Bar */
+.part.statusbar {
+    background: linear-gradient(90deg, #120A05 0%, #1A0D07 50%, #120A05 100%) !important;
+    border-top: 1px solid rgba(255, 140, 0, 0.2) !important;
+}
+
+.statusbar-item a {
+    color: #FF8C00 !important;
+}
+
+.statusbar-item a:hover {
+    color: #FFD700 !important;
+    text-shadow: 0 0 4px rgba(255, 215, 0, 0.3) !important;
+}
+
+/* Editor Tabs */
+.tabs-container .tab {
+    background: transparent !important;
+    border: none !important;
+    transition: background 0.2s !important;
+}
+
+.tabs-container .tab.active {
+    background: rgba(36, 23, 13, 0.8) !important;
+    border-bottom: 2px solid #FF8C00 !important;
+}
+
+.tabs-container .tab:hover:not(.active) {
+    background: rgba(36, 23, 13, 0.5) !important;
+}
+
+.tabs-container .tab .tab-label a {
+    color: #8B4513 !important;
+}
+
+.tabs-container .tab.active .tab-label a {
+    color: #FFD700 !important;
+}
+
+/* Panel (Terminal, Output, etc) */
+.part.panel {
+    background: rgba(26, 17, 10, 0.9) !important;
+    backdrop-filter: blur(8px) !important;
+    border-top: 1px solid rgba(255, 140, 0, 0.15) !important;
+}
+
+/* Menus & Dropdowns */
+.monaco-menu {
+    background: rgba(26, 17, 10, 0.95) !important;
+    backdrop-filter: blur(16px) !important;
+    border: 1px solid rgba(255, 140, 0, 0.2) !important;
+    border-radius: 8px !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
+}
+
+.monaco-menu .action-item.focused {
+    background: rgba(61, 42, 26, 0.8) !important;
+}
+
+.monaco-menu .action-item .action-label {
+    color: #E0D0C0 !important;
+}
+
+/* Quick Input (Command Palette) */
+.quick-input-widget {
+    background: rgba(26, 17, 10, 0.95) !important;
+    backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(255, 140, 0, 0.25) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5) !important;
+}
+
+.quick-input-header {
+    background: transparent !important;
+}
+
+.quick-input-list-entry.focused {
+    background: rgba(255, 140, 0, 0.15) !important;
+}
+
+/* Scrollbars */
+.monaco-scrollable-element>.scrollbar>.slider {
+    background: rgba(139, 69, 19, 0.5) !important;
+    border-radius: 4px !important;
+}
+
+.monaco-scrollable-element>.scrollbar>.slider:hover {
+    background: rgba(255, 140, 0, 0.5) !important;
+}
+
+/* Welcome Page */
+.monaco-workbench .part.editor>.content .gettingStartedContainer {
+    background: rgba(26, 17, 10, 0.95) !important;
+}
+
+.monaco-workbench .gettingStartedContainer .gettingStartedSlide {
+    background: transparent !important;
+}
+
+.monaco-workbench .gettingStartedContainer .categories-scrollbar-container {
+    background: rgba(36, 23, 13, 0.5) !important;
+    border-radius: 8px !important;
+}
+
+/* Editor */
+.monaco-editor {
+    background-color: #1A110A !important;
+}
+
+.monaco-editor .margin {
+    background-color: #1A110A !important;
+}
+
+/* Subtle Golden Glow on Focus */
+input:focus,
+textarea:focus,
+.monaco-inputbox.focused {
+    outline: none !important;
+    border-color: #FF8C00 !important;
+    box-shadow: 0 0 8px rgba(255, 140, 0, 0.3) !important;
+}
+
+/* Badge Styling */
+.monaco-count-badge {
+    background: linear-gradient(135deg, #FF8C00, #D2691E) !important;
+    box-shadow: 0 0 4px rgba(255, 140, 0, 0.3) !important;
+}
+
+/* Firefly Branding in Title */
+.part.statusbar .statusbar-item.left:first-child {
+    font-weight: 600 !important;
+}
+
+/* Thought Stream */
+.firefly-thought-stream {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    border: 1px solid rgba(255, 140, 0, 0.1);
+    font-size: 0.9em;
+    font-family: 'Consolas', 'Monaco', monospace;
+}
+
+.thought-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 6px;
+    border-radius: 4px;
+    animation: fadeIn 0.3s ease;
+}
+
+.thought-item.reasoning {
+    color: #FFBF00;
+    /* Amber */
+    background: rgba(255, 191, 0, 0.05);
+}
+
+.thought-item.action {
+    color: #FF8C00;
+    /* Dark Orange */
+    background: rgba(255, 140, 0, 0.05);
+}
+
+.thought-item.observation {
+    color: #FFD700;
+    /* Gold */
+    background: rgba(255, 215, 0, 0.05);
+    font-style: italic;
+}
+
+.thought-icon {
+    font-size: 1.1em;
+    opacity: 0.8;
+    margin-top: 2px;
+}
+
+.thought-content {
+    white-space: pre-wrap;
+    word-break: break-word;
+    line-height: 1.4;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Chat Input */
+.firefly-chat-container {
+    padding: 8px 0;
+    border-top: 1px solid rgba(255, 140, 0, 0.1);
+}
+
+.firefly-chat-input {
+    width: 100%;
+    padding: 8px 12px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 140, 0, 0.3);
+    border-radius: 4px;
+    color: var(--firefly-text);
+    font-family: inherit;
+    transition: all 0.2s ease;
+}
+
+.firefly-chat-input:focus {
+    outline: none;
+    border-color: var(--firefly-orange);
+    box-shadow: 0 0 5px rgba(255, 140, 0, 0.2);
+}
+
+.thought-item.user-chat {
+    color: #00BFFF;
+    /* Deep Sky Blue */
+    background: rgba(0, 191, 255, 0.05);
+    align-self: flex-end;
+    /* Align user messages to right? Or keep left? Keep left for stream consistency but maybe shift slightly */
+    border-left: 2px solid #00BFFF;
+}

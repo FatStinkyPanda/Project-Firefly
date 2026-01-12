@@ -41,6 +41,52 @@ export class FireflyMainService extends Disposable implements IFireflyMainServic
         this.startAgent();
     }
 
+    setAutonomousMode(enabled: boolean): void {
+        this._status = { ...this._status, isAutonomous: enabled };
+        this._onDidChangeStatus.fire(this._status);
+        this.sendCommand('set_mode', { autonomous: enabled });
+    }
+
+    sendIntent(id: string, args: any[]): void {
+        this.sendCommand('intent', { id, args });
+    }
+
+    async createAgent(name: string, persona: string): Promise<string> {
+        this.logService.info(`[Firefly] Creating Agent: ${name} (Persona: ${persona})`);
+        const id = Math.random().toString(36).substring(7);
+        this.sendCommand('create_agent', { id, name, persona });
+        return id;
+    }
+
+    async deleteAgent(id: string): Promise<void> {
+        this.logService.info(`[Firefly] Deleting Agent: ${id}`);
+        this.sendCommand('delete_agent', { id });
+    }
+
+    setSafetyMode(mode: string): void {
+        this.logService.info(`[Firefly] Safety Mode -> ${mode}`);
+        this.sendCommand('set_safety_mode', { mode });
+    }
+
+    setActiveModel(modelId: string): void {
+        this.logService.info(`[Firefly] Active Model -> ${modelId}`);
+        this.sendCommand('set_active_model', { model_id: modelId });
+    }
+
+    sendChat(text: string): void {
+        this.sendCommand('chat', { text });
+    }
+
+
+    private sendCommand(type: string, payload: any): void {
+        if (this._agentProcess?.stdin?.writable) {
+            const command = JSON.stringify({ type, ...payload }) + '\n';
+            this._agentProcess.stdin.write(command);
+        } else {
+            this.logService.warn(`[Firefly] Cannot send command ${type}: Agent process stdin not available.`);
+        }
+    }
+
     private startAgent(): void {
         const pythonPath = isWindows ? 'python' : 'python3';
         // Assume agent_manager is in the same root as the vscode folder

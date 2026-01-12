@@ -10,7 +10,7 @@ import { InstantiationService } from '../../../../../platform/instantiation/comm
 import { NullLogService } from '../../../../../platform/log/common/log.js';
 import { NullExtensionService } from '../../../extensions/common/extensions.js';
 import { CommandService } from '../../common/commandService.js';
-import { IFireflyWorkbenchService, IFireflyThought } from '../../../firefly/common/firefly.js';
+import { IFireflyWorkbenchService, IFireflyThought, SafetyMode, IModelUsage } from '../../../firefly/common/firefly.js';
 import { Event } from '../../../../../base/common/event.js';
 
 class MockFireflyService implements IFireflyWorkbenchService {
@@ -18,14 +18,29 @@ class MockFireflyService implements IFireflyWorkbenchService {
 	readonly onDidChangeThought = Event.None;
 	readonly onDidChangeMode = Event.None;
 	readonly onDidChangeStatus = Event.None;
+	readonly onDidChangeSafetyMode = Event.None;
+	readonly onDidChangeActiveModel = Event.None;
 
 	isAutonomousMode(): boolean { return false; }
 	setAutonomousMode(enabled: boolean): void { }
 
 	getCurrentThought(): IFireflyThought | undefined { return undefined; }
+	getThoughtHistory(): IFireflyThought[] { return []; }
 	getTotalCost(): number { return 0; }
 
 	reportIntent(commandId: string, args: unknown[]): void { }
+
+	createAgent(name: string, persona: string): Promise<string> { return Promise.resolve('mock-id'); }
+	deleteAgent(id: string): Promise<void> { return Promise.resolve(); }
+
+	getSafetyMode(): SafetyMode { return 'MANUAL'; }
+	setSafetyMode(mode: SafetyMode): void { }
+
+	getActiveModel(): string { return 'mock-model'; }
+	setActiveModel(modelId: string): void { }
+	sendChat(text: string): Promise<void> { return Promise.resolve(); }
+	getAvailableModels(): { id: string; name: string; provider: string }[] { return []; }
+	getModelUsage(): IModelUsage[] { return []; }
 }
 
 

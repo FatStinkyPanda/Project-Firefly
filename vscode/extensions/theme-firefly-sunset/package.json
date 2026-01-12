@@ -1,0 +1,22 @@
+{
+    "name": "theme-firefly-sunset",
+    "displayName": "Firefly Sunset: Ember & Ash",
+    "description": "A premium AI-native theme inspired by fireflies at sunset in autumn.",
+    "version": "1.0.0",
+    "publisher": "firefly",
+    "engines": {
+        "vscode": "^1.109.0"
+    },
+    "categories": [
+        "Themes"
+    ],
+    "contributes": {
+        "themes": [
+            {
+                "label": "Firefly Sunset: Ember & Ash",
+                "uiTheme": "vs-dark",
+                "path": "./themes/firefly-sunset.json"
+            }
+        ]
+    }
+}
