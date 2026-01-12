@@ -1,10 +1,11 @@
-import unittest
-import json
-import urllib.request
-import time
-import shutil
 from pathlib import Path
 from unittest.mock import MagicMock
+import json
+import shutil
+import time
+import unittest
+import urllib.request
+
 from agent_manager.core.api_service import APIService
 from agent_manager.core.artifact_service import ArtifactService
 from agent_manager.core.event_bus import EventBusService
@@ -16,14 +17,14 @@ class TestAPIService(unittest.TestCase):
         if cls.test_root.exists():
             shutil.rmtree(cls.test_root)
         cls.test_root.mkdir()
-        
+
         cls.bus = EventBusService()
         cls.artifacts = ArtifactService(root_path=str(cls.test_root))
         cls.mock_client = MagicMock()
         cls.mock_client.usage_ledger = {"total_cost_usd": 0.05}
         cls.api = APIService(cls.bus, cls.artifacts, model_client=cls.mock_client, port=5051)
         cls.api.start()
-        
+
         # Give it a moment to start
         time.sleep(0.5)
 
@@ -41,19 +42,19 @@ class TestAPIService(unittest.TestCase):
     def test_artifacts_flow(self):
         session_id = "test_session_123"
         self.artifacts.create_artifact(session_id, "thought", "I am thinking")
-        
+
         # 1. List sessions
         with urllib.request.urlopen("http://localhost:5051/api/artifacts") as response:
             sessions = json.loads(response.read().decode())
             self.assertIn(session_id, sessions)
-            
+
         # 2. List artifacts in session
         with urllib.request.urlopen(f"http://localhost:5051/api/artifacts/{session_id}") as response:
             arts = json.loads(response.read().decode())
             self.assertEqual(len(arts), 1)
             self.assertEqual(arts[0]["type"], "thought")
             filename = arts[0]["name"]
-            
+
         # 3. Get specific artifact
         with urllib.request.urlopen(f"http://localhost:5051/api/artifacts/{session_id}/{filename}") as response:
             content = json.loads(response.read().decode())

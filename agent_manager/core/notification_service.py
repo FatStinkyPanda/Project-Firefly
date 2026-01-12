@@ -43,6 +43,10 @@ class NotificationService:
                 "subject": f"FIREFLY CRITICAL: {message}",
                 "text": message
             })
+            self.event_bus.publish("sms_output", {
+                "to": self.config_service.get("admin_phone") if self.config_service else None,
+                "text": f"🔥 FIREFLY CRITICAL: {message}"
+            })
 
         self.event_bus.publish("webhook_event", {"type": "notification", "data": payload})
 

@@ -2,8 +2,8 @@ import logging
 import os # Added for os.environ.get
 import time
 
-from agent_manager.core.artifact_service import ArtifactService
 from agent_manager.core.api_service import APIService
+from agent_manager.core.artifact_service import ArtifactService
 from agent_manager.core.browser_adapter import BrowserService
 from agent_manager.core.config_service import ConfigurationService
 from agent_manager.core.dashboard_service import DashboardService
@@ -19,6 +19,7 @@ from agent_manager.triggers.email import EmailService
 from agent_manager.triggers.system_events import WorkspaceMonitoringService
 from agent_manager.triggers.telegram import TelegramService
 from agent_manager.triggers.webhook import WebhookService
+from agent_manager.triggers.sms import SMSService
 
 # Configure Logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -84,6 +85,7 @@ def main():
     webhook_service = WebhookService(event_bus=bus, port=5000)
     telegram_service = TelegramService(event_bus=bus)
     email_service = EmailService(event_bus=bus)
+    sms_service = SMSService(event_bus=bus)
     workspace_service = WorkspaceMonitoringService(event_bus=bus)
     git_monitor = GitMonitoringService(event_bus=bus)
 
@@ -95,6 +97,7 @@ def main():
     webhook_service.start()
     telegram_service.start()
     email_service.start()
+    sms_service.start()
     workspace_service.start()
     git_monitor.start()
     api_service.start()
@@ -114,6 +117,7 @@ def main():
         telegram_service.stop()
         webhook_service.stop()
         email_service.stop()
+        sms_service.stop()
         api_service.stop()
         git_monitor.stop()
         orchestrator.stop()

@@ -1,11 +1,11 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
+from pathlib import Path
 from threading import Thread
 from typing import Optional, Any, Dict
 import json
 import logging
 import os
 import urllib.parse
-from pathlib import Path
 
 logger = logging.getLogger("FireflyAPI")
 
@@ -35,7 +35,7 @@ class APIRequestHandler(BaseHTTPRequestHandler):
         # /api/artifacts
         if len(path_parts) == 2 and path_parts[1] == 'artifacts':
             self.handle_list_sessions()
-        
+
         # /api/artifacts/{session_id}
         elif len(path_parts) == 3 and path_parts[1] == 'artifacts':
             self.handle_list_artifacts(path_parts[2])
@@ -58,7 +58,7 @@ class APIRequestHandler(BaseHTTPRequestHandler):
     def handle_list_sessions(self):
         artifact_service = self.server.artifact_service
         base_dir = artifact_service.artifact_base_dir
-        
+
         if not base_dir.exists():
             APIResponse.json(self, [])
             return
@@ -69,7 +69,7 @@ class APIRequestHandler(BaseHTTPRequestHandler):
     def handle_list_artifacts(self, session_id):
         artifact_service = self.server.artifact_service
         session_dir = artifact_service.artifact_base_dir / session_id
-        
+
         if not session_dir.exists():
             APIResponse.error(self, "Session not found")
             return
@@ -86,7 +86,7 @@ class APIRequestHandler(BaseHTTPRequestHandler):
     def handle_get_artifact(self, session_id, filename):
         artifact_service = self.server.artifact_service
         file_path = artifact_service.artifact_base_dir / session_id / filename
-        
+
         if not file_path.exists() or not file_path.is_file():
             APIResponse.error(self, "Artifact not found")
             return

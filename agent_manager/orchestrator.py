@@ -43,6 +43,7 @@ class OrchestratorManager:
         self.event_bus.subscribe("peer_left", self.handle_event)
         self.event_bus.subscribe("git_event", self.handle_event)
         self.event_bus.subscribe("email_input", self.handle_event)
+        self.event_bus.subscribe("sms_input", self.handle_event)
 
     def stop(self):
         self.is_running = False
@@ -65,6 +66,10 @@ class OrchestratorManager:
             from_addr = payload.get("from")
             session_id = f"email_{from_addr.replace('@', '_').replace('.', '_')}"
             self.process_request(payload.get("text"), source="email", context=payload, session_id=session_id)
+        elif event_type == "sms_input":
+            from_num = payload.get("from")
+            session_id = f"sms_{from_num.replace('+', '').replace(' ', '')}"
+            self.process_request(payload.get("text"), source="sms", context=payload, session_id=session_id)
         elif event_type == "system_event":
             self.handle_system_event(payload)
         elif event_type == "git_event":
@@ -164,6 +169,11 @@ class OrchestratorManager:
                     self.event_bus.publish("email_output", {
                         "to": context.get("from"),
                         "subject": f"Re: {context.get('subject', 'Firefly Response')}",
+                        "text": msg
+                    })
+                elif source == "sms" and context:
+                    self.event_bus.publish("sms_output", {
+                        "to": context.get("from"),
                         "text": msg
                     })
                 else:
