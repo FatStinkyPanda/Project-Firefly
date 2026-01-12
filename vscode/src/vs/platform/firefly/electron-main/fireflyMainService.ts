@@ -49,9 +49,10 @@ export class FireflyMainService extends Disposable implements IFireflyMainServic
         this.logService.info(`[Firefly] Spawning Agent Backend: ${pythonPath} ${agentPath}`);
 
         try {
+            const projectRoot = join(this.environmentMainService.appRoot, '..');
             this._agentProcess = spawn(pythonPath, [agentPath], {
-                cwd: join(this.environmentMainService.appRoot, '..'),
-                env: { ...process.env, "FIREFLY_IDE_MODE": "true" }
+                cwd: projectRoot,
+                env: { ...process.env, "FIREFLY_IDE_MODE": "true", "PYTHONPATH": projectRoot }
             });
 
             this._status = { ...this._status, agentRunning: true };

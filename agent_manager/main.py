@@ -7,7 +7,9 @@ from agent_manager.core.browser_adapter import BrowserService
 from agent_manager.core.config_service import ConfigurationService
 from agent_manager.core.dashboard_service import DashboardService
 from agent_manager.core.event_bus import EventBusService
+from agent_manager.core.memory_service import MemoryService
 from agent_manager.core.git_service import GitMonitoringService
+from agent_manager.core.prompt_service import PromptService
 from agent_manager.core.session_manager import SessionManager
 from agent_manager.models.manager import ModelClientManager
 from agent_manager.orchestrator import OrchestratorManager
@@ -38,6 +40,12 @@ def main():
     # 3.5 Initialize Session Management
     session_manager = SessionManager()
 
+    # 3.8 Initialize Prompt Service
+    prompt_service = PromptService()
+    
+    # 3.9 Initialize Memory Service
+    memory_service = MemoryService(model_client=model_client)
+
     # 3.6 Initialize Browser Adapter
     browser_adapter = BrowserService(event_bus=bus)
 
@@ -56,7 +64,9 @@ def main():
         peer_discovery=peer_discovery,
         session_manager=session_manager,
         browser_service=browser_adapter,
-        artifact_service=artifact_service
+        artifact_service=artifact_service,
+        prompt_service=prompt_service,
+        memory_service=memory_service
     )
     orchestrator.start()
 

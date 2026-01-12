@@ -15,6 +15,7 @@ class OpenAIHandler(BaseHandler):
     OpenAI Service using standard library (zero-dependency).
     """
     BASE_URL = "https://api.openai.com/v1/chat/completions"
+    EMBED_URL = "https://api.openai.com/v1/embeddings"
 
     def __init__(self, api_key: Optional[str] = None, model_name: str = "gpt-4o-mini"):
         self.api_key = api_key or os.environ.get("OPENAI_API_KEY")
@@ -79,4 +80,29 @@ class OpenAIHandler(BaseHandler):
             raise Exception(f"OpenAI API failed with status {e.code}")
         except Exception as e:
             logger.error(f"OpenAI Connection Error: {e}")
+            raise
+
+    def embed(self, text: str) -> List[float]:
+        """Generate embedding using OpenAI's embeddings API."""
+        if not self.validate_config():
+            raise ValueError("OpenAI API Key not found.")
+
+        data = {
+            "model": "text-embedding-3-small",
+            "input": text
+        }
+
+        headers = {
+            'Content-Type': 'application/json',
+            'Authorization': f'Bearer {self.api_key}'
+        }
+
+        req = urllib.request.Request(self.EMBED_URL, data=json.dumps(data).encode('utf-8'), headers=headers)
+
+        try:
+            with urllib.request.urlopen(req) as response:
+                result = json.loads(response.read().decode('utf-8'))
+                return result['data'][0]['embedding']
+        except Exception as e:
+            logger.error(f"OpenAI Embed Error: {e}")
             raise

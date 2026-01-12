@@ -14,7 +14,7 @@ class OrchestratorManager:
     Manages the lifecycle and execution of agents based on triggers.
     Robustly handles AI responses using the Firefly Tagging System (FTS).
     """
-    def __init__(self, event_bus, model_client, config_service=None, peer_discovery=None, session_manager=None, browser_service=None, artifact_service=None):
+    def __init__(self, event_bus, model_client, config_service=None, peer_discovery=None, session_manager=None, browser_service=None, artifact_service=None, prompt_service=None):
         self.event_bus = event_bus
         self.model_client = model_client
         self.config_service = config_service
@@ -22,6 +22,8 @@ class OrchestratorManager:
         self.session_manager = session_manager
         self.browser_service = browser_service
         self.artifact_service = artifact_service
+        self.prompt_service = prompt_service
+        self.memory_service = memory_service
         self.git_manager = GitManager()
         self.tag_parser = TagParserService()
         self._current_conflicts = set()
@@ -96,29 +98,20 @@ class OrchestratorManager:
         if self.session_manager:
             self.session_manager.add_message(session_id, "user", prompt)
             history_context = self.session_manager.format_for_ai(session_id)
+            
+            # Retrieve relevant semantic memories
+            if self.memory_service:
+                memories = self.memory_service.query(prompt, top_k=3)
+                if memories:
+                    mem_context = "\n[RELEVANT HISTORICAL CONTEXT]\n" + "\n".join([f"- {m['text']}" for m in memories])
+                    history_context += mem_context
 
-        role_instructions = ""
-        if agent_role == "GitFlowManager":
-            role_instructions = (
-                "You are the Firefly GitFlowManager. Your primary responsibility is maintaining repository health. "
-                "You must review all incoming commits, resolve merge conflicts intelligently, and manage branch lifecycles. "
-                "When a conflict occurs, analyze the conflict markers and provide a clean, production-ready resolution. "
-                "Always run tests (`npm test` or `pytest`) before finalizing a merge resolution."
-            )
+        # 2. Construct System Prompt using PromptService
+        if self.prompt_service:
+            system_prompt = self.prompt_service.get_prompt(agent_role, session_context=history_context)
         else:
-            role_instructions = f"You are the Firefly {agent_role}."
-
-        system_prompt = (
-            f"{role_instructions} "
-            "Use <thought> tags for your reasoning. "
-            "Use <command> tags to execute shell commands. "
-            "Use <message> tags to communicate back to the user. "
-            "Use <browser action=\"navigate|click|type|screenshot|get_text\" url=\"...\" selector=\"...\" text=\"...\" path=\"...\"/> to automate the browser. "
-            "Use <delegate recipient=\"agent_name\">task_description</delegate> to assign work to a peer. "
-            "If a Git conflict is detected, you must use <git_resolve path=\"file/path\">resolved_content</git_resolve> after reviewing the conflict in the file.\n"
-            "Be precise and autonomous.\n"
-            f"{history_context}"
-        )
+            # Fallback to legacy logic if service not available
+            system_prompt = f"You are the Firefly {agent_role}. {history_context}"
 
         try:
             response = self.model_client.generate(prompt, system_prompt=system_prompt)
@@ -141,10 +134,17 @@ class OrchestratorManager:
                 if self.artifact_service:
                     self.artifact_service.create_artifact(session_id, "command", {"command": cmd, "success": result})
 
+            # 2. Extract Thoughts and Index in Memory
+            thoughts = re.findall(r'<thought>(.*?)</thought>', response.text, re.DOTALL | re.IGNORECASE)
+            for t in thoughts:
+                if self.memory_service:
+                    self.memory_service.upsert(t.strip(), {"type": "thought", "session": session_id})
+
             # 2.5 Handle Browser Actions
             await self._handle_browser_actions(response.text, session_id)
 
-            # 3. Handle delegations
+            # 3. Handle plans and delegations
+            self._handle_plans(response.text, session_id)
             self._handle_delegations(response.text)
 
             # 4. Route messages
@@ -295,6 +295,21 @@ class OrchestratorManager:
                      session_id=f"git_review_{data.get('branch')}",
                      agent_role="GitFlowManager"
                  )
+
+    def _handle_plans(self, text: str, session_id: str):
+        """Extracts and parses <plan> tags for task decomposition."""
+        plans = re.findall(r'<plan>(.*?)</plan>', text, re.DOTALL | re.IGNORECASE)
+        for plan_content in plans:
+            logger.info(f"PLAN DETECTED: {plan_content.strip()}")
+            if self.artifact_service:
+                self.artifact_service.create_artifact(session_id, "plan", plan_content.strip())
+
+            # Simple parsing of checkboxes like: - [ ] Task name (Role)
+            tasks = re.findall(r'- \[ \] (.*?) \((.*?)\)', plan_content)
+            for task_desc, role in tasks:
+                 logger.info(f"Sub-task identified: {task_desc} (Assigned to: {role})")
+                 # Autonomously delegate sub-tasks
+                 self.delegate_task(role, f"Part of plan for {session_id}: {task_desc}")
 
     def handle_peer_message(self, payload: dict, session_id: str = "peer_unknown"):
         """Handle coordination messages from other agents."""

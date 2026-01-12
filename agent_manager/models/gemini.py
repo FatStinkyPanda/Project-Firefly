@@ -80,3 +80,28 @@ class GeminiHandler(BaseHandler):
         except Exception as e:
             logger.error(f"Gemini Connection Error: {e}")
             raise
+
+    def embed(self, text: str) -> List[float]:
+        """Generate embedding using Google's Generative AI API."""
+        if not self.api_key:
+            raise ValueError("Gemini API Key not found.")
+
+        # Using text-embedding-004 model for Gemini
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:embedContent?key={self.api_key}"
+        
+        data = {
+            "model": "models/text-embedding-004",
+            "content": {
+                "parts": [{"text": text}]
+            }
+        }
+
+        req = urllib.request.Request(url, data=json.dumps(data).encode('utf-8'), headers={'Content-Type': 'application/json'})
+
+        try:
+            with urllib.request.urlopen(req) as response:
+                result = json.loads(response.read().decode('utf-8'))
+                return result['embedding']['values']
+        except Exception as e:
+            logger.error(f"Gemini Embed Error: {e}")
+            raise

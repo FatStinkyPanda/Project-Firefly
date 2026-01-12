@@ -124,3 +124,13 @@ class HandlerClientManager:
 
         # If we reach here, all providers failed
         raise RuntimeError(f"All model providers failed: {'; '.join(full_error_log)}")
+
+    def embed(self, text: str) -> List[float]:
+        """Generate an embedding for the text using the primary provider."""
+        for provider in self.providers:
+            try:
+                return provider.embed(text)
+            except Exception as e:
+                logger.warning(f"Embedding failed with {provider.__class__.__name__}: {e}")
+                continue
+        raise RuntimeError("All embedding providers failed.")

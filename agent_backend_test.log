@@ -1,0 +1,15 @@
+﻿python : Traceback (most recent call last):
+At line:1 char:1
++ python c:\Users\dbiss\Desktop\Projects\Personal\Project-Fi
+refly\agent ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (mos 
+   t recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "c:\Users\dbiss\Desktop\Projects\Personal\Project-Fir
+efly\agent_manager\main.py", line 5, in <module>
+    from agent_manager.core.config_service import 
+ConfigurationService
+ModuleNotFoundError: No module named 'agent_manager'
