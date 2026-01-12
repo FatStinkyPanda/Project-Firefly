@@ -14,13 +14,14 @@ class OrchestratorManager:
     Manages the lifecycle and execution of agents based on triggers.
     Robustly handles AI responses using the Firefly Tagging System (FTS).
     """
-    def __init__(self, event_bus, model_client, config_service=None, peer_discovery=None, session_manager=None, browser_service=None):
+    def __init__(self, event_bus, model_client, config_service=None, peer_discovery=None, session_manager=None, browser_service=None, artifact_service=None):
         self.event_bus = event_bus
         self.model_client = model_client
         self.config_service = config_service
         self.peer_discovery = peer_discovery
         self.session_manager = session_manager
         self.browser_service = browser_service
+        self.artifact_service = artifact_service
         self.git_manager = GitManager()
         self.tag_parser = TagParserService()
         self._current_conflicts = set()
@@ -131,10 +132,14 @@ class OrchestratorManager:
             for thought in parsed.thoughts:
                 logger.info(f"CORE THOUGHT: {thought}")
                 self.set_status(thought=thought)
+                if self.artifact_service:
+                    self.artifact_service.create_artifact(session_id, "thought", thought)
 
             # 2. execute commands (with safety)
             for cmd in parsed.commands:
-                self.execute_command(cmd)
+                result = self.execute_command(cmd)
+                if self.artifact_service:
+                    self.artifact_service.create_artifact(session_id, "command", {"command": cmd, "success": result})
 
             # 2.5 Handle Browser Actions
             await self._handle_browser_actions(response.text, session_id)
@@ -190,6 +195,9 @@ class OrchestratorManager:
                 result_msg = f"[BROWSER RESULT] {action}: {result}"
                 self.session_manager.add_message(session_id, "system", result_msg)
 
+                if self.artifact_service:
+                    self.artifact_service.create_artifact(session_id, "browser_result", {"action": action, "result": result})
+
                 # Optional: Proactively trigger a follow-up if it was a scrape/screenshot
                 if action in ["get_text", "navigate", "screenshot"]:
                     # We might want to trigger the agent again with the new context
@@ -216,7 +224,13 @@ class OrchestratorManager:
                 logger.info(f"STDOUT: {result.stdout.strip()}")
             if result.stderr:
                 logger.error(f"STDERR: {result.stderr.strip()}")
-            return True
+
+            if self.artifact_service:
+                 # Note: Ideally we'd pass the session_id here, but execute_command doesn't have it.
+                 # For now, we record command status generically or refine the signature.
+                 pass
+
+            return result.returncode == 0
         except Exception as e:
             logger.error(f"Execution Error: {e}")
             return False

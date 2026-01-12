@@ -2,6 +2,7 @@ import logging
 import os # Added for os.environ.get
 import time
 
+from agent_manager.core.artifact_service import ArtifactService
 from agent_manager.core.browser_adapter import BrowserService
 from agent_manager.core.config_service import ConfigurationService
 from agent_manager.core.dashboard_service import DashboardService
@@ -40,6 +41,9 @@ def main():
     # 3.6 Initialize Browser Adapter
     browser_adapter = BrowserService(event_bus=bus)
 
+    # 3.7 Initialize Artifact Service
+    artifact_service = ArtifactService()
+
     # 4. Initialize Peer Discovery
     peer_discovery = PeerDiscoveryService(event_bus=bus)
     peer_discovery.start()
@@ -51,7 +55,8 @@ def main():
         config_service=config,
         peer_discovery=peer_discovery,
         session_manager=session_manager,
-        browser_adapter=browser_adapter
+        browser_service=browser_adapter,
+        artifact_service=artifact_service
     )
     orchestrator.start()
 
