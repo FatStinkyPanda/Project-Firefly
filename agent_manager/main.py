@@ -3,6 +3,7 @@ import os # Added for os.environ.get
 import time
 
 from agent_manager.core.artifact_service import ArtifactService
+from agent_manager.core.api_service import APIService
 from agent_manager.core.browser_adapter import BrowserService
 from agent_manager.core.config_service import ConfigurationService
 from agent_manager.core.dashboard_service import DashboardService
@@ -14,10 +15,10 @@ from agent_manager.core.prompt_service import PromptService
 from agent_manager.core.session_manager import SessionManager
 from agent_manager.models.manager import ModelClientManager
 from agent_manager.orchestrator import OrchestratorManager
+from agent_manager.triggers.email import EmailService
 from agent_manager.triggers.system_events import WorkspaceMonitoringService
 from agent_manager.triggers.telegram import TelegramService
 from agent_manager.triggers.webhook import WebhookService
-from agent_manager.triggers.email import EmailService
 
 # Configure Logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -57,6 +58,9 @@ def main():
     # 3.7 Initialize Artifact Service
     artifact_service = ArtifactService()
 
+    # 3.11 Initialize API Service (Artifacts Viewer Support)
+    api_service = APIService(event_bus=bus, artifact_service=artifact_service, model_client=model_client, port=5050)
+
     # 4. Initialize Peer Discovery
     peer_discovery = PeerDiscoveryService(event_bus=bus)
     peer_discovery.start()
@@ -93,6 +97,7 @@ def main():
     email_service.start()
     workspace_service.start()
     git_monitor.start()
+    api_service.start()
 
     notifier.notify("Firefly Agent Manager initialized and ready.")
 
@@ -109,6 +114,7 @@ def main():
         telegram_service.stop()
         webhook_service.stop()
         email_service.stop()
+        api_service.stop()
         git_monitor.stop()
         orchestrator.stop()
 

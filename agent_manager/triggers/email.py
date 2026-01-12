@@ -1,12 +1,13 @@
-import imaplib
-import smtplib
+from email.mime.text import MIMEText
+from typing import Optional, Dict, Any
 import email
 import logging
 import os
 import threading
 import time
-from email.mime.text import MIMEText
-from typing import Optional, Dict, Any
+
+import imaplib
+import smtplib
 
 logger = logging.getLogger("FireflyEmailService")
 
@@ -23,10 +24,10 @@ class EmailService:
         self.smtp_host = smtp_host or os.environ.get("SMTP_HOST", "smtp.gmail.com")
         self.imap_port = int(os.environ.get("IMAP_PORT", 993))
         self.smtp_port = int(os.environ.get("SMTP_PORT", 587))
-        
+
         self.is_running = False
         self.polling_thread = None
-        
+
         # Subscribe to outgoing messages to send them back via Email
         self.event_bus.subscribe("email_output", self.handle_outgoing_message)
 
@@ -78,15 +79,15 @@ class EmailService:
 
                 raw_email = data[0][1]
                 msg = email.message_from_bytes(raw_email)
-                
+
                 subject = msg.get("Subject", "")
                 from_addr = msg.get("From", "")
-                
+
                 # Check for Firefly prefix or specific format
                 if "FIREFLY" in subject.upper():
                     body = self._get_email_body(msg)
                     logger.info(f"Received Firefly Email from {from_addr}: {subject}")
-                    
+
                     payload = {
                         "type": "email",
                         "from": from_addr,
@@ -94,7 +95,7 @@ class EmailService:
                         "text": body
                     }
                     self.event_bus.publish("email_input", payload)
-                
+
             mail.logout()
         except Exception as e:
             logger.debug(f"IMAP check failed (expected if creds invalid): {e}")
