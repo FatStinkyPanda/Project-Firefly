@@ -1003,7 +1003,7 @@
       "type": "NOTE",
       "message": "Avoid shell=True for security. We wrap in powershell/sh instead to keep shell features.",
       "file": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\orchestrator.py",
-      "line": 216,
+      "line": 217,
       "author": null,
       "priority": 3,
       "context": "        try:\n            # Note: Avoid shell=True for security. We wrap in powershell/sh instead to keep shell features.\n            if os.name == 'nt':\n                cmd_args = [\"powershell.exe\", \""
@@ -1012,7 +1012,7 @@
       "type": "NOTE",
       "message": "Ideally we'd pass the session_id here, but execute_command doesn't have it.",
       "file": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\orchestrator.py",
-      "line": 229,
+      "line": 230,
       "author": null,
       "priority": 3,
       "context": "            if self.artifact_service:\n                 # Note: Ideally we'd pass the session_id here, but execute_command doesn't have it.\n                 # For now, we record command status generica"

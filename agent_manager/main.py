@@ -46,7 +46,7 @@ def main():
 
     # 3.9 Initialize Memory Service
     memory_service = MemoryService(model_client=model_client)
-    
+
     # 3.10 Initialize Notification Service
     notifier = NotificationService(event_bus=bus, config_service=config)
 
@@ -90,7 +90,7 @@ def main():
     telegram_service.start()
     workspace_service.start()
     git_monitor.start()
-    
+
     notifier.notify("Firefly Agent Manager initialized and ready.")
 
     # 7. Keep Alive Loop

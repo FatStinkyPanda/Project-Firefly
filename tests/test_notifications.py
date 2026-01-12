@@ -1,7 +1,8 @@
-import unittest
 from unittest.mock import MagicMock
-from agent_manager.core.notification_service import NotificationService
+import unittest
+
 from agent_manager.core.event_bus import EventBusService
+from agent_manager.core.notification_service import NotificationService
 
 class TestNotificationService(unittest.TestCase):
     def setUp(self):
@@ -12,17 +13,17 @@ class TestNotificationService(unittest.TestCase):
         # Mock subscribers
         mock_tg = MagicMock()
         mock_webhook = MagicMock()
-        
+
         self.event_bus.subscribe("telegram_output", mock_tg)
         self.event_bus.subscribe("webhook_event", mock_webhook)
-        
+
         self.service.notify("Test alert", priority="critical")
-        
+
         # Verify Telegram call
         mock_tg.assert_called_once()
         payload_tg = mock_tg.call_args[0][1]
         self.assertEqual(payload_tg["text"], "[CRITICAL] Test alert")
-        
+
         # Verify Webhook call
         mock_webhook.assert_called_once()
         payload_wh = mock_webhook.call_args[0][1]
@@ -33,7 +34,7 @@ class TestNotificationService(unittest.TestCase):
         # Trigger via broadcast event
         self.service.notify = MagicMock()
         self.event_bus.publish("broadcast_notification", {"text": "System update", "priority": "info"})
-        
+
         self.service.notify.assert_called_once_with("System update", "info", None)
 
 if __name__ == "__main__":
