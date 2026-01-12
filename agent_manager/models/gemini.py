@@ -88,7 +88,7 @@ class GeminiHandler(BaseHandler):
 
         # Using text-embedding-004 model for Gemini
         url = f"https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:embedContent?key={self.api_key}"
-        
+
         data = {
             "model": "models/text-embedding-004",
             "content": {

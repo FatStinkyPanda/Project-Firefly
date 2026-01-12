@@ -1,10 +1,11 @@
-import os
-import json
-import logging
-import numpy as np
-import faiss
 from pathlib import Path
 from typing import List, Dict, Any, Optional
+import json
+import logging
+import os
+
+import faiss
+import numpy as np
 
 logger = logging.getLogger("FireflyMemoryService")
 
@@ -19,11 +20,11 @@ class MemoryService:
         self.root_path = Path(memory_path or ".firefly/memory")
         self.index_file = self.root_path / "firefly_index.faiss"
         self.metadata_file = self.root_path / "firefly_metadata.json"
-        
+
         self.dimension = 1536 # Default for OpenAI 'text-embedding-3-small'
         self.index = None
         self.metadata = [] # List of dicts matching index IDs
-        
+
         self._initialize_storage()
 
     def _initialize_storage(self):
@@ -41,7 +42,7 @@ class MemoryService:
             self._create_empty_index()
 
     def _create_empty_index(self):
-        # We start with FlatL2 for simplicity. 
+        # We start with FlatL2 for simplicity.
         # For very large codebases, HNSW is better.
         self.index = faiss.IndexFlatL2(self.dimension)
         self.metadata = []
@@ -52,7 +53,7 @@ class MemoryService:
         try:
             embedding = self.model_client.embed(text)
             vec = np.array([embedding]).astype('float32')
-            
+
             # If dimensions mismatch (e.g. model changed), reset index
             if vec.shape[1] != self.dimension:
                 logger.warning(f"Embedding dimension mismatch ({vec.shape[1]} vs {self.dimension}). Recreating index.")
@@ -80,9 +81,9 @@ class MemoryService:
         try:
             embedding = self.model_client.embed(query_text)
             vec = np.array([embedding]).astype('float32')
-            
+
             distances, indices = self.index.search(vec, top_k)
-            
+
             results = []
             for i, idx in enumerate(indices[0]):
                 if idx != -1 and idx < len(self.metadata):

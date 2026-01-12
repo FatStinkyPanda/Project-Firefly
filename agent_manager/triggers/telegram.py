@@ -20,6 +20,7 @@ class TelegramService:
     def __init__(self, event_bus, token: Optional[str] = None):
         self.event_bus = event_bus
         self.token = token or os.environ.get("TELEGRAM_BOT_TOKEN")
+        self.default_chat_id = os.environ.get("TELEGRAM_CHAT_ID")
         self.is_running = False
         self.last_update_id = 0
         self.polling_thread = None
@@ -37,6 +38,8 @@ class TelegramService:
         self.polling_thread = threading.Thread(target=self._poll_loop, daemon=True)
         self.polling_thread.start()
         logger.info("TelegramService started polling.")
+        if self.default_chat_id:
+            self.send_message(self.default_chat_id, "🔥 Project-Firefly Agent Manager is now LIVE and monitoring.")
 
     def stop(self):
         """Stop the polling loop."""
@@ -100,7 +103,7 @@ class TelegramService:
 
     def handle_outgoing_message(self, event_type: str, payload: Dict[str, Any]):
         """Handle 'telegram_output' events -> Send message to Telegram."""
-        chat_id = payload.get("chat_id")
+        chat_id = payload.get("chat_id") or self.default_chat_id
         text = payload.get("text")
 
         if chat_id and text:

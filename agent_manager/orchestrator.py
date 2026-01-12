@@ -14,7 +14,7 @@ class OrchestratorManager:
     Manages the lifecycle and execution of agents based on triggers.
     Robustly handles AI responses using the Firefly Tagging System (FTS).
     """
-    def __init__(self, event_bus, model_client, config_service=None, peer_discovery=None, session_manager=None, browser_service=None, artifact_service=None, prompt_service=None):
+    def __init__(self, event_bus, model_client, config_service=None, peer_discovery=None, session_manager=None, browser_service=None, artifact_service=None, prompt_service=None, memory_service=None, notification_service=None):
         self.event_bus = event_bus
         self.model_client = model_client
         self.config_service = config_service
@@ -24,6 +24,7 @@ class OrchestratorManager:
         self.artifact_service = artifact_service
         self.prompt_service = prompt_service
         self.memory_service = memory_service
+        self.notification_service = notification_service
         self.git_manager = GitManager()
         self.tag_parser = TagParserService()
         self._current_conflicts = set()
@@ -98,7 +99,7 @@ class OrchestratorManager:
         if self.session_manager:
             self.session_manager.add_message(session_id, "user", prompt)
             history_context = self.session_manager.format_for_ai(session_id)
-            
+
             # Retrieve relevant semantic memories
             if self.memory_service:
                 memories = self.memory_service.query(prompt, top_k=3)
@@ -308,6 +309,8 @@ class OrchestratorManager:
             tasks = re.findall(r'- \[ \] (.*?) \((.*?)\)', plan_content)
             for task_desc, role in tasks:
                  logger.info(f"Sub-task identified: {task_desc} (Assigned to: {role})")
+                 if self.notification_service:
+                     self.notification_service.notify(f"Decomposing task: {task_desc} -> Routing to {role}")
                  # Autonomously delegate sub-tasks
                  self.delegate_task(role, f"Part of plan for {session_id}: {task_desc}")
 
