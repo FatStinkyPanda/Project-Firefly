@@ -12,15 +12,44 @@
 }
 
 .firefly-agent-hub {
-    padding: 16px;
+    padding: 0;
     height: 100%;
     display: flex;
     flex-direction: column;
-    gap: 16px;
     background: var(--firefly-humus);
     color: var(--firefly-text);
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    overflow-y: auto;
+    overflow: hidden;
+    /* Manage overflow per tab */
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(18, 10, 5, 0.5);
+    border-left: 1px solid rgba(255, 140, 0, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(139, 69, 19, 0.4);
+    border-radius: 5px;
+    border: 2px solid transparent;
+    /* Creates padding around thumb */
+    background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 140, 0, 0.4);
+    border: 2px solid transparent;
+    background-clip: content-box;
+}
+
+::-webkit-scrollbar-corner {
+    background: transparent;
 }
 
 /* Premium Header */
@@ -58,6 +87,63 @@
     color: var(--firefly-gold);
     border-color: var(--firefly-gold);
     animation: firefly-pulse 2s infinite ease-in-out;
+}
+
+/* Tabs */
+.firefly-tabs {
+    display: flex;
+    border-bottom: 1px solid var(--glass-border);
+    background: rgba(0, 0, 0, 0.2);
+    padding: 0 8px;
+}
+
+.firefly-tab {
+    padding: 10px 16px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 500;
+    color: var(--firefly-text-subtle);
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+}
+
+.firefly-tab:hover {
+    color: var(--firefly-text);
+    background: rgba(255, 140, 0, 0.05);
+}
+
+.firefly-tab.active {
+    color: var(--firefly-gold);
+    border-bottom-color: var(--firefly-gold);
+}
+
+/* Tab Content Areas */
+.firefly-content {
+    display: none;
+    flex: 1;
+    flex-direction: column;
+    overflow-y: auto;
+    /* Scroll per tab */
+    padding: 16px;
+    gap: 16px;
+}
+
+.firefly-content.active {
+    display: flex;
+}
+
+/* Chat Specifics - Full Height Override */
+.firefly-content.chat-content {
+    padding: 0;
+    overflow: hidden;
+    /* Chat stream handles its own scroll */
+    gap: 0;
+}
+
+.chat-input-wrapper {
+    padding: 12px;
+    border-top: 1px solid var(--glass-border);
+    background: rgba(0, 0, 0, 0.2);
 }
 
 /* Agent List Dashboard */
@@ -383,12 +469,11 @@ textarea:focus,
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    padding: 8px;
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 6px;
-    border: 1px solid rgba(255, 140, 0, 0.1);
-    font-size: 0.9em;
+    gap: 12px;
+    padding: 16px;
+    background: transparent;
+    border: none;
+    font-size: 0.95em;
     font-family: 'Consolas', 'Monaco', monospace;
 }
 
@@ -445,10 +530,7 @@ textarea:focus,
 }
 
 /* Chat Input */
-.firefly-chat-container {
-    padding: 8px 0;
-    border-top: 1px solid rgba(255, 140, 0, 0.1);
-}
+/* Container handled by .chat-input-wrapper now */
 
 .firefly-chat-input {
     width: 100%;

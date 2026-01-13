@@ -20,12 +20,20 @@ import { append, $, addDisposableListener } from '../../../../base/browser/dom.j
 
 export class FireflyViewPane extends ViewPane {
 
-    private container?: HTMLElement;
-    private thoughtElement?: HTMLElement;
+    private tabsContainer?: HTMLElement;
+    private agentsContainer?: HTMLElement;
+    private chatContainer?: HTMLElement;
+    private manageContainer?: HTMLElement;
 
+    private container?: HTMLElement;
+
+    // Content Elements
+    private thoughtElement?: HTMLElement;
     private costElement?: HTMLElement;
     private statusTag?: HTMLElement;
     private autonomousBtn?: HTMLButtonElement;
+
+    private activeTab: 'agents' | 'chat' | 'manage' = 'agents';
 
     constructor(
         options: IViewPaneOptions,
@@ -49,35 +57,56 @@ export class FireflyViewPane extends ViewPane {
 
         this.container = append(container, $('.firefly-agent-hub'));
 
-        // Premium Header
-        const header = append(this.container, $('.firefly-header'));
-        append(header, $('.firefly-title')).textContent = 'Agent Hub';
-        this.statusTag = append(header, $('.firefly-status-tag.online'));
-        this.statusTag.textContent = 'Connected';
+        // 1. Render Tabs
+        this.renderTabs(this.container);
 
-        // Agent List Section
-        append(this.container, $('.firefly-section-label')).textContent = 'Active Agents';
-        const agentList = append(this.container, $('.firefly-agent-list'));
+        // 2. Render Content Containers
+        this.agentsContainer = append(this.container, $('.firefly-content.agents-content'));
+        this.chatContainer = append(this.container, $('.firefly-content.chat-content'));
+        this.manageContainer = append(this.container, $('.firefly-content.manage-content'));
 
-        // Mock Agents based on Mockup
+        // --- AGENTS TAB CONTENT ---
+        // Header (Pulse)
+        append(this.agentsContainer, $('.firefly-section-label')).textContent = 'Firefly Pulse';
+        const pulseCard = append(this.agentsContainer, $('.firefly-agent-card.active'));
+        const pulseHeader = append(pulseCard, $('.agent-card-header'));
+        append(pulseHeader, $('.agent-icon.codicon.codicon-radio-tower'));
+        append(pulseHeader, $('.agent-name')).textContent = 'Primary Link';
+        this.statusTag = append(pulseHeader, $('.agent-status-indicator')); // Reuse status indicator logic here
+
+        // Active Agents List
+        append(this.agentsContainer, $('.firefly-section-label')).textContent = 'Active Agents';
+        const agentList = append(this.agentsContainer, $('.firefly-agent-list'));
         this.renderAgentCard(agentList, 'Reviewer', 'codicon-sparkle', 'Analyzing architectural patterns...', true);
         this.renderAgentCard(agentList, 'Coder', 'codicon-terminal', 'Implementing feature X...', false);
         this.renderAgentCard(agentList, 'Architect', 'codicon-layers', 'Idle', false);
 
-        // Global Thought/Activity (Linked to real backend)
-        append(this.container, $('.firefly-section-label')).textContent = 'Firefly Pulse';
-        const pulseCard = append(this.container, $('.firefly-agent-card.active'));
-        const pulseHeader = append(pulseCard, $('.agent-card-header'));
-        append(pulseHeader, $('.agent-icon.codicon.codicon-radio-tower'));
-        append(pulseHeader, $('.agent-name')).textContent = 'Primary Link';
-        append(pulseHeader, $('.agent-status-indicator'));
+        // Usage Investment (Move to Agents tab for visibility)
+        this.costElement = append(this.agentsContainer, $('.firefly-usage-container'));
 
-        // Thought Stream (Scrollable)
-        this.thoughtElement = append(this.container, $('.firefly-thought-stream'));
 
-        // Controls
-        append(this.container, $('.firefly-section-label')).textContent = 'Directives';
-        const controls = append(this.container, $('.firefly-controls'));
+        // --- CHAT TAB CONTENT ---
+        // Thought Stream (Full Height)
+        this.thoughtElement = append(this.chatContainer, $('.firefly-thought-stream'));
+
+        // Chat Input (Bottom Pinned)
+        const chatWrapper = append(this.chatContainer, $('.chat-input-wrapper'));
+        const chatInput = append(chatWrapper, $<HTMLInputElement>('input.firefly-chat-input'));
+        chatInput.placeholder = 'Message Firefly...';
+        chatInput.type = 'text';
+
+        this._register(addDisposableListener(chatInput, 'keydown', (e: KeyboardEvent) => {
+            if (e.key === 'Enter' && chatInput.value.trim()) {
+                const text = chatInput.value.trim();
+                this.fireflyService.sendChat(text);
+                chatInput.value = '';
+            }
+        }));
+
+
+        // --- MANAGE TAB CONTENT ---
+        append(this.manageContainer, $('.firefly-section-label')).textContent = 'Directives';
+        const controls = append(this.manageContainer, $('.firefly-controls'));
         this.autonomousBtn = append(controls, $('button.firefly-button')) as HTMLButtonElement;
         const createBtn = append(controls, $('button.firefly-button.create-btn')) as HTMLButtonElement;
         createBtn.textContent = 'Create Agent';
@@ -101,20 +130,11 @@ export class FireflyViewPane extends ViewPane {
             }
         }));
 
-        this.updateAutonomousButton();
+        // Orchestration
+        append(this.manageContainer, $('.firefly-section-label')).textContent = 'Orchestration';
+        const orchestrationControls = append(this.manageContainer, $('.firefly-controls'));
 
-        if (this.autonomousBtn) {
-            this._register(addDisposableListener(this.autonomousBtn, 'click', () => {
-                const current = this.fireflyService.isAutonomousMode();
-                this.fireflyService.setAutonomousMode(!current);
-            }));
-        }
-
-        // Model & Safety Controls Section
-        append(this.container, $('.firefly-section-label')).textContent = 'Orchestration';
-        const orchestrationControls = append(this.container, $('.firefly-controls'));
-
-        // Model Selector Button
+        // Model Selector
         const modelBtn = append(orchestrationControls, $('button.firefly-button'));
         append(modelBtn, $('span.codicon.codicon-hubot'));
         append(modelBtn, $('span')).textContent = ` ${this.getModelDisplayName(this.fireflyService.getActiveModel())}`;
@@ -140,7 +160,7 @@ export class FireflyViewPane extends ViewPane {
             }
         }));
 
-        // Safety Mode Button
+        // Safety Mode
         const safetyBtn = append(orchestrationControls, $('button.firefly-button'));
         append(safetyBtn, $('span.codicon.codicon-shield'));
         append(safetyBtn, $('span')).textContent = ` ${this.fireflyService.getSafetyMode()}`;
@@ -165,30 +185,10 @@ export class FireflyViewPane extends ViewPane {
             }
         }));
 
-        // Usage Investment
-        this.costElement = append(this.container, $('.firefly-usage-container'));
 
-        // Chat Input
-        const chatContainer = append(this.container, $('.firefly-chat-container'));
-        const chatInput = append(chatContainer, $<HTMLInputElement>('input.firefly-chat-input'));
-        chatInput.placeholder = 'Message Firefly...';
-        chatInput.type = 'text';
-
-        this._register(addDisposableListener(chatInput, 'keydown', (e: KeyboardEvent) => {
-            if (e.key === 'Enter' && chatInput.value.trim()) {
-                const text = chatInput.value.trim();
-                this.fireflyService.sendChat(text);
-                // Optimistically add to view (or rely on history update if service persists it?)
-                // Service doesn't persist USER chats automatically unless we call reportIntent or similar?
-                // Actually reportIntent appends observation. 
-                // We should add a method to service to append USER CHAT thought.
-                // But for now let's just send it.
-                // Wait, if I want it in the stream, the service needs to know.
-                // I'll update the service to append the thought in sendChat.
-                chatInput.value = '';
-            }
-        }));
-
+        // Initialize Tab State
+        this.updateTabs();
+        this.updateAutonomousButton();
         this.updateStatus();
 
         // Listen for updates
@@ -210,6 +210,51 @@ export class FireflyViewPane extends ViewPane {
         }));
 
         this.updateThought();
+    }
+
+    private renderTabs(parent: HTMLElement): void {
+        this.tabsContainer = append(parent, $('.firefly-tabs'));
+
+        const tabs = [
+            { id: 'agents', label: 'Agents' },
+            { id: 'chat', label: 'Chat' },
+            { id: 'manage', label: 'Manage' }
+        ];
+
+        tabs.forEach(tab => {
+            const tabEl = append(this.tabsContainer!, $('.firefly-tab'));
+            tabEl.textContent = tab.label;
+            tabEl.dataset.tabId = tab.id;
+
+            this._register(addDisposableListener(tabEl, 'click', () => {
+                this.activeTab = tab.id as any;
+                this.updateTabs();
+            }));
+        });
+    }
+
+    private updateTabs(): void {
+        if (!this.tabsContainer) return;
+
+        // Update Tab Styles
+        Array.from(this.tabsContainer.children).forEach(child => {
+            const el = child as HTMLElement;
+            if (el.dataset.tabId === this.activeTab) {
+                el.classList.add('active');
+            } else {
+                el.classList.remove('active');
+            }
+        });
+
+        // Update Content Visibility
+        if (this.agentsContainer) this.agentsContainer.style.display = this.activeTab === 'agents' ? 'flex' : 'none';
+        if (this.chatContainer) this.chatContainer.style.display = this.activeTab === 'chat' ? 'flex' : 'none';
+        // Ensure Chat scroll is handled correctly when visible
+        if (this.activeTab === 'chat' && this.thoughtElement) {
+            this.thoughtElement.scrollTop = this.thoughtElement.scrollHeight;
+        }
+
+        if (this.manageContainer) this.manageContainer.style.display = this.activeTab === 'manage' ? 'flex' : 'none';
     }
 
     private getModelDisplayName(modelId: string): string {
@@ -252,8 +297,6 @@ export class FireflyViewPane extends ViewPane {
 
         const history = this.fireflyService.getThoughtHistory();
 
-        // Clear current view (inefficient but safe for now, better to append diffs later)
-        // Actually, let's just re-render all for simplicity as history is capped at 100
         // Clear current view
         this.thoughtElement.innerText = '';
 
