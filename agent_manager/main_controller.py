@@ -2,6 +2,7 @@ import logging
 import os # Added for os.environ.get
 import time
 
+from agent_manager.core.api_controller import APIController
 from agent_manager.core.api_service import APIService
 from agent_manager.core.artifact_service import ArtifactService
 from agent_manager.core.browser_adapter import BrowserService
@@ -9,8 +10,10 @@ from agent_manager.core.config_service import ConfigurationService
 from agent_manager.core.dashboard_service import DashboardService
 from agent_manager.core.event_bus import EventBusService
 from agent_manager.core.git_service import GitMonitoringService
+from agent_manager.core.ide_integration import WorkspaceMonitoringService as MonitoringService # Renamed for clarity
 from agent_manager.core.memory_service import MemoryService
 from agent_manager.core.notification_service import NotificationService
+from agent_manager.core.peer_discovery import PeerDiscoveryService
 from agent_manager.core.prompt_service import PromptService
 from agent_manager.core.session_manager import SessionManager
 from agent_manager.models.manager import ModelClientManager
@@ -21,11 +24,6 @@ from agent_manager.triggers.sms import SMSService
 from agent_manager.triggers.system_events import WorkspaceMonitoringService # To be removed
 from agent_manager.triggers.telegram import TelegramService
 from agent_manager.triggers.webhook import WebhookService
-
-# New imports
-from agent_manager.core.api_controller import APIController
-from agent_manager.core.ide_integration import WorkspaceMonitoringService as MonitoringService # Renamed for clarity
-from agent_manager.core.peer_discovery import PeerDiscoveryService
 
 
 # Configure logging

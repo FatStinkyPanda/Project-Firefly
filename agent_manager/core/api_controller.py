@@ -144,7 +144,7 @@ class APIController:
             self.server.artifact_service = self.artifact_service
             self.server.model_client = self.model_client
             self.server.event_bus = self.event_bus
-            
+
             self.server.serve_forever()
         except Exception as e:
             logger.error(f"API Server failed: {e}")

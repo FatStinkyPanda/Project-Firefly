@@ -90,7 +90,7 @@ export class FireflyMainService extends Disposable implements IFireflyMainServic
     private startAgent(): void {
         const pythonPath = isWindows ? 'python' : 'python3';
         // Assume agent_manager is in the same root as the vscode folder
-        const agentPath = join(this.environmentMainService.appRoot, '..', 'agent_manager', 'main.py');
+        const agentPath = join(this.environmentMainService.appRoot, '..', 'agent_manager', 'main_controller.py');
 
         this.logService.info(`[Firefly] Spawning Agent Backend: ${pythonPath} ${agentPath}`);
 
