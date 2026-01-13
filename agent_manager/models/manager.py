@@ -1,22 +1,22 @@
 from typing import List, Optional, Dict, Any
 import logging
 
-from .anthropic import AnthropicHandler
-from .base import BaseHandler, HandlerResponse
-from .gemini import GeminiHandler
-from .ollama import OllamaHandler
-from .open_connector import OpenRouterHandler
-from .openai import OpenAIHandler
+from .anthropic import AnthropicService
+from .base import BaseService, ServiceResponse
+from .gemini import GeminiService
+from .ollama import OllamaService
+from .open_connector import OpenRouterService
+from .openai import OpenAIService
 
 logger = logging.getLogger("FireflyHandlerClient")
 
-class HandlerClientManager:
+class ModelClientManager:
     """
     Universal Handler Client.
     Manages multiple model services and handles failover logic.
     Tracks token usage and cost.
     """
-    def __init__(self, providers: Optional[List[BaseHandler]] = None, event_bus = None, config_service = None):
+    def __init__(self, providers: Optional[List[BaseService]] = None, event_bus = None, config_service = None):
         self.providers = providers or []
         self.event_bus = event_bus
         self.config_service = config_service
@@ -39,7 +39,7 @@ class HandlerClientManager:
 
     def _initialize_default_providers(self):
         """Initialize all supported providers (keys loaded from env)."""
-        for cls in [GeminiHandler, OpenAIHandler, AnthropicHandler, OpenRouterHandler, OllamaHandler]:
+        for cls in [GeminiService, OpenAIService, AnthropicService, OpenRouterService, OllamaService]:
             try:
                 p = cls()
                 if p.validate_config():
@@ -62,13 +62,13 @@ class HandlerClientManager:
                 return 999
 
         self.providers.sort(key=get_priority)
-        logger.info(f"Handler providers reordered: {[p.__class__.__name__ for p in self.providers]}")
+        logger.info(f"Service providers reordered: {[p.__class__.__name__ for p in self.providers]}")
 
-    def add_provider(self, provider: BaseHandler):
+    def add_provider(self, provider: BaseService):
         """Add a service to the end of the priority list."""
         self.providers.append(provider)
 
-    def _record_usage(self, response: HandlerResponse):
+    def _record_usage(self, response: ServiceResponse):
         """Update internal ledger and emit event."""
         self.usage_ledger["total_prompt_tokens"] += response.prompt_tokens
         self.usage_ledger["total_completion_tokens"] += response.completion_tokens
@@ -93,7 +93,7 @@ class HandlerClientManager:
                 "total_usage": self.usage_ledger
             })
 
-    def generate(self, prompt: str, system_prompt: Optional[str] = None) -> HandlerResponse:
+    def generate(self, prompt: str, system_prompt: Optional[str] = None) -> ServiceResponse:
         """
         Attempt to generate text using the configured providers in priority order.
         If one fails, try the next.

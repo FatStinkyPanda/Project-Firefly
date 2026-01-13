@@ -16,18 +16,28 @@ from agent_manager.core.session_manager import SessionManager
 from agent_manager.models.manager import ModelClientManager
 from agent_manager.orchestrator import OrchestratorManager
 from agent_manager.triggers.email import EmailService
-from agent_manager.triggers.system_events import WorkspaceMonitoringService
+from agent_manager.triggers.ide_control import IDEControlService
+from agent_manager.triggers.sms import SMSService
+from agent_manager.triggers.system_events import WorkspaceMonitoringService # To be removed
 from agent_manager.triggers.telegram import TelegramService
 from agent_manager.triggers.webhook import WebhookService
-from agent_manager.triggers.sms import SMSService
 
-# Configure Logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-logger = logging.getLogger("FireflyAgentManager")
-
+# New imports
+from agent_manager.core.api_controller import APIController
+from agent_manager.core.ide_integration import WorkspaceMonitoringService as MonitoringService # Renamed for clarity
 from agent_manager.core.peer_discovery import PeerDiscoveryService
 
-# [Existing imports ...]
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.StreamHandler(sys.stdout),
+        logging.FileHandler('firefly_agent_manager.log')
+    ]
+)
+logger = logging.getLogger("FireflyMain")
 
 def main():
     logger.info("Initializing Firefly Agent Manager...")
@@ -88,6 +98,7 @@ def main():
     sms_service = SMSService(event_bus=bus)
     workspace_service = WorkspaceMonitoringService(event_bus=bus)
     git_monitor = GitMonitoringService(event_bus=bus)
+    ide_control = IDEControlService(event_bus=bus)
 
     # 6. Initialize Dashboard
     dashboard = DashboardService(event_bus=bus)
@@ -100,6 +111,7 @@ def main():
     sms_service.start()
     workspace_service.start()
     git_monitor.start()
+    ide_control.start()
     api_service.start()
 
     notifier.notify("Firefly Agent Manager initialized and ready.")
@@ -119,6 +131,7 @@ def main():
         email_service.stop()
         sms_service.stop()
         api_service.stop()
+        ide_control.stop()
         git_monitor.stop()
         orchestrator.stop()
 

@@ -25,6 +25,7 @@ class OrchestratorManager:
         self.prompt_service = prompt_service
         self.memory_service = memory_service
         self.notification_service = notification_service
+        self.is_autonomous = False
         self.git_manager = GitManager()
         self.tag_parser = TagParserService()
         self._current_conflicts = set()
@@ -44,6 +45,13 @@ class OrchestratorManager:
         self.event_bus.subscribe("git_event", self.handle_event)
         self.event_bus.subscribe("email_input", self.handle_event)
         self.event_bus.subscribe("sms_input", self.handle_event)
+        self.event_bus.subscribe("ide_set_mode", self.handle_event)
+        self.event_bus.subscribe("ide_intent", self.handle_event)
+        self.event_bus.subscribe("ide_create_agent", self.handle_event)
+        self.event_bus.subscribe("ide_delete_agent", self.handle_event)
+        self.event_bus.subscribe("ide_set_safety_mode", self.handle_event)
+        self.event_bus.subscribe("ide_set_active_model", self.handle_event)
+        self.event_bus.subscribe("ide_chat", self.handle_event)
 
     def stop(self):
         self.is_running = False
@@ -70,6 +78,25 @@ class OrchestratorManager:
             from_num = payload.get("from")
             session_id = f"sms_{from_num.replace('+', '').replace(' ', '')}"
             self.process_request(payload.get("text"), source="sms", context=payload, session_id=session_id)
+        elif event_type == "ide_set_mode":
+            is_autonomous = payload.get("autonomous", False)
+            self.set_autonomous_mode(is_autonomous)
+        elif event_type == "ide_intent":
+            intent_id = payload.get("id")
+            intent_args = payload.get("args")
+            self.handle_intent(intent_id, intent_args)
+        elif event_type == "ide_create_agent":
+            self.handle_create_agent(payload)
+        elif event_type == "ide_delete_agent":
+            self.handle_delete_agent(payload)
+        elif event_type == "ide_set_safety_mode":
+            self.handle_set_safety_mode(payload)
+        elif event_type == "ide_set_active_model":
+            self.handle_set_active_model(payload)
+        elif event_type == "ide_chat":
+            text = payload.get("text")
+            logger.info(f"Received chat: {text}")
+            self.process_request(text, source="chat", session_id="firefly_chat")
         elif event_type == "system_event":
             self.handle_system_event(payload)
         elif event_type == "git_event":
@@ -78,7 +105,61 @@ class OrchestratorManager:
             self._total_cost += payload.get("cost", 0)
             self.set_status(cost=self._total_cost)
 
-    def process_request(self, prompt: str, source: str, context: dict = None, session_id: str = "default", agent_role: str = "Lead Orchestrator"):
+    def set_autonomous_mode(self, enabled: bool):
+        """Toggle autonomous execution mode."""
+        self.is_autonomous = enabled
+        logger.info(f"Orchestrator autonomous mode: {'ENABLED' if enabled else 'DISABLED'}")
+        # Log this as an artifact
+        if self.artifact_service:
+            self.artifact_service.create_artifact(
+                "internal",
+                "mode_change",
+                f"Autonomous mode set to {enabled}",
+                session_id="system"
+            )
+        # We also broadcast a status update to the IDE
+        print(f"[FIREFLY:STATUS] mode={'autonomous' if enabled else 'manual'}")
+
+    def handle_intent(self, intent_id: str, args: Any):
+        """Process a user intent as an observation for the agent."""
+        logger.info(f"Processing user intent: {intent_id}")
+        # In a real scenario, this would trigger a planning pulse if in autonomous mode
+        if self.is_autonomous:
+             message = f"User performed action: {intent_id} with args: {args}. Does this require any follow-up?"
+             # We could queue a background task here
+             self.process_request(message, source="system_intent", session_id="autonomous_loop")
+
+    def handle_create_agent(self, payload: dict):
+        """Handle agent creation request from the IDE."""
+        agent_id = payload.get("id")
+        name = payload.get("name")
+        persona = payload.get("persona")
+        logger.info(f"Summoning Agent: {name} (ID: {agent_id}) -> {persona}")
+        self.set_status(thought=f"Spectral manifest of '{name}' complete. Focus: {persona}")
+
+    def handle_delete_agent(self, payload: dict):
+        """Handle agent deletion request from the IDE."""
+        agent_id = payload.get("id")
+        logger.info(f"Banishing Agent: {agent_id}")
+        self.set_status(thought=f"Agent {agent_id} returned to the void.")
+
+    def handle_set_safety_mode(self, payload: dict):
+        """Handle safety mode change from IDE."""
+        mode = payload.get("mode", "MANUAL")
+        logger.info(f"Safety Mode -> {mode}")
+        self._safety_mode = mode
+        self.set_status(thought=f"Command approval mode: {mode}")
+
+    def handle_set_active_model(self, payload: dict):
+        """Handle active model change from IDE."""
+        model_id = payload.get("model_id", "gemini-2.0-flash")
+        logger.info(f"Active Model -> {model_id}")
+        if self.model_client:
+            # Update the model client's active model
+            self.model_client.set_active_model(model_id)
+        self.set_status(thought=f"Model switched to: {model_id}")
+
+    def process_request(self, text: str, source: str = "manual", context: Optional[Dict] = None, session_id: str = "default", agent_role: str = "Lead Orchestrator"):
         """
         Sync bridge to async processing.
         """

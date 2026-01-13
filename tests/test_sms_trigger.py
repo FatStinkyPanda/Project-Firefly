@@ -1,7 +1,8 @@
-import unittest
 from unittest.mock import MagicMock, patch
-from agent_manager.triggers.sms import SMSService
+import unittest
+
 from agent_manager.core.event_bus import EventBusService
+from agent_manager.triggers.sms import SMSService
 
 class TestSMSService(unittest.TestCase):
     def setUp(self):
@@ -20,12 +21,12 @@ class TestSMSService(unittest.TestCase):
             "To": "+1234567890",
             "Body": "Status check"
         }
-        
+
         mock_handler = MagicMock()
         self.event_bus.subscribe("sms_input", mock_handler)
-        
+
         self.event_bus.publish("webhook_event", payload)
-        
+
         mock_handler.assert_called_once()
         processed = mock_handler.call_args[0][1]
         self.assertEqual(processed["text"], "Status check")
@@ -37,9 +38,9 @@ class TestSMSService(unittest.TestCase):
         mock_response = MagicMock()
         mock_response.read.return_value = b'{"sid": "SM_test"}'
         mock_urlopen.return_value.__enter__.return_value = mock_response
-        
+
         self.service.send_sms("+1987654321", "Agent response")
-        
+
         # Verify it attempted to call Twilio
         args, kwargs = mock_urlopen.call_args
         req = args[0]

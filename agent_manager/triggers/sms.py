@@ -1,9 +1,9 @@
+from typing import Dict, Any, Optional
+import json
 import logging
 import os
 import urllib.parse
 import urllib.request
-import json
-from typing import Dict, Any, Optional
 
 logger = logging.getLogger("FireflySMSService")
 
@@ -17,7 +17,7 @@ class SMSService:
         self.twilio_sid = os.environ.get("TWILIO_ACCOUNT_SID")
         self.twilio_auth_token = os.environ.get("TWILIO_AUTH_TOKEN")
         self.twilio_number = os.environ.get("TWILIO_NUMBER")
-        
+
         # Subscribe to generic webhook events
         self.event_bus.subscribe("webhook_event", self.handle_incoming_webhook)
         # Subscribe to outgoing SMS requests
@@ -33,9 +33,9 @@ class SMSService:
         if "Body" in payload and "From" in payload:
             text = payload.get("Body")
             from_number = payload.get("From")
-            
+
             logger.info(f"Received SMS from {from_number}: {text}")
-            
+
             sms_payload = {
                 "type": "sms",
                 "from": from_number,
@@ -59,18 +59,18 @@ class SMSService:
             return
 
         url = f"https://api.twilio.com/2010-04-01/Accounts/{self.twilio_sid}/Messages.json"
-        
+
         data = urllib.parse.urlencode({
             "To": to_number,
             "From": self.twilio_number,
             "Body": text
         }).encode("utf-8")
-        
+
         # Basic Auth
         import base64
         auth_str = f"{self.twilio_sid}:{self.twilio_auth_token}"
         encoded_auth = base64.b64encode(auth_str.encode("ascii")).decode("ascii")
-        
+
         req = urllib.request.Request(url, data=data, method="POST")
         req.add_header("Authorization", f"Basic {encoded_auth}")
         req.add_header("Content-Type", "application/x-www-form-urlencoded")

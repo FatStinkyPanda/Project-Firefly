@@ -1,16 +1,16 @@
-from typing import Optional, TYPE_CHECKING, Dict, Any
+from typing import Optional, TYPE_CHECKING, Dict, Any, List
 import json
 import logging
 import os
 import urllib.error
 import urllib.request
 
-from .base import BaseHandler
+from .base import BaseService, ServiceResponse
 from __future__ import annotations
 
-logger = logging.getLogger("FireflyOpenAIHandler")
+logger = logging.getLogger("FireflyOpenAIService")
 
-class OpenAIHandler(BaseHandler):
+class OpenAIService(BaseService):
     """
     OpenAI Service using standard library (zero-dependency).
     """
@@ -24,8 +24,7 @@ class OpenAIHandler(BaseHandler):
     def validate_config(self) -> bool:
         return bool(self.api_key)
 
-    def generate(self, prompt: str, system_prompt: Optional[str] = None) -> HandlerResponse:
-        from .base import HandlerResponse
+    def generate(self, prompt: str, system_prompt: Optional[str] = None) -> ServiceResponse:
         if not self.validate_config():
             raise ValueError("OpenAI API Key not found. Set OPENAI_API_KEY environment variable.")
 
@@ -63,7 +62,7 @@ class OpenAIHandler(BaseHandler):
                     # $0.15 / 1M tokens prompt, $0.60 / 1M tokens completion
                     cost = (pt * 0.00000015) + (ct * 0.0000006)
 
-                    return HandlerResponse(
+                    return ServiceResponse(
                         text=text,
                         prompt_tokens=pt,
                         completion_tokens=ct,

@@ -119,29 +119,35 @@ class APIRequestHandler(BaseHTTPRequestHandler):
         # Override to suppress standard HTTP logging to stdout to keep Firefly logs clean
         logger.debug(format % args)
 
-class APIService:
-    def __init__(self, event_bus, artifact_service, model_client=None, port: int = 5050):
+class APIController:
+    """
+    Manages the HTTP API Server.
+    """
+    def __init__(self, event_bus, artifact_service=None, model_client=None, port=5000):
         self.port = port
+        self.server = None
+        self.thread = None
         self.event_bus = event_bus
         self.artifact_service = artifact_service
         self.model_client = model_client
-        self.server: Optional[HTTPServer] = None
-        self.thread: Optional[Thread] = None
 
     def start(self):
-        """Start the API server in a separate thread."""
+        self.thread = threading.Thread(target=self._run)
+        self.thread.daemon = True
+        self.thread.start()
+        logger.info(f"API Controller started on port {self.port}")
+
+    def _run(self):
         try:
             self.server = HTTPServer(('0.0.0.0', self.port), APIRequestHandler)
+            # Inject services into server for handler access
             self.server.artifact_service = self.artifact_service
             self.server.model_client = self.model_client
             self.server.event_bus = self.event_bus
-
-            self.thread = Thread(target=self.server.serve_forever)
-            self.thread.daemon = True
-            self.thread.start()
-            logger.info(f"Firefly API server started on port {self.port}")
+            
+            self.server.serve_forever()
         except Exception as e:
-            logger.error(f"Failed to start API server: {e}")
+            logger.error(f"API Server failed: {e}")
 
     def stop(self):
         """Stop the API server."""

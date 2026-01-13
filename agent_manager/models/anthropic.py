@@ -5,16 +5,15 @@ import os
 import urllib.error
 import urllib.request
 
-from .base import BaseHandler
+from .base import BaseService, ServiceResponse
 from __future__ import annotations
 
 if TYPE_CHECKING:
-    from .base import BaseHandler
-from __future__ import annotations
+    pass
 
-logger = logging.getLogger("FireflyAnthropicHandler")
+logger = logging.getLogger("FireflyAnthropicService")
 
-class AnthropicHandler(BaseHandler):
+class AnthropicService(BaseService):
     """
     Anthropic Service (Claude) using standard library (zero-dependency).
     """
@@ -27,8 +26,7 @@ class AnthropicHandler(BaseHandler):
     def validate_config(self) -> bool:
         return bool(self.api_key)
 
-    def generate(self, prompt: str, system_prompt: Optional[str] = None) -> HandlerResponse:
-        from .base import HandlerResponse
+    def generate(self, prompt: str, system_prompt: Optional[str] = None) -> ServiceResponse:
         if not self.validate_config():
             raise ValueError("Anthropic API Key not found. Set ANTHROPIC_API_KEY environment variable.")
 
@@ -68,7 +66,7 @@ class AnthropicHandler(BaseHandler):
                     # $3 / 1M input, $15 / 1M output
                     cost = (pt * 0.000003) + (ct * 0.000015)
 
-                    return HandlerResponse(
+                    return ServiceResponse(
                         text=text.strip(),
                         prompt_tokens=pt,
                         completion_tokens=ct,

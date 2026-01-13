@@ -6,6 +6,20 @@
         "openrouter",
         "ollama"
     ],
+    "active_context_compression": {
+        "global_enabled": false,
+        "per_model_defaults": {
+            "gemini": false,
+            "openai": false,
+            "anthropic": false,
+            "openrouter": false,
+            "ollama": false
+        },
+        "per_agent_defaults": {
+            "orchestrator": false,
+            "worker": false
+        }
+    },
     "approval_policy": "ORCHESTRATOR_ONLY",
     "auto_approved_commands": [
         "ls",

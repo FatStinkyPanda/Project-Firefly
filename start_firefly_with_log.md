@@ -1,0 +1,1 @@
+./code.bat 2>&1 | Tee-Object -FilePath code.bat.log.txt

@@ -50,6 +50,16 @@ Firefly provides granular control over autonomous actions through its **Command 
     - **MANUAL:** Maximum safety. Every system command requires developer intervention.
 - **Preconfigured Safe-Defaults:** Firefly includes lists of "Always Safe" (read-only) and "Ask Always" (destructive) commands to protect your device while enabling 100% autonomous development.
 
+### 5. 🗜️ Active Context Compression
+Firefly introduces an optional **Active Context Compression** mode designed to enable small local models to work effectively on massive codebases.
+- **Why it matters:** Standard 16k context windows cannot hold millions of lines of code. This mode treats the context window as a temporary "workbench" rather than a storage drive.
+- **How it works:**
+    - **Skeleton View:** Agents work with compressed "skeleton" files (signatures only) to navigate the architecture without reading full implementation details.
+    - **Graph RAG:** A knowledge graph maps function calls, allowing agents to find dependencies logically rather than just semantically.
+    - **State Management:** Decouples "Project Status" from "Agent Memory," ensuring long-term goals persist even as context is cleared.
+- **Configuration:** This mode is **disabled by default**. It is an advanced feature that can be enabled per-agent or per-model in `options.json`.
+  > See [active_context_compression.md](active_context_compression.md) for full architectural details.
+
 ---
 
 ## 🏗️ Architecture

@@ -5,14 +5,12 @@ import os
 import urllib.error
 import urllib.request
 
+from .base import BaseService, ServiceResponse
 from __future__ import annotations
 
-if TYPE_CHECKING:
-    from .base import BaseHandler
+logger = logging.getLogger("FireflyOllamaService")
 
-logger = logging.getLogger("FireflyOllamaHandler")
-
-class OllamaHandler(BaseHandler):
+class OllamaService(BaseService):
     """
     Ollama Service for local inference (zero-dependency).
     """
@@ -25,9 +23,7 @@ class OllamaHandler(BaseHandler):
         # Check if ollama is reachable? For now just return True.
         return True
 
-    def generate(self, prompt: str, system_prompt: Optional[str] = None) -> HandlerResponse:
-        from .base import HandlerResponse
-
+    def generate(self, prompt: str, system_prompt: Optional[str] = None) -> ServiceResponse:
         full_prompt = prompt
         if system_prompt:
             full_prompt = f"System: {system_prompt}\n\nUser: {prompt}"
@@ -52,7 +48,7 @@ class OllamaHandler(BaseHandler):
                     pt = result.get('prompt_eval_count', 0)
                     ct = result.get('eval_count', 0)
 
-                    return HandlerResponse(
+                    return ServiceResponse(
                         text=text.strip(),
                         prompt_tokens=pt,
                         completion_tokens=ct,
