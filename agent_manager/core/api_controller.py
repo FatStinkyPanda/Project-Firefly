@@ -9,7 +9,7 @@ import urllib.parse
 
 logger = logging.getLogger("FireflyAPI")
 
-class APIResponse:
+class APIResponseManager:
     @staticmethod
     def json(handler, data, status=200):
         handler.send_response(status)
@@ -20,7 +20,7 @@ class APIResponse:
 
     @staticmethod
     def error(handler, message, status=404):
-        APIResponse.json(handler, {"error": message}, status)
+        APIResponseManager.json(handler, {"error": message}, status)
 
 class APIRequestHandler(BaseHTTPRequestHandler):
     def do_GET(self):
@@ -29,7 +29,7 @@ class APIRequestHandler(BaseHTTPRequestHandler):
         path_parts = parsed_path.path.strip('/').split('/')
 
         if not path_parts or path_parts[0] != 'api':
-            APIResponse.error(self, "Not Found", 404)
+            APIResponseManager.error(self, "Not Found", 404)
             return
 
         # /api/artifacts
@@ -53,25 +53,25 @@ class APIRequestHandler(BaseHTTPRequestHandler):
             self.handle_get_usage()
 
         else:
-            APIResponse.error(self, "Endpoint not found", 404)
+            APIResponseManager.error(self, "Endpoint not found", 404)
 
     def handle_list_sessions(self):
         artifact_service = self.server.artifact_service
         base_dir = artifact_service.artifact_base_dir
 
         if not base_dir.exists():
-            APIResponse.json(self, [])
+            APIResponseManager.json(self, [])
             return
 
         sessions = [d.name for d in base_dir.iterdir() if d.is_dir()]
-        APIResponse.json(self, sorted(sessions, reverse=True))
+        APIResponseManager.json(self, sorted(sessions, reverse=True))
 
     def handle_list_artifacts(self, session_id):
         artifact_service = self.server.artifact_service
         session_dir = artifact_service.artifact_base_dir / session_id
 
         if not session_dir.exists():
-            APIResponse.error(self, "Session not found")
+            APIResponseManager.error(self, "Session not found")
             return
 
         artifacts = []
@@ -81,22 +81,22 @@ class APIRequestHandler(BaseHTTPRequestHandler):
                 "type": file.name.split('-')[-1].replace('.json', ''),
                 "path": f"/api/artifacts/{session_id}/{file.name}"
             })
-        APIResponse.json(self, artifacts)
+        APIResponseManager.json(self, artifacts)
 
     def handle_get_artifact(self, session_id, filename):
         artifact_service = self.server.artifact_service
         file_path = artifact_service.artifact_base_dir / session_id / filename
 
         if not file_path.exists() or not file_path.is_file():
-            APIResponse.error(self, "Artifact not found")
+            APIResponseManager.error(self, "Artifact not found")
             return
 
         try:
             with open(file_path, 'r', encoding='utf-8') as f:
                 data = json.load(f)
-            APIResponse.json(self, data)
+            APIResponseManager.json(self, data)
         except Exception as e:
-            APIResponse.error(self, f"Error reading artifact: {str(e)}", 500)
+            APIResponseManager.error(self, f"Error reading artifact: {str(e)}", 500)
 
     def handle_get_status(self):
         # This could be expanded to include more runtime info
@@ -105,15 +105,15 @@ class APIRequestHandler(BaseHTTPRequestHandler):
             "version": "1.0.0",
             "capabilities": ["browser", "memory", "artifacts", "triggers", "usage_api"]
         }
-        APIResponse.json(self, status)
+        APIResponseManager.json(self, status)
 
     def handle_get_usage(self):
         # Access the model client manager via the server
         model_client = self.server.model_client
         if model_client:
-            APIResponse.json(self, model_client.usage_ledger)
+            APIResponseManager.json(self, model_client.usage_ledger)
         else:
-            APIResponse.error(self, "Model client not available", 500)
+            APIResponseManager.error(self, "Model client not available", 500)
 
     def log_message(self, format, *args):
         # Override to suppress standard HTTP logging to stdout to keep Firefly logs clean
