@@ -404,29 +404,41 @@ def main():
     Console.header("Codebase Summarizer")
 
     # Parse args
-    args = [a for a in sys.argv[1:] if not a.startswith('-')]
     output_file = None
+    input_path = None
+    
+    # 1. Extract named args
+    i = 1
+    while i < len(sys.argv):
+        arg = sys.argv[i]
+        if arg == '--output':
+            if i + 1 < len(sys.argv):
+                output_file = Path(sys.argv[i + 1])
+                i += 2
+                continue
+            else:
+                Console.fail("Error: --output requires a file path")
+                return 1
+        elif not arg.startswith('-') and input_path is None:
+            input_path = Path(arg)
+            i += 1
+        else:
+            i += 1
 
-    for i, arg in enumerate(sys.argv):
-        if arg == '--output' and i + 1 < len(sys.argv):
-            output_file = Path(sys.argv[i + 1])
+    # 2. Determine path if not provided
+    if input_path is None:
+        input_path = find_project_root() or Path.cwd()
 
-    # Get path
-    if args:
-        path = Path(args[0])
-    else:
-        path = find_project_root() or Path.cwd()
+    if not input_path.exists():
+        Console.fail(f"Path not found: {input_path}")
+        return 1
 
-    if not path.exists():
-        Console.fail(f"Path not found: {path}")
-        sys.exit(1)
+    Console.info(f"Analyzing: {input_path}")
 
-    Console.info(f"Analyzing: {path}")
-
-    summary = summarize_codebase(path)
+    summary = summarize_codebase(input_path)
     markdown = format_summary_markdown(summary)
 
-    # Output
+    # 3. Output
     if output_file:
         with open(output_file, 'w', encoding='utf-8') as f:
             f.write(markdown)
