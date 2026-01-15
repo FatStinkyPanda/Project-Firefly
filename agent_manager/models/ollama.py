@@ -1,4 +1,3 @@
-from __future__ import annotations
 from typing import Optional, TYPE_CHECKING, Dict, Any
 import json
 import logging
@@ -7,6 +6,7 @@ import urllib.error
 import urllib.request
 
 from .base import BaseService, ServiceResponse
+from __future__ import annotations
 
 logger = logging.getLogger("FireflyOllamaService")
 

@@ -110,6 +110,16 @@ class ArchReport:
 # Default layer rules (can be customized)
 DEFAULT_RULES = [
     LayerRule(
+        layer='test',
+        can_depend_on=['controller', 'service', 'repository', 'model', 'util'],
+        patterns=['*test*', '*mock*', '*fixture*']
+    ),
+    LayerRule(
+        layer='main',
+        can_depend_on=['controller', 'service', 'repository', 'model', 'util'],
+        patterns=['main', 'app', 'run', 'cli']
+    ),
+    LayerRule(
         layer='controller',
         can_depend_on=['service', 'model', 'util'],
         patterns=['*controller*', '*handler*', '*route*', 'app.api*', 'app.view*']
@@ -222,7 +232,7 @@ class NamingConventionChecker:
         self.violations: List[ArchViolation] = []
 
     def check(self, tree: ast.Module):
-        if not self.layer or self.layer not in self.CONVENTIONS:
+        if not self.layer or self.layer not in self.CONVENTIONS or self.layer == 'test':
             return
 
         expected = self.CONVENTIONS[self.layer]

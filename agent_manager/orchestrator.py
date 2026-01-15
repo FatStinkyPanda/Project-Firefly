@@ -198,7 +198,7 @@ class OrchestratorManager:
                 if memories:
                     mem_context = "\n[RELEVANT HISTORICAL CONTEXT]\n" + "\n".join([f"- {m['text']}" for m in memories])
                     history_context += mem_context
-            
+
             # Retrieve project state (Active Context Compression)
             if self.context_service:
                 # Assuming root is current working dir or similar
@@ -248,7 +248,7 @@ Known Bugs: {', '.join(state.get('known_bugs', []))}
 
             # 2.5 Handle Browser Actions
             await self._handle_browser_actions(response.text, session_id)
-            
+
             # 2.6 Handle Skeleton Actions
             self._handle_skeleton_requests(response.text, session_id)
 
@@ -333,7 +333,7 @@ Known Bugs: {', '.join(state.get('known_bugs', []))}
         skeleton_tags = re.findall(r'<skeleton\s+path=["\'](.*?)["\']\s*/?>', text, re.IGNORECASE)
         for path in skeleton_tags:
             logger.info(f"Skeleton Request for: {path}")
-            
+
             try:
                 # Use environment/project root logic if possible, assuming absolute or relative to root
                 # For now, simplistic check
@@ -342,13 +342,13 @@ Known Bugs: {', '.join(state.get('known_bugs', []))}
                     # We'll assume relative to CWD for now, or rely on absolute paths.
                     # Better: try to find it.
                     pass
-                
+
                 if os.path.exists(path):
                     with open(path, 'r', encoding='utf-8') as f:
                         content = f.read()
-                    
+
                     skeleton = self.context_service.generate_skeleton(content, path)
-                    
+
                     # Feed back to session
                     if self.session_manager:
                         msg = f"[SKELETON VIEW] {path}:\n{skeleton}"

@@ -1,10 +1,10 @@
 {
-  "total_items": 695,
+  "total_items": 748,
   "by_type": {
     "readme": 62,
     "module": 60,
-    "class": 134,
-    "function": 439
+    "class": 144,
+    "function": 482
   },
   "items": [
     {
@@ -22,12 +22,6 @@
     {
       "type": "readme",
       "name": "README.md",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\README.md",
-      "summary": "> **AI Agent Enhancement Package** - 42 Scripts | 48 Commands | 6 Hooks **Windows (PowerShell):** ```powershell"
-    },
-    {
-      "type": "readme",
-      "name": "README.md",
       "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mitmserver\\README.md",
       "summary": "This is a man-in-the-middle (MITM) proxy server designed to intercept and inspect the network requests made by the official Antigravity application. It's a crucial tool for understanding the Antigravi"
     },
@@ -36,24 +30,6 @@
       "name": "README.md",
       "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\README.md",
       "summary": "[![Feature Requests](https://img.shields.io/github/issues/microsoft/vscode/feature-request.svg)](https://github.com/microsoft/vscode/issues?q=is%3Aopen+is%3Aissue+label%3Afeature-request+sort%3Areacti"
-    },
-    {
-      "type": "readme",
-      "name": "README.md",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\.build\\builtInExtensions\\ms-vscode.js-debug\\README.md",
-      "summary": "<h1>   <img alt=\"vscode-js-debug\" src=\"https://github.com/Microsoft/vscode-pwa/raw/HEAD/resources/readme/logo-with-text.png\" width=\"500\"> </h1>"
-    },
-    {
-      "type": "readme",
-      "name": "README.md",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\.build\\builtInExtensions\\ms-vscode.js-debug-companion\\README.md",
-      "summary": "A companion extension to [js-debug](https://github.com/microsoft/vscode-js-debug) to enable remote Chrome debugging. You probably don't want to install this extension by itself, but for your interest,"
-    },
-    {
-      "type": "readme",
-      "name": "README.md",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\.build\\builtInExtensions\\ms-vscode.vscode-js-profile-table\\README.md",
-      "summary": "This is a custom editor that provides tablular information from for V8-style `.cpuprofile` files. Usage: 1. Install this extension, 2. Open a `.cpuprofile` file in VS Code,"
     },
     {
       "type": "readme",
@@ -70,8 +46,104 @@
     {
       "type": "readme",
       "name": "README.md",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\build\\monaco\\README.md",
-      "summary": "* The `monaco.d.ts` is now automatically generated when running `gulp watch` * increase version in `build/monaco/package.json` * Be sure to have all changes committed **and pushed to the remote**"
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\test\\README.md",
+      "summary": "This folder contains the various test runners for VS Code. Please refer to the documentation within for how to run them: * `unit`: our suite of unit tests ([README](unit/README.md)) * `integration`: o"
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\test\\automation\\README.md",
+      "summary": "This package contains functionality for automating various components of the VS Code UI, via an automation \"driver\" that connects from a separate process. It is used by the `smoke` tests."
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\test\\mcp\\README.md",
+      "summary": "This directory contains a Model Context Protocol (MCP) server that provides Playwright browser automation capabilities for Code - OSS development and testing. The MCP server exposes Code - OSS's Playw"
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\test\\monaco\\README.md",
+      "summary": "This directory contains scripts that are used to smoke test the Monaco Editor distribution.  $test/monaco> npm i  $test/monaco> npm run bundle"
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\test\\sanity\\README.md",
+      "summary": "Automated end-to-end release sanity tests for published VS Code builds. These tests verify critical functionality across different platforms and installation methods, ensuring that published builds me"
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\test\\smoke\\README.md",
+      "summary": "Make sure you are on **Node v12.x**. ```bash npm i && npm run compile"
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\test\\unit\\README.md",
+      "summary": "    ./scripts/test.[sh|bat] All unit tests are run inside a Electron renderer environment which access to DOM and Nodejs api. This is the closest to the environment in which VS Code itself ships. Note"
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\test\\integration\\browser\\README.md",
+      "summary": "Make sure to run the following commands to compile and install dependencies:     cd test/integration/browser     npm i"
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\src\\vscode-dts\\README.md",
+      "summary": "This is the place for the stable API and for API proposals. 1. find a proposal you are interested in 1. add its name to your extensions `package.json#enabledApiProposals` property"
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\src\\vs\\workbench\\contrib\\terminalContrib\\README.md",
+      "summary": "_Terminal contribs_ are a way of splitting out standalone terminal features into their own components that build upon the main terminal code. The `terminalContrib/` folder can only import from `termin"
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\src\\vs\\editor\\test\\node\\diffing\\README.md",
+      "summary": "Every folder in `fixtures` represents a test. The file that starts with `1.` is diffed against the file that starts with `2.`. Use `tst` instead of `ts` to avoid compiler/linter errors for typescript "
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\out-build\\vscode-dts\\README.md",
+      "summary": "This is the place for the stable API and for API proposals. 1. find a proposal you are interested in 1. add its name to your extensions `package.json#enabledApiProposals` property"
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\out-build\\vs\\workbench\\contrib\\terminalContrib\\README.md",
+      "summary": "_Terminal contribs_ are a way of splitting out standalone terminal features into their own components that build upon the main terminal code. The `terminalContrib/` folder can only import from `termin"
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\out-build\\vs\\editor\\test\\node\\diffing\\README.md",
+      "summary": "Every folder in `fixtures` represents a test. The file that starts with `1.` is diffed against the file that starts with `2.`. Use `tst` instead of `ts` to avoid compiler/linter errors for typescript "
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\out\\vscode-dts\\README.md",
+      "summary": "This is the place for the stable API and for API proposals. 1. find a proposal you are interested in 1. add its name to your extensions `package.json#enabledApiProposals` property"
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\out\\vs\\workbench\\contrib\\terminalContrib\\README.md",
+      "summary": "_Terminal contribs_ are a way of splitting out standalone terminal features into their own components that build upon the main terminal code. The `terminalContrib/` folder can only import from `termin"
+    },
+    {
+      "type": "readme",
+      "name": "README.md",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\out\\vs\\editor\\test\\node\\diffing\\README.md",
+      "summary": "Every folder in `fixtures` represents a test. The file that starts with `1.` is diffed against the file that starts with `2.`. Use `tst` instead of `ts` to avoid compiler/linter errors for typescript "
     },
     {
       "type": "readme",
@@ -142,20 +214,8 @@
     {
       "type": "readme",
       "name": "README.md",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\extensions\\javascript\\syntaxes\\README.md",
-      "summary": "The file `JavaScript.tmLanguage.json` is derived from [TypeScriptReact.tmLanguage](https://github.com/microsoft/TypeScript-TmLanguage/blob/master/TypeScriptReact.tmLanguage). To update to the latest v"
-    },
-    {
-      "type": "readme",
-      "name": "README.md",
       "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\extensions\\json-language-features\\README.md",
       "summary": "**Notice:** This extension is bundled with Visual Studio Code. It can be disabled but not uninstalled. See [JSON in Visual Studio Code](https://code.visualstudio.com/docs/languages/json) to learn abou"
-    },
-    {
-      "type": "readme",
-      "name": "README.md",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\extensions\\json-language-features\\server\\README.md",
-      "summary": "[![NPM Version](https://img.shields.io/npm/v/vscode-json-languageserver.svg)](https://npmjs.org/package/vscode-json-languageserver) [![NPM Downloads](https://img.shields.io/npm/dm/vscode-json-language"
     },
     {
       "type": "readme",
@@ -238,26 +298,8 @@
     {
       "type": "readme",
       "name": "README.md",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\extensions\\terminal-suggest\\out\\fig\\README.md",
-      "summary": "This folder contains the `autocomplete-parser` project from https://github.com/aws/amazon-q-developer-cli/blob/main/packages/autocomplete-parser and its dependencies which were located in siblings fol"
-    },
-    {
-      "type": "readme",
-      "name": "README.md",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\extensions\\terminal-suggest\\src\\fig\\README.md",
-      "summary": "This folder contains the `autocomplete-parser` project from https://github.com/aws/amazon-q-developer-cli/blob/main/packages/autocomplete-parser and its dependencies which were located in siblings fol"
-    },
-    {
-      "type": "readme",
-      "name": "README.md",
       "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\extensions\\theme-seti\\README.md",
       "summary": "This is an icon theme that uses the icons from [`seti-ui`](https://github.com/jesseweed/seti-ui). There is script that can be used to update icons, [./build/update-icon-theme.js](build/update-icon-the"
-    },
-    {
-      "type": "readme",
-      "name": "README.md",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\extensions\\typescript-basics\\syntaxes\\README.md",
-      "summary": "The file `TypeScript.tmLanguage.json` and `TypeScriptReact.tmLanguage.json` are derived from [TypeScript.tmLanguage](https://github.com/microsoft/TypeScript-TmLanguage/blob/master/TypeScript.tmLanguag"
     },
     {
       "type": "readme",
@@ -274,104 +316,62 @@
     {
       "type": "readme",
       "name": "README.md",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\out\\vs\\editor\\test\\node\\diffing\\README.md",
-      "summary": "Every folder in `fixtures` represents a test. The file that starts with `1.` is diffed against the file that starts with `2.`. Use `tst` instead of `ts` to avoid compiler/linter errors for typescript "
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\extensions\\typescript-basics\\syntaxes\\README.md",
+      "summary": "The file `TypeScript.tmLanguage.json` and `TypeScriptReact.tmLanguage.json` are derived from [TypeScript.tmLanguage](https://github.com/microsoft/TypeScript-TmLanguage/blob/master/TypeScript.tmLanguag"
     },
     {
       "type": "readme",
       "name": "README.md",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\out\\vs\\workbench\\contrib\\terminalContrib\\README.md",
-      "summary": "_Terminal contribs_ are a way of splitting out standalone terminal features into their own components that build upon the main terminal code. The `terminalContrib/` folder can only import from `termin"
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\extensions\\terminal-suggest\\src\\fig\\README.md",
+      "summary": "This folder contains the `autocomplete-parser` project from https://github.com/aws/amazon-q-developer-cli/blob/main/packages/autocomplete-parser and its dependencies which were located in siblings fol"
     },
     {
       "type": "readme",
       "name": "README.md",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\out\\vscode-dts\\README.md",
-      "summary": "This is the place for the stable API and for API proposals. 1. find a proposal you are interested in 1. add its name to your extensions `package.json#enabledApiProposals` property"
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\extensions\\terminal-suggest\\out\\fig\\README.md",
+      "summary": "This folder contains the `autocomplete-parser` project from https://github.com/aws/amazon-q-developer-cli/blob/main/packages/autocomplete-parser and its dependencies which were located in siblings fol"
     },
     {
       "type": "readme",
       "name": "README.md",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\out-build\\vs\\editor\\test\\node\\diffing\\README.md",
-      "summary": "Every folder in `fixtures` represents a test. The file that starts with `1.` is diffed against the file that starts with `2.`. Use `tst` instead of `ts` to avoid compiler/linter errors for typescript "
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\extensions\\json-language-features\\server\\README.md",
+      "summary": "[![NPM Version](https://img.shields.io/npm/v/vscode-json-languageserver.svg)](https://npmjs.org/package/vscode-json-languageserver) [![NPM Downloads](https://img.shields.io/npm/dm/vscode-json-language"
     },
     {
       "type": "readme",
       "name": "README.md",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\out-build\\vs\\workbench\\contrib\\terminalContrib\\README.md",
-      "summary": "_Terminal contribs_ are a way of splitting out standalone terminal features into their own components that build upon the main terminal code. The `terminalContrib/` folder can only import from `termin"
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\extensions\\javascript\\syntaxes\\README.md",
+      "summary": "The file `JavaScript.tmLanguage.json` is derived from [TypeScriptReact.tmLanguage](https://github.com/microsoft/TypeScript-TmLanguage/blob/master/TypeScriptReact.tmLanguage). To update to the latest v"
     },
     {
       "type": "readme",
       "name": "README.md",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\out-build\\vscode-dts\\README.md",
-      "summary": "This is the place for the stable API and for API proposals. 1. find a proposal you are interested in 1. add its name to your extensions `package.json#enabledApiProposals` property"
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\build\\monaco\\README.md",
+      "summary": "* The `monaco.d.ts` is now automatically generated when running `gulp watch` * increase version in `build/monaco/package.json` * Be sure to have all changes committed **and pushed to the remote**"
     },
     {
       "type": "readme",
       "name": "README.md",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\src\\vs\\editor\\test\\node\\diffing\\README.md",
-      "summary": "Every folder in `fixtures` represents a test. The file that starts with `1.` is diffed against the file that starts with `2.`. Use `tst` instead of `ts` to avoid compiler/linter errors for typescript "
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\.build\\builtInExtensions\\ms-vscode.js-debug\\README.md",
+      "summary": "<h1>   <img alt=\"vscode-js-debug\" src=\"https://github.com/Microsoft/vscode-pwa/raw/HEAD/resources/readme/logo-with-text.png\" width=\"500\"> </h1>"
     },
     {
       "type": "readme",
       "name": "README.md",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\src\\vs\\workbench\\contrib\\terminalContrib\\README.md",
-      "summary": "_Terminal contribs_ are a way of splitting out standalone terminal features into their own components that build upon the main terminal code. The `terminalContrib/` folder can only import from `termin"
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\.build\\builtInExtensions\\ms-vscode.js-debug-companion\\README.md",
+      "summary": "A companion extension to [js-debug](https://github.com/microsoft/vscode-js-debug) to enable remote Chrome debugging. You probably don't want to install this extension by itself, but for your interest,"
     },
     {
       "type": "readme",
       "name": "README.md",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\src\\vscode-dts\\README.md",
-      "summary": "This is the place for the stable API and for API proposals. 1. find a proposal you are interested in 1. add its name to your extensions `package.json#enabledApiProposals` property"
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\.build\\builtInExtensions\\ms-vscode.vscode-js-profile-table\\README.md",
+      "summary": "This is a custom editor that provides tablular information from for V8-style `.cpuprofile` files. Usage: 1. Install this extension, 2. Open a `.cpuprofile` file in VS Code,"
     },
     {
       "type": "readme",
       "name": "README.md",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\test\\README.md",
-      "summary": "This folder contains the various test runners for VS Code. Please refer to the documentation within for how to run them: * `unit`: our suite of unit tests ([README](unit/README.md)) * `integration`: o"
-    },
-    {
-      "type": "readme",
-      "name": "README.md",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\test\\automation\\README.md",
-      "summary": "This package contains functionality for automating various components of the VS Code UI, via an automation \"driver\" that connects from a separate process. It is used by the `smoke` tests."
-    },
-    {
-      "type": "readme",
-      "name": "README.md",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\test\\integration\\browser\\README.md",
-      "summary": "Make sure to run the following commands to compile and install dependencies:     cd test/integration/browser     npm i"
-    },
-    {
-      "type": "readme",
-      "name": "README.md",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\test\\mcp\\README.md",
-      "summary": "This directory contains a Model Context Protocol (MCP) server that provides Playwright browser automation capabilities for Code - OSS development and testing. The MCP server exposes Code - OSS's Playw"
-    },
-    {
-      "type": "readme",
-      "name": "README.md",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\test\\monaco\\README.md",
-      "summary": "This directory contains scripts that are used to smoke test the Monaco Editor distribution.  $test/monaco> npm i  $test/monaco> npm run bundle"
-    },
-    {
-      "type": "readme",
-      "name": "README.md",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\test\\sanity\\README.md",
-      "summary": "Automated end-to-end release sanity tests for published VS Code builds. These tests verify critical functionality across different platforms and installation methods, ensuring that published builds me"
-    },
-    {
-      "type": "readme",
-      "name": "README.md",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\test\\smoke\\README.md",
-      "summary": "Make sure you are on **Node v12.x**. ```bash npm i && npm run compile"
-    },
-    {
-      "type": "readme",
-      "name": "README.md",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\vscode\\test\\unit\\README.md",
-      "summary": "    ./scripts/test.[sh|bat] All unit tests are run inside a Electron renderer environment which access to DOM and Nodejs api. This is the closest to the environment in which VS Code itself ships. Note"
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\mcp-global\\mcp-global-rules\\README.md",
+      "summary": "> **AI Agent Enhancement Package** - 42 Scripts | 48 Commands | 6 Hooks **Windows (PowerShell):** ```powershell"
     },
     {
       "type": "readme",
@@ -393,9 +393,51 @@
     },
     {
       "type": "function",
+      "name": "set_autonomous_mode",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\orchestrator.py",
+      "summary": "Toggle autonomous execution mode."
+    },
+    {
+      "type": "function",
+      "name": "handle_intent",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\orchestrator.py",
+      "summary": "Process a user intent as an observation for the agent."
+    },
+    {
+      "type": "function",
+      "name": "handle_create_agent",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\orchestrator.py",
+      "summary": "Handle agent creation request from the IDE."
+    },
+    {
+      "type": "function",
+      "name": "handle_delete_agent",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\orchestrator.py",
+      "summary": "Handle agent deletion request from the IDE."
+    },
+    {
+      "type": "function",
+      "name": "handle_set_safety_mode",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\orchestrator.py",
+      "summary": "Handle safety mode change from IDE."
+    },
+    {
+      "type": "function",
+      "name": "handle_set_active_model",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\orchestrator.py",
+      "summary": "Handle active model change from IDE."
+    },
+    {
+      "type": "function",
       "name": "process_request",
       "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\orchestrator.py",
-      "summary": "Unified processing logic using AI + Tag Parsing + Session Memory."
+      "summary": "Sync bridge to async processing."
+    },
+    {
+      "type": "function",
+      "name": "_handle_skeleton_requests",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\orchestrator.py",
+      "summary": "Extracts and executes <skeleton path=\"...\"> tags."
     },
     {
       "type": "function",
@@ -420,6 +462,12 @@
       "name": "handle_git_event",
       "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\orchestrator.py",
       "summary": "Logic for Git events like commits, checkouts, and merges."
+    },
+    {
+      "type": "function",
+      "name": "_handle_plans",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\orchestrator.py",
+      "summary": "Extracts and parses <plan> tags for task decomposition."
     },
     {
       "type": "function",
@@ -458,292 +506,76 @@
       "summary": "Firefly Agent Manager"
     },
     {
-      "type": "class",
-      "name": "ConfigurationService",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\config_service.py",
-      "summary": "Manages Firefly options and policies."
+      "type": "function",
+      "name": "test_failover_logic",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\tests\\test_ai_client_failover.py",
+      "summary": "Test that the manager fails over from a bad service to a good one."
     },
     {
       "type": "function",
-      "name": "is_command_safe",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\config_service.py",
-      "summary": "Check if a command is approved based on the current policy."
-    },
-    {
-      "type": "class",
-      "name": "DashboardService",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\dashboard_service.py",
-      "summary": "Real-time CLI dashboard for Project-Firefly."
-    },
-    {
-      "type": "class",
-      "name": "EventBusService",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\event_bus.py",
-      "summary": "Central event bus for the agent system."
+      "name": "test_all_fail",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\tests\\test_ai_client_failover.py",
+      "summary": "Test strict failure when all providers fail."
     },
     {
       "type": "function",
-      "name": "subscribe",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\event_bus.py",
-      "summary": "Subscribe a callback function to a specific event type."
+      "name": "test_autonomous_command_execution",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\tests\\test_autonomous_loop.py",
+      "summary": "Verify that <command> tags are parsed and executed if safe."
     },
     {
       "type": "function",
-      "name": "publish",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\event_bus.py",
-      "summary": "Publish an event to all subscribers."
-    },
-    {
-      "type": "class",
-      "name": "GitManager",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\git_manager.py",
-      "summary": "Wrapper for Git CLI commands, used by agents to manage branches and conflicts."
-    },
-    {
-      "type": "class",
-      "name": "GitMonitoringService",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\git_service.py",
-      "summary": "Monitors the .git directory for state changes (branches, commits, merges)."
-    },
-    {
-      "type": "class",
-      "name": "PeerDiscoveryService",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\peer_discovery.py",
-      "summary": "Enables detection and communication with other Firefly/MCP agents."
+      "name": "test_safety_policy_block",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\tests\\test_autonomous_loop.py",
+      "summary": "Verify that destructive commands are blocked by the safety policy."
     },
     {
       "type": "function",
-      "name": "refresh",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\peer_discovery.py",
-      "summary": "Synchronously refresh presence, peers, and mailbox."
-    },
-    {
-      "type": "class",
-      "name": "SessionManager",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\session_manager.py",
-      "summary": "Manages stateful conversation histories for different trigger sources."
+      "name": "test_session_history",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\tests\\test_intelligence_visibility.py",
+      "summary": "Verify that SessionManager tracks and formats history correctly."
     },
     {
       "type": "function",
-      "name": "get_history",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\session_manager.py",
-      "summary": "Returns the chat history for a given session."
+      "name": "test_session_sliding_window",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\tests\\test_intelligence_visibility.py",
+      "summary": "Verify max history limits."
     },
     {
       "type": "function",
-      "name": "add_message",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\session_manager.py",
-      "summary": "Adds a message to the session history."
+      "name": "test_dashboard_aggregation",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\tests\\test_intelligence_visibility.py",
+      "summary": "Verify that DashboardService correctly catches events."
     },
     {
       "type": "function",
-      "name": "clear_session",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\session_manager.py",
-      "summary": "Resets the history for a session."
+      "name": "test_peer_discovery_and_delegation",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\tests\\test_multi_agent.py",
+      "summary": "Verify that a peer is discovered and a task is delegated to it."
     },
     {
       "type": "function",
-      "name": "format_for_ai",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\session_manager.py",
-      "summary": "Formats the history as a single string for AI context (compatibility mode)."
-    },
-    {
-      "type": "class",
-      "name": "TagParserService",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\tag_parser.py",
-      "summary": "Robustly extracts structured data from AI-generated text using XML-like tags."
+      "name": "test_role_based_delegation",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\tests\\test_multi_agent.py",
+      "summary": "Verify that a task is delegated to an agent with a specific role."
     },
     {
       "type": "function",
-      "name": "parse",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\tag_parser.py",
-      "summary": "Parse text and extract all identified tags."
+      "name": "test_capability_based_delegation",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\tests\\test_multi_agent.py",
+      "summary": "Verify that a task is delegated to an agent with a specific capability."
     },
     {
       "type": "function",
-      "name": "_extract_all",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\tag_parser.py",
-      "summary": "Extract all occurrences of a specific tag using regex."
+      "name": "test_poll_updates",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\tests\\test_telegram_trigger.py",
+      "summary": "Test that polling processes updates and publishes events."
     },
     {
       "type": "function",
-      "name": "wrap",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\tag_parser.py",
-      "summary": "Utility to wrap content in FTS tags."
-    },
-    {
-      "type": "class",
-      "name": "AnthropicService",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\models\\anthropic.py",
-      "summary": "Anthropic Service (Claude) using standard library (zero-dependency)."
-    },
-    {
-      "type": "class",
-      "name": "ModelResponse",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\models\\base.py",
-      "summary": "Standardized response from an AI Model Service."
-    },
-    {
-      "type": "class",
-      "name": "BaseModelService",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\models\\base.py",
-      "summary": "Abstract Base Class for all AI Model Services."
-    },
-    {
-      "type": "function",
-      "name": "generate",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\models\\base.py",
-      "summary": "Generate a complete response from the model."
-    },
-    {
-      "type": "function",
-      "name": "validate_config",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\models\\base.py",
-      "summary": "Check if the provider is correctly configured (e.g., has API key)."
-    },
-    {
-      "type": "class",
-      "name": "GeminiService",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\models\\gemini.py",
-      "summary": "Google Gemini Service using standard library (zero-dependency)."
-    },
-    {
-      "type": "class",
-      "name": "ModelClientManager",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\models\\manager.py",
-      "summary": "Universal Model Client."
-    },
-    {
-      "type": "function",
-      "name": "_initialize_default_providers",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\models\\manager.py",
-      "summary": "Initialize all supported providers (keys loaded from env)."
-    },
-    {
-      "type": "function",
-      "name": "reorder_providers",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\models\\manager.py",
-      "summary": "Reorder providers based on config priority."
-    },
-    {
-      "type": "function",
-      "name": "add_provider",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\models\\manager.py",
-      "summary": "Add a service to the end of the priority list."
-    },
-    {
-      "type": "function",
-      "name": "_record_usage",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\models\\manager.py",
-      "summary": "Update internal ledger and emit event."
-    },
-    {
-      "type": "function",
-      "name": "generate",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\models\\manager.py",
-      "summary": "Attempt to generate text using the configured providers in priority order."
-    },
-    {
-      "type": "class",
-      "name": "OllamaService",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\models\\ollama.py",
-      "summary": "Ollama Service for local inference (zero-dependency)."
-    },
-    {
-      "type": "class",
-      "name": "OpenAIService",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\models\\openai.py",
-      "summary": "OpenAI Service using standard library (zero-dependency)."
-    },
-    {
-      "type": "class",
-      "name": "OpenRouterManager",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\models\\open_connector.py",
-      "summary": "OpenRouter Service using standard library (zero-dependency)."
-    },
-    {
-      "type": "class",
-      "name": "TagResponse",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\models\\tag.py",
-      "summary": "Structured container for parsed tags."
-    },
-    {
-      "type": "module",
-      "name": "__init__",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\models\\__init__.py",
-      "summary": "Universal Model Client package."
-    },
-    {
-      "type": "class",
-      "name": "WorkspaceMonitoringService",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\triggers\\system_events.py",
-      "summary": "Monitors the project workspace for file changes and system events."
-    },
-    {
-      "type": "class",
-      "name": "TelegramService",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\triggers\\telegram.py",
-      "summary": "Service to handle Telegram Bot API interactions."
-    },
-    {
-      "type": "function",
-      "name": "start",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\triggers\\telegram.py",
-      "summary": "Start the polling loop in a background thread."
-    },
-    {
-      "type": "function",
-      "name": "stop",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\triggers\\telegram.py",
-      "summary": "Stop the polling loop."
-    },
-    {
-      "type": "function",
-      "name": "_poll_loop",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\triggers\\telegram.py",
-      "summary": "Internal loop to check for updates."
-    },
-    {
-      "type": "function",
-      "name": "_check_updates",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\triggers\\telegram.py",
-      "summary": "Call getUpdates API."
-    },
-    {
-      "type": "function",
-      "name": "_process_update",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\triggers\\telegram.py",
-      "summary": "Process a single update and publish event."
-    },
-    {
-      "type": "function",
-      "name": "handle_outgoing_message",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\triggers\\telegram.py",
-      "summary": "Handle 'telegram_output' events -> Send message to Telegram."
-    },
-    {
-      "type": "function",
-      "name": "send_message",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\triggers\\telegram.py",
-      "summary": "Send a text message to a chat."
-    },
-    {
-      "type": "function",
-      "name": "do_POST",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\triggers\\webhook.py",
-      "summary": "Handle incoming webhook POST requests."
-    },
-    {
-      "type": "function",
-      "name": "start",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\triggers\\webhook.py",
-      "summary": "Start the webhook server in a separate thread."
-    },
-    {
-      "type": "function",
-      "name": "stop",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\triggers\\webhook.py",
-      "summary": "Stop the webhook server."
+      "name": "test_send_message",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\tests\\test_telegram_trigger.py",
+      "summary": "Test sending a message via telegram_output event."
     },
     {
       "type": "module",
@@ -4106,76 +3938,562 @@
       "summary": "Tests package."
     },
     {
-      "type": "function",
-      "name": "test_failover_logic",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\tests\\test_ai_client_failover.py",
-      "summary": "Test that the manager fails over from a bad service to a good one."
+      "type": "class",
+      "name": "APIController",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\api_controller.py",
+      "summary": "Manages the HTTP API Server."
     },
     {
       "type": "function",
-      "name": "test_all_fail",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\tests\\test_ai_client_failover.py",
-      "summary": "Test strict failure when all providers fail."
+      "name": "do_GET",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\api_controller.py",
+      "summary": "Handle GET requests for artifacts and status."
     },
     {
       "type": "function",
-      "name": "test_autonomous_command_execution",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\tests\\test_autonomous_loop.py",
-      "summary": "Verify that <command> tags are parsed and executed if safe."
+      "name": "stop",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\api_controller.py",
+      "summary": "Stop the API server."
+    },
+    {
+      "type": "class",
+      "name": "ArtifactService",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\artifact_service.py",
+      "summary": "Manages persistent storage of agent actions, thoughts, and results."
     },
     {
       "type": "function",
-      "name": "test_safety_policy_block",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\tests\\test_autonomous_loop.py",
-      "summary": "Verify that destructive commands are blocked by the safety policy."
+      "name": "_ensure_dir",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\artifact_service.py",
+      "summary": "Ensures the artifact directory exists."
     },
     {
       "type": "function",
-      "name": "test_session_history",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\tests\\test_intelligence_visibility.py",
-      "summary": "Verify that SessionManager tracks and formats history correctly."
+      "name": "create_artifact",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\artifact_service.py",
+      "summary": "Creates a new artifact entry."
     },
     {
       "type": "function",
-      "name": "test_session_sliding_window",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\tests\\test_intelligence_visibility.py",
-      "summary": "Verify max history limits."
+      "name": "export_session_log",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\artifact_service.py",
+      "summary": "Exports a consolidated markdown log for a specific session."
+    },
+    {
+      "type": "class",
+      "name": "BrowserService",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\browser_adapter.py",
+      "summary": "Adapter for browser automation using Playwright."
+    },
+    {
+      "type": "class",
+      "name": "ConfigurationService",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\config_service.py",
+      "summary": "Manages Firefly options and policies."
     },
     {
       "type": "function",
-      "name": "test_dashboard_aggregation",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\tests\\test_intelligence_visibility.py",
-      "summary": "Verify that DashboardService correctly catches events."
+      "name": "is_command_safe",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\config_service.py",
+      "summary": "Check if a command is approved based on the current policy."
+    },
+    {
+      "type": "class",
+      "name": "ContextCompressionService",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\context_service.py",
+      "summary": "Manages active context compression:"
     },
     {
       "type": "function",
-      "name": "test_peer_discovery_and_delegation",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\tests\\test_multi_agent.py",
-      "summary": "Verify that a peer is discovered and a task is delegated to it."
+      "name": "get_project_state",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\context_service.py",
+      "summary": "Reads project_state.json from the project root."
     },
     {
       "type": "function",
-      "name": "test_role_based_delegation",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\tests\\test_multi_agent.py",
-      "summary": "Verify that a task is delegated to an agent with a specific role."
+      "name": "update_project_state",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\context_service.py",
+      "summary": "Updates specific fields in project_state.json."
     },
     {
       "type": "function",
-      "name": "test_capability_based_delegation",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\tests\\test_multi_agent.py",
-      "summary": "Verify that a task is delegated to an agent with a specific capability."
+      "name": "generate_skeleton",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\context_service.py",
+      "summary": "Generates a compressed skeleton view of the code."
     },
     {
       "type": "function",
-      "name": "test_poll_updates",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\tests\\test_telegram_trigger.py",
-      "summary": "Test that polling processes updates and publishes events."
+      "name": "_skeletonize_python",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\context_service.py",
+      "summary": "Extracts classes, functions, and docstrings from Python code."
     },
     {
       "type": "function",
-      "name": "test_send_message",
-      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\tests\\test_telegram_trigger.py",
-      "summary": "Test sending a message via telegram_output event."
+      "name": "_skeletonize_typescript",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\context_service.py",
+      "summary": "Extracts interfaces, classes, types, and exported functions from TS/JS."
+    },
+    {
+      "type": "class",
+      "name": "DashboardService",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\dashboard_service.py",
+      "summary": "Real-time CLI dashboard for Project-Firefly."
+    },
+    {
+      "type": "class",
+      "name": "EventBusService",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\event_bus.py",
+      "summary": "Central event bus for the agent system."
+    },
+    {
+      "type": "function",
+      "name": "subscribe",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\event_bus.py",
+      "summary": "Subscribe a callback function to a specific event type."
+    },
+    {
+      "type": "function",
+      "name": "publish",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\event_bus.py",
+      "summary": "Publish an event to all subscribers."
+    },
+    {
+      "type": "class",
+      "name": "GitManager",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\git_manager.py",
+      "summary": "Wrapper for Git CLI commands, used by agents to manage branches and conflicts."
+    },
+    {
+      "type": "class",
+      "name": "GitMonitoringService",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\git_service.py",
+      "summary": "Monitors the .git directory for state changes (branches, commits, merges)."
+    },
+    {
+      "type": "class",
+      "name": "MemoryService",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\memory_service.py",
+      "summary": "Project-Firefly Semantic Memory."
+    },
+    {
+      "type": "function",
+      "name": "upsert",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\memory_service.py",
+      "summary": "Vectorize and store text in the index."
+    },
+    {
+      "type": "function",
+      "name": "query",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\memory_service.py",
+      "summary": "Search memory for relevant context."
+    },
+    {
+      "type": "function",
+      "name": "save",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\memory_service.py",
+      "summary": "Persist index and metadata to disk."
+    },
+    {
+      "type": "class",
+      "name": "NotificationService",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\notification_service.py",
+      "summary": "Unified notification hub for Project-Firefly."
+    },
+    {
+      "type": "function",
+      "name": "notify",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\notification_service.py",
+      "summary": "Send a notification to all active channels."
+    },
+    {
+      "type": "function",
+      "name": "on_broadcast",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\notification_service.py",
+      "summary": "Handler for internal broadcast events."
+    },
+    {
+      "type": "class",
+      "name": "PeerDiscoveryService",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\peer_discovery.py",
+      "summary": "Enables detection and communication with other Firefly/MCP agents."
+    },
+    {
+      "type": "function",
+      "name": "refresh",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\peer_discovery.py",
+      "summary": "Synchronously refresh presence, peers, and mailbox."
+    },
+    {
+      "type": "class",
+      "name": "PromptService",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\prompt_service.py",
+      "summary": "Manages agent personas and system prompts for Project-Firefly."
+    },
+    {
+      "type": "function",
+      "name": "get_prompt",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\prompt_service.py",
+      "summary": "Constructs the final system prompt for a specific role."
+    },
+    {
+      "type": "class",
+      "name": "SessionManager",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\session_manager.py",
+      "summary": "Manages stateful conversation histories for different trigger sources."
+    },
+    {
+      "type": "function",
+      "name": "get_history",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\session_manager.py",
+      "summary": "Returns the chat history for a given session."
+    },
+    {
+      "type": "function",
+      "name": "add_message",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\session_manager.py",
+      "summary": "Adds a message to the session history."
+    },
+    {
+      "type": "function",
+      "name": "clear_session",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\session_manager.py",
+      "summary": "Resets the history for a session."
+    },
+    {
+      "type": "function",
+      "name": "format_for_ai",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\session_manager.py",
+      "summary": "Formats the history as a single string for AI context (compatibility mode)."
+    },
+    {
+      "type": "class",
+      "name": "TagParserService",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\tag_parser.py",
+      "summary": "Robustly extracts structured data from AI-generated text using XML-like tags."
+    },
+    {
+      "type": "function",
+      "name": "parse",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\tag_parser.py",
+      "summary": "Parse text and extract all identified tags."
+    },
+    {
+      "type": "function",
+      "name": "_extract_all",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\tag_parser.py",
+      "summary": "Extract all occurrences of a specific tag using regex."
+    },
+    {
+      "type": "function",
+      "name": "wrap",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\core\\tag_parser.py",
+      "summary": "Utility to wrap content in FTS tags."
+    },
+    {
+      "type": "class",
+      "name": "AnthropicService",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\models\\anthropic.py",
+      "summary": "Anthropic Service (Claude) using standard library (zero-dependency)."
+    },
+    {
+      "type": "class",
+      "name": "ServiceResponse",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\models\\base.py",
+      "summary": "Standardized response from an AI Model Service."
+    },
+    {
+      "type": "class",
+      "name": "BaseService",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\models\\base.py",
+      "summary": "Abstract base class for all LLM providers."
+    },
+    {
+      "type": "function",
+      "name": "generate",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\models\\base.py",
+      "summary": "Generate a complete response from the model."
+    },
+    {
+      "type": "function",
+      "name": "validate_config",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\models\\base.py",
+      "summary": "Check if the provider is correctly configured (e.g., has API key)."
+    },
+    {
+      "type": "class",
+      "name": "GeminiService",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\models\\gemini.py",
+      "summary": "Google Gemini Service using standard library (zero-dependency)."
+    },
+    {
+      "type": "function",
+      "name": "embed",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\models\\gemini.py",
+      "summary": "Generate embedding using Google's Generative AI API."
+    },
+    {
+      "type": "class",
+      "name": "ModelClientManager",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\models\\manager.py",
+      "summary": "Universal Handler Client."
+    },
+    {
+      "type": "function",
+      "name": "_initialize_default_providers",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\models\\manager.py",
+      "summary": "Initialize all supported providers (keys loaded from env)."
+    },
+    {
+      "type": "function",
+      "name": "reorder_providers",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\models\\manager.py",
+      "summary": "Reorder providers based on config priority."
+    },
+    {
+      "type": "function",
+      "name": "add_provider",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\models\\manager.py",
+      "summary": "Add a service to the end of the priority list."
+    },
+    {
+      "type": "function",
+      "name": "_record_usage",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\models\\manager.py",
+      "summary": "Update internal ledger and emit event."
+    },
+    {
+      "type": "function",
+      "name": "generate",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\models\\manager.py",
+      "summary": "Attempt to generate text using the configured providers in priority order."
+    },
+    {
+      "type": "function",
+      "name": "embed",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\models\\manager.py",
+      "summary": "Generate an embedding for the text using the primary provider."
+    },
+    {
+      "type": "class",
+      "name": "OllamaService",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\models\\ollama.py",
+      "summary": "Ollama Service for local inference (zero-dependency)."
+    },
+    {
+      "type": "class",
+      "name": "OpenAIService",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\models\\openai.py",
+      "summary": "OpenAI Service using standard library (zero-dependency)."
+    },
+    {
+      "type": "function",
+      "name": "embed",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\models\\openai.py",
+      "summary": "Generate embedding using OpenAI's embeddings API."
+    },
+    {
+      "type": "class",
+      "name": "OpenRouterService",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\models\\open_connector.py",
+      "summary": "OpenRouter Service using standard library (zero-dependency)."
+    },
+    {
+      "type": "class",
+      "name": "TagResponse",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\models\\tag.py",
+      "summary": "Structured container for parsed tags."
+    },
+    {
+      "type": "module",
+      "name": "__init__",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\models\\__init__.py",
+      "summary": "Universal Model Client package."
+    },
+    {
+      "type": "class",
+      "name": "EmailService",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\triggers\\email.py",
+      "summary": "Service to handle Email (IMAP/SMTP) interactions."
+    },
+    {
+      "type": "function",
+      "name": "start",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\triggers\\email.py",
+      "summary": "Start the polling loop in a background thread."
+    },
+    {
+      "type": "function",
+      "name": "stop",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\triggers\\email.py",
+      "summary": "Stop the polling loop."
+    },
+    {
+      "type": "function",
+      "name": "_poll_loop",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\triggers\\email.py",
+      "summary": "Internal loop to check for updates."
+    },
+    {
+      "type": "function",
+      "name": "_check_emails",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\triggers\\email.py",
+      "summary": "Connect to IMAP and check for UNSEEN messages."
+    },
+    {
+      "type": "function",
+      "name": "_get_email_body",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\triggers\\email.py",
+      "summary": "Extract body text from email message."
+    },
+    {
+      "type": "function",
+      "name": "handle_outgoing_message",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\triggers\\email.py",
+      "summary": "Handle 'email_output' events -> Send email response."
+    },
+    {
+      "type": "function",
+      "name": "send_email",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\triggers\\email.py",
+      "summary": "Send an email using SMTP."
+    },
+    {
+      "type": "class",
+      "name": "IDEControlService",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\triggers\\ide_control.py",
+      "summary": "Service that listens to stdin for JSON commands from the VS Code main process."
+    },
+    {
+      "type": "function",
+      "name": "start",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\triggers\\ide_control.py",
+      "summary": "Start the stdin listener thread."
+    },
+    {
+      "type": "function",
+      "name": "_listen_loop",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\triggers\\ide_control.py",
+      "summary": "Continuously read lines from stdin and process as JSON commands."
+    },
+    {
+      "type": "function",
+      "name": "_process_command",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\triggers\\ide_control.py",
+      "summary": "Route the command to the event bus."
+    },
+    {
+      "type": "function",
+      "name": "stop",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\triggers\\ide_control.py",
+      "summary": "Stop the service."
+    },
+    {
+      "type": "class",
+      "name": "SMSService",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\triggers\\sms.py",
+      "summary": "Service to handle SMS (Twilio/Generic Webhook) interactions."
+    },
+    {
+      "type": "function",
+      "name": "handle_incoming_webhook",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\triggers\\sms.py",
+      "summary": "Check if a webhook payload is an SMS (e.g., from Twilio)."
+    },
+    {
+      "type": "function",
+      "name": "handle_outgoing_message",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\triggers\\sms.py",
+      "summary": "Handle 'sms_output' events -> Send SMS via Twilio."
+    },
+    {
+      "type": "function",
+      "name": "send_sms",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\triggers\\sms.py",
+      "summary": "Send an SMS using Twilio API (zero-dependency approach)."
+    },
+    {
+      "type": "function",
+      "name": "start",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\triggers\\sms.py",
+      "summary": "Service startup logic."
+    },
+    {
+      "type": "function",
+      "name": "stop",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\triggers\\sms.py",
+      "summary": "Service shutdown logic."
+    },
+    {
+      "type": "class",
+      "name": "WorkspaceMonitoringService",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\triggers\\system_events.py",
+      "summary": "Monitors the project workspace for file changes and system events."
+    },
+    {
+      "type": "class",
+      "name": "TelegramService",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\triggers\\telegram.py",
+      "summary": "Service to handle Telegram Bot API interactions."
+    },
+    {
+      "type": "function",
+      "name": "start",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\triggers\\telegram.py",
+      "summary": "Start the polling loop in a background thread."
+    },
+    {
+      "type": "function",
+      "name": "stop",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\triggers\\telegram.py",
+      "summary": "Stop the polling loop."
+    },
+    {
+      "type": "function",
+      "name": "_poll_loop",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\triggers\\telegram.py",
+      "summary": "Internal loop to check for updates."
+    },
+    {
+      "type": "function",
+      "name": "_check_updates",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\triggers\\telegram.py",
+      "summary": "Call getUpdates API."
+    },
+    {
+      "type": "function",
+      "name": "_process_update",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\triggers\\telegram.py",
+      "summary": "Process a single update and publish event."
+    },
+    {
+      "type": "function",
+      "name": "handle_outgoing_message",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\triggers\\telegram.py",
+      "summary": "Handle 'telegram_output' events -> Send message to Telegram."
+    },
+    {
+      "type": "function",
+      "name": "send_message",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\triggers\\telegram.py",
+      "summary": "Send a text message to a chat."
+    },
+    {
+      "type": "function",
+      "name": "do_POST",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\triggers\\webhook.py",
+      "summary": "Handle incoming webhook POST requests."
+    },
+    {
+      "type": "function",
+      "name": "start",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\triggers\\webhook.py",
+      "summary": "Start the webhook server in a separate thread."
+    },
+    {
+      "type": "function",
+      "name": "stop",
+      "path": "C:\\Users\\dbiss\\Desktop\\Projects\\Personal\\Project-Firefly\\agent_manager\\triggers\\webhook.py",
+      "summary": "Stop the webhook server."
     }
   ]
 }
