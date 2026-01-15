@@ -1,8 +1,8 @@
+from pathlib import Path
 import logging
 import os
 import sys
 import time
-from pathlib import Path
 
 # Ensure project root is in sys.path
 sys.path.append(str(Path(__file__).parent.parent))
@@ -11,6 +11,7 @@ from agent_manager.core.api_controller import APIController
 from agent_manager.core.artifact_service import ArtifactService
 from agent_manager.core.browser_adapter import BrowserService
 from agent_manager.core.config_service import ConfigurationService
+from agent_manager.core.context_service import ContextCompressionService
 from agent_manager.core.dashboard_service import DashboardService
 from agent_manager.core.event_bus import EventBusService
 from agent_manager.core.git_service import GitMonitoringService
@@ -71,6 +72,9 @@ def main():
     # 3.7 Initialize Artifact Service
     artifact_service = ArtifactService()
 
+    # 3.12 Initialize Context Compression Service
+    context_service = ContextCompressionService(artifact_service=artifact_service)
+
     # 3.11 Initialize API Controller
     api_controller = APIController(event_bus=bus, artifact_service=artifact_service, model_client=model_client, port=5050)
 
@@ -89,7 +93,8 @@ def main():
         artifact_service=artifact_service,
         prompt_service=prompt_service,
         memory_service=memory_service,
-        notification_service=notifier
+        notification_service=notifier,
+        context_service=context_service
     )
     orchestrator.start()
 

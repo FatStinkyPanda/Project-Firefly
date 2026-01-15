@@ -124,8 +124,18 @@ Successfully implemented the `BrowserAdapter` using Playwright.
 
 ## 🤝 Contributing
 Firefly follows the **MCP-Global** protocol. All contributions must pass the automated security and quality gates.
-- Always run `python mcp.py context` before starting work.
-- **Never disable a hook.** Fix the underlying root cause.
+---
+
+## 🤖 MCP Global Enforcement
+
+This project is protected and managed by **MCP Global**.
+- **Memory & Context:** Full project indexing is automated.
+- **Enforcement:** Architectural and security rules are enforced via mandatory pre-commit and pre-push hooks.
+- **Autonomous Collaboration:** Agents coordinate through the `agent_manager` and MCP tools.
+- **Fix Properly:** Never bypass security or quality gates.
+
+To refresh context: `python mcp-global/mcp.py autocontext`
+To build full index: `python mcp-global/mcp.py index-all`
 
 ---
 

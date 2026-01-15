@@ -1,12 +1,11 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from pathlib import Path
 from threading import Thread
-import threading
-import threading
 from typing import Optional, Any, Dict
 import json
 import logging
 import os
+import threading
 import urllib.parse
 
 logger = logging.getLogger("FireflyAPI")

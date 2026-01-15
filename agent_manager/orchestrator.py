@@ -14,7 +14,7 @@ class OrchestratorManager:
     Manages the lifecycle and execution of agents based on triggers.
     Robustly handles AI responses using the Firefly Tagging System (FTS).
     """
-    def __init__(self, event_bus, model_client, config_service=None, peer_discovery=None, session_manager=None, browser_service=None, artifact_service=None, prompt_service=None, memory_service=None, notification_service=None):
+    def __init__(self, event_bus, model_client, config_service=None, peer_discovery=None, session_manager=None, browser_service=None, artifact_service=None, prompt_service=None, memory_service=None, notification_service=None, context_service=None):
         self.event_bus = event_bus
         self.model_client = model_client
         self.config_service = config_service
@@ -25,6 +25,7 @@ class OrchestratorManager:
         self.prompt_service = prompt_service
         self.memory_service = memory_service
         self.notification_service = notification_service
+        self.context_service = context_service
         self.is_autonomous = False
         self.git_manager = GitManager()
         self.tag_parser = TagParserService()
@@ -169,7 +170,7 @@ class OrchestratorManager:
             loop = asyncio.new_event_loop()
             asyncio.set_event_loop(loop)
 
-        return loop.run_until_complete(self.process_request_async(prompt, source, context, session_id, agent_role))
+        return loop.run_until_complete(self.process_request_async(text, source, context, session_id, agent_role))
 
     async def process_request_async(self, prompt: str, source: str, context: dict = None, session_id: str = "default", agent_role: str = "Lead Orchestrator"):
         """
@@ -197,6 +198,19 @@ class OrchestratorManager:
                 if memories:
                     mem_context = "\n[RELEVANT HISTORICAL CONTEXT]\n" + "\n".join([f"- {m['text']}" for m in memories])
                     history_context += mem_context
+            
+            # Retrieve project state (Active Context Compression)
+            if self.context_service:
+                # Assuming root is current working dir or similar
+                state = self.context_service.get_project_state(os.getcwd())
+                state_summary = f"""
+[PROJECT STATE]
+Global Goal: {state.get('global_goal')}
+Active Task: {state.get('current_active_task')}
+Items in Queue: {len(state.get('next_step_queue', []))}
+Known Bugs: {', '.join(state.get('known_bugs', []))}
+"""
+                history_context += state_summary
 
         # 2. Construct System Prompt using PromptService
         if self.prompt_service:
@@ -234,6 +248,9 @@ class OrchestratorManager:
 
             # 2.5 Handle Browser Actions
             await self._handle_browser_actions(response.text, session_id)
+            
+            # 2.6 Handle Skeleton Actions
+            self._handle_skeleton_requests(response.text, session_id)
 
             # 3. Handle plans and delegations
             self._handle_plans(response.text, session_id)
@@ -306,6 +323,44 @@ class OrchestratorManager:
                     # We might want to trigger the agent again with the new context
                     # to keep the autonomous flow going.
                     self.process_request("Analyze the browser result and continue.", source="system", session_id=session_id)
+
+    def _handle_skeleton_requests(self, text: str, session_id: str):
+        """Extracts and executes <skeleton path="..."> tags."""
+        if not self.context_service:
+            return
+
+        # Regex to find <skeleton path="..." />
+        skeleton_tags = re.findall(r'<skeleton\s+path=["\'](.*?)["\']\s*/?>', text, re.IGNORECASE)
+        for path in skeleton_tags:
+            logger.info(f"Skeleton Request for: {path}")
+            
+            try:
+                # Use environment/project root logic if possible, assuming absolute or relative to root
+                # For now, simplistic check
+                if not os.path.isabs(path):
+                    # How do we know project root? We might guess or need configuration.
+                    # We'll assume relative to CWD for now, or rely on absolute paths.
+                    # Better: try to find it.
+                    pass
+                
+                if os.path.exists(path):
+                    with open(path, 'r', encoding='utf-8') as f:
+                        content = f.read()
+                    
+                    skeleton = self.context_service.generate_skeleton(content, path)
+                    
+                    # Feed back to session
+                    if self.session_manager:
+                        msg = f"[SKELETON VIEW] {path}:\n{skeleton}"
+                        self.session_manager.add_message(session_id, "system", msg)
+                else:
+                     if self.session_manager:
+                        self.session_manager.add_message(session_id, "system", f"[ERROR] File not found for skeleton: {path}")
+
+            except Exception as e:
+                logger.error(f"Failed to generate skeleton: {e}")
+                if self.session_manager:
+                     self.session_manager.add_message(session_id, "system", f"[ERROR] Skeleton generation failed: {e}")
 
     def execute_command(self, command: str):
         """Executes a command if it passes the safety policy."""

@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "c:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\agent_manager\main.py", line 10, in <module>
+    from agent_manager.main_controller import main
+  File "c:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\agent_manager\main_controller.py", line 23, in <module>
+    from agent_manager.models.manager import ModelClientManager
+  File "c:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\agent_manager\models\manager.py", line 4, in <module>
+    from .anthropic import AnthropicService
+  File "c:\Users\dbiss\Desktop\Projects\Personal\Project-Firefly\agent_manager\models\anthropic.py", line 9
+    from __future__ import annotations
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: from __future__ imports must occur at the beginning of the file
